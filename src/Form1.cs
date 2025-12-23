@@ -11,5 +11,25 @@ namespace team1
         {
 
         }
+
+        private void 一般科棟ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 電気工学科棟ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
