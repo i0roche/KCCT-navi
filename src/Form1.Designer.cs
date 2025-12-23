@@ -190,7 +190,7 @@ namespace team1
             // 
             電気工学科棟ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { fToolStripMenuItem9, fToolStripMenuItem10, fToolStripMenuItem11, fToolStripMenuItem12 });
             電気工学科棟ToolStripMenuItem.Name = "電気工学科棟ToolStripMenuItem";
-            電気工学科棟ToolStripMenuItem.Size = new Size(359, 44);
+            電気工学科棟ToolStripMenuItem.Size = new Size(297, 44);
             電気工学科棟ToolStripMenuItem.Text = "電気工学科棟";
             電気工学科棟ToolStripMenuItem.Click += 電気工学科棟ToolStripMenuItem_Click;
             // 
@@ -226,34 +226,34 @@ namespace team1
             // 
             電子工学科棟ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { fToolStripMenuItem6, fToolStripMenuItem7, ｆToolStripMenuItem, fToolStripMenuItem8 });
             電子工学科棟ToolStripMenuItem.Name = "電子工学科棟ToolStripMenuItem";
-            電子工学科棟ToolStripMenuItem.Size = new Size(359, 44);
+            電子工学科棟ToolStripMenuItem.Size = new Size(297, 44);
             電子工学科棟ToolStripMenuItem.Text = "電子工学科棟";
             // 
             // fToolStripMenuItem6
             // 
             fToolStripMenuItem6.Name = "fToolStripMenuItem6";
-            fToolStripMenuItem6.Size = new Size(359, 44);
+            fToolStripMenuItem6.Size = new Size(184, 44);
             fToolStripMenuItem6.Text = "１F";
             fToolStripMenuItem6.Click += fToolStripMenuItem6_Click;
             // 
             // fToolStripMenuItem7
             // 
             fToolStripMenuItem7.Name = "fToolStripMenuItem7";
-            fToolStripMenuItem7.Size = new Size(359, 44);
+            fToolStripMenuItem7.Size = new Size(184, 44);
             fToolStripMenuItem7.Text = "２F";
             fToolStripMenuItem7.Click += fToolStripMenuItem7_Click;
             // 
             // ｆToolStripMenuItem
             // 
             ｆToolStripMenuItem.Name = "ｆToolStripMenuItem";
-            ｆToolStripMenuItem.Size = new Size(359, 44);
+            ｆToolStripMenuItem.Size = new Size(184, 44);
             ｆToolStripMenuItem.Text = "３F";
             ｆToolStripMenuItem.Click += ｆToolStripMenuItem_Click;
             // 
             // fToolStripMenuItem8
             // 
             fToolStripMenuItem8.Name = "fToolStripMenuItem8";
-            fToolStripMenuItem8.Size = new Size(359, 44);
+            fToolStripMenuItem8.Size = new Size(184, 44);
             fToolStripMenuItem8.Text = "４F";
             fToolStripMenuItem8.Click += fToolStripMenuItem8_Click;
             // 
@@ -261,7 +261,7 @@ namespace team1
             // 
             都市工学科棟ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { fToolStripMenuItem13, fToolStripMenuItem14, fToolStripMenuItem15, fToolStripMenuItem16 });
             都市工学科棟ToolStripMenuItem.Name = "都市工学科棟ToolStripMenuItem";
-            都市工学科棟ToolStripMenuItem.Size = new Size(359, 44);
+            都市工学科棟ToolStripMenuItem.Size = new Size(297, 44);
             都市工学科棟ToolStripMenuItem.Text = "都市工学科棟";
             // 
             // fToolStripMenuItem13
@@ -269,30 +269,34 @@ namespace team1
             fToolStripMenuItem13.Name = "fToolStripMenuItem13";
             fToolStripMenuItem13.Size = new Size(184, 44);
             fToolStripMenuItem13.Text = "１F";
+            fToolStripMenuItem13.Click += fToolStripMenuItem13_Click;
             // 
             // fToolStripMenuItem14
             // 
             fToolStripMenuItem14.Name = "fToolStripMenuItem14";
             fToolStripMenuItem14.Size = new Size(184, 44);
             fToolStripMenuItem14.Text = "２F";
+            fToolStripMenuItem14.Click += fToolStripMenuItem14_Click;
             // 
             // fToolStripMenuItem15
             // 
             fToolStripMenuItem15.Name = "fToolStripMenuItem15";
             fToolStripMenuItem15.Size = new Size(184, 44);
             fToolStripMenuItem15.Text = "３F";
+            fToolStripMenuItem15.Click += fToolStripMenuItem15_Click;
             // 
             // fToolStripMenuItem16
             // 
             fToolStripMenuItem16.Name = "fToolStripMenuItem16";
             fToolStripMenuItem16.Size = new Size(184, 44);
             fToolStripMenuItem16.Text = "４F";
+            fToolStripMenuItem16.Click += fToolStripMenuItem16_Click;
             // 
             // 機械工学科棟ToolStripMenuItem
             // 
             機械工学科棟ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { fToolStripMenuItem17, fToolStripMenuItem18, fToolStripMenuItem19, fToolStripMenuItem20 });
             機械工学科棟ToolStripMenuItem.Name = "機械工学科棟ToolStripMenuItem";
-            機械工学科棟ToolStripMenuItem.Size = new Size(359, 44);
+            機械工学科棟ToolStripMenuItem.Size = new Size(297, 44);
             機械工学科棟ToolStripMenuItem.Text = "機械工学科棟";
             // 
             // fToolStripMenuItem17
@@ -300,55 +304,64 @@ namespace team1
             fToolStripMenuItem17.Name = "fToolStripMenuItem17";
             fToolStripMenuItem17.Size = new Size(184, 44);
             fToolStripMenuItem17.Text = "１F";
+            fToolStripMenuItem17.Click += fToolStripMenuItem17_Click;
             // 
             // fToolStripMenuItem18
             // 
             fToolStripMenuItem18.Name = "fToolStripMenuItem18";
             fToolStripMenuItem18.Size = new Size(184, 44);
             fToolStripMenuItem18.Text = "２F";
+            fToolStripMenuItem18.Click += fToolStripMenuItem18_Click;
             // 
             // fToolStripMenuItem19
             // 
             fToolStripMenuItem19.Name = "fToolStripMenuItem19";
             fToolStripMenuItem19.Size = new Size(184, 44);
             fToolStripMenuItem19.Text = "３F";
+            fToolStripMenuItem19.Click += fToolStripMenuItem19_Click;
             // 
             // fToolStripMenuItem20
             // 
             fToolStripMenuItem20.Name = "fToolStripMenuItem20";
             fToolStripMenuItem20.Size = new Size(184, 44);
             fToolStripMenuItem20.Text = "４F";
+            fToolStripMenuItem20.Click += fToolStripMenuItem20_Click;
             // 
             // 応用化学科棟ToolStripMenuItem
             // 
             応用化学科棟ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { fToolStripMenuItem21, fToolStripMenuItem22, fToolStripMenuItem23, ｆToolStripMenuItem1 });
             応用化学科棟ToolStripMenuItem.Name = "応用化学科棟ToolStripMenuItem";
-            応用化学科棟ToolStripMenuItem.Size = new Size(359, 44);
+            応用化学科棟ToolStripMenuItem.Size = new Size(297, 44);
             応用化学科棟ToolStripMenuItem.Text = "応用化学科棟";
+            応用化学科棟ToolStripMenuItem.Click += 応用化学科棟ToolStripMenuItem_Click;
             // 
             // fToolStripMenuItem21
             // 
             fToolStripMenuItem21.Name = "fToolStripMenuItem21";
             fToolStripMenuItem21.Size = new Size(184, 44);
             fToolStripMenuItem21.Text = "１F";
+            fToolStripMenuItem21.Click += fToolStripMenuItem21_Click;
             // 
             // fToolStripMenuItem22
             // 
             fToolStripMenuItem22.Name = "fToolStripMenuItem22";
             fToolStripMenuItem22.Size = new Size(184, 44);
             fToolStripMenuItem22.Text = "２F";
+            fToolStripMenuItem22.Click += fToolStripMenuItem22_Click;
             // 
             // fToolStripMenuItem23
             // 
             fToolStripMenuItem23.Name = "fToolStripMenuItem23";
             fToolStripMenuItem23.Size = new Size(184, 44);
             fToolStripMenuItem23.Text = "３F";
+            fToolStripMenuItem23.Click += fToolStripMenuItem23_Click;
             // 
             // ｆToolStripMenuItem1
             // 
             ｆToolStripMenuItem1.Name = "ｆToolStripMenuItem1";
             ｆToolStripMenuItem1.Size = new Size(184, 44);
             ｆToolStripMenuItem1.Text = "４F";
+            ｆToolStripMenuItem1.Click += ｆToolStripMenuItem1_Click;
             // 
             // 専攻科棟ToolStripMenuItem
             // 
@@ -362,18 +375,21 @@ namespace team1
             fToolStripMenuItem24.Name = "fToolStripMenuItem24";
             fToolStripMenuItem24.Size = new Size(184, 44);
             fToolStripMenuItem24.Text = "１F";
+            fToolStripMenuItem24.Click += fToolStripMenuItem24_Click;
             // 
             // fToolStripMenuItem25
             // 
             fToolStripMenuItem25.Name = "fToolStripMenuItem25";
             fToolStripMenuItem25.Size = new Size(184, 44);
             fToolStripMenuItem25.Text = "２F";
+            fToolStripMenuItem25.Click += fToolStripMenuItem25_Click;
             // 
             // fToolStripMenuItem26
             // 
             fToolStripMenuItem26.Name = "fToolStripMenuItem26";
             fToolStripMenuItem26.Size = new Size(184, 44);
             fToolStripMenuItem26.Text = "３F";
+            fToolStripMenuItem26.Click += fToolStripMenuItem26_Click;
             // 
             // 本部棟ToolStripMenuItem
             // 
@@ -387,12 +403,14 @@ namespace team1
             fToolStripMenuItem27.Name = "fToolStripMenuItem27";
             fToolStripMenuItem27.Size = new Size(184, 44);
             fToolStripMenuItem27.Text = "１F";
+            fToolStripMenuItem27.Click += fToolStripMenuItem27_Click;
             // 
             // fToolStripMenuItem28
             // 
             fToolStripMenuItem28.Name = "fToolStripMenuItem28";
             fToolStripMenuItem28.Size = new Size(184, 44);
             fToolStripMenuItem28.Text = "２F";
+            fToolStripMenuItem28.Click += fToolStripMenuItem28_Click;
             // 
             // 講義棟ToolStripMenuItem1
             // 
@@ -406,24 +424,28 @@ namespace team1
             fToolStripMenuItem29.Name = "fToolStripMenuItem29";
             fToolStripMenuItem29.Size = new Size(184, 44);
             fToolStripMenuItem29.Text = "１F";
+            fToolStripMenuItem29.Click += fToolStripMenuItem29_Click;
             // 
             // fToolStripMenuItem30
             // 
             fToolStripMenuItem30.Name = "fToolStripMenuItem30";
             fToolStripMenuItem30.Size = new Size(184, 44);
             fToolStripMenuItem30.Text = "２F";
+            fToolStripMenuItem30.Click += fToolStripMenuItem30_Click;
             // 
             // fToolStripMenuItem31
             // 
             fToolStripMenuItem31.Name = "fToolStripMenuItem31";
             fToolStripMenuItem31.Size = new Size(184, 44);
             fToolStripMenuItem31.Text = "３F";
+            fToolStripMenuItem31.Click += fToolStripMenuItem31_Click;
             // 
             // fToolStripMenuItem32
             // 
             fToolStripMenuItem32.Name = "fToolStripMenuItem32";
             fToolStripMenuItem32.Size = new Size(184, 44);
             fToolStripMenuItem32.Text = "４F";
+            fToolStripMenuItem32.Click += fToolStripMenuItem32_Click;
             // 
             // 学生会館ToolStripMenuItem
             // 
@@ -437,18 +459,21 @@ namespace team1
             fToolStripMenuItem33.Name = "fToolStripMenuItem33";
             fToolStripMenuItem33.Size = new Size(184, 44);
             fToolStripMenuItem33.Text = "１F";
+            fToolStripMenuItem33.Click += fToolStripMenuItem33_Click;
             // 
             // ｆToolStripMenuItem2
             // 
             ｆToolStripMenuItem2.Name = "ｆToolStripMenuItem2";
             ｆToolStripMenuItem2.Size = new Size(184, 44);
             ｆToolStripMenuItem2.Text = "２F";
+            ｆToolStripMenuItem2.Click += ｆToolStripMenuItem2_Click;
             // 
             // fToolStripMenuItem34
             // 
             fToolStripMenuItem34.Name = "fToolStripMenuItem34";
             fToolStripMenuItem34.Size = new Size(184, 44);
             fToolStripMenuItem34.Text = "３F";
+            fToolStripMenuItem34.Click += fToolStripMenuItem34_Click;
             // 
             // 機械工場ToolStripMenuItem
             // 
@@ -462,12 +487,14 @@ namespace team1
             fToolStripMenuItem35.Name = "fToolStripMenuItem35";
             fToolStripMenuItem35.Size = new Size(184, 44);
             fToolStripMenuItem35.Text = "１F";
+            fToolStripMenuItem35.Click += fToolStripMenuItem35_Click;
             // 
             // fToolStripMenuItem36
             // 
             fToolStripMenuItem36.Name = "fToolStripMenuItem36";
             fToolStripMenuItem36.Size = new Size(184, 44);
             fToolStripMenuItem36.Text = "２F";
+            fToolStripMenuItem36.Click += fToolStripMenuItem36_Click;
             // 
             // 図書館ToolStripMenuItem
             // 
@@ -475,18 +502,21 @@ namespace team1
             図書館ToolStripMenuItem.Name = "図書館ToolStripMenuItem";
             図書館ToolStripMenuItem.Size = new Size(109, 38);
             図書館ToolStripMenuItem.Text = "図書館";
+            図書館ToolStripMenuItem.Click += 図書館ToolStripMenuItem_Click;
             // 
             // fToolStripMenuItem37
             // 
             fToolStripMenuItem37.Name = "fToolStripMenuItem37";
-            fToolStripMenuItem37.Size = new Size(184, 44);
+            fToolStripMenuItem37.Size = new Size(359, 44);
             fToolStripMenuItem37.Text = "１F";
+            fToolStripMenuItem37.Click += fToolStripMenuItem37_Click;
             // 
             // fToolStripMenuItem38
             // 
             fToolStripMenuItem38.Name = "fToolStripMenuItem38";
-            fToolStripMenuItem38.Size = new Size(184, 44);
+            fToolStripMenuItem38.Size = new Size(359, 44);
             fToolStripMenuItem38.Text = "２F";
+            fToolStripMenuItem38.Click += fToolStripMenuItem38_Click;
             // 
             // pictureBox1
             // 
