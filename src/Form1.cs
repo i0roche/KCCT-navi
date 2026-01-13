@@ -197,7 +197,7 @@ namespace team1
 
         private void fToolStripMenuItem30_Click(object sender, EventArgs e)
         {
-
+            pictureBox1.Image = Properties.Resources.kougi_2;
         }
 
         private void fToolStripMenuItem31_Click(object sender, EventArgs e)
