@@ -31,12 +31,12 @@ namespace team1
         {
             var json = Properties.Resources.general_json;
             _places = new();
-            _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.general_json));)
-            _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.elec_json));)
-            _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.denshi_json));)
-            _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.toshi_json));)
-            _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.chem_json));)
-            _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.mech_json));)
+            _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.general_json));
+            _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.elec_json));
+            _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.denshi_json));
+            _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.toshi_json));
+            _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.chem_json));
+            _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.mech_json));
 
         }
 
@@ -376,6 +376,11 @@ namespace team1
         private void button1_Click_1(object sender, EventArgs e)
         {
             this.Load += Form1_Load;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
