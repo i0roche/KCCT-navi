@@ -1,14 +1,42 @@
+using System.Text.Json;
+using System.Linq;
+
 namespace team1
 {
     public partial class Form1 : Form
     {
+
+        private List<Place> _places = new();
+
+        // JSON用モデル
+        public class Place
+        {
+
+            public string id { get; set; } = "";
+            public string name { get; set; } = "";
+            public string type { get; set; } = "";
+            public string building { get; set; } = "";
+            public int floor { get; set; }
+            public string department { get; set; } = "";
+            public List<string> tags { get; set; } = new();
+        }
         public Form1()
         {
             InitializeComponent();
+            button1.Click += button1_Click;
+            textBox1.KeyDown += textBox1_KeyDown;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            var json = Properties.Resources.general_json;
+            _places = new();
+            _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.general_json));)
+            _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.elec_json));)
+            _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.denshi_json));)
+            _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.toshi_json));)
+            _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.chem_json));)
+            _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.mech_json));)
 
         }
 
@@ -258,6 +286,96 @@ namespace team1
         private void 実験排水処理施設棟ToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object? sender, EventArgs e) => DoSearch();
+
+        private void textBox1_KeyDown(object? sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                DoSearch();
+            }
+        }
+
+        private void DoSearch()
+        {
+            var q = textBox1.Text.Trim();
+            if (string.IsNullOrEmpty(q)) return;
+
+            // まず完全一致優先、なければ部分一致
+            var hit = _places.FirstOrDefault(p =>
+                          string.Equals(p.name, q, StringComparison.OrdinalIgnoreCase) ||
+                          p.tags.Any(t => string.Equals(t, q, StringComparison.OrdinalIgnoreCase)))
+                   ?? _places.FirstOrDefault(p =>
+                          p.name.Contains(q, StringComparison.OrdinalIgnoreCase) ||
+                          p.tags.Any(t => t.Contains(q, StringComparison.OrdinalIgnoreCase)));
+
+            if (hit == null)
+            {
+                MessageBox.Show("見つかりませんでした");
+                return;
+            }
+
+            // building / floor で地図画像へ切り替え
+            SetMapImage(hit.building, hit.floor);
+        }
+
+        private void SetMapImage(string building, int floor)
+        {
+            // ここはあなたのResources名に合わせて分岐
+            // ※ JSONのbuilding表記が「一般科A棟」「一般科B棟」などなので、実際の表記に合わせて調整してね
+
+            if (building.Contains("一般科"))
+            {
+                pictureBox1.Image = floor switch
+                {
+                    1 => Properties.Resources.ippan_1,
+                    2 => Properties.Resources.ippan_2,
+                    3 => Properties.Resources.ippan_3,
+                    4 => Properties.Resources.ippan_4,
+                    5 => Properties.Resources.ippan_5,
+                    6 => Properties.Resources.ippan_6,
+                    _ => pictureBox1.Image
+                };
+                return;
+            }
+
+            if (building.Contains("電気工学科棟"))
+            {
+                pictureBox1.Image = floor switch
+                {
+                    1 => Properties.Resources.denki_1,
+                    2 => Properties.Resources.denki_2,
+                    3 => Properties.Resources.denki_3,
+                    4 => Properties.Resources.denki_4,
+                    _ => pictureBox1.Image
+                };
+                return;
+            }
+
+            if (building.Contains("電子工学科棟"))
+            {
+                pictureBox1.Image = floor switch
+                {
+                    1 => Properties.Resources.densi_1,
+                    2 => Properties.Resources.densi_2,
+                    3 => Properties.Resources.densi_3,
+                    4 => Properties.Resources.densi_4,
+                    _ => pictureBox1.Image
+                };
+                return;
+            }
+
+            // 他の棟も同じ要領で追加（都市, 機械, 応化, 専攻科, 本部, 講義, 学生会館, 図書館, 工場など）
+
+            MessageBox.Show($"地図が未対応: {building} {floor}F");
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Load += Form1_Load;
         }
     }
 }
