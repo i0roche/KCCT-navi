@@ -377,5 +377,10 @@ namespace team1
         {
             this.Load += Form1_Load;
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
