@@ -1,0 +1,353 @@
+[
+  {
+    "id": "room_2f_denshi_office_tech",
+    "name": "技術職員室",
+    "type": "office_tech",
+    "building": "電子工学科棟",
+    "floor": 2,
+    "department": "denshi",
+    "tags": ["技術職員室", "電子工学科棟", "電子工学科", "denshi", "技術職員室"]
+  },
+  {
+    "id": "room_1f_denshi_lab_basic_electronics",
+    "name": "電子基礎実験室",
+    "type": "lab",
+    "building": "電子工学科棟",
+    "floor": 1,
+    "department": "denshi",
+    "tags": ["電子基礎実験室", "電子工学科棟", "電子工学科", "denshi", "実験室"]
+  },
+  {
+    "id": "room_1f_denshi_lab_device",
+    "name": "デバイス工学実験室（クリーンルーム）",
+    "type": "lab",
+    "building": "電子工学科棟",
+    "floor": 1,
+    "department": "denshi",
+    "tags": ["デバイス工学実験室（クリーンルーム）", "電子工学科棟", "電子工学科", "denshi", "実験室"]
+  },
+  {
+    "id": "room_1f_denshi_lab_frontier",
+    "name": "フロンティア材料実験室",
+    "type": "lab",
+    "building": "電子工学科棟",
+    "floor": 1,
+    "department": "denshi",
+    "tags": ["フロンティア材料実験室", "電子工学科棟", "電子工学科", "denshi", "実験室"]
+  },
+  {
+    "id": "room_1f_denshi_lab_acoustic",
+    "name": "音響工学実験室（無響室）",
+    "type": "lab",
+    "building": "電子工学科棟",
+    "floor": 1,
+    "department": "denshi",
+    "tags": ["音響工学実験室（無響室）", "電子工学科棟", "電子工学科", "denshi", "実験室"]
+  },
+  {
+    "id": "room_1f_denshi_facility_workshop",
+    "name": "工作室",
+    "type": "facility",
+    "building": "電子工学科棟",
+    "floor": 1,
+    "department": "denshi",
+    "tags": ["工作室", "電子工学科棟", "電子工学科", "denshi"]
+  },
+  {
+    "id": "room_2f_denshi_lab_control",
+    "name": "電子制御実験室",
+    "type": "lab",
+    "building": "電子工学科棟",
+    "floor": 2,
+    "department": "denshi",
+    "tags": ["電子制御実験室", "電子工学科棟", "電子工学科", "denshi", "実験室"]
+  },
+  {
+    "id": "room_2f_denshi_lab_measurement",
+    "name": "電子計測実験室",
+    "type": "lab",
+    "building": "電子工学科棟",
+    "floor": 2,
+    "department": "denshi",
+    "tags": ["電子計測実験室", "電子工学科棟", "電子工学科", "denshi", "実験室"]
+  },
+  {
+    "id": "room_2f_denshi_lab_optoelectronics",
+    "name": "光電子工学実験室",
+    "type": "lab",
+    "building": "電子工学科棟",
+    "floor": 2,
+    "department": "denshi",
+    "tags": ["光電子工学実験室", "電子工学科棟", "電子工学科", "denshi", "実験室"]
+  },
+  {
+    "id": "room_2f_denshi_facility_equipment",
+    "name": "器材室",
+    "type": "facility",
+    "building": "電子工学科棟",
+    "floor": 2,
+    "department": "denshi",
+    "tags": ["器材室", "電子工学科棟", "電子工学科", "denshi"]
+  },
+  {
+    "id": "room_3f_denshi_lab_computer",
+    "name": "計算機工学実験室",
+    "type": "lab",
+    "building": "電子工学科棟",
+    "floor": 3,
+    "department": "denshi",
+    "tags": ["計算機工学実験室", "電子工学科棟", "電子工学科", "denshi", "実験室"]
+  },
+  {
+    "id": "room_3f_denshi_facility_DigitalFabricationLab",
+    "name": "Digital Fabrication Lab.",
+    "type": "facility",
+    "building": "電子工学科棟",
+    "floor": 3,
+    "department": "denshi",
+    "tags": ["Digital Fabrication Lab.", "電子工学科棟", "電子工学科", "denshi"]
+  },
+  {
+    "id": "room_3f_denshi_lab_software",
+    "name": "ソフトウェア工学実験室",
+    "type": "lab",
+    "building": "電子工学科棟",
+    "floor": 3,
+    "department": "denshi",
+    "tags": ["ソフトウェア工学実験室", "電子工学科棟", "電子工学科", "denshi", "実験室"]
+  },
+  {
+    "id": "room_3f_denshi_facility_archive",
+    "name": "資料室",
+    "type": "facility",
+    "building": "電子工学科棟",
+    "floor": 3,
+    "department": "denshi",
+    "tags": ["資料室", "電子工学科棟", "電子工学科", "denshi"]
+  },
+  {
+    "id": "room_3f_denshi_facility_meeting",
+    "name": "会議室",
+    "type": "facility",
+    "building": "電子工学科棟",
+    "floor": 3,
+    "department": "denshi",
+    "tags": ["会議室", "電子工学科棟", "電子工学科", "denshi"]
+  },
+  {
+    "id": "room_4f_denshi_facility_HighPerformanceComputingLab",
+    "name": "High Performance Computing Lab.",
+    "type": "facility",
+    "building": "電子工学科棟",
+    "floor": 4,
+    "department": "denshi",
+    "tags": ["High Performance Computing Lab.", "電子工学科棟", "電子工学科", "denshi"]
+  },
+  {
+    "id": "room_4f_denshi_lab_comm",
+    "name": "通信工学実験室",
+    "type": "lab",
+    "building": "電子工学科棟",
+    "floor": 4,
+    "department": "denshi",
+    "tags": ["通信工学実験室", "電子工学科棟", "電子工学科", "denshi", "実験室"]
+  },
+  {
+    "id": "room_4f_denshi_lab_applied",
+    "name": "電子応用実験室",
+    "type": "lab",
+    "building": "電子工学科棟",
+    "floor": 4,
+    "department": "denshi",
+    "tags": ["電子応用実験室", "電子工学科棟", "電子工学科", "denshi", "実験室"]
+  },
+  {
+    "id": "room_4f_denshi_facility_part_time",
+    "name": "非常勤講師室",
+    "type": "facility",
+    "building": "電子工学科棟",
+    "floor": 4,
+    "department": "denshi",
+    "tags": ["非常勤講師室", "電子工学科棟", "電子工学科", "denshi"]
+  },
+  {
+    "id": "room_2f_denshi_facility_graduation_1",
+    "name": "卒研室1",
+    "type": "facility",
+    "building": "電子工学科棟",
+    "floor": 2,
+    "department": "denshi",
+    "tags": ["卒研室1", "電子工学科棟", "電子工学科", "denshi"]
+  },
+  {
+    "id": "room_2f_denshi_facility_graduation_2",
+    "name": "卒研室2",
+    "type": "facility",
+    "building": "電子工学科棟",
+    "floor": 2,
+    "department": "denshi",
+    "tags": ["卒研室2", "電子工学科棟", "電子工学科", "denshi"]
+  },
+  {
+    "id": "room_2f_denshi_facility_graduation_3",
+    "name": "卒研室3",
+    "type": "facility",
+    "building": "電子工学科棟",
+    "floor": 2,
+    "department": "denshi",
+    "tags": ["卒研室3", "電子工学科棟", "電子工学科", "denshi"]
+  },
+  {
+    "id": "room_3f_denshi_facility_graduation_4",
+    "name": "卒研室4",
+    "type": "facility",
+    "building": "電子工学科棟",
+    "floor": 3,
+    "department": "denshi",
+    "tags": ["卒研室4", "電子工学科棟", "電子工学科", "denshi"]
+  },
+  {
+    "id": "room_3f_denshi_facility_graduation_5",
+    "name": "卒研室5",
+    "type": "facility",
+    "building": "電子工学科棟",
+    "floor": 3,
+    "department": "denshi",
+    "tags": ["卒研室5", "電子工学科棟", "電子工学科", "denshi"]
+  },
+  {
+    "id": "room_3f_denshi_facility_graduation_6",
+    "name": "卒研室6",
+    "type": "facility",
+    "building": "電子工学科棟",
+    "floor": 3,
+    "department": "denshi",
+    "tags": ["卒研室6", "電子工学科棟", "電子工学科", "denshi"]
+  },
+  {
+    "id": "room_4f_denshi_facility_graduation_7",
+    "name": "卒研室7",
+    "type": "facility",
+    "building": "電子工学科棟",
+    "floor": 4,
+    "department": "denshi",
+    "tags": ["卒研室7", "電子工学科棟", "電子工学科", "denshi"]
+  },
+  {
+    "id": "room_4f_denshi_facility_graduation_8",
+    "name": "卒研室8",
+    "type": "facility",
+    "building": "電子工学科棟",
+    "floor": 4,
+    "department": "denshi",
+    "tags": ["卒研室8", "電子工学科棟", "電子工学科", "denshi"]
+  },
+  {
+    "id": "room_4f_denshi_facility_graduation_9",
+    "name": "卒研室9",
+    "type": "facility",
+    "building": "電子工学科棟",
+    "floor": 4,
+    "department": "denshi",
+    "tags": ["卒研室9", "電子工学科棟", "電子工学科", "denshi"]
+  },
+  {
+    "id": "room_4f_denshi_facility_graduation_10",
+    "name": "卒研室10",
+    "type": "facility",
+    "building": "電子工学科棟",
+    "floor": 4,
+    "department": "denshi",
+    "tags": ["卒研室10", "電子工学科棟", "電子工学科", "denshi"]
+  },
+  {
+    "id": "room_2f_denshi_lab_ogiwara",
+    "name": "荻原 研究室",
+    "type": "lab",
+    "building": "電子工学科棟",
+    "floor": 2,
+    "department": "denshi",
+    "tags": ["荻原 研究室", "電子工学科棟", "電子工学科", "denshi", "研究室", "荻原"]
+  },
+  {
+    "id": "room_2f_denshi_lab_oyama",
+    "name": "尾山 研究室",
+    "type": "lab",
+    "building": "電子工学科棟",
+    "floor": 2,
+    "department": "denshi",
+    "tags": ["尾山 研究室", "電子工学科棟", "電子工学科", "denshi", "研究室", "尾山"]
+  },
+  {
+    "id": "room_2f_denshi_lab_nishi",
+    "name": "西 研究室",
+    "type": "lab",
+    "building": "電子工学科棟",
+    "floor": 2,
+    "department": "denshi",
+    "tags": ["西 研究室", "電子工学科棟", "電子工学科", "denshi", "研究室", "西"]
+  },
+  {
+    "id": "room_3f_denshi_lab_takada",
+    "name": "髙田 研究室",
+    "type": "lab",
+    "building": "電子工学科棟",
+    "floor": 3,
+    "department": "denshi",
+    "tags": ["髙田 研究室", "電子工学科棟", "電子工学科", "denshi", "研究室", "髙田"]
+  },
+  {
+    "id": "room_3f_denshi_lab_tahara",
+    "name": "田原 研究室",
+    "type": "lab",
+    "building": "電子工学科棟",
+    "floor": 3,
+    "department": "denshi",
+    "tags": ["田原 研究室", "電子工学科棟", "電子工学科", "denshi", "研究室", "田原"]
+  },
+  {
+    "id": "room_3f_denshi_lab_tozaki",
+    "name": "戸崎 研究室",
+    "type": "lab",
+    "building": "電子工学科棟",
+    "floor": 3,
+    "department": "denshi",
+    "tags": ["戸崎 研究室", "電子工学科棟", "電子工学科", "denshi", "研究室", "戸崎"]
+  },
+  {
+    "id": "room_4f_denshi_lab_koba",
+    "name": "木場 研究室",
+    "type": "lab",
+    "building": "電子工学科棟",
+    "floor": 4,
+    "department": "denshi",
+    "tags": ["木場 研究室", "電子工学科棟", "電子工学科", "denshi", "研究室", "木場"]
+  },
+  {
+    "id": "room_4f_denshi_lab_hashimoto",
+    "name": "橋本(好) 研究室",
+    "type": "lab",
+    "building": "電子工学科棟",
+    "floor": 4,
+    "department": "denshi",
+    "tags": ["橋本(好) 研究室", "電子工学科棟", "電子工学科", "denshi", "研究室", "橋本(好)"]
+  },
+  {
+    "id": "room_4f_denshi_lab_fujimoto",
+    "name": "藤本 研究室",
+    "type": "lab",
+    "building": "電子工学科棟",
+    "floor": 4,
+    "department": "denshi",
+    "tags": ["藤本 研究室", "電子工学科棟", "電子工学科", "denshi", "研究室", "藤本"]
+  },
+  {
+    "id": "room_4f_denshi_lab_koya",
+    "name": "小矢 研究室",
+    "type": "lab",
+    "building": "電子工学科棟",
+    "floor": 4,
+    "department": "denshi",
+    "tags": ["小矢 研究室", "電子工学科棟", "電子工学科", "denshi", "研究室", "小矢"]
+  }
+]

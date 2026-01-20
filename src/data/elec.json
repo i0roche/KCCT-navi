@@ -1,0 +1,380 @@
+[
+  {
+    "id": "room_2f_elec_office_tech",
+    "name": "技術職員室",
+    "type": "office_tech",
+    "building": "電気工学科棟",
+    "floor": 2,
+    "department": "elec",
+    "tags": ["技術職員室", "電気工学科棟", "電気工学科", "elec", "技術職員室"]
+  },
+  {
+    "id": "room_2f_elec_lab_power_1",
+    "name": "電力工学実験室1",
+    "type": "lab",
+    "building": "電気工学科棟",
+    "floor": 2,
+    "department": "elec",
+    "tags": ["電力工学実験室1", "電気工学科棟", "電気工学科", "elec", "実験室"]
+  },
+  {
+    "id": "room_2f_elec_lab_power_2",
+    "name": "電力工学実験室2",
+    "type": "lab",
+    "building": "電気工学科棟",
+    "floor": 2,
+    "department": "elec",
+    "tags": ["電力工学実験室2", "電気工学科棟", "電気工学科", "elec", "実験室"]
+  },
+  {
+    "id": "room_2f_elec_lab_machine_1",
+    "name": "電気機械実験室1",
+    "type": "lab",
+    "building": "電気工学科棟",
+    "floor": 2,
+    "department": "elec",
+    "tags": ["電気機械実験室1", "電気工学科棟", "電気工学科", "elec", "実験室"]
+  },
+  {
+    "id": "room_2f_elec_lab_machine_2",
+    "name": "電気機械実験室2",
+    "type": "lab",
+    "building": "電気工学科棟",
+    "floor": 2,
+    "department": "elec",
+    "tags": ["電気機械実験室2", "電気工学科棟", "電気工学科", "elec", "実験室"]
+  },
+  {
+    "id": "room_2f_elec_lab_nano_device",
+    "name": "ナノデバイス実験室",
+    "type": "lab",
+    "building": "電気工学科棟",
+    "floor": 2,
+    "department": "elec",
+    "tags": ["ナノデバイス実験室", "電気工学科棟", "電気工学科", "elec", "実験室"]
+  },
+  {
+    "id": "room_2f_elec_lab_nano_material",
+    "name": "ナノマテリアル実験室",
+    "type": "lab",
+    "building": "電気工学科棟",
+    "floor": 2,
+    "department": "elec",
+    "tags": ["ナノマテリアル実験室", "電気工学科棟", "電気工学科", "elec", "実験室"]
+  },
+  {
+    "id": "room_2f_elec_facility_equipment",
+    "name": "器材室",
+    "type": "facility",
+    "building": "電気工学科棟",
+    "floor": 2,
+    "department": "elec",
+    "tags": ["器材室", "電気工学科棟", "電気工学科", "elec"]
+  },
+  {
+    "id": "room_3f_elec_lab_measurement",
+    "name": "電気計測実験室",
+    "type": "lab",
+    "building": "電気工学科棟",
+    "floor": 3,
+    "department": "elec",
+    "tags": ["電気計測実験室", "電気工学科棟", "電気工学科", "elec", "実験室"]
+  },
+  {
+    "id": "room_3f_elec_lab_comm",
+    "name": "通信工学実験室",
+    "type": "lab",
+    "building": "電気工学科棟",
+    "floor": 3,
+    "department": "elec",
+    "tags": ["通信工学実験室", "電気工学科棟", "電気工学科", "elec", "実験室"]
+  },
+  {
+    "id": "room_3f_elec_lab_electronics_1",
+    "name": "電子工学実験室1",
+    "type": "lab",
+    "building": "電気工学科棟",
+    "floor": 3,
+    "department": "elec",
+    "tags": ["電子工学実験室1", "電気工学科棟", "電気工学科", "elec", "実験室"]
+  },
+  {
+    "id": "room_3f_elec_lab_electronics_2",
+    "name": "電子工学実験室2",
+    "type": "lab",
+    "building": "電気工学科棟",
+    "floor": 3,
+    "department": "elec",
+    "tags": ["電子工学実験室2", "電気工学科棟", "電気工学科", "elec", "実験室"]
+  },
+  {
+    "id": "room_3f_elec_lab_control",
+    "name": "制御工学実験室",
+    "type": "lab",
+    "building": "電気工学科棟",
+    "floor": 3,
+    "department": "elec",
+    "tags": ["制御工学実験室", "電気工学科棟", "電気工学科", "elec", "実験室"]
+  },
+  {
+    "id": "room_4f_elec_lab_medical_image",
+    "name": "医用画像工学実験室",
+    "type": "lab",
+    "building": "電気工学科棟",
+    "floor": 4,
+    "department": "elec",
+    "tags": ["医用画像工学実験室", "電気工学科棟", "電気工学科", "elec", "実験室"]
+  },
+  {
+    "id": "room_4f_elec_classroom_info",
+    "name": "情報演習室",
+    "type": "classroom",
+    "building": "電気工学科棟",
+    "floor": 4,
+    "department": "elec",
+    "tags": ["情報演習室", "電気工学科棟", "電気工学科", "elec"]
+  },
+  {
+    "id": "room_4f_elec_lab_applied_elec",
+    "name": "電気応用実験室",
+    "type": "lab",
+    "building": "電気工学科棟",
+    "floor": 4,
+    "department": "elec",
+    "tags": ["電気応用実験室", "電気工学科棟", "電気工学科", "elec", "実験室"]
+  },
+  {
+    "id": "room_4f_elec_classroom_unix",
+    "name": "UNIX演習室",
+    "type": "classroom",
+    "building": "電気工学科棟",
+    "floor": 4,
+    "department": "elec",
+    "tags": ["UNIX演習室", "電気工学科棟", "電気工学科", "elec"]
+  },
+  {
+    "id": "room_4f_elec_facility_meeting",
+    "name": "会議室",
+    "type": "facility",
+    "building": "電気工学科棟",
+    "floor": 4,
+    "department": "elec",
+    "tags": ["会議室", "電気工学科棟", "電気工学科", "elec"]
+  },
+  {
+    "id": "room_3f_elec_facility_graduation_1",
+    "name": "卒研室1",
+    "type": "facility",
+    "building": "電気工学科棟",
+    "floor": 3,
+    "department": "elec",
+    "tags": ["卒研室1", "電気工学科棟", "電気工学科", "elec"]
+  },
+  {
+    "id": "room_3f_elec_facility_graduation_2",
+    "name": "卒研室2",
+    "type": "facility",
+    "building": "電気工学科棟",
+    "floor": 3,
+    "department": "elec",
+    "tags": ["卒研室2", "電気工学科棟", "電気工学科", "elec"]
+  },
+  {
+    "id": "room_3f_elec_facility_graduation_3",
+    "name": "卒研室3",
+    "type": "facility",
+    "building": "電気工学科棟",
+    "floor": 3,
+    "department": "elec",
+    "tags": ["卒研室3", "電気工学科棟", "電気工学科", "elec"]
+  },
+  {
+    "id": "room_3f_elec_facility_graduation_4",
+    "name": "卒研室4",
+    "type": "facility",
+    "building": "電気工学科棟",
+    "floor": 3,
+    "department": "elec",
+    "tags": ["卒研室4", "電気工学科棟", "電気工学科", "elec"]
+  },
+  {
+    "id": "room_4f_elec_facility_graduation_5",
+    "name": "卒研室5",
+    "type": "facility",
+    "building": "電気工学科棟",
+    "floor": 4,
+    "department": "elec",
+    "tags": ["卒研室5", "電気工学科棟", "電気工学科", "elec"]
+  },
+  {
+    "id": "room_4f_elec_facility_graduation_6",
+    "name": "卒研室6",
+    "type": "facility",
+    "building": "電気工学科棟",
+    "floor": 4,
+    "department": "elec",
+    "tags": ["卒研室6", "電気工学科棟", "電気工学科", "elec"]
+  },
+  {
+    "id": "room_4f_elec_facility_graduation_7",
+    "name": "卒研室7",
+    "type": "facility",
+    "building": "電気工学科棟",
+    "floor": 4,
+    "department": "elec",
+    "tags": ["卒研室7", "電気工学科棟", "電気工学科", "elec"]
+  },
+  {
+    "id": "room_4f_elec_facility_graduation_8",
+    "name": "卒研室8",
+    "type": "facility",
+    "building": "電気工学科棟",
+    "floor": 4,
+    "department": "elec",
+    "tags": ["卒研室8", "電気工学科棟", "電気工学科", "elec"]
+  },
+  {
+    "id": "room_4f_elec_facility_graduation_9",
+    "name": "卒研室9",
+    "type": "facility",
+    "building": "電気工学科棟",
+    "floor": 4,
+    "department": "elec",
+    "tags": ["卒研室9", "電気工学科棟", "電気工学科", "elec"]
+  },
+  {
+    "id": "room_4f_elec_facility_graduation_10",
+    "name": "卒研室10",
+    "type": "facility",
+    "building": "電気工学科棟",
+    "floor": 4,
+    "department": "elec",
+    "tags": ["卒研室10", "電気工学科棟", "電気工学科", "elec"]
+  },
+  {
+    "id": "room_2f_elec_lab_murata",
+    "name": "村田 研究室",
+    "type": "lab",
+    "building": "電気工学科棟",
+    "floor": 2,
+    "department": "elec",
+    "tags": ["村田 研究室", "電気工学科棟", "電気工学科", "elec", "研究室", "村田"]
+  },
+  {
+    "id": "room_2f_elec_lab_yamashita",
+    "name": "山下 研究室",
+    "type": "lab",
+    "building": "電気工学科棟",
+    "floor": 2,
+    "department": "elec",
+    "tags": ["山下 研究室", "電気工学科棟", "電気工学科", "elec", "研究室", "山下"]
+  },
+  {
+    "id": "room_2f_elec_lab_ishimaru",
+    "name": "石丸 研究室",
+    "type": "lab",
+    "building": "電気工学科棟",
+    "floor": 2,
+    "department": "elec",
+    "tags": ["石丸 研究室", "電気工学科棟", "電気工学科", "elec", "研究室", "石丸"]
+  },
+  {
+    "id": "room_2f_elec_lab_mishima",
+    "name": "三島 研究室",
+    "type": "lab",
+    "building": "電気工学科棟",
+    "floor": 2,
+    "department": "elec",
+    "tags": ["三島 研究室", "電気工学科棟", "電気工学科", "elec", "研究室", "三島"]
+  },
+  {
+    "id": "room_2f_elec_lab_uchida",
+    "name": "内田 研究室",
+    "type": "lab",
+    "building": "電気工学科棟",
+    "floor": 2,
+    "department": "elec",
+    "tags": ["内田 研究室", "電気工学科棟", "電気工学科", "elec", "研究室", "内田"]
+  },
+  {
+    "id": "room_3f_elec_lab_minamide",
+    "name": "南出 研究室",
+    "type": "lab",
+    "building": "電気工学科棟",
+    "floor": 3,
+    "department": "elec",
+    "tags": ["南出 研究室", "電気工学科棟", "電気工学科", "elec", "研究室", "南出"]
+  },
+  {
+    "id": "room_3f_elec_lab_matsushima",
+    "name": "松島 研究室",
+    "type": "lab",
+    "building": "電気工学科棟",
+    "floor": 3,
+    "department": "elec",
+    "tags": ["松島 研究室", "電気工学科棟", "電気工学科", "elec", "研究室", "松島"]
+  },
+  {
+    "id": "room_3f_elec_lab_satou",
+    "name": "佐藤(徹) 研究室",
+    "type": "lab",
+    "building": "電気工学科棟",
+    "floor": 3,
+    "department": "elec",
+    "tags": ["佐藤(徹) 研究室", "電気工学科棟", "電気工学科", "elec", "研究室", "佐藤(徹)"]
+  },
+  {
+    "id": "room_3f_elec_lab_koba",
+    "name": "木場 研究室",
+    "type": "lab",
+    "building": "電気工学科棟",
+    "floor": 3,
+    "department": "elec",
+    "tags": ["木場 研究室", "電気工学科棟", "電気工学科", "elec", "研究室", "木場"]
+  },
+  {
+    "id": "room_3f_elec_lab_hayashi",
+    "name": "林 研究室",
+    "type": "lab",
+    "building": "電気工学科棟",
+    "floor": 3,
+    "department": "elec",
+    "tags": ["林 研究室", "電気工学科棟", "電気工学科", "elec", "研究室", "林"]
+  },
+  {
+    "id": "room_4f_elec_lab_teranishi",
+    "name": "寺西 研究室",
+    "type": "lab",
+    "building": "電気工学科棟",
+    "floor": 4,
+    "department": "elec",
+    "tags": ["寺西 研究室", "電気工学科棟", "電気工学科", "elec", "研究室", "寺西"]
+  },
+  {
+    "id": "room_4f_elec_lab_ozeki",
+    "name": "小関 研究室",
+    "type": "lab",
+    "building": "電気工学科棟",
+    "floor": 4,
+    "department": "elec",
+    "tags": ["小関 研究室", "電気工学科棟", "電気工学科", "elec", "研究室", "小関"]
+  },
+  {
+    "id": "room_4f_elec_lab_taniguchi",
+    "name": "谷口(勝) 研究室",
+    "type": "lab",
+    "building": "電気工学科棟",
+    "floor": 4,
+    "department": "elec",
+    "tags": ["谷口(勝) 研究室", "電気工学科棟", "電気工学科", "elec", "研究室", "谷口(勝)"]
+  },
+  {
+    "id": "room_4f_elec_lab_nagai",
+    "name": "長井 研究室",
+    "type": "lab",
+    "building": "電気工学科棟",
+    "floor": 4,
+    "department": "elec",
+    "tags": ["長井 研究室", "電気工学科棟", "電気工学科", "elec", "研究室", "長井"]
+  }
+]

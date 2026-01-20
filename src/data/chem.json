@@ -1,0 +1,317 @@
+[
+  {
+    "id": "room_4f_chem_office_tech",
+    "name": "技術職員室",
+    "type": "office_tech",
+    "building": "応用化学科棟",
+    "floor": 4,
+    "department": "chem",
+    "tags": ["技術職員室", "応用化学科棟", "応用化学科", "chem", "技術職員室"]
+  },
+  {
+    "id": "room_1f_chem_lab_chem_eng_1",
+    "name": "化学工学実験室1",
+    "type": "lab",
+    "building": "応用化学科棟",
+    "floor": 1,
+    "department": "chem",
+    "tags": ["化学工学実験室1", "応用化学科棟", "応用化学科", "chem", "実験室"]
+  },
+  {
+    "id": "room_1f_chem_lab_physical_chem",
+    "name": "物理化学実験室",
+    "type": "lab",
+    "building": "応用化学科棟",
+    "floor": 1,
+    "department": "chem",
+    "tags": ["物理化学実験室", "応用化学科棟", "応用化学科", "chem", "実験室"]
+  },
+  {
+    "id": "room_1f_chem_lab_culture",
+    "name": "培養実験室",
+    "type": "lab",
+    "building": "応用化学科棟",
+    "floor": 1,
+    "department": "chem",
+    "tags": ["培養実験室", "応用化学科棟", "応用化学科", "chem", "実験室"]
+  },
+  {
+    "id": "room_1f_chem_facility_chemical_storage_1",
+    "name": "薬品室1",
+    "type": "facility",
+    "building": "応用化学科棟",
+    "floor": 1,
+    "department": "chem",
+    "tags": ["薬品室1", "応用化学科棟", "応用化学科", "chem"]
+  },
+  {
+    "id": "room_1f_chem_facility_chemical_storage_2",
+    "name": "薬品室2",
+    "type": "facility",
+    "building": "応用化学科棟",
+    "floor": 1,
+    "department": "chem",
+    "tags": ["薬品室2", "応用化学科棟", "応用化学科", "chem"]
+  },
+  {
+    "id": "room_1f_chem_facility_chemical_storage_3",
+    "name": "薬品室3",
+    "type": "facility",
+    "building": "応用化学科棟",
+    "floor": 1,
+    "department": "chem",
+    "tags": ["薬品室3", "応用化学科棟", "応用化学科", "chem"]
+  },
+  {
+    "id": "room_1f_chem_facility_chemical_storage_4",
+    "name": "薬品室4",
+    "type": "facility",
+    "building": "応用化学科棟",
+    "floor": 1,
+    "department": "chem",
+    "tags": ["薬品室4", "応用化学科棟", "応用化学科", "chem"]
+  },
+  {
+    "id": "room_2f_chem_lab_chem_eng_2",
+    "name": "化学工学実験室2",
+    "type": "lab",
+    "building": "応用化学科棟",
+    "floor": 2,
+    "department": "chem",
+    "tags": ["化学工学実験室2", "応用化学科棟", "応用化学科", "chem", "実験室"]
+  },
+  {
+    "id": "room_2f_chem_lab_chem_eng_3",
+    "name": "化学工学実験室3",
+    "type": "lab",
+    "building": "応用化学科棟",
+    "floor": 2,
+    "department": "chem",
+    "tags": ["化学工学実験室3", "応用化学科棟", "応用化学科", "chem", "実験室"]
+  },
+  {
+    "id": "room_2f_chem_lab_applied_science",
+    "name": "応用科学実験室",
+    "type": "lab",
+    "building": "応用化学科棟",
+    "floor": 2,
+    "department": "chem",
+    "tags": ["応用科学実験室", "応用化学科棟", "応用化学科", "chem", "実験室"]
+  },
+  {
+    "id": "room_2f_chem_facility_measurement_equipment_1",
+    "name": "計測機器室1",
+    "type": "facility",
+    "building": "応用化学科棟",
+    "floor": 2,
+    "department": "chem",
+    "tags": ["計測機器室1", "応用化学科棟", "応用化学科", "chem"]
+  },
+  {
+    "id": "room_2f_chem_facility_measurement_equipment_2",
+    "name": "計測機器室2",
+    "type": "facility",
+    "building": "応用化学科棟",
+    "floor": 2,
+    "department": "chem",
+    "tags": ["計測機器室2", "応用化学科棟", "応用化学科", "chem"]
+  },
+  {
+    "id": "room_2f_chem_facility_measurement_equipment_3",
+    "name": "計測機器室3",
+    "type": "facility",
+    "building": "応用化学科棟",
+    "floor": 2,
+    "department": "chem",
+    "tags": ["計測機器室3", "応用化学科棟", "応用化学科", "chem"]
+  },
+  {
+    "id": "room_2f_chem_facility_measurement_equipment_4",
+    "name": "計測機器室4",
+    "type": "facility",
+    "building": "応用化学科棟",
+    "floor": 2,
+    "department": "chem",
+    "tags": ["計測機器室4", "応用化学科棟", "応用化学科", "chem"]
+  },
+  {
+    "id": "room_2f_chem_facility_measurement_equipment_5",
+    "name": "計測機器室5",
+    "type": "facility",
+    "building": "応用化学科棟",
+    "floor": 2,
+    "department": "chem",
+    "tags": ["計測機器室5", "応用化学科棟", "応用化学科", "chem"]
+  },
+  {
+    "id": "room_3f_chem_lab_analytical_chem",
+    "name": "分析化学実験室",
+    "type": "lab",
+    "building": "応用化学科棟",
+    "floor": 3,
+    "department": "chem",
+    "tags": ["分析化学実験室", "応用化学科棟", "応用化学科", "chem", "実験室"]
+  },
+  {
+    "id": "room_3f_chem_lab_inorganic_chem",
+    "name": "無機化学実験室",
+    "type": "lab",
+    "building": "応用化学科棟",
+    "floor": 3,
+    "department": "chem",
+    "tags": ["無機化学実験室", "応用化学科棟", "応用化学科", "chem", "実験室"]
+  },
+  {
+    "id": "room_4f_chem_lab_organic_chem",
+    "name": "有機化学実験室",
+    "type": "lab",
+    "building": "応用化学科棟",
+    "floor": 4,
+    "department": "chem",
+    "tags": ["有機化学実験室", "応用化学科棟", "応用化学科", "chem", "実験室"]
+  },
+  {
+    "id": "room_4f_chem_facility_meeting",
+    "name": "会議室",
+    "type": "facility",
+    "building": "応用化学科棟",
+    "floor": 4,
+    "department": "chem",
+    "tags": ["会議室", "応用化学科棟", "応用化学科", "chem"]
+  },
+  {
+    "id": "room_1f_chem_facility_graduation_1",
+    "name": "卒研室1",
+    "type": "facility",
+    "building": "応用化学科棟",
+    "floor": 1,
+    "department": "chem",
+    "tags": ["卒研室1", "応用化学科棟", "応用化学科", "chem"]
+  },
+  {
+    "id": "room_2f_chem_facility_graduation_2",
+    "name": "卒研室2",
+    "type": "facility",
+    "building": "応用化学科棟",
+    "floor": 2,
+    "department": "chem",
+    "tags": ["卒研室2", "応用化学科棟", "応用化学科", "chem"]
+  },
+  {
+    "id": "room_3f_chem_facility_graduation_3",
+    "name": "卒研室3",
+    "type": "facility",
+    "building": "応用化学科棟",
+    "floor": 3,
+    "department": "chem",
+    "tags": ["卒研室3", "応用化学科棟", "応用化学科", "chem"]
+  },
+  {
+    "id": "room_4f_chem_facility_graduation_4",
+    "name": "卒研室4",
+    "type": "facility",
+    "building": "応用化学科棟",
+    "floor": 4,
+    "department": "chem",
+    "tags": ["卒研室4", "応用化学科棟", "応用化学科", "chem"]
+  },
+  {
+    "id": "room_4f_chem_facility_graduation_5",
+    "name": "卒研室5",
+    "type": "facility",
+    "building": "応用化学科棟",
+    "floor": 4,
+    "department": "chem",
+    "tags": ["卒研室5", "応用化学科棟", "応用化学科", "chem"]
+  },
+  {
+    "id": "room_2f_chem_lab_inaba",
+    "name": "稲葉 研究室",
+    "type": "lab",
+    "building": "応用化学科棟",
+    "floor": 2,
+    "department": "chem",
+    "tags": ["稲葉 研究室", "応用化学科棟", "応用化学科", "chem", "研究室", "稲葉"]
+  },
+  {
+    "id": "room_2f_chem_lab_shimazu",
+    "name": "島津 研究室",
+    "type": "lab",
+    "building": "応用化学科棟",
+    "floor": 2,
+    "department": "chem",
+    "tags": ["島津 研究室", "応用化学科棟", "応用化学科", "chem", "研究室", "島津"]
+  },
+  {
+    "id": "room_2f_chem_lab_uchida",
+    "name": "内田 研究室",
+    "type": "lab",
+    "building": "応用化学科棟",
+    "floor": 2,
+    "department": "chem",
+    "tags": ["内田 研究室", "応用化学科棟", "応用化学科", "chem", "研究室", "内田"]
+  },
+  {
+    "id": "room_3f_chem_lab_komatsu",
+    "name": "小松 研究室",
+    "type": "lab",
+    "building": "応用化学科棟",
+    "floor": 3,
+    "department": "chem",
+    "tags": ["小松 研究室", "応用化学科棟", "応用化学科", "chem", "研究室", "小松"]
+  },
+  {
+    "id": "room_3f_chem_lab_kobayashi",
+    "name": "小林 研究室",
+    "type": "lab",
+    "building": "応用化学科棟",
+    "floor": 3,
+    "department": "chem",
+    "tags": ["小林 研究室", "応用化学科棟", "応用化学科", "chem", "研究室", "小林"]
+  },
+  {
+    "id": "room_3f_chem_lab_miwa",
+    "name": "三輪 研究室",
+    "type": "lab",
+    "building": "応用化学科棟",
+    "floor": 3,
+    "department": "chem",
+    "tags": ["三輪 研究室", "応用化学科棟", "応用化学科", "chem", "研究室", "三輪"]
+  },
+  {
+    "id": "room_3f_chem_lab_sugahara",
+    "name": "菅原 研究室",
+    "type": "lab",
+    "building": "応用化学科棟",
+    "floor": 3,
+    "department": "chem",
+    "tags": ["菅原 研究室", "応用化学科棟", "応用化学科", "chem", "研究室", "菅原"]
+  },
+  {
+    "id": "room_4f_chem_lab_kuwada",
+    "name": "桑田 研究室",
+    "type": "lab",
+    "building": "応用化学科棟",
+    "floor": 4,
+    "department": "chem",
+    "tags": ["桑田 研究室", "応用化学科棟", "応用化学科", "chem", "研究室", "桑田"]
+  },
+  {
+    "id": "room_4f_chem_lab_kusukawa",
+    "name": "楠川 研究室",
+    "type": "lab",
+    "building": "応用化学科棟",
+    "floor": 4,
+    "department": "chem",
+    "tags": ["楠川 研究室", "応用化学科棟", "応用化学科", "chem", "研究室", "楠川"]
+  },
+  {
+    "id": "room_4f_chem_lab_sato",
+    "name": "佐藤(博) 研究室",
+    "type": "lab",
+    "building": "応用化学科棟",
+    "floor": 4,
+    "department": "chem",
+    "tags": ["佐藤(博) 研究室", "応用化学科棟", "応用化学科", "chem", "研究室", "佐藤(博)"]
+  }
+]
