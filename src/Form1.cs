@@ -31,12 +31,12 @@ namespace team1
         {
             var json = Properties.Resources.general_json;
             _places = new();
-            _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.general_json));)
-            _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.elec_json));)
-            _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.denshi_json));)
-            _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.toshi_json));)
-            _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.chem_json));)
-            _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.mech_json));)
+            _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.general_json));
+            _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.elec_json));
+            _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.denshi_json));
+            _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.toshi_json));
+            _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.chem_json));
+            _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.mech_json));
 
         }
 
