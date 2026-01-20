@@ -71,6 +71,36 @@ namespace team1.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to [
+        ///  {
+        ///    &quot;id&quot;: &quot;room_4f_chem_office_tech&quot;,
+        ///    &quot;name&quot;: &quot;技術職員室&quot;,
+        ///    &quot;type&quot;: &quot;office_tech&quot;,
+        ///    &quot;building&quot;: &quot;応用化学科棟&quot;,
+        ///    &quot;floor&quot;: 4,
+        ///    &quot;department&quot;: &quot;chem&quot;,
+        ///    &quot;tags&quot;: [&quot;技術職員室&quot;, &quot;応用化学科棟&quot;, &quot;応用化学科&quot;, &quot;chem&quot;, &quot;技術職員室&quot;]
+        ///  },
+        ///  {
+        ///    &quot;id&quot;: &quot;room_1f_chem_lab_chem_eng_1&quot;,
+        ///    &quot;name&quot;: &quot;化学工学実験室1&quot;,
+        ///    &quot;type&quot;: &quot;lab&quot;,
+        ///    &quot;building&quot;: &quot;応用化学科棟&quot;,
+        ///    &quot;floor&quot;: 1,
+        ///    &quot;department&quot;: &quot;chem&quot;,
+        ///    &quot;tags&quot;: [&quot;化学工学実験室1&quot;, &quot;応用化学科棟&quot;, &quot;応用化学科&quot;, &quot;chem&quot;, &quot;実験室&quot;]
+        ///  },
+        ///  {
+        ///    &quot;id&quot;: &quot;room_1f_chem_lab_physical_chem&quot;,
+        ///    &quot;name&quot;: &quot;物理化学実験室&quot; [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string chem_json {
+            get {
+                return ResourceManager.GetString("chem_json", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap denki_1 {
@@ -107,6 +137,36 @@ namespace team1.Properties {
             get {
                 object obj = ResourceManager.GetObject("denki_4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [
+        ///  {
+        ///    &quot;id&quot;: &quot;room_2f_denshi_office_tech&quot;,
+        ///    &quot;name&quot;: &quot;技術職員室&quot;,
+        ///    &quot;type&quot;: &quot;office_tech&quot;,
+        ///    &quot;building&quot;: &quot;電子工学科棟&quot;,
+        ///    &quot;floor&quot;: 2,
+        ///    &quot;department&quot;: &quot;denshi&quot;,
+        ///    &quot;tags&quot;: [&quot;技術職員室&quot;, &quot;電子工学科棟&quot;, &quot;電子工学科&quot;, &quot;denshi&quot;, &quot;技術職員室&quot;]
+        ///  },
+        ///  {
+        ///    &quot;id&quot;: &quot;room_1f_denshi_lab_basic_electronics&quot;,
+        ///    &quot;name&quot;: &quot;電子基礎実験室&quot;,
+        ///    &quot;type&quot;: &quot;lab&quot;,
+        ///    &quot;building&quot;: &quot;電子工学科棟&quot;,
+        ///    &quot;floor&quot;: 1,
+        ///    &quot;department&quot;: &quot;denshi&quot;,
+        ///    &quot;tags&quot;: [&quot;電子基礎実験室&quot;, &quot;電子工学科棟&quot;, &quot;電子工学科&quot;, &quot;denshi&quot;, &quot;実験室&quot;]
+        ///  },
+        ///  {
+        ///    &quot;id&quot;: &quot;room_1f_denshi_lab_device&quot;,
+        ///    &quot;name [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string denshi_json {
+            get {
+                return ResourceManager.GetString("denshi_json", resourceCulture);
             }
         }
         
@@ -151,6 +211,37 @@ namespace team1.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to [
+        ///  {
+        ///    &quot;id&quot;: &quot;room_2f_elec_office_tech&quot;,
+        ///    &quot;name&quot;: &quot;技術職員室&quot;,
+        ///    &quot;type&quot;: &quot;office_tech&quot;,
+        ///    &quot;building&quot;: &quot;電気工学科棟&quot;,
+        ///    &quot;floor&quot;: 2,
+        ///    &quot;department&quot;: &quot;elec&quot;,
+        ///    &quot;tags&quot;: [&quot;技術職員室&quot;, &quot;電気工学科棟&quot;, &quot;電気工学科&quot;, &quot;elec&quot;, &quot;技術職員室&quot;]
+        ///  },
+        ///  {
+        ///    &quot;id&quot;: &quot;room_2f_elec_lab_power_1&quot;,
+        ///    &quot;name&quot;: &quot;電力工学実験室1&quot;,
+        ///    &quot;type&quot;: &quot;lab&quot;,
+        ///    &quot;building&quot;: &quot;電気工学科棟&quot;,
+        ///    &quot;floor&quot;: 2,
+        ///    &quot;department&quot;: &quot;elec&quot;,
+        ///    &quot;tags&quot;: [&quot;電力工学実験室1&quot;, &quot;電気工学科棟&quot;, &quot;電気工学科&quot;, &quot;elec&quot;, &quot;実験室&quot;]
+        ///  },
+        ///  {
+        ///    &quot;id&quot;: &quot;room_2f_elec_lab_power_2&quot;,
+        ///    &quot;name&quot;: &quot;電力工学実験室2&quot;,
+        ///    &quot;t [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string elec_json {
+            get {
+                return ResourceManager.GetString("elec_json", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap gakuseikaikan_1 {
@@ -177,6 +268,43 @@ namespace team1.Properties {
             get {
                 object obj = ResourceManager.GetObject("gakuseikaikan_3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [
+        ///  {
+        ///    &quot;id&quot;: &quot;room_1f_general_classroom_art&quot;,
+        ///    &quot;name&quot;: &quot;芸術教室&quot;,
+        ///    &quot;type&quot;: &quot;classroom&quot;,
+        ///    &quot;building&quot;: &quot;一般科A棟&quot;,
+        ///    &quot;floor&quot;: 1,
+        ///    &quot;department&quot;: &quot;general&quot;,
+        ///    &quot;tags&quot;: [
+        ///      &quot;芸術教室&quot;,
+        ///      &quot;一般科A棟&quot;,
+        ///      &quot;一般科&quot;
+        ///    ]
+        ///  },
+        ///  {
+        ///    &quot;id&quot;: &quot;room_1f_general_facility_rokushin&quot;,
+        ///    &quot;name&quot;: &quot;六神ホール&quot;,
+        ///    &quot;type&quot;: &quot;facility&quot;,
+        ///    &quot;building&quot;: &quot;一般科A棟&quot;,
+        ///    &quot;floor&quot;: 1,
+        ///    &quot;department&quot;: &quot;general&quot;,
+        ///    &quot;tags&quot;: [
+        ///      &quot;六神ホール&quot;,
+        ///      &quot;一般科A棟&quot;,
+        ///      &quot;一般科&quot;
+        ///    ]
+        ///  },
+        ///  {
+        ///    &quot;id&quot;: &quot;room_1f_general_facility_testfield [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string general_json {
+            get {
+                return ResourceManager.GetString("general_json", resourceCulture);
             }
         }
         
@@ -451,6 +579,37 @@ namespace team1.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to [
+        ///  {
+        ///    &quot;id&quot;: &quot;room_1f_mech_office_tech&quot;,
+        ///    &quot;name&quot;: &quot;技術職員室&quot;,
+        ///    &quot;type&quot;: &quot;office_tech&quot;,
+        ///    &quot;building&quot;: &quot;機械工学科実験実習棟&quot;,
+        ///    &quot;floor&quot;: 1,
+        ///    &quot;department&quot;: &quot;mech&quot;,
+        ///    &quot;tags&quot;: [&quot;技術職員室&quot;, &quot;機械工学科実験実習棟&quot;, &quot;機械工学科&quot;, &quot;mech&quot;]
+        ///  },
+        ///  {
+        ///    &quot;id&quot;: &quot;room_1f_mech_lab_energy&quot;,
+        ///    &quot;name&quot;: &quot;エネルギー実験室&quot;,
+        ///    &quot;type&quot;: &quot;lab&quot;,
+        ///    &quot;building&quot;: &quot;機械工学科棟&quot;,
+        ///    &quot;floor&quot;: 1,
+        ///    &quot;department&quot;: &quot;mech&quot;,
+        ///    &quot;tags&quot;: [&quot;エネルギー実験室&quot;, &quot;機械工学科棟&quot;, &quot;機械工学科&quot;, &quot;mech&quot;, &quot;実験室&quot;]
+        ///  },
+        ///  {
+        ///    &quot;id&quot;: &quot;room_1f_mech_facility_production_3&quot;,
+        ///    &quot;name&quot;: &quot;生産加工3&quot;,
+        ///  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string mech_json {
+            get {
+                return ResourceManager.GetString("mech_json", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap senkou_1 {
@@ -487,6 +646,36 @@ namespace team1.Properties {
             get {
                 object obj = ResourceManager.GetObject("syokudo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [
+        ///  {
+        ///    &quot;id&quot;: &quot;room_3f_toshi_office_tech&quot;,
+        ///    &quot;name&quot;: &quot;技術職員室&quot;,
+        ///    &quot;type&quot;: &quot;office_tech&quot;,
+        ///    &quot;building&quot;: &quot;都市工学科棟&quot;,
+        ///    &quot;floor&quot;: 3,
+        ///    &quot;department&quot;: &quot;toshi&quot;,
+        ///    &quot;tags&quot;: [&quot;技術職員室&quot;, &quot;都市工学科棟&quot;, &quot;都市工学科&quot;, &quot;toshi&quot;, &quot;技術職員室&quot;]
+        ///  },
+        ///  {
+        ///    &quot;id&quot;: &quot;room_1f_toshi_facility_surveying&quot;,
+        ///    &quot;name&quot;: &quot;測量準備室&quot;,
+        ///    &quot;type&quot;: &quot;facility&quot;,
+        ///    &quot;building&quot;: &quot;都市工学科棟&quot;,
+        ///    &quot;floor&quot;: 1,
+        ///    &quot;department&quot;: &quot;toshi&quot;,
+        ///    &quot;tags&quot;: [&quot;測量準備室&quot;, &quot;都市工学科棟&quot;, &quot;都市工学科&quot;, &quot;toshi&quot;]
+        ///  },
+        ///  {
+        ///    &quot;id&quot;: &quot;room_1f_toshi_facility_surveying_2&quot;,
+        ///    &quot;name&quot;: &quot;測量 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string toshi_json {
+            get {
+                return ResourceManager.GetString("toshi_json", resourceCulture);
             }
         }
         
