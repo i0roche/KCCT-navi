@@ -1,13 +1,5 @@
 [
-  {
-    "id": "room_2f_denshi_office_tech",
-    "name": "技術職員室",
-    "type": "office_tech",
-    "building": "電子工学科棟",
-    "floor": 2,
-    "department": "denshi",
-    "tags": ["技術職員室", "電子工学科棟", "電子工学科", "denshi", "技術職員室"]
-  },
+  
   {
     "id": "room_1f_denshi_lab_basic_electronics",
     "name": "電子基礎実験室",
@@ -52,6 +44,15 @@
     "floor": 1,
     "department": "denshi",
     "tags": ["工作室", "電子工学科棟", "電子工学科", "denshi"]
+  },
+  {
+    "id": "room_2f_denshi_office_tech",
+    "name": "技術職員室",
+    "type": "office_tech",
+    "building": "電子工学科棟",
+    "floor": 2,
+    "department": "denshi",
+    "tags": ["技術職員室", "電子工学科棟", "電子工学科", "denshi", "技術職員室"]
   },
   {
     "id": "room_2f_denshi_lab_control",

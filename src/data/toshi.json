@@ -1,13 +1,5 @@
 [
-  {
-    "id": "room_3f_toshi_office_tech",
-    "name": "技術職員室",
-    "type": "office_tech",
-    "building": "都市工学科棟",
-    "floor": 3,
-    "department": "toshi",
-    "tags": ["技術職員室", "都市工学科棟", "都市工学科", "toshi", "技術職員室"]
-  },
+  
   {
     "id": "room_1f_toshi_facility_surveying",
     "name": "測量準備室",
@@ -72,6 +64,15 @@
     "tags": ["衛生工学実験室", "都市工学科棟", "都市工学科", "toshi", "実験室"]
   },
   {
+    "id": "room_3f_toshi_office_tech",
+    "name": "技術職員室",
+    "type": "office_tech",
+    "building": "都市工学科棟",
+    "floor": 3,
+    "department": "toshi",
+    "tags": ["技術職員室", "都市工学科棟", "都市工学科", "toshi", "技術職員室"]
+  },
+  {
     "id": "room_3f_toshi_facility_meeting",
     "name": "会議室",
     "type": "facility",
@@ -91,12 +92,12 @@
   },
   {
     "id": "room_4f_toshi_lab_planning",
-    "name": "計画額実験室",
+    "name": "計画学実験室",
     "type": "lab",
     "building": "都市工学科棟",
     "floor": 4,
     "department": "toshi",
-    "tags": ["計画額実験室", "都市工学科棟", "都市工学科", "toshi", "実験室"]
+    "tags": ["計画学実験室", "都市工学科棟", "都市工学科", "toshi", "実験室"]
   },
   {
     "id": "room_4f_toshi_facility_drawing",
