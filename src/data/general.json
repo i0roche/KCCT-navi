@@ -627,11 +627,11 @@
     ]
   },
   {
-    "id": "room_2f_mech_hr_m1a",
+    "id": "room_4f_mech_hr_m1a",
     "name": "M1A ホームルーム",
     "type": "classroom",
     "building": "一般科A棟",
-    "floor": 2,
+    "floor": 4,
     "department": "mech",
     "tags": [
       "M1A ホームルーム",
@@ -641,11 +641,11 @@
     ]
   },
   {
-    "id": "room_2f_mech_hr_m1b",
+    "id": "room_4f_mech_hr_m1b",
     "name": "M1B ホームルーム",
     "type": "classroom",
     "building": "一般科A棟",
-    "floor": 2,
+    "floor": 4,
     "department": "mech",
     "tags": [
       "M1B ホームルーム",
@@ -655,11 +655,11 @@
     ]
   },
   {
-    "id": "room_2f_elec_hr_e1",
+    "id": "room_4f_elec_hr_e1",
     "name": "E1 ホームルーム",
     "type": "classroom",
     "building": "一般科A棟",
-    "floor": 2,
+    "floor": 4,
     "department": "elec",
     "tags": [
       "E1 ホームルーム",
@@ -669,11 +669,11 @@
     ]
   },
   {
-    "id": "room_2f_denshi_hr_d1",
+    "id": "room_4f_denshi_hr_d1",
     "name": "D1 ホームルーム",
     "type": "classroom",
     "building": "一般科A棟",
-    "floor": 2,
+    "floor": 4,
     "department": "denshi",
     "tags": [
       "D1 ホームルーム",
@@ -683,11 +683,11 @@
     ]
   },
   {
-    "id": "room_2f_chem_hr_c1",
+    "id": "room_4f_chem_hr_c1",
     "name": "C1 ホームルーム",
     "type": "classroom",
     "building": "一般科A棟",
-    "floor": 2,
+    "floor": 4,
     "department": "chem",
     "tags": [
       "C1 ホームルーム",
@@ -697,12 +697,12 @@
     ]
   },
   {
-    "id": "room_2f_urban_hr_s1",
+    "id": "room_4f_toshi_hr_s1",
     "name": "S1 ホームルーム",
     "type": "classroom",
     "building": "一般科A棟",
-    "floor": 2,
-    "department": "urban",
+    "floor": 4,
+    "department": "toshi",
     "tags": [
       "S1 ホームルーム",
       "一般科A棟",
@@ -795,11 +795,11 @@
     ]
   },
   {
-    "id": "room_4f_mech_hr_m3a",
+    "id": "room_2f_mech_hr_m3a",
     "name": "M3A ホームルーム",
     "type": "classroom",
     "building": "一般科A棟",
-    "floor": 4,
+    "floor": 2,
     "department": "mech",
     "tags": [
       "M3A ホームルーム",
@@ -809,11 +809,11 @@
     ]
   },
   {
-    "id": "room_4f_mech_hr_m3b",
+    "id": "room_2f_mech_hr_m3b",
     "name": "M3B ホームルーム",
     "type": "classroom",
     "building": "一般科A棟",
-    "floor": 4,
+    "floor": 2,
     "department": "mech",
     "tags": [
       "M3B ホームルーム",
@@ -823,11 +823,11 @@
     ]
   },
   {
-    "id": "room_4f_elec_hr_e3",
+    "id": "room_2f_elec_hr_e3",
     "name": "E3 ホームルーム",
     "type": "classroom",
     "building": "一般科A棟",
-    "floor": 4,
+    "floor": 2,
     "department": "elec",
     "tags": [
       "E3 ホームルーム",
@@ -837,11 +837,11 @@
     ]
   },
   {
-    "id": "room_4f_denshi_hr_d3",
+    "id": "room_2f_denshi_hr_d3",
     "name": "D3 ホームルーム",
     "type": "classroom",
     "building": "一般科A棟",
-    "floor": 4,
+    "floor": 2,
     "department": "denshi",
     "tags": [
       "D3 ホームルーム",
@@ -851,11 +851,11 @@
     ]
   },
   {
-    "id": "room_4f_chem_hr_c3",
+    "id": "room_2f_chem_hr_c3",
     "name": "C3 ホームルーム",
     "type": "classroom",
     "building": "一般科A棟",
-    "floor": 4,
+    "floor": 2,
     "department": "chem",
     "tags": [
       "C3 ホームルーム",
@@ -865,12 +865,12 @@
     ]
   },
   {
-    "id": "room_4f_urban_hr_s3",
+    "id": "room_2f_toshi_hr_s3",
     "name": "S3 ホームルーム",
     "type": "classroom",
     "building": "一般科A棟",
-    "floor": 4,
-    "department": "urban",
+    "floor": 2,
+    "department": "toshi",
     "tags": [
       "S3 ホームルーム",
       "一般科A棟",
