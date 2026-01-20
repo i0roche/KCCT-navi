@@ -252,7 +252,12 @@ namespace team1
 
         private void fToolStripMenuItem36_Click_1(object sender, EventArgs e)
         {
-            pictureBox1.Image = Properties.Resources.gakuseikaikan_2;
+            pictureBox1.Image = Properties.Resources.koujyou_2;
+        }
+
+        private void 実験排水処理施設棟ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
