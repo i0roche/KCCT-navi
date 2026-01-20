@@ -6,7 +6,7 @@ using System.Text.Json;
 
 namespace AStarNavigation
 {
-    // --- データ読み込み用モデル ---
+    // --- データ読み込み用クラス---
     public class MapPoint
     {
         public float X { get; set; }
