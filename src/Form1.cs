@@ -249,5 +249,10 @@ namespace team1
         {
             pictureBox1.Image = Properties.Resources.library_2;
         }
+
+        private void fToolStripMenuItem36_Click_1(object sender, EventArgs e)
+        {
+            pictureBox1.Image = Properties.Resources.gakuseikaikan_2;
+        }
     }
 }
