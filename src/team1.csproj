@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="SkiaSharp.Views.Desktop.Common" Version="3.119.1" />
     <PackageReference Include="SkiaSharp.Views.WindowsForms" Version="3.119.1" />
     <PackageReference Include="Svg.Skia" Version="3.4.1" />
   </ItemGroup>

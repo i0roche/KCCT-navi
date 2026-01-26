@@ -1,5 +1,9 @@
 using System.Text.Json;
 using System.Linq;
+using System.Xml.Linq;
+using SkiaSharp;
+using SkiaSharp.Views.Desktop;
+using Svg.Skia;
 
 namespace team1
 {
@@ -7,6 +11,9 @@ namespace team1
     {
 
         private List<Place> _places = new();
+
+        private SKSvg _svgMap;
+        private XDocument _svgXml;
 
         // JSON用モデル
         public class Place
@@ -25,6 +32,8 @@ namespace team1
             InitializeComponent();
             button1.Click += button1_Click;
             textBox1.KeyDown += textBox1_KeyDown;
+
+            this.Load += Form1_Load;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -37,8 +46,28 @@ namespace team1
             _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.toshi_json));
             _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.chem_json));
             _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.mech_json));
+            //_places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.others_json));
 
+            LoadSvgMap();
         }
+
+        private void LoadSvgMap()
+        {
+            try
+            {
+                string svgPath = "map.svg";
+
+                _svgMap = new SKSvg();
+                _svgMap.Load(svgPath);
+
+                _svgXml = XDocument.Load(svgPath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("SVGマップの読み込みに失敗しました \n" + ex.Message);
+            }
+        }
+
 
         private void 一般科棟ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -130,22 +159,22 @@ namespace team1
 
         private void fToolStripMenuItem13_Click(object sender, EventArgs e)
         {
-            pictureBox1.Image = Properties.Resources.tosi_1;
+            pictureBox1.Image = Properties.Resources.toshi_1;
         }
 
         private void fToolStripMenuItem14_Click(object sender, EventArgs e)
         {
-            pictureBox1.Image = Properties.Resources.tosi_2;
+            pictureBox1.Image = Properties.Resources.toshi_2;
         }
 
         private void fToolStripMenuItem15_Click(object sender, EventArgs e)
         {
-            pictureBox1.Image = Properties.Resources.tosi_3;
+            pictureBox1.Image = Properties.Resources.toshi_3;
         }
 
         private void fToolStripMenuItem16_Click(object sender, EventArgs e)
         {
-            pictureBox1.Image = Properties.Resources.tosi_4;
+            pictureBox1.Image = Properties.Resources.toshi_4;
         }
 
         private void fToolStripMenuItem17_Click(object sender, EventArgs e)
@@ -324,53 +353,79 @@ namespace team1
 
         private void SetMapImage(string building, int floor)
         {
-            // ここはあなたのResources名に合わせて分岐
-            // ※ JSONのbuilding表記が「一般科A棟」「一般科B棟」などなので、実際の表記に合わせて調整してね
+            string targetId = "";
 
-            if (building.Contains("一般科"))
+            if (building.Contains("一般科")) targetId = "view_ippan_" + floor + "f";
+            else if (building.Contains("電気")) targetId = "view_elec_" + floor + "f";
+            else if (building.Contains("電子")) targetId = "view_denshi_" + floor + "f";
+            else if (building.Contains("機械")) targetId = "view_mech_" + floor + "f";
+            else if (building.Contains("都市")) targetId = "view_toshi_" + floor + "f";
+            else if (building.Contains("化学")) targetId = "view_chem_" + floor + "f";
+            else if (building.Contains("専攻")) targetId = "view_senkou_" + floor + "f";
+            else if (building.Contains("本部")) targetId = "view_honbutou_" + floor + "f";
+            else if (building.Contains("講義")) targetId = "view_kougi_" + floor + "f";
+            else if (building.Contains("学生会館")) targetId = "view_gakuseikaikan_" + floor + "f";
+            else if (building.Contains("工場")) targetId = "view_koujyou_" + floor + "f";
+            else if (building.Contains("図書館")) targetId = "view_library_" + floor + "f";
+            else if (building.Contains("排水")) targetId = "view_haisuishori_" + floor + "f";
+
+            if (string.IsNullOrEmpty(targetId))
             {
-                pictureBox1.Image = floor switch
-                {
-                    1 => Properties.Resources.ippan_1,
-                    2 => Properties.Resources.ippan_2,
-                    3 => Properties.Resources.ippan_3,
-                    4 => Properties.Resources.ippan_4,
-                    5 => Properties.Resources.ippan_5,
-                    6 => Properties.Resources.ippan_6,
-                    _ => pictureBox1.Image
-                };
+                MessageBox.Show($"地図が未対応: {building} {floor}F");
                 return;
             }
 
-            if (building.Contains("電気工学科棟"))
+            var img = GetZoomedImage(targetId, pictureBox1.Width, pictureBox1.Height);
+
+            if (img != null)
             {
-                pictureBox1.Image = floor switch
-                {
-                    1 => Properties.Resources.denki_1,
-                    2 => Properties.Resources.denki_2,
-                    3 => Properties.Resources.denki_3,
-                    4 => Properties.Resources.denki_4,
-                    _ => pictureBox1.Image
-                };
-                return;
+                pictureBox1.Image = img;
+            }
+            else
+            {
+                MessageBox.Show($"InkscapeのSVG内に ID: '{targetId}' の透明な四角が見つかりません！");
+            }
+        }
+
+        private Image GetZoomedImage(string targetId, int width, int height)
+        {
+
+            if (_svgMap == null || _svgXml == null) return null;
+
+            XNamespace svgNs = "http://www.w3.org/2000/svg";
+
+            var targetElement = _svgXml.Descendants(svgNs + "rect")
+                                       .FirstOrDefault(x => x.Attribute("id")?.Value == targetId);
+
+            if (targetElement == null) return null;
+
+            // 座標とサイズを取得
+            float rectX = float.Parse(targetElement.Attribute("x").Value);
+            float rectY = float.Parse(targetElement.Attribute("y").Value);
+            float rectW = float.Parse(targetElement.Attribute("width").Value);
+            float rectH = float.Parse(targetElement.Attribute("height").Value);
+
+            // SkiaSharpで描画
+            var bitmap = new SKBitmap(width, height);
+            using (var canvas = new SKCanvas(bitmap))
+            {
+                canvas.Clear(SKColors.White);
+
+                // 画面サイズに合わせて拡縮率を計算
+                float scaleX = width / rectW;
+                float scaleY = height / rectH;
+                float scale = Math.Min(scaleX, scaleY);
+
+                // カメラ移動 (行列変換)
+                canvas.Scale(scale);
+                canvas.Translate(-rectX, -rectY);
+
+                // SVGを描画！
+                canvas.DrawPicture(_svgMap.Picture);
             }
 
-            if (building.Contains("電子工学科棟"))
-            {
-                pictureBox1.Image = floor switch
-                {
-                    1 => Properties.Resources.densi_1,
-                    2 => Properties.Resources.densi_2,
-                    3 => Properties.Resources.densi_3,
-                    4 => Properties.Resources.densi_4,
-                    _ => pictureBox1.Image
-                };
-                return;
-            }
-
-            // 他の棟も同じ要領で追加（都市, 機械, 応化, 専攻科, 本部, 講義, 学生会館, 図書館, 工場など）
-
-            MessageBox.Show($"地図が未対応: {building} {floor}F");
+            // Windows Formsの画像に変換して返す
+            return bitmap.ToBitmap();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
