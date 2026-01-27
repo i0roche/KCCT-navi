@@ -28,10 +28,10 @@ namespace team1
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            button1 = new Button();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            menuStrip1 = new MenuStrip();
+            TextBox1 = new TextBox();
+            Button1 = new Button();
+            FlowLayoutPanel1 = new FlowLayoutPanel();
+            MenuStrip1 = new MenuStrip();
             一般科棟ToolStripMenuItem = new ToolStripMenuItem();
             fToolStripMenuItem0 = new ToolStripMenuItem();
             fToolStripMenuItem1 = new ToolStripMenuItem();
@@ -39,7 +39,7 @@ namespace team1
             fToolStripMenuItem3 = new ToolStripMenuItem();
             fToolStripMenuItem4 = new ToolStripMenuItem();
             fToolStripMenuItem5 = new ToolStripMenuItem();
-            講義棟ToolStripMenuItem = new ToolStripMenuItem();
+            専門学科棟ToolStripMenuItem = new ToolStripMenuItem();
             電気工学科棟ToolStripMenuItem = new ToolStripMenuItem();
             fToolStripMenuItem6 = new ToolStripMenuItem();
             fToolStripMenuItem7 = new ToolStripMenuItem();
@@ -71,7 +71,7 @@ namespace team1
             本部棟ToolStripMenuItem = new ToolStripMenuItem();
             fToolStripMenuItem28 = new ToolStripMenuItem();
             fToolStripMenuItem29 = new ToolStripMenuItem();
-            講義棟ToolStripMenuItem1 = new ToolStripMenuItem();
+            講義棟ToolStripMenuItem = new ToolStripMenuItem();
             fToolStripMenuItem30 = new ToolStripMenuItem();
             fToolStripMenuItem31 = new ToolStripMenuItem();
             fToolStripMenuItem32 = new ToolStripMenuItem();
@@ -88,45 +88,45 @@ namespace team1
             実験排水処理施設棟ToolStripMenuItem = new ToolStripMenuItem();
             fToolStripMenuItem40 = new ToolStripMenuItem();
             fToolStripMenuItem41 = new ToolStripMenuItem();
-            menuStrip1.SuspendLayout();
+            MenuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(3, 61);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(303, 39);
-            textBox1.TabIndex = 0;
-            textBox1.TextChanged += textBox1_TextChanged;
+            TextBox1.Location = new Point(3, 61);
+            TextBox1.Name = "textBox1";
+            TextBox1.Size = new Size(303, 39);
+            TextBox1.TabIndex = 0;
+            TextBox1.TextChanged += textBox1_TextChanged;
             // 
             // button1
             // 
-            button1.Location = new Point(312, 58);
-            button1.Name = "button1";
-            button1.Size = new Size(150, 46);
-            button1.TabIndex = 1;
-            button1.Text = "Search";
-            button1.UseVisualStyleBackColor = true;
+            Button1.Location = new Point(312, 58);
+            Button1.Name = "button1";
+            Button1.Size = new Size(150, 46);
+            Button1.TabIndex = 1;
+            Button1.Text = "Search";
+            Button1.UseVisualStyleBackColor = true;
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.AutoSize = true;
-            flowLayoutPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            flowLayoutPanel1.Location = new Point(0, 0);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(0, 0);
-            flowLayoutPanel1.TabIndex = 3;
+            FlowLayoutPanel1.AutoSize = true;
+            FlowLayoutPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            FlowLayoutPanel1.Location = new Point(0, 0);
+            FlowLayoutPanel1.Name = "flowLayoutPanel1";
+            FlowLayoutPanel1.Size = new Size(0, 0);
+            FlowLayoutPanel1.TabIndex = 3;
             // 
             // menuStrip1
             // 
-            menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { 一般科棟ToolStripMenuItem, 講義棟ToolStripMenuItem, 専攻科棟ToolStripMenuItem, 本部棟ToolStripMenuItem, 講義棟ToolStripMenuItem1, 学生会館ToolStripMenuItem, 図書館ToolStripMenuItem, 機械工場ToolStripMenuItem, 実験排水処理施設棟ToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(10, 3, 0, 3);
-            menuStrip1.Size = new Size(1872, 42);
-            menuStrip1.TabIndex = 5;
-            menuStrip1.Text = "menuStrip1";
+            MenuStrip1.ImageScalingSize = new Size(20, 20);
+            MenuStrip1.Items.AddRange(new ToolStripItem[] { 一般科棟ToolStripMenuItem, 専門学科棟ToolStripMenuItem, 専攻科棟ToolStripMenuItem, 本部棟ToolStripMenuItem, 講義棟ToolStripMenuItem, 学生会館ToolStripMenuItem, 図書館ToolStripMenuItem, 機械工場ToolStripMenuItem, 実験排水処理施設棟ToolStripMenuItem });
+            MenuStrip1.Location = new Point(0, 0);
+            MenuStrip1.Name = "menuStrip1";
+            MenuStrip1.Padding = new Padding(10, 3, 0, 3);
+            MenuStrip1.Size = new Size(1872, 42);
+            MenuStrip1.TabIndex = 5;
+            MenuStrip1.Text = "menuStrip1";
             // 
             // 一般科棟ToolStripMenuItem
             // 
@@ -180,10 +180,10 @@ namespace team1
             // 
             // 講義棟ToolStripMenuItem
             // 
-            講義棟ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { 電気工学科棟ToolStripMenuItem, 電子工学科棟ToolStripMenuItem, 都市工学科棟ToolStripMenuItem, 機械工学科棟ToolStripMenuItem, 応用化学科棟ToolStripMenuItem });
-            講義棟ToolStripMenuItem.Name = "講義棟ToolStripMenuItem";
-            講義棟ToolStripMenuItem.Size = new Size(154, 36);
-            講義棟ToolStripMenuItem.Text = "専門学科棟";
+            専門学科棟ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { 電気工学科棟ToolStripMenuItem, 電子工学科棟ToolStripMenuItem, 都市工学科棟ToolStripMenuItem, 機械工学科棟ToolStripMenuItem, 応用化学科棟ToolStripMenuItem });
+            専門学科棟ToolStripMenuItem.Name = "専門学科棟ToolStripMenuItem";
+            専門学科棟ToolStripMenuItem.Size = new Size(154, 36);
+            専門学科棟ToolStripMenuItem.Text = "専門学科棟";
             // 
             // 電気工学科棟ToolStripMenuItem
             // 
@@ -302,28 +302,28 @@ namespace team1
             // 
             fToolStripMenuItem18.Name = "fToolStripMenuItem18";
             fToolStripMenuItem18.Size = new Size(183, 44);
-            fToolStripMenuItem18.Text = "２F";
+            fToolStripMenuItem18.Text = "１F";
             fToolStripMenuItem18.Click += fToolStripMenuItem18_Click;
             // 
             // fToolStripMenuItem19
             // 
             fToolStripMenuItem19.Name = "fToolStripMenuItem19";
             fToolStripMenuItem19.Size = new Size(183, 44);
-            fToolStripMenuItem19.Text = "３F";
+            fToolStripMenuItem19.Text = "２F";
             fToolStripMenuItem19.Click += fToolStripMenuItem19_Click;
             // 
             // fToolStripMenuItem20
             // 
             fToolStripMenuItem20.Name = "fToolStripMenuItem20";
             fToolStripMenuItem20.Size = new Size(183, 44);
-            fToolStripMenuItem20.Text = "４F";
+            fToolStripMenuItem20.Text = "３F";
             fToolStripMenuItem20.Click += fToolStripMenuItem20_Click;
             // 
             // fToolStripMenuItem21
             // 
             fToolStripMenuItem21.Name = "fToolStripMenuItem21";
             fToolStripMenuItem21.Size = new Size(183, 44);
-            fToolStripMenuItem21.Text = "１F";
+            fToolStripMenuItem21.Text = "４F";
             fToolStripMenuItem21.Click += fToolStripMenuItem21_Click;
             // 
             // 応用化学科棟ToolStripMenuItem
@@ -359,15 +359,22 @@ namespace team1
             // 
             fToolStripMenuItem25.Name = "fToolStripMenuItem25";
             fToolStripMenuItem25.Size = new Size(183, 44);
-            fToolStripMenuItem25.Text = "１F";
+            fToolStripMenuItem25.Text = "４F";
             fToolStripMenuItem25.Click += fToolStripMenuItem25_Click;
             // 
             // 専攻科棟ToolStripMenuItem
             // 
-            専攻科棟ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { fToolStripMenuItem25, fToolStripMenuItem26, fToolStripMenuItem27 });
+            専攻科棟ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { fToolStripMenuItem41, fToolStripMenuItem26, fToolStripMenuItem27 });
             専攻科棟ToolStripMenuItem.Name = "専攻科棟ToolStripMenuItem";
             専攻科棟ToolStripMenuItem.Size = new Size(130, 36);
             専攻科棟ToolStripMenuItem.Text = "専攻科棟";
+            // 
+            // fToolStripMenuItem41
+            // 
+            fToolStripMenuItem41.Name = "fToolStripMenuItem41";
+            fToolStripMenuItem41.Size = new Size(32, 19);
+            fToolStripMenuItem41.Text = "１F";
+            fToolStripMenuItem41.Click += fToolStripMenuItem41_Click;
             // 
             // fToolStripMenuItem26
             // 
@@ -406,10 +413,10 @@ namespace team1
             // 
             // 講義棟ToolStripMenuItem1
             // 
-            講義棟ToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { fToolStripMenuItem30, fToolStripMenuItem31, fToolStripMenuItem32, fToolStripMenuItem33 });
-            講義棟ToolStripMenuItem1.Name = "講義棟ToolStripMenuItem1";
-            講義棟ToolStripMenuItem1.Size = new Size(106, 36);
-            講義棟ToolStripMenuItem1.Text = "講義棟";
+            講義棟ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { fToolStripMenuItem30, fToolStripMenuItem31, fToolStripMenuItem32, fToolStripMenuItem33 });
+            講義棟ToolStripMenuItem.Name = "講義棟ToolStripMenuItem";
+            講義棟ToolStripMenuItem.Size = new Size(106, 36);
+            講義棟ToolStripMenuItem.Text = "講義棟";
             // 
             // fToolStripMenuItem30
             // 
@@ -518,51 +525,47 @@ namespace team1
             fToolStripMenuItem40.Text = "１F";
             fToolStripMenuItem40.Click += fToolStripMenuItem40_Click;
             // 
-            // fToolStripMenuItem41
-            // 
-            fToolStripMenuItem41.Name = "fToolStripMenuItem41";
-            fToolStripMenuItem41.Size = new Size(32, 19);
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1872, 1230);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
-            Controls.Add(flowLayoutPanel1);
-            Controls.Add(menuStrip1);
-            MainMenuStrip = menuStrip1;
+            Controls.Add(Button1);
+            Controls.Add(TextBox1);
+            Controls.Add(FlowLayoutPanel1);
+            Controls.Add(MenuStrip1);
+            MainMenuStrip = MenuStrip1;
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
+            MenuStrip1.ResumeLayout(false);
+            MenuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox textBox1;
-        private Button button1;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private MenuStrip menuStrip1;
+        private TextBox TextBox1;
+        private Button Button1;
+        private FlowLayoutPanel FlowLayoutPanel1;
+        private MenuStrip MenuStrip1;
         private ToolStripMenuItem 一般科棟ToolStripMenuItem;
+        private ToolStripMenuItem 専門学科棟ToolStripMenuItem;
         private ToolStripMenuItem 講義棟ToolStripMenuItem;
         private ToolStripMenuItem 専攻科棟ToolStripMenuItem;
         private ToolStripMenuItem 本部棟ToolStripMenuItem;
+        private ToolStripMenuItem 電気工学科棟ToolStripMenuItem;
+        private ToolStripMenuItem 電子工学科棟ToolStripMenuItem;
+        private ToolStripMenuItem 都市工学科棟ToolStripMenuItem;
+        private ToolStripMenuItem 機械工学科棟ToolStripMenuItem;
+        private ToolStripMenuItem 応用化学科棟ToolStripMenuItem;
         private ToolStripMenuItem fToolStripMenuItem0;
         private ToolStripMenuItem fToolStripMenuItem1;
         private ToolStripMenuItem fToolStripMenuItem2;
         private ToolStripMenuItem fToolStripMenuItem3;
         private ToolStripMenuItem fToolStripMenuItem4;
         private ToolStripMenuItem fToolStripMenuItem5;
-        private ToolStripMenuItem 電気工学科棟ToolStripMenuItem;
-        private ToolStripMenuItem 電子工学科棟ToolStripMenuItem;
-        private ToolStripMenuItem 都市工学科棟ToolStripMenuItem;
-        private ToolStripMenuItem 機械工学科棟ToolStripMenuItem;
-        private ToolStripMenuItem 応用化学科棟ToolStripMenuItem;
         private ToolStripMenuItem fToolStripMenuItem6;
         private ToolStripMenuItem fToolStripMenuItem7;
         private ToolStripMenuItem fToolStripMenuItem8;
@@ -586,7 +589,6 @@ namespace team1
         private ToolStripMenuItem fToolStripMenuItem26;
         private ToolStripMenuItem fToolStripMenuItem27;
         private ToolStripMenuItem fToolStripMenuItem28;
-        private ToolStripMenuItem 講義棟ToolStripMenuItem1;
         private ToolStripMenuItem fToolStripMenuItem29;
         private ToolStripMenuItem fToolStripMenuItem30;
         private ToolStripMenuItem fToolStripMenuItem31;

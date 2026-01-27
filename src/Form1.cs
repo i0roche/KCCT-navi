@@ -37,9 +37,6 @@ namespace team1
             public List<string> tags { get; set; } = new();
         }
 
-        // ---------------------------------------------------------
-        //  2. コンストラクタ & ロード
-        // ---------------------------------------------------------
         public Form1()
         {
             InitializeComponent();
@@ -55,13 +52,12 @@ namespace team1
             skControl.MouseUp += OnMouseUp;
             skControl.MouseWheel += OnMouseWheel;
 
-            // 画面に追加 (PictureBoxの上にかぶせる)
             this.Controls.Add(skControl);
             skControl.SendToBack();
 
             // イベント登録 (Designerの設定が消えている場合用)
             // button1.Click += button1_Click; 
-            textBox1.KeyDown += textBox1_KeyDown;
+            TextBox1.KeyDown += textBox1_KeyDown;
             this.Load += Form1_Load;
         }
 
@@ -80,19 +76,19 @@ namespace team1
             if (Properties.Resources.toshi_json != null) _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.toshi_json) ?? new());
             if (Properties.Resources.chem_json != null) _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.chem_json) ?? new());
             if (Properties.Resources.mech_json != null) _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.mech_json) ?? new());
-            // if (Properties.Resources.other_json != null) _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.other_json) ?? new());
+            if (Properties.Resources.advance_json != null) _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.advance_json) ?? new());
+            if (Properties.Resources.factory_json != null) _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.factory_json) ?? new());
+            if (Properties.Resources.other_json != null) _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.other_json) ?? new());
         }
 
         private void LoadSvgMap()
         {
             try
             {
-                // ★ファイル名注意
                 string svgPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "data", "map.svg"); ;
 
                 if (!System.IO.File.Exists(svgPath))
                 {
-                    // ファイルがない場合は map.svg も試す（念のため）
                     if (System.IO.File.Exists("map.svg")) svgPath = "map.svg";
                     else return;
                 }
@@ -110,10 +106,6 @@ namespace team1
                 MessageBox.Show("SVG読み込みエラー: " + ex.Message);
             }
         }
-
-        // ---------------------------------------------------------
-        //  3. 描画・操作ロジック (Googleマップ風)
-        // ---------------------------------------------------------
 
         private void OnPaintSurface(object? sender, SKPaintSurfaceEventArgs e)
         {
@@ -179,9 +171,6 @@ namespace team1
             skControl.Invalidate();
         }
 
-        // ---------------------------------------------------------
-        //  4. 検索 & ズーム機能
-        // ---------------------------------------------------------
         private void button1_Click(object? sender, EventArgs e) => DoSearch();
         private void textBox1_KeyDown(object? sender, KeyEventArgs e)
         {
@@ -190,7 +179,7 @@ namespace team1
 
         private void DoSearch()
         {
-            var q = textBox1.Text.Trim();
+            var q = TextBox1.Text.Trim();
             if (string.IsNullOrEmpty(q)) return;
 
             var hit = _places.FirstOrDefault(p =>
@@ -228,13 +217,11 @@ namespace team1
             ZoomToId(targetId);
         }
 
-        // ★魔法の関数：指定IDへカメラ移動
         private void ZoomToId(string targetId)
         {
             if (_svgMap?.Picture == null || _svgXml == null) return;
 
-            XNamespace svgNs = "http://www.w3.org/2000/svg";
-            var targetElement = _svgXml.Descendants(svgNs + "rect")
+            var targetElement = _svgXml.Descendants()
                                        .FirstOrDefault(x => x.Attribute("id")?.Value == targetId);
 
             if (targetElement == null)
@@ -265,19 +252,16 @@ namespace team1
         }
 
 
-        // ---------------------------------------------------------
-        //  5. メニューバー イベントハンドラ
-        //  (Designerの名前 fToolStripMenuItem0〜41 に完全対応)
-        // ---------------------------------------------------------
-
         // --- 一般科棟 (1-6F) ---
         private void 一般科棟ToolStripMenuItem_Click(object sender, EventArgs e) { }
-        private void fToolStripMenuItem0_Click(object sender, EventArgs e) => MoveToBuilding("一般科", 1); // 恐らく1F
+        private void fToolStripMenuItem0_Click(object sender, EventArgs e) => MoveToBuilding("一般科", 1);
         private void fToolStripMenuItem1_Click(object sender, EventArgs e) => MoveToBuilding("一般科", 2);
         private void fToolStripMenuItem2_Click(object sender, EventArgs e) => MoveToBuilding("一般科", 3);
         private void fToolStripMenuItem3_Click(object sender, EventArgs e) => MoveToBuilding("一般科", 4);
         private void fToolStripMenuItem4_Click(object sender, EventArgs e) => MoveToBuilding("一般科", 5);
         private void fToolStripMenuItem5_Click(object sender, EventArgs e) => MoveToBuilding("一般科", 6);
+
+        private void 専門学科棟ToolStripMenuItem_Click(object sender, EventArgs e) { }
 
         // --- 電気工学科棟 (1-4F) ---
         private void 電気工学科棟ToolStripMenuItem_Click(object sender, EventArgs e) { }
@@ -312,39 +296,44 @@ namespace team1
         private void fToolStripMenuItem25_Click(object sender, EventArgs e) => MoveToBuilding("応用化学科棟", 4);
 
         // --- 専攻科棟 (1-3F) ---
-        private void fToolStripMenuItem26_Click(object sender, EventArgs e) => MoveToBuilding("専攻科棟", 1);
-        private void fToolStripMenuItem27_Click(object sender, EventArgs e) => MoveToBuilding("専攻科棟", 2);
-        private void fToolStripMenuItem28_Click(object sender, EventArgs e) => MoveToBuilding("専攻科棟", 3);
+        private void 専攻科棟ToolStripMenuItem_Click(object sender, EventArgs e) { }
+        private void fToolStripMenuItem41_Click(object sender, EventArgs e) => MoveToBuilding("専攻科棟", 1);
+        private void fToolStripMenuItem26_Click(object sender, EventArgs e) => MoveToBuilding("専攻科棟", 2);
+        private void fToolStripMenuItem27_Click(object sender, EventArgs e) => MoveToBuilding("専攻科棟", 3);
 
         // --- 本部棟 (1-2F) ---
-        private void fToolStripMenuItem29_Click(object sender, EventArgs e) => MoveToBuilding("本部棟", 1);
-        private void fToolStripMenuItem30_Click(object sender, EventArgs e) => MoveToBuilding("本部棟", 2);
+        private void 本部棟ToolStripMenuItem_Click(object sender, EventArgs e) { }
+        private void fToolStripMenuItem28_Click(object sender, EventArgs e) => MoveToBuilding("本部棟", 1);
+        private void fToolStripMenuItem29_Click(object sender, EventArgs e) => MoveToBuilding("本部棟", 2);
 
         // --- 講義棟 (1-4F) ---
-        private void fToolStripMenuItem31_Click(object sender, EventArgs e) => MoveToBuilding("講義棟", 1);
-        private void fToolStripMenuItem32_Click(object sender, EventArgs e) => MoveToBuilding("講義棟", 2);
-        private void fToolStripMenuItem33_Click(object sender, EventArgs e) => MoveToBuilding("講義棟", 3);
-        private void fToolStripMenuItem34_Click(object sender, EventArgs e) => MoveToBuilding("講義棟", 4);
+        private void 講義棟ToolStripMenuItem_Click(object sender, EventArgs e) { }
+        private void fToolStripMenuItem30_Click(object sender, EventArgs e) => MoveToBuilding("講義棟", 1);
+        private void fToolStripMenuItem31_Click(object sender, EventArgs e) => MoveToBuilding("講義棟", 2);
+        private void fToolStripMenuItem32_Click(object sender, EventArgs e) => MoveToBuilding("講義棟", 3);
+        private void fToolStripMenuItem33_Click(object sender, EventArgs e) => MoveToBuilding("講義棟", 4);
 
         // --- 学生会館 (1-3F) ---
-        private void fToolStripMenuItem35_Click(object sender, EventArgs e) => MoveToBuilding("学生会館", 1);
-        private void fToolStripMenuItem36_Click(object sender, EventArgs e) => MoveToBuilding("学生会館", 2);
-        private void fToolStripMenuItem37_Click(object sender, EventArgs e) => MoveToBuilding("学生会館", 3);
+        private void 学生会館ToolStripMenuItem_Click(object sender, EventArgs e) { }
+        private void fToolStripMenuItem34_Click(object sender, EventArgs e) => MoveToBuilding("学生会館", 1);
+        private void fToolStripMenuItem35_Click(object sender, EventArgs e) => MoveToBuilding("学生会館", 2);
+        private void fToolStripMenuItem36_Click(object sender, EventArgs e) => MoveToBuilding("学生会館", 3);
 
         // --- 機械工場 (1-2F) ---
-        private void fToolStripMenuItem38_Click(object sender, EventArgs e) => MoveToBuilding("機械工場", 1);
-        private void fToolStripMenuItem39_Click(object sender, EventArgs e) => MoveToBuilding("機械工場", 2);
+        private void fToolStripMenuItem39_Click(object sender, EventArgs e) => MoveToBuilding("機械工場", 1);
+        //private void fToolStripMenuItem39_Click(object sender, EventArgs e) => MoveToBuilding("機械工場", 2);
 
         // --- 図書館 (1-2F) ---
         private void 図書館ToolStripMenuItem_Click(object sender, EventArgs e) { }
-        private void fToolStripMenuItem40_Click(object sender, EventArgs e) => MoveToBuilding("図書館", 1);
-        private void fToolStripMenuItem41_Click(object sender, EventArgs e) => MoveToBuilding("図書館", 2);
+        private void fToolStripMenuItem37_Click(object sender, EventArgs e) => MoveToBuilding("図書館", 1);
+        private void fToolStripMenuItem38_Click(object sender, EventArgs e) => MoveToBuilding("図書館", 2);
 
         // --- その他 ---
-        private void 実験排水処理施設棟ToolStripMenuItem_Click(object sender, EventArgs e) => MoveToBuilding("実験排水処理施設棟", 1);
+        private void 実験排水処理施設棟ToolStripMenuItem_Click(object sender, EventArgs e) { }
+        private void fToolStripMenuItem40_Click(object sender, EventArgs e)=> MoveToBuilding("実験排水処理施設棟", 1);
 
         // その他
-        private void pictureBox1_Click(object sender, EventArgs e) { }
+        private void PictureBox1_Click(object sender, EventArgs e) { }
         private void textBox1_TextChanged(object sender, EventArgs e) { }
     }
 }

@@ -22,7 +22,7 @@ namespace team1.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace team1.Properties {
         ///   このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("team1.Properties.Resources", typeof(Resources).Assembly);
@@ -51,12 +51,22 @@ namespace team1.Properties {
         ///   現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        /// </summary>
+        public static byte[] advance_json {
+            get {
+                object obj = ResourceManager.GetObject("advance_json", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
@@ -85,7 +95,7 @@ namespace team1.Properties {
         ///    &quot;name&quot;: &quot;培養実験室&quot;,
         ///    &quot;t [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        internal static string chem_json {
+        public static string chem_json {
             get {
                 return ResourceManager.GetString("chem_json", resourceCulture);
             }
@@ -115,7 +125,7 @@ namespace team1.Properties {
         ///  {
         ///    &quot;id&quot;: &quot;room_1f_denshi_lab_ [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        internal static string denshi_json {
+        public static string denshi_json {
             get {
                 return ResourceManager.GetString("denshi_json", resourceCulture);
             }
@@ -146,9 +156,19 @@ namespace team1.Properties {
         ///    &quot;name&quot;: &quot;電力工学実験室2&quot;,
         ///    &quot;t [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        internal static string elec_json {
+        public static string elec_json {
             get {
                 return ResourceManager.GetString("elec_json", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        /// </summary>
+        public static byte[] factory_json {
+            get {
+                object obj = ResourceManager.GetObject("factory_json", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
@@ -183,7 +203,7 @@ namespace team1.Properties {
         ///  {
         ///    &quot;id&quot;: &quot;room_1f_general_facility_testfield [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        internal static string general_json {
+        public static string general_json {
             get {
                 return ResourceManager.GetString("general_json", resourceCulture);
             }
@@ -192,7 +212,7 @@ namespace team1.Properties {
         /// <summary>
         ///   型 System.Byte[] のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] map {
+        public static byte[] map {
             get {
                 object obj = ResourceManager.GetObject("map", resourceCulture);
                 return ((byte[])(obj));
@@ -224,7 +244,7 @@ namespace team1.Properties {
         ///    &quot;name&quot;: &quot;生産加工3&quot;,
         ///  [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        internal static string mech_json {
+        public static string mech_json {
             get {
                 return ResourceManager.GetString("mech_json", resourceCulture);
             }
@@ -233,7 +253,7 @@ namespace team1.Properties {
         /// <summary>
         ///   型 System.Byte[] のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] other_json {
+        public static byte[] other_json {
             get {
                 object obj = ResourceManager.GetObject("other_json", resourceCulture);
                 return ((byte[])(obj));
@@ -265,7 +285,7 @@ namespace team1.Properties {
         ///    &quot;id&quot;: &quot;room_1f_toshi_lab_material_1&quot;,
         ///    &quot;name&quot;: &quot;材料実験室1 [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        internal static string toshi_json {
+        public static string toshi_json {
             get {
                 return ResourceManager.GetString("toshi_json", resourceCulture);
             }
