@@ -147,7 +147,7 @@ namespace team1
             pictureBox1.Image = Properties.Resources.densi_2;
         }
 
-        private void ｆToolStripMenuItem_Click(object sender, EventArgs e)
+        private void fToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pictureBox1.Image = Properties.Resources.densi_3;
         }
@@ -217,7 +217,7 @@ namespace team1
             pictureBox1.Image = Properties.Resources.kagaku_3;
         }
 
-        private void ｆToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void fToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             pictureBox1.Image = Properties.Resources.kagaku_4;
         }
@@ -272,7 +272,7 @@ namespace team1
             pictureBox1.Image = Properties.Resources.gakuseikaikan_1;
         }
 
-        private void ｆToolStripMenuItem2_Click(object sender, EventArgs e)
+        private void fToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             pictureBox1.Image = Properties.Resources.gakuseikaikan_2;
         }
@@ -355,19 +355,20 @@ namespace team1
         {
             string targetId = "";
 
-            if (building.Contains("一般科")) targetId = "view_ippan_" + floor + "f";
-            else if (building.Contains("電気")) targetId = "view_elec_" + floor + "f";
-            else if (building.Contains("電子")) targetId = "view_denshi_" + floor + "f";
-            else if (building.Contains("機械")) targetId = "view_mech_" + floor + "f";
-            else if (building.Contains("都市")) targetId = "view_toshi_" + floor + "f";
-            else if (building.Contains("化学")) targetId = "view_chem_" + floor + "f";
-            else if (building.Contains("専攻")) targetId = "view_senkou_" + floor + "f";
-            else if (building.Contains("本部")) targetId = "view_honbutou_" + floor + "f";
-            else if (building.Contains("講義")) targetId = "view_kougi_" + floor + "f";
-            else if (building.Contains("学生会館")) targetId = "view_gakuseikaikan_" + floor + "f";
-            else if (building.Contains("工場")) targetId = "view_koujyou_" + floor + "f";
-            else if (building.Contains("図書館")) targetId = "view_library_" + floor + "f";
-            else if (building.Contains("排水")) targetId = "view_haisuishori_" + floor + "f";
+            if (building.Contains("一般科")) targetId = "view_ippan";
+            else if (building.Contains("電気")) targetId = "view_elec";
+            else if (building.Contains("電子")) targetId = "view_denshi";
+            else if (building.Contains("機械")) targetId = "view_mech";
+            else if (building.Contains("都市")) targetId = "view_toshi";
+            else if (building.Contains("化学")) targetId = "view_chem";
+            else if (building.Contains("専攻")) targetId = "view_senkou";
+            else if (building.Contains("本部")) targetId = "view_honbu";
+            else if (building.Contains("講義")) targetId = "view_kougi";
+            else if (building.Contains("学生会館")) targetId = "view_gakusei";
+            else if (building.Contains("工場")) targetId = "view_koujyou";
+            else if (building.Contains("図書館")) targetId = "view_info";
+            else if (building.Contains("排水")) targetId = "view_haisui";
+            else if (building.Contains("食堂")) targetId = "view_shokudou";
 
             if (string.IsNullOrEmpty(targetId))
             {
