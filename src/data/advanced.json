@@ -1,0 +1,236 @@
+[
+  {
+    "id": "room_1f_advanced_lab_design_analysis",
+    "name": "創造デザイン工房（解析・設計工房）",
+    "type": "lab",
+    "building": "専攻科棟",
+    "floor": 1,
+    "department": "advanced",
+    "tags": ["創造デザイン工房（解析・設計工房）", "専攻科棟", "専攻科", "advanced", "実験室"]
+  },
+  {
+    "id": "room_1f_advanced_lab_design_modeling",
+    "name": "創造デザイン工房（造形工房）",
+    "type": "lab",
+    "building": "専攻科棟",
+    "floor": 1,
+    "department": "advanced",
+    "tags": ["創造デザイン工房（造形工房）", "専攻科棟", "専攻科", "advanced", "実験室"]
+  },
+  {
+    "id": "room_1f_advanced_lab_design_processing",
+    "name": "創造デザイン工房（加工工房）",
+    "type": "lab",
+    "building": "専攻科棟",
+    "floor": 1,
+    "department": "advanced",
+    "tags": ["創造デザイン工房（加工工房）", "専攻科棟", "専攻科", "advanced", "実験室"]
+  },
+  {
+    "id": "room_1f_advanced_office_tech",
+    "name": "工房技術職員室",
+    "type": "office_tech",
+    "building": "専攻科棟",
+    "floor": 1,
+    "department": "advanced",
+    "tags": ["工房技術職員室", "専攻科棟", "専攻科", "advanced", "技術職員室"]
+  },
+  {
+    "id": "room_1f_advanced_souko",
+    "name": "倉庫",
+    "type": "facility",
+    "building": "専攻科棟",
+    "floor": 1,
+    "department": "advanced",
+    "tags": [ "専攻科棟", "専攻科", "advanced", "倉庫"]
+  },
+  {
+    "id": "room_1f_advanced_lab_teacher_1",
+    "name": "林田研究室",
+    "type": "lab",
+    "building": "専攻科棟",
+    "floor": 1,
+    "department": "advanced",
+    "tags": ["林田","林田 研究室","研究室" ,"専攻科棟", "専攻科", "advanced"]
+  },
+  {
+    "id": "room_1f_advanced_AED_lab_1",
+    "name": "学生研究室AED1",
+    "type": "lab",
+    "building": "専攻科棟",
+    "floor": 1,
+    "department": "advanced",
+    "tags": ["学生研究室","AED", "専攻科棟", "専攻科", "advanced"]
+  },
+  {
+    "id": "room_1f_advanced_NVC_lab",
+    "name": "NVC研究室",
+    "type": "lab",
+    "building": "専攻科棟",
+    "floor": 1,
+    "department": "advanced",
+    "tags": ["NVC", "専攻科棟", "専攻科", "advanced", "研究室"]
+  },
+  {
+    "id": "room_1f_advanced_EV_mach",
+    "name": "EV機械室",
+    "type": "facility",
+    "building": "専攻科棟",
+    "floor": 1,
+    "department": "advanced",
+    "tags": ["EV", "専攻科棟", "専攻科", "advanced", "機械室"]
+  },
+  {
+    "id": "restroom_1f_advanced_WC_man",
+    "name": "男子トイレ",
+    "type": "restroom",
+    "building": "専攻科棟",
+    "floor": 1,
+    "department": "advanced",
+    "tags": ["トイレ", "専攻科棟", "専攻科", "advanced", "男子"]
+  },
+  {
+    "id": "room_2f_advanced_classroom_lecture_large",
+    "name": "大講義室",
+    "type": "classroom",
+    "building": "専攻科棟",
+    "floor": 2,
+    "department": "advanced",
+    "tags": ["大講義室", "専攻科棟", "専攻科", "advanced"]
+  },
+  {
+    "id": "room_2f_advanced_classroom_lecture_mid_1",
+    "name": "中講義室1",
+    "type": "classroom",
+    "building": "専攻科棟",
+    "floor": 2,
+    "department": "advanced",
+    "tags": ["中講義室1", "専攻科棟", "専攻科", "advanced"]
+  },
+  {
+    "id": "room_2f_advanced_classroom_lecture_mid_2",
+    "name": "中講義室2",
+    "type": "classroom",
+    "building": "専攻科棟",
+    "floor": 2,
+    "department": "advanced",
+    "tags": ["中講義室2", "専攻科棟", "専攻科", "advanced"]
+  },
+  {
+    "id": "room_2f_advanced_facility_MeetingRoom",
+    "name": "Meeting Room",
+    "type": "facility",
+    "building": "専攻科棟",
+    "floor": 2,
+    "department": "advanced",
+    "tags": ["Meeting Room", "専攻科棟", "専攻科", "advanced"]
+  },
+  {
+    "id": "room_2f_advanced_facility_research_office",
+    "name": "研究渉外主事室",
+    "type": "facility",
+    "building": "専攻科棟",
+    "floor": 2,
+    "department": "advanced",
+    "tags": ["研究渉外主事室", "専攻科棟", "専攻科", "advanced"]
+  },
+  {
+    "id": "restroom_2f_advanced_WC_man",
+    "name": "男子トイレ",
+    "type": "restroom",
+    "building": "専攻科棟",
+    "floor": 2,
+    "department": "advanced",
+    "tags": ["トイレ", "専攻科棟", "専攻科", "advanced", "男子"]
+  },
+  {
+    "id": "restroom_2f_advanced_WC_woman",
+    "name": "女子トイレ",
+    "type": "restroom",
+    "building": "専攻科棟",
+    "floor": 2,
+    "department": "advanced",
+    "tags": ["トイレ", "専攻科棟", "専攻科", "advanced", "女子"]
+  },
+  {
+    "id": "room_3f_advanced_lab_energy",
+    "name": "エネルギー工学実験室",
+    "type": "lab",
+    "building": "専攻科棟",
+    "floor": 3,
+    "department": "advanced",
+    "tags": ["エネルギー工学実験室", "専攻科棟", "専攻科", "advanced", "実験室"]
+  },
+  {
+    "id": "room_3f_advanced_lab_electronics_applied_2",
+    "name": "電子応用第2実験室",
+    "type": "lab",
+    "building": "専攻科棟",
+    "floor": 3,
+    "department": "advanced",
+    "tags": ["電子応用第2実験室", "専攻科棟", "専攻科", "advanced", "実験室"]
+  },
+  {
+    "id": "room_3f_advanced_lab_biophysics",
+    "name": "生物物理化学実験室",
+    "type": "lab",
+    "building": "専攻科棟",
+    "floor": 3,
+    "department": "advanced",
+    "tags": ["生物物理化学実験室", "専攻科棟", "専攻科", "advanced", "実験室"]
+  },
+  {
+    "id": "room_3f_advanced_lab_stu_AE_2",
+    "name": "学生研究室AE2",
+    "type": "lab",
+    "building": "専攻科棟",
+    "floor": 3,
+    "department": "advanced",
+    "tags": ["学生研究室", "専攻科棟", "専攻科", "advanced", "AE2"]
+  },  
+  {
+    "id": "room_3f_advanced_lab_stu_AC",
+    "name": "学生研究室AC",
+    "type": "lab",
+    "building": "専攻科棟",
+    "floor": 3,
+    "department": "advanced",
+    "tags": ["学生研究室AC", "専攻科棟", "専攻科", "advanced", "学生研究室"]
+  },  
+  {
+    "id": "room_3f_advanced_lab_teature_2",
+    "name": "津吉研究室",
+    "type": "lab",
+    "building": "専攻科棟",
+    "floor": 3,
+    "department": "advanced",
+    "tags": ["津吉 研究室", "専攻科棟", "専攻科", "advanced", "研究室"]
+  },
+  {
+    "id": "room_3f_advanced_lab_teature_3",
+    "name": "九鬼研究室",
+    "type": "lab",
+    "building": "専攻科棟",
+    "floor": 3,
+    "department": "advanced",
+    "tags": ["九鬼 研究室", "専攻科棟", "専攻科", "advanced", "研究室"]
+  },
+  {
+    "id": "restroom_3f_advanced_WC_man",
+    "name": "男子トイレ",
+    "type": "restroom",
+    "building": "専攻科棟",
+    "floor": 3,
+    "department": "advanced",
+    "tags": ["トイレ", "専攻科棟", "専攻科", "advanced", "男子"]
+  },
+  {
+    "id": "restroom_3f_advanced_WC_woman",
+    "name": "女子トイレ",
+    "type": "restroom",
+    "building": "専攻科棟",
+    "floor": 2,
+    "department": "advanced",
+    "tags": ["トイレ", "専攻科棟", "専攻科", "advanced", "女子"]
+  }
+]
