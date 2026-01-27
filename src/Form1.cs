@@ -40,12 +40,6 @@ namespace team1
             _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.mech_json) ?? new());
             _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.other_json) ?? new());
             _places.AddRange(JsonSerializer.Deserialize<List<Place>>(Properties.Resources.advanced_json) ?? new());
-            var mats = _places
-    .Where(p => p.name.Contains("材料実験室", StringComparison.Ordinal))
-    .Select(p => $"[{p.name}] len={p.name.Length} codepoints={string.Join(" ", p.name.Select(c => ((int)c).ToString("X4")))}")
-    .ToList();
-
-            MessageBox.Show(string.Join("\n", mats));
         }
 
         private void 一般科棟ToolStripMenuItem_Click(object sender, EventArgs e)
