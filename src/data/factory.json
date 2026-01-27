@@ -1,0 +1,254 @@
+[
+  {
+    "id": "room_1f_factory_lab_material_proc1",
+    "name": "材料加工実験室1",
+    "type": "lab",
+    "building": "機械工学科実験実習棟",
+    "floor": 1,
+    "department": "factory",
+    "tags": ["材料加工実験室1", "機械工学科実験実習棟", "機械工学科", "mech", "実験室"]
+  },
+  {
+    "id": "room_1f_factory_lab_material_strength1",
+    "name": "材料強度実験室1",
+    "type": "lab",
+    "building": "機械工学科実験実習棟",
+    "floor": 1,
+    "department": "factory",
+    "tags": ["材料強度実験室1", "機械工学科実験実習棟", "機械工学科", "mech", "実験室"]
+  },
+  {
+    "id": "room_1f_factory_lab_material_strength2",
+    "name": "材料強度実験室2",
+    "type": "lab",
+    "building": "機械工学科実験実習棟",
+    "floor": 1,
+    "department": "factory",
+    "tags": ["材料強度実験室2", "機械工学科実験実習棟", "機械工学科", "mech", "実験室"]
+  },
+  {
+    "id": "room_1f_factory_facility_casting",
+    "name": "鋳造工場",
+    "type": "facility",
+    "building": "機械工学科実験実習棟",
+    "floor": 1,
+    "department": "factory",
+    "tags": ["鋳造工場", "機械工学科実験実習棟", "機械工学科", "mech"]
+  },
+  {
+    "id": "room_1f_factory_facility_factory_1",
+    "name": "機械工場1",
+    "type": "facility",
+    "building": "機械工学科実験実習棟",
+    "floor": 1,
+    "department": "factory",
+    "tags": ["機械工場1", "機械工学科実験実習棟", "機械工学科", "mech"]
+  },
+  {
+    "id": "room_1f_factory_facility_factory_2",
+    "name": "機械工場2",
+    "type": "facility",
+    "building": "機械工学科実験実習棟",
+    "floor": 1,
+    "department": "factory",
+    "tags": ["機械工場2", "機械工学科実験実習棟", "機械工学科", "mech"]
+  },
+  {
+    "id": "room_1f_factory_lab_production",
+    "name": "生産加工学実験室",
+    "type": "lab",
+    "building": "機械工学科実験実習棟",
+    "floor": 1,
+    "department": "factory",
+    "tags": ["生産加工学実験室", "機械工学科実験実習棟", "機械工学科", "mech", "実験室"]
+  },
+  {
+    "id": "room_1f_factory_lab_robot",
+    "name": "ロボット実験室",
+    "type": "lab",
+    "building": "機械工学科実験実習棟",
+    "floor": 1,
+    "department": "factory",
+    "tags": ["ロボット実験室", "機械工学科実験実習棟", "機械工学科", "mech", "実験室"]
+  },
+  {
+    "id": "room_1f_factory_lab_fluid",
+    "name": "流体実験室",
+    "type": "lab",
+    "building": "機械工学科実験実習棟",
+    "floor": 1,
+    "department": "factory",
+    "tags": ["流体実験室", "機械工学科実験実習棟", "機械工学科", "mech", "実験室"]
+  },
+  {
+    "id": "room_1f_factory_lab_graduation_material",
+    "name": "卒研室 (材料強度実験室)",
+    "type": "lab",
+    "building": "機械工学科実験実習棟",
+    "floor": 1,
+    "department": "factory",
+    "tags": ["卒研室 (材料強度実験室)", "機械工学科実験実習棟", "機械工学科", "mech", "実験室"]
+  },
+  {
+    "id": "room_1f_factory_lab_graduation_prod_1",
+    "name": "卒研室1 (生産加工学実験室)",
+    "type": "lab",
+    "building": "機械工学科実験実習棟",
+    "floor": 1,
+    "department": "factory",
+    "tags": ["卒研室1 (生産加工学実験室)", "機械工学科実験実習棟", "機械工学科", "mech", "実験室"]
+  },
+  {
+    "id": "room_1f_factory_lab_graduation_prod_2",
+    "name": "卒研室2 (生産加工学実験室)",
+    "type": "lab",
+    "building": "機械工学科実験実習棟",
+    "floor": 1,
+    "department": "factory",
+    "tags": ["卒研室2 (生産加工学実験室)", "機械工学科実験実習棟", "機械工学科", "mech", "実験室"]
+  },
+  {
+    "id": "room_1f_factory_lab_graduation_robot_1",
+    "name": "卒研室1 (ロボット実験室)",
+    "type": "lab",
+    "building": "機械工学科実験実習棟",
+    "floor": 1,
+    "department": "factory",
+    "tags": ["卒研室1 (ロボット実験室)", "機械工学科実験実習棟", "機械工学科", "mech", "実験室"]
+  },
+  {
+    "id": "room_1f_factory_lab_graduation_robot_2",
+    "name": "卒研室2 (ロボット実験室)",
+    "type": "lab",
+    "building": "機械工学科実験実習棟",
+    "floor": 1,
+    "department": "factory",
+    "tags": ["卒研室2 (ロボット実験室)", "機械工学科実験実習棟", "機械工学科", "mech", "実験室"]
+  },
+  {
+    "id": "room_1f_factory_lab_graduation_fluid_1",
+    "name": "卒研室1 (流体実験室)",
+    "type": "lab",
+    "building": "機械工学科実験実習棟",
+    "floor": 1,
+    "department": "factory",
+    "tags": ["卒研室1 (流体実験室)", "機械工学科実験実習棟", "機械工学科", "mech", "実験室"]
+  },
+  {
+    "id": "room_1f_factory_lab_graduation_fluid_2",
+    "name": "卒研室2 (流体実験室)",
+    "type": "lab",
+    "building": "機械工学科実験実習棟",
+    "floor": 1,
+    "department": "factory",
+    "tags": ["卒研室2 (流体実験室)", "機械工学科実験実習棟", "機械工学科", "mech", "実験室"]
+  },{
+    "id": "room_1f_factory_office_tech",
+    "name": "技術職員室",
+    "type": "office_tech",
+    "building": "機械工学科実験実習棟",
+    "floor": 1,
+    "department": "factory",
+    "tags": ["技術職員室", "機械工学科実験実習棟", "機械工学科", "mech"]
+  },
+  {
+    "id": "room_1f_factory_facility_production_1",
+    "name": "生産加工1",
+    "type": "facility",
+    "building": "機械工学科実験実習棟",
+    "floor": 1,
+    "department": "factory",
+    "tags": ["生産加工1", "機械工学科棟", "機械工学科", "mech"]
+  },
+  {
+    "id": "room_1f_factory_facility_production_2",
+    "name": "生産加工2",
+    "type": "facility",
+    "building": "機械工学科実験実習棟",
+    "floor": 1,
+    "department": "factory",
+    "tags": ["生産加工2", "機械工学科棟", "機械工学科", "mech"]
+  },
+  {
+    "id": "room_1f_factory_junbi_1",
+    "name": "準備室1",
+    "type": "facility",
+    "building": "機械工学科実験実習棟",
+    "floor": 1,
+    "department": "factory",
+    "tags": ["準備室", "機械工学科棟", "機械工学科", "mech"]
+  },
+  {
+    "id": "room_1f_factory_junbi_2",
+    "name": "準備室2",
+    "type": "facility",
+    "building": "機械工学科実験実習棟",
+    "floor": 1,
+    "department": "factory",
+    "tags": ["準備室", "機械工学科棟", "機械工学科", "mech"]
+  },
+  {
+    "id": "room_1f_factory_junbi_3",
+    "name": "準備室3",
+    "type": "facility",
+    "building": "機械工学科実験実習棟",
+    "floor": 1,
+    "department": "factory",
+    "tags": ["準備室", "機械工学科棟", "機械工学科", "mech"]
+  },
+  {
+    "id": "room_2f_factory_lab_solarcar",
+    "name": "ソーラーカー研究室",
+    "type": "lab",
+    "building": "機械工学科実験実習棟",
+    "floor": 2,
+    "department":"factory",
+    "tags": ["部室", "機械工学科棟", "機械工学科", "mech"]
+  },
+  {
+    "id": "room_2f_factory_facility_bunseki",
+    "name": "分析室",
+    "type": "facility",
+    "building": "実験廃水処理施設棟",
+    "floor": 2,
+    "department":"factory",
+    "tags": ["分析室", "機械工学科棟", "機械工学科", "mech"]
+  },
+  {
+    "id": "room_2f_factory_facility_haiekisyori",
+    "name": "廃液処理室",
+    "type": "facility",
+    "building": "実験廃水処理施設棟",
+    "floor": 2,
+    "department":"factory",
+    "tags": ["廃液処理室", "機械工学科棟", "機械工学科", "mech"]
+  },
+  {
+    "id": "room_2f_factory_facility_gus",
+    "name": "ガスボンベ室",
+    "type": "facility",
+    "building": "実験廃水処理施設棟",
+    "floor": 2,
+    "department":"factory",
+    "tags": ["ガスボンベ室", "機械工学科棟", "機械工学科", "mech"]
+  },
+  {
+    "id": "room_2f_factory_facility_piroty",
+    "name": "ピロティ",
+    "type": "facility",
+    "building": "実験廃水処理施設棟",
+    "floor": 2,
+    "department":"factory",
+    "tags": ["ピロティ", "機械工学科棟", "機械工学科", "mech"]
+  },
+  {
+    "id": "room_2f_factory_facility_suirizikken",
+    "name": "水理実験室",
+    "type": "facility",
+    "building": "実験廃水処理施設棟",
+    "floor": 2,
+    "department":"factory",
+    "tags": ["水理実験室", "機械工学科棟", "機械工学科", "mech"]
+  }
+]
+
