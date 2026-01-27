@@ -9,6 +9,57 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="data\denki1.png" />
+    <None Remove="data\denki2.png" />
+    <None Remove="data\denki3.png" />
+    <None Remove="data\denki4.png" />
+    <None Remove="data\densi1.png" />
+    <None Remove="data\densi2.png" />
+    <None Remove="data\densi3.png" />
+    <None Remove="data\densi4.png" />
+    <None Remove="data\gakuseikaikan_1.png" />
+    <None Remove="data\gakuseikaikan_2.png" />
+    <None Remove="data\gakuseikaikan_3.png" />
+    <None Remove="data\honbutou_1.png" />
+    <None Remove="data\honbutou_2.png" />
+    <None Remove="data\info-center.png" />
+    <None Remove="data\ippan_1.png" />
+    <None Remove="data\ippan_2.png" />
+    <None Remove="data\ippan_3.png" />
+    <None Remove="data\ippan_4.png" />
+    <None Remove="data\ippan_5.png" />
+    <None Remove="data\ippan_6.png" />
+    <None Remove="data\kagaku1.png" />
+    <None Remove="data\kagaku2.png" />
+    <None Remove="data\kagaku3.png" />
+    <None Remove="data\kagaku4.png" />
+    <None Remove="data\kikai1.png" />
+    <None Remove="data\kikai2.png" />
+    <None Remove="data\kikai3.png" />
+    <None Remove="data\kikai4.png" />
+    <None Remove="data\kougi1.png" />
+    <None Remove="data\kougi2.png" />
+    <None Remove="data\kougi3.png" />
+    <None Remove="data\kougi4.png" />
+    <None Remove="data\koujyou_1.png" />
+    <None Remove="data\koujyou_2.png" />
+    <None Remove="data\library_1.png" />
+    <None Remove="data\library_2.png" />
+    <None Remove="data\map_notext_4K.png" />
+    <None Remove="data\map_text_4K.png" />
+    <None Remove="data\senkou_1.png" />
+    <None Remove="data\senkou_2.png" />
+    <None Remove="data\senkou_3.png" />
+    <None Remove="data\syokudo.png" />
+    <None Remove="data\tosi1.png" />
+    <None Remove="data\tosi2.png" />
+    <None Remove="data\tosi3.png" />
+    <None Remove="data\tosi4.png" />
+    <None Remove="data\施設一覧.xlsx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SkiaSharp.Views.Desktop.Common" Version="3.119.1" />
     <PackageReference Include="SkiaSharp.Views.WindowsForms" Version="3.119.1" />
     <PackageReference Include="Svg.Skia" Version="3.4.1" />
   </ItemGroup>
@@ -26,6 +77,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="data\map.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
