@@ -61,43 +61,6 @@ namespace team1.Properties {
         }
         
         /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap _0A78D002_BD67_46A2_9763_FD8EEB751F32 {
-            get {
-                object obj = ResourceManager.GetObject("0A78D002-BD67-46A2-9763-FD8EEB751F32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   [
-        ///  {
-        ///    &quot;id&quot;: &quot;room_1f_advanced_lab_design_analysis&quot;,
-        ///    &quot;name&quot;: &quot;創造デザイン工房（解析・設計工房）&quot;,
-        ///    &quot;type&quot;: &quot;lab&quot;,
-        ///    &quot;building&quot;: &quot;専攻科棟&quot;,
-        ///    &quot;floor&quot;: 1,
-        ///    &quot;department&quot;: &quot;advanced&quot;,
-        ///    &quot;tags&quot;: [&quot;創造デザイン工房（解析・設計工房）&quot;, &quot;専攻科棟&quot;, &quot;専攻科&quot;, &quot;advanced&quot;, &quot;実験室&quot;]
-        ///  },
-        ///  {
-        ///    &quot;id&quot;: &quot;room_1f_advanced_lab_design_modeling&quot;,
-        ///    &quot;name&quot;: &quot;創造デザイン工房（造形工房）&quot;,
-        ///    &quot;type&quot;: &quot;lab&quot;,
-        ///    &quot;building&quot;: &quot;専攻科棟&quot;,
-        ///    &quot;floor&quot;: 1,
-        ///    &quot;department&quot;: &quot;advanced&quot;,
-        ///    &quot;tags&quot;: [&quot;創造デザイン工房（造形工房）&quot;, &quot;専攻科棟&quot;, &quot;専攻科&quot;, &quot;advanced&quot;, &quot;実験室&quot;]
-        ///  },        /// [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string advanced_json {
-            get {
-                return ResourceManager.GetString("advanced_json", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   [
         ///  {
         ///    &quot;id&quot;: &quot;room_1f_chem_lab_chem_eng_1&quot;,
@@ -125,46 +88,6 @@ namespace team1.Properties {
         internal static string chem_json {
             get {
                 return ResourceManager.GetString("chem_json", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap denki_1 {
-            get {
-                object obj = ResourceManager.GetObject("denki_1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap denki_2 {
-            get {
-                object obj = ResourceManager.GetObject("denki_2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap denki_3 {
-            get {
-                object obj = ResourceManager.GetObject("denki_3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap denki_4 {
-            get {
-                object obj = ResourceManager.GetObject("denki_4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -199,46 +122,6 @@ namespace team1.Properties {
         }
         
         /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap densi_1 {
-            get {
-                object obj = ResourceManager.GetObject("densi_1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap densi_2 {
-            get {
-                object obj = ResourceManager.GetObject("densi_2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap densi_3 {
-            get {
-                object obj = ResourceManager.GetObject("densi_3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap densi_4 {
-            get {
-                object obj = ResourceManager.GetObject("densi_4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   [
         ///  {
         ///    &quot;id&quot;: &quot;room_1f_elec_office_tech&quot;,
@@ -266,36 +149,6 @@ namespace team1.Properties {
         internal static string elec_json {
             get {
                 return ResourceManager.GetString("elec_json", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap gakuseikaikan_1 {
-            get {
-                object obj = ResourceManager.GetObject("gakuseikaikan_1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap gakuseikaikan_2 {
-            get {
-                object obj = ResourceManager.GetObject("gakuseikaikan_2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap gakuseikaikan_3 {
-            get {
-                object obj = ResourceManager.GetObject("gakuseikaikan_3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -337,272 +190,12 @@ namespace team1.Properties {
         }
         
         /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        ///   型 System.Byte[] のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap honbutou_1 {
+        internal static byte[] map {
             get {
-                object obj = ResourceManager.GetObject("honbutou_1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap honbutou_2 {
-            get {
-                object obj = ResourceManager.GetObject("honbutou_2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap info_center {
-            get {
-                object obj = ResourceManager.GetObject("info-center", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap ippan_1 {
-            get {
-                object obj = ResourceManager.GetObject("ippan_1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap ippan_2 {
-            get {
-                object obj = ResourceManager.GetObject("ippan_2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap ippan_3 {
-            get {
-                object obj = ResourceManager.GetObject("ippan_3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap ippan_4 {
-            get {
-                object obj = ResourceManager.GetObject("ippan_4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap ippan_5 {
-            get {
-                object obj = ResourceManager.GetObject("ippan_5", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap ippan_6 {
-            get {
-                object obj = ResourceManager.GetObject("ippan_6", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap kagaku_1 {
-            get {
-                object obj = ResourceManager.GetObject("kagaku_1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap kagaku_2 {
-            get {
-                object obj = ResourceManager.GetObject("kagaku_2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap kagaku_3 {
-            get {
-                object obj = ResourceManager.GetObject("kagaku_3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap kagaku_4 {
-            get {
-                object obj = ResourceManager.GetObject("kagaku_4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap kikai_1 {
-            get {
-                object obj = ResourceManager.GetObject("kikai_1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap kikai_2 {
-            get {
-                object obj = ResourceManager.GetObject("kikai_2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap kikai_3 {
-            get {
-                object obj = ResourceManager.GetObject("kikai_3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap kikai_4 {
-            get {
-                object obj = ResourceManager.GetObject("kikai_4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap kougi_1 {
-            get {
-                object obj = ResourceManager.GetObject("kougi_1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap kougi_2 {
-            get {
-                object obj = ResourceManager.GetObject("kougi_2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap kougi_3 {
-            get {
-                object obj = ResourceManager.GetObject("kougi_3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap kougi_4 {
-            get {
-                object obj = ResourceManager.GetObject("kougi_4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap koujyou_1 {
-            get {
-                object obj = ResourceManager.GetObject("koujyou_1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap koujyou_2 {
-            get {
-                object obj = ResourceManager.GetObject("koujyou_2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap library_1 {
-            get {
-                object obj = ResourceManager.GetObject("library_1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap library_2 {
-            get {
-                object obj = ResourceManager.GetObject("library_2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap map_notext_4K {
-            get {
-                object obj = ResourceManager.GetObject("map_notext_4K", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap map_text_4K {
-            get {
-                object obj = ResourceManager.GetObject("map_text_4K", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("map", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
@@ -638,71 +231,12 @@ namespace team1.Properties {
         }
         
         /// <summary>
-        ///   [
-        ///  {
-        ///    &quot;id&quot;: &quot;room_1f_advanced_lab_design_analysis&quot;,
-        ///    &quot;name&quot;: &quot;創造デザイン工房（解析・設計工房）&quot;,
-        ///    &quot;type&quot;: &quot;lab&quot;,
-        ///    &quot;building&quot;: &quot;専攻科棟&quot;,
-        ///    &quot;floor&quot;: 1,
-        ///    &quot;department&quot;: &quot;advanced&quot;,
-        ///    &quot;tags&quot;: [&quot;創造デザイン工房（解析・設計工房）&quot;, &quot;専攻科棟&quot;, &quot;専攻科&quot;, &quot;advanced&quot;, &quot;実験室&quot;]
-        ///  },
-        ///  {
-        ///    &quot;id&quot;: &quot;room_1f_advanced_lab_design_modeling&quot;,
-        ///    &quot;name&quot;: &quot;創造デザイン工房（造形工房）&quot;,
-        ///    &quot;type&quot;: &quot;lab&quot;,
-        ///    &quot;building&quot;: &quot;専攻科棟&quot;,
-        ///    &quot;floor&quot;: 1,
-        ///    &quot;department&quot;: &quot;advanced&quot;,
-        ///    &quot;tags&quot;: [&quot;創造デザイン工房（造形工房）&quot;, &quot;専攻科棟&quot;, &quot;専攻科&quot;, &quot;advanced&quot;, &quot;実験室&quot;]
-        ///  },
-        ///  {
-        ///    &quot;id&quot;: &quot;roo [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
+        ///   型 System.Byte[] のローカライズされたリソースを検索します。
         /// </summary>
-        internal static string other_json {
+        internal static byte[] other_json {
             get {
-                return ResourceManager.GetString("other_json", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap senkou_1 {
-            get {
-                object obj = ResourceManager.GetObject("senkou_1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap senkou_2 {
-            get {
-                object obj = ResourceManager.GetObject("senkou_2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap senkou_3 {
-            get {
-                object obj = ResourceManager.GetObject("senkou_3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap syokudo {
-            get {
-                object obj = ResourceManager.GetObject("syokudo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("other_json", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
@@ -734,46 +268,6 @@ namespace team1.Properties {
         internal static string toshi_json {
             get {
                 return ResourceManager.GetString("toshi_json", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap tosi_1 {
-            get {
-                object obj = ResourceManager.GetObject("tosi_1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap tosi_2 {
-            get {
-                object obj = ResourceManager.GetObject("tosi_2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap tosi_3 {
-            get {
-                object obj = ResourceManager.GetObject("tosi_3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap tosi_4 {
-            get {
-                object obj = ResourceManager.GetObject("tosi_4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

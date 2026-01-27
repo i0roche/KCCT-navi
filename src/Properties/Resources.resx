@@ -118,169 +118,28 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="0A78D002-BD67-46A2-9763-FD8EEB751F32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\0A78D002-BD67-46A2-9763-FD8EEB751F32.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="denki_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\denki.1.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="denki_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\denki.2.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="denki_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\denki.3.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="denki_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\denki.4.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="densi_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\densi2.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="densi_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\densi1.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="densi_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\densi3.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="densi_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\densi4.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gakuseikaikan_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\gakuseikaikan1.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gakuseikaikan_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\gakuseikaikan2.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gakuseikaikan_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\gakuseikaikan3.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="honbutou_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\honbutou1.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="honbutou_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\honbutou2.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="info-center" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\info-center.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ippan_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\ippan1.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="library_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\library1.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="library_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\library2.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="map_notext_4K" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\map_notext_4K.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="map_text_4K" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\map_text_4K.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="senkou_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\senkou1.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="senkou_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\senkou2.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="senkou_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\senkou3.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="syokudo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\syokudo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ippan_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\ippan2.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ippan_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\ippan3.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ippan_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\ippan4.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ippan_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\ippan5.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ippan_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\ippan6.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="kagaku_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\kagaku1.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="kagaku_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\kagaku2.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="kagaku_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\kagaku3.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="kagaku_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\kagaku4.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="kikai_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\kikai1.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="kikai_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\kikai2.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="kikai_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\kikai3.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="kikai_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\kikai4.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="kougi_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\kougi1.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="kougi_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\kougi3.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="kougi_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\kougi4.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="koujyou_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\kikaikoujou.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="koujyou_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\haisuikoujou.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tosi_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\tosi2.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tosi_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\tosi3.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tosi_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\tosi4.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tosi_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\tosi1.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="kougi_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\kougi2.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="advanced_json" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\advanced.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="chem_json" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\chem.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="general_json" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\general.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="denshi_json" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\denshi.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="chem_json" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\chem.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="elec_json" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\elec.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="general_json" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\general.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="toshi_json" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\toshi.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="mech_json" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\mech.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="other_json" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\other.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>..\data\other.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="toshi_json" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\toshi.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="map" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\map.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
