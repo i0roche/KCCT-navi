@@ -73,14 +73,34 @@ namespace team1.Properties {
         /// <summary>
         ///   Looks up a localized string similar to [
         ///  {
-        ///    &quot;id&quot;: &quot;room_4f_chem_office_tech&quot;,
-        ///    &quot;name&quot;: &quot;技術職員室&quot;,
-        ///    &quot;type&quot;: &quot;office_tech&quot;,
-        ///    &quot;building&quot;: &quot;応用化学科棟&quot;,
-        ///    &quot;floor&quot;: 4,
-        ///    &quot;department&quot;: &quot;chem&quot;,
-        ///    &quot;tags&quot;: [&quot;技術職員室&quot;, &quot;応用化学科棟&quot;, &quot;応用化学科&quot;, &quot;chem&quot;, &quot;技術職員室&quot;]
+        ///    &quot;id&quot;: &quot;room_1f_advanced_lab_design_analysis&quot;,
+        ///    &quot;name&quot;: &quot;創造デザイン工房（解析・設計工房）&quot;,
+        ///    &quot;type&quot;: &quot;lab&quot;,
+        ///    &quot;building&quot;: &quot;専攻科棟&quot;,
+        ///    &quot;floor&quot;: 1,
+        ///    &quot;department&quot;: &quot;advanced&quot;,
+        ///    &quot;tags&quot;: [&quot;創造デザイン工房（解析・設計工房）&quot;, &quot;専攻科棟&quot;, &quot;専攻科&quot;, &quot;advanced&quot;, &quot;実験室&quot;]
         ///  },
+        ///  {
+        ///    &quot;id&quot;: &quot;room_1f_advanced_lab_design_modeling&quot;,
+        ///    &quot;name&quot;: &quot;創造デザイン工房（造形工房）&quot;,
+        ///    &quot;type&quot;: &quot;lab&quot;,
+        ///    &quot;building&quot;: &quot;専攻科棟&quot;,
+        ///    &quot;floor&quot;: 1,
+        ///    &quot;department&quot;: &quot;advanced&quot;,
+        ///    &quot;tags&quot;: [&quot;創造デザイン工房（造形工房）&quot;, &quot;専攻科棟&quot;, &quot;専攻科&quot;, &quot;advanced&quot;, &quot;実験室&quot;]
+        ///  },
+        ///  {
+        ///    &quot;id&quot;: &quot;roo [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string advanced_json {
+            get {
+                return ResourceManager.GetString("advanced_json", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [
         ///  {
         ///    &quot;id&quot;: &quot;room_1f_chem_lab_chem_eng_1&quot;,
         ///    &quot;name&quot;: &quot;化学工学実験室1&quot;,
@@ -92,7 +112,17 @@ namespace team1.Properties {
         ///  },
         ///  {
         ///    &quot;id&quot;: &quot;room_1f_chem_lab_physical_chem&quot;,
-        ///    &quot;name&quot;: &quot;物理化学実験室&quot; [rest of string was truncated]&quot;;.
+        ///    &quot;name&quot;: &quot;物理化学実験室&quot;,
+        ///    &quot;type&quot;: &quot;lab&quot;,
+        ///    &quot;building&quot;: &quot;応用化学科棟&quot;,
+        ///    &quot;floor&quot;: 1,
+        ///    &quot;department&quot;: &quot;chem&quot;,
+        ///    &quot;tags&quot;: [&quot;物理化学実験室&quot;, &quot;応用化学科棟&quot;, &quot;応用化学科&quot;, &quot;chem&quot;, &quot;実験室&quot;]
+        ///  },
+        ///  {
+        ///    &quot;id&quot;: &quot;room_1f_chem_lab_culture&quot;,
+        ///    &quot;name&quot;: &quot;培養実験室&quot;,
+        ///    &quot;t [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string chem_json {
             get {
@@ -142,15 +172,7 @@ namespace team1.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to [
-        ///  {
-        ///    &quot;id&quot;: &quot;room_2f_denshi_office_tech&quot;,
-        ///    &quot;name&quot;: &quot;技術職員室&quot;,
-        ///    &quot;type&quot;: &quot;office_tech&quot;,
-        ///    &quot;building&quot;: &quot;電子工学科棟&quot;,
-        ///    &quot;floor&quot;: 2,
-        ///    &quot;department&quot;: &quot;denshi&quot;,
-        ///    &quot;tags&quot;: [&quot;技術職員室&quot;, &quot;電子工学科棟&quot;, &quot;電子工学科&quot;, &quot;denshi&quot;, &quot;技術職員室&quot;]
-        ///  },
+        ///  
         ///  {
         ///    &quot;id&quot;: &quot;room_1f_denshi_lab_basic_electronics&quot;,
         ///    &quot;name&quot;: &quot;電子基礎実験室&quot;,
@@ -162,7 +184,15 @@ namespace team1.Properties {
         ///  },
         ///  {
         ///    &quot;id&quot;: &quot;room_1f_denshi_lab_device&quot;,
-        ///    &quot;name [rest of string was truncated]&quot;;.
+        ///    &quot;name&quot;: &quot;デバイス工学実験室（クリーンルーム）&quot;,
+        ///    &quot;type&quot;: &quot;lab&quot;,
+        ///    &quot;building&quot;: &quot;電子工学科棟&quot;,
+        ///    &quot;floor&quot;: 1,
+        ///    &quot;department&quot;: &quot;denshi&quot;,
+        ///    &quot;tags&quot;: [&quot;デバイス工学実験室（クリーンルーム）&quot;, &quot;電子工学科棟&quot;, &quot;電子工学科&quot;, &quot;denshi&quot;, &quot;実験室&quot;]
+        ///  },
+        ///  {
+        ///    &quot;id&quot;: &quot;room_1f_denshi_lab_ [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string denshi_json {
             get {
@@ -213,25 +243,25 @@ namespace team1.Properties {
         /// <summary>
         ///   Looks up a localized string similar to [
         ///  {
-        ///    &quot;id&quot;: &quot;room_2f_elec_office_tech&quot;,
+        ///    &quot;id&quot;: &quot;room_1f_elec_office_tech&quot;,
         ///    &quot;name&quot;: &quot;技術職員室&quot;,
         ///    &quot;type&quot;: &quot;office_tech&quot;,
         ///    &quot;building&quot;: &quot;電気工学科棟&quot;,
-        ///    &quot;floor&quot;: 2,
+        ///    &quot;floor&quot;: 1,
         ///    &quot;department&quot;: &quot;elec&quot;,
         ///    &quot;tags&quot;: [&quot;技術職員室&quot;, &quot;電気工学科棟&quot;, &quot;電気工学科&quot;, &quot;elec&quot;, &quot;技術職員室&quot;]
         ///  },
         ///  {
-        ///    &quot;id&quot;: &quot;room_2f_elec_lab_power_1&quot;,
+        ///    &quot;id&quot;: &quot;room_1f_elec_lab_power_1&quot;,
         ///    &quot;name&quot;: &quot;電力工学実験室1&quot;,
         ///    &quot;type&quot;: &quot;lab&quot;,
         ///    &quot;building&quot;: &quot;電気工学科棟&quot;,
-        ///    &quot;floor&quot;: 2,
+        ///    &quot;floor&quot;: 1,
         ///    &quot;department&quot;: &quot;elec&quot;,
         ///    &quot;tags&quot;: [&quot;電力工学実験室1&quot;, &quot;電気工学科棟&quot;, &quot;電気工学科&quot;, &quot;elec&quot;, &quot;実験室&quot;]
         ///  },
         ///  {
-        ///    &quot;id&quot;: &quot;room_2f_elec_lab_power_2&quot;,
+        ///    &quot;id&quot;: &quot;room_1f_elec_lab_power_2&quot;,
         ///    &quot;name&quot;: &quot;電力工学実験室2&quot;,
         ///    &quot;t [rest of string was truncated]&quot;;.
         /// </summary>
@@ -610,6 +640,35 @@ namespace team1.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to [
+        ///  {
+        ///    &quot;id&quot;: &quot;room_1f_advanced_lab_design_analysis&quot;,
+        ///    &quot;name&quot;: &quot;創造デザイン工房（解析・設計工房）&quot;,
+        ///    &quot;type&quot;: &quot;lab&quot;,
+        ///    &quot;building&quot;: &quot;専攻科棟&quot;,
+        ///    &quot;floor&quot;: 1,
+        ///    &quot;department&quot;: &quot;advanced&quot;,
+        ///    &quot;tags&quot;: [&quot;創造デザイン工房（解析・設計工房）&quot;, &quot;専攻科棟&quot;, &quot;専攻科&quot;, &quot;advanced&quot;, &quot;実験室&quot;]
+        ///  },
+        ///  {
+        ///    &quot;id&quot;: &quot;room_1f_advanced_lab_design_modeling&quot;,
+        ///    &quot;name&quot;: &quot;創造デザイン工房（造形工房）&quot;,
+        ///    &quot;type&quot;: &quot;lab&quot;,
+        ///    &quot;building&quot;: &quot;専攻科棟&quot;,
+        ///    &quot;floor&quot;: 1,
+        ///    &quot;department&quot;: &quot;advanced&quot;,
+        ///    &quot;tags&quot;: [&quot;創造デザイン工房（造形工房）&quot;, &quot;専攻科棟&quot;, &quot;専攻科&quot;, &quot;advanced&quot;, &quot;実験室&quot;]
+        ///  },
+        ///  {
+        ///    &quot;id&quot;: &quot;roo [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string other_json {
+            get {
+                return ResourceManager.GetString("other_json", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap senkou_1 {
@@ -651,15 +710,7 @@ namespace team1.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to [
-        ///  {
-        ///    &quot;id&quot;: &quot;room_3f_toshi_office_tech&quot;,
-        ///    &quot;name&quot;: &quot;技術職員室&quot;,
-        ///    &quot;type&quot;: &quot;office_tech&quot;,
-        ///    &quot;building&quot;: &quot;都市工学科棟&quot;,
-        ///    &quot;floor&quot;: 3,
-        ///    &quot;department&quot;: &quot;toshi&quot;,
-        ///    &quot;tags&quot;: [&quot;技術職員室&quot;, &quot;都市工学科棟&quot;, &quot;都市工学科&quot;, &quot;toshi&quot;, &quot;技術職員室&quot;]
-        ///  },
+        ///  
         ///  {
         ///    &quot;id&quot;: &quot;room_1f_toshi_facility_surveying&quot;,
         ///    &quot;name&quot;: &quot;測量準備室&quot;,
@@ -671,7 +722,16 @@ namespace team1.Properties {
         ///  },
         ///  {
         ///    &quot;id&quot;: &quot;room_1f_toshi_facility_surveying_2&quot;,
-        ///    &quot;name&quot;: &quot;測量 [rest of string was truncated]&quot;;.
+        ///    &quot;name&quot;: &quot;測量学実習室&quot;,
+        ///    &quot;type&quot;: &quot;facility&quot;,
+        ///    &quot;building&quot;: &quot;都市工学科棟&quot;,
+        ///    &quot;floor&quot;: 1,
+        ///    &quot;department&quot;: &quot;toshi&quot;,
+        ///    &quot;tags&quot;: [&quot;測量学実習室&quot;, &quot;都市工学科棟&quot;, &quot;都市工学科&quot;, &quot;toshi&quot;]
+        ///  },
+        ///  {
+        ///    &quot;id&quot;: &quot;room_1f_toshi_lab_material_1&quot;,
+        ///    &quot;name&quot;: &quot;材料実験室1 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string toshi_json {
             get {
