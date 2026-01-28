@@ -5,7 +5,7 @@
 ## 1. データ構造の基本方針
 
 - **ID (SVG & JSON共通):** 部屋・施設を一意に特定するキー。**スネークケース**（小文字と `_` ）で統一。
-- **属性データ (JSON):** 検索・表示用のデータはSVGに持たせず、すべて `data.json` で管理する。
+- **属性データ (JSON):** 検索・表示用のデータはSVGに持たせず、すべて `*.json` で管理する。
 - **座標データ (SVG):** 経路計算（A*）用の座標はSVGの円・線の座標をそのまま利用する。
 
 ---
@@ -50,33 +50,23 @@ A*アルゴリズムで上下階を繋いだり、特殊な目的地（トイレ
 | --- | --- | --- | --- |
 | **階段** | `stair_[名前]_[階]f` | `stair_main_1f / stair_west_2f` | **最重要。** 同名の1階と2階をプログラムで自動接続する。 |
 | **エレベーター** | `elv_[名前]_[階]f` | `elv_main_1f` | 階段と同様に縦移動の接続用。 |
-| **トイレ** | `wc_[階]f_[性別]_[場所]` | `wc_1f_men_west / wc_1f_multi_main` | 性別: `men`, `women`, `multi`。 |
-| **出入口** | `ent_[階]f_[名前]` | `ent_1f_main / ent_2f_bridge` | 外部や渡り廊下との接続点。 |
-
-### 3-3. 非表示・論理ノード (Hidden Logic Nodes)
-
-地図上には表示されない、経路計算用の通過点。
-
-| 種類 | ルール | 役割 |
-| --- | --- | --- |
-| **通路の分岐点** | `node_[階]f_[連番]` | 廊下の角、交差点に配置。 |
-| **ドア前ノード** | `door_[階]f_[連番]` | 部屋の中から廊下へ出るための中継点。 |
+| **トイレ** | `wc_[階]f_[性別]_[場所]` | `wc_1f_men_west / wc_1f_multi_main` | 性別: `men`, `women`, `multi` |
 
 ---
 
 ## 4. JSON データスキーマ (JSON Schema)
 
-`data.json` の各要素の定義。
+`*.json` の各要素の定義。
 
 ```json
 {
-  "id": "room_4f_mech_hr_m1a",  // 【必須】SVGのIDと完全一致させる
-  "name": "M1A ホームルーム",      // 【必須】アプリ表示名
-  "type": "classroom",          // 種類 (classroom, lab, facility, office_tech)
-  "building": "一般科A棟",        // 建物名
-  "floor": 2,                   // 階数 (int)
-  "department": "mech",         // 学科コード
-  "tags": [                     // 検索ヒット用キーワード
+  "Id": "room_4f_mech_hr_m1a",  // SVGのIDと完全一致させる
+  "Name": "M1A ホームルーム",    // アプリ表示名
+  "Type": "classroom",          // 種類 (classroom, lab, facility, office_tech)
+  "Building": "一般科A棟",       // 建物名
+  "Floor": 2,                   // 階数 (int)
+  "Department": "mech",         // 学科コード
+  "Tags": [                     // 検索ヒット用キーワード
     "HR",
     "M1A",
     "機械工学科",
