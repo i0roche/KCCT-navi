@@ -136,10 +136,19 @@
   <data name="mech_json" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\mech.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="other_json" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\data\other.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="map" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\map.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="factory_json" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\factory.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="advance_json" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\advanced.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="common_json" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\common.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="facilities_json" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\data\facilities.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

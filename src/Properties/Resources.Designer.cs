@@ -22,7 +22,7 @@ namespace team1.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace team1.Properties {
         ///   このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("team1.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace team1.Properties {
         ///   現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,61 +61,80 @@ namespace team1.Properties {
         }
         
         /// <summary>
+        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        /// </summary>
+        public static byte[] advance_json {
+            get {
+                object obj = ResourceManager.GetObject("advance_json", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   [
         ///  {
-        ///    &quot;id&quot;: &quot;room_1f_chem_lab_chem_eng_1&quot;,
-        ///    &quot;name&quot;: &quot;化学工学実験室1&quot;,
-        ///    &quot;type&quot;: &quot;lab&quot;,
-        ///    &quot;building&quot;: &quot;応用化学科棟&quot;,
-        ///    &quot;floor&quot;: 1,
-        ///    &quot;department&quot;: &quot;chem&quot;,
-        ///    &quot;tags&quot;: [&quot;化学工学実験室1&quot;, &quot;応用化学科棟&quot;, &quot;応用化学科&quot;, &quot;chem&quot;, &quot;実験室&quot;]
+        ///    &quot;Id&quot;: &quot;room_1f_chem_lab_chem_eng_1&quot;,
+        ///    &quot;Name&quot;: &quot;化学工学実験室1&quot;,
+        ///    &quot;Type&quot;: &quot;lab&quot;,
+        ///    &quot;Building&quot;: &quot;応用化学科棟&quot;,
+        ///    &quot;Floor&quot;: 1,
+        ///    &quot;Department&quot;: &quot;chem&quot;,
+        ///    &quot;Tags&quot;: [&quot;化学工学実験室1&quot;, &quot;応用化学科棟&quot;, &quot;応用化学科&quot;, &quot;chem&quot;, &quot;実験室&quot;]
         ///  },
         ///  {
-        ///    &quot;id&quot;: &quot;room_1f_chem_lab_physical_chem&quot;,
-        ///    &quot;name&quot;: &quot;物理化学実験室&quot;,
-        ///    &quot;type&quot;: &quot;lab&quot;,
-        ///    &quot;building&quot;: &quot;応用化学科棟&quot;,
-        ///    &quot;floor&quot;: 1,
-        ///    &quot;department&quot;: &quot;chem&quot;,
-        ///    &quot;tags&quot;: [&quot;物理化学実験室&quot;, &quot;応用化学科棟&quot;, &quot;応用化学科&quot;, &quot;chem&quot;, &quot;実験室&quot;]
+        ///    &quot;Id&quot;: &quot;room_1f_chem_lab_physical_chem&quot;,
+        ///    &quot;Name&quot;: &quot;物理化学実験室&quot;,
+        ///    &quot;Type&quot;: &quot;lab&quot;,
+        ///    &quot;Building&quot;: &quot;応用化学科棟&quot;,
+        ///    &quot;Floor&quot;: 1,
+        ///    &quot;Department&quot;: &quot;chem&quot;,
+        ///    &quot;Tags&quot;: [&quot;物理化学実験室&quot;, &quot;応用化学科棟&quot;, &quot;応用化学科&quot;, &quot;chem&quot;, &quot;実験室&quot;]
         ///  },
         ///  {
-        ///    &quot;id&quot;: &quot;room_1f_chem_lab_culture&quot;,
-        ///    &quot;name&quot;: &quot;培養実験室&quot;,
-        ///    &quot;t [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
+        ///    &quot;Id&quot;: &quot;room_1f_chem_lab_culture&quot;,
+        ///    &quot;Name&quot;: &quot;培養実験室&quot;,
+        ///    &quot;T [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        internal static string chem_json {
+        public static string chem_json {
             get {
                 return ResourceManager.GetString("chem_json", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   [
-        ///  
-        ///  {
-        ///    &quot;id&quot;: &quot;room_1f_denshi_lab_basic_electronics&quot;,
-        ///    &quot;name&quot;: &quot;電子基礎実験室&quot;,
-        ///    &quot;type&quot;: &quot;lab&quot;,
-        ///    &quot;building&quot;: &quot;電子工学科棟&quot;,
-        ///    &quot;floor&quot;: 1,
-        ///    &quot;department&quot;: &quot;denshi&quot;,
-        ///    &quot;tags&quot;: [&quot;電子基礎実験室&quot;, &quot;電子工学科棟&quot;, &quot;電子工学科&quot;, &quot;denshi&quot;, &quot;実験室&quot;]
-        ///  },
-        ///  {
-        ///    &quot;id&quot;: &quot;room_1f_denshi_lab_device&quot;,
-        ///    &quot;name&quot;: &quot;デバイス工学実験室（クリーンルーム）&quot;,
-        ///    &quot;type&quot;: &quot;lab&quot;,
-        ///    &quot;building&quot;: &quot;電子工学科棟&quot;,
-        ///    &quot;floor&quot;: 1,
-        ///    &quot;department&quot;: &quot;denshi&quot;,
-        ///    &quot;tags&quot;: [&quot;デバイス工学実験室（クリーンルーム）&quot;, &quot;電子工学科棟&quot;, &quot;電子工学科&quot;, &quot;denshi&quot;, &quot;実験室&quot;]
-        ///  },
-        ///  {
-        ///    &quot;id&quot;: &quot;room_1f_denshi_lab_ [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
+        ///   型 System.Byte[] のローカライズされたリソースを検索します。
         /// </summary>
-        internal static string denshi_json {
+        public static byte[] common_json {
+            get {
+                object obj = ResourceManager.GetObject("common_json", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   [
+        ///  {
+        ///    &quot;Id&quot;: &quot;room_1f_denshi_lab_basic_electronics&quot;,
+        ///    &quot;Name&quot;: &quot;電子基礎実験室&quot;,
+        ///    &quot;Type&quot;: &quot;lab&quot;,
+        ///    &quot;Building&quot;: &quot;電子工学科棟&quot;,
+        ///    &quot;Floor&quot;: 1,
+        ///    &quot;Department&quot;: &quot;denshi&quot;,
+        ///    &quot;Tags&quot;: [&quot;電子基礎実験室&quot;, &quot;電子工学科棟&quot;, &quot;電子工学科&quot;, &quot;denshi&quot;, &quot;実験室&quot;]
+        ///  },
+        ///  {
+        ///    &quot;Id&quot;: &quot;room_1f_denshi_lab_device&quot;,
+        ///    &quot;Name&quot;: &quot;デバイス工学実験室（クリーンルーム）&quot;,
+        ///    &quot;Type&quot;: &quot;lab&quot;,
+        ///    &quot;Building&quot;: &quot;電子工学科棟&quot;,
+        ///    &quot;Floor&quot;: 1,
+        ///    &quot;Department&quot;: &quot;denshi&quot;,
+        ///    &quot;Tags&quot;: [&quot;デバイス工学実験室（クリーンルーム）&quot;, &quot;電子工学科棟&quot;, &quot;電子工学科&quot;, &quot;denshi&quot;, &quot;実験室&quot;]
+        ///  },
+        ///  {
+        ///    &quot;Id&quot;: &quot;room_1f_denshi_lab_fro [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string denshi_json {
             get {
                 return ResourceManager.GetString("denshi_json", resourceCulture);
             }
@@ -124,66 +143,80 @@ namespace team1.Properties {
         /// <summary>
         ///   [
         ///  {
-        ///    &quot;id&quot;: &quot;room_1f_elec_office_tech&quot;,
-        ///    &quot;name&quot;: &quot;技術職員室&quot;,
-        ///    &quot;type&quot;: &quot;office_tech&quot;,
-        ///    &quot;building&quot;: &quot;電気工学科棟&quot;,
-        ///    &quot;floor&quot;: 1,
-        ///    &quot;department&quot;: &quot;elec&quot;,
-        ///    &quot;tags&quot;: [&quot;技術職員室&quot;, &quot;電気工学科棟&quot;, &quot;電気工学科&quot;, &quot;elec&quot;, &quot;技術職員室&quot;]
+        ///    &quot;Id&quot;: &quot;room_1f_elec_office_tech&quot;,
+        ///    &quot;Name&quot;: &quot;技術職員室&quot;,
+        ///    &quot;Type&quot;: &quot;office_tech&quot;,
+        ///    &quot;Building&quot;: &quot;電気工学科棟&quot;,
+        ///    &quot;Floor&quot;: 1,
+        ///    &quot;Department&quot;: &quot;elec&quot;,
+        ///    &quot;Tags&quot;: [&quot;技術職員室&quot;, &quot;電気工学科棟&quot;, &quot;電気工学科&quot;, &quot;elec&quot;, &quot;技術職員室&quot;]
         ///  },
         ///  {
-        ///    &quot;id&quot;: &quot;room_1f_elec_lab_power_1&quot;,
-        ///    &quot;name&quot;: &quot;電力工学実験室1&quot;,
-        ///    &quot;type&quot;: &quot;lab&quot;,
-        ///    &quot;building&quot;: &quot;電気工学科棟&quot;,
-        ///    &quot;floor&quot;: 1,
-        ///    &quot;department&quot;: &quot;elec&quot;,
-        ///    &quot;tags&quot;: [&quot;電力工学実験室1&quot;, &quot;電気工学科棟&quot;, &quot;電気工学科&quot;, &quot;elec&quot;, &quot;実験室&quot;]
+        ///    &quot;Id&quot;: &quot;room_1f_elec_lab_power_1&quot;,
+        ///    &quot;Name&quot;: &quot;電力工学実験室1&quot;,
+        ///    &quot;Type&quot;: &quot;lab&quot;,
+        ///    &quot;Building&quot;: &quot;電気工学科棟&quot;,
+        ///    &quot;Floor&quot;: 1,
+        ///    &quot;Department&quot;: &quot;elec&quot;,
+        ///    &quot;Tags&quot;: [&quot;電力工学実験室1&quot;, &quot;電気工学科棟&quot;, &quot;電気工学科&quot;, &quot;elec&quot;, &quot;実験室&quot;]
         ///  },
         ///  {
-        ///    &quot;id&quot;: &quot;room_1f_elec_lab_power_2&quot;,
-        ///    &quot;name&quot;: &quot;電力工学実験室2&quot;,
-        ///    &quot;t [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
+        ///    &quot;Id&quot;: &quot;room_1f_elec_lab_power_2&quot;,
+        ///    &quot;Name&quot;: &quot;電力工学実験室2&quot;,
+        ///    &quot;T [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        internal static string elec_json {
+        public static string elec_json {
             get {
                 return ResourceManager.GetString("elec_json", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        /// </summary>
+        public static byte[] facilities_json {
+            get {
+                object obj = ResourceManager.GetObject("facilities_json", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        /// </summary>
+        public static byte[] factory_json {
+            get {
+                object obj = ResourceManager.GetObject("factory_json", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   [
         ///  {
-        ///    &quot;id&quot;: &quot;room_1f_general_classroom_art&quot;,
-        ///    &quot;name&quot;: &quot;芸術教室&quot;,
-        ///    &quot;type&quot;: &quot;classroom&quot;,
-        ///    &quot;building&quot;: &quot;一般科A棟&quot;,
-        ///    &quot;floor&quot;: 1,
-        ///    &quot;department&quot;: &quot;general&quot;,
-        ///    &quot;tags&quot;: [
-        ///      &quot;芸術教室&quot;,
-        ///      &quot;一般科A棟&quot;,
-        ///      &quot;一般科&quot;
-        ///    ]
+        ///    &quot;Id&quot;: &quot;room_1f_general_classroom_art&quot;,
+        ///    &quot;Name&quot;: &quot;芸術教室&quot;,
+        ///    &quot;Type&quot;: &quot;classroom&quot;,
+        ///    &quot;Building&quot;: &quot;一般科A棟&quot;,
+        ///    &quot;Floor&quot;: 1,
+        ///    &quot;Department&quot;: &quot;general&quot;,
+        ///    &quot;Tags&quot;: [&quot;芸術教室&quot;, &quot;一般科A棟&quot;, &quot;一般科&quot;]
         ///  },
         ///  {
-        ///    &quot;id&quot;: &quot;room_1f_general_facility_rokushin&quot;,
-        ///    &quot;name&quot;: &quot;六神ホール&quot;,
-        ///    &quot;type&quot;: &quot;facility&quot;,
-        ///    &quot;building&quot;: &quot;一般科A棟&quot;,
-        ///    &quot;floor&quot;: 1,
-        ///    &quot;department&quot;: &quot;general&quot;,
-        ///    &quot;tags&quot;: [
-        ///      &quot;六神ホール&quot;,
-        ///      &quot;一般科A棟&quot;,
-        ///      &quot;一般科&quot;
-        ///    ]
+        ///    &quot;Id&quot;: &quot;room_1f_general_facility_rokushin&quot;,
+        ///    &quot;Name&quot;: &quot;六神ホール&quot;,
+        ///    &quot;Type&quot;: &quot;facility&quot;,
+        ///    &quot;Building&quot;: &quot;一般科A棟&quot;,
+        ///    &quot;Floor&quot;: 1,
+        ///    &quot;Department&quot;: &quot;general&quot;,
+        ///    &quot;Tags&quot;: [&quot;六神ホール&quot;, &quot;一般科A棟&quot;, &quot;一般科&quot;]
         ///  },
         ///  {
-        ///    &quot;id&quot;: &quot;room_1f_general_facility_testfield [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
+        ///    &quot;Id&quot;: &quot;room_1f_general_facility_testfield&quot;,
+        ///    &quot;Name&quot;: &quot;ものづくりテストフィールド&quot;,
+        ///    &quot;Type&quot;: &quot;fac [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        internal static string general_json {
+        public static string general_json {
             get {
                 return ResourceManager.GetString("general_json", resourceCulture);
             }
@@ -192,7 +225,7 @@ namespace team1.Properties {
         /// <summary>
         ///   型 System.Byte[] のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] map {
+        public static byte[] map {
             get {
                 object obj = ResourceManager.GetObject("map", resourceCulture);
                 return ((byte[])(obj));
@@ -202,70 +235,60 @@ namespace team1.Properties {
         /// <summary>
         ///   [
         ///  {
-        ///    &quot;id&quot;: &quot;room_1f_mech_office_tech&quot;,
-        ///    &quot;name&quot;: &quot;技術職員室&quot;,
-        ///    &quot;type&quot;: &quot;office_tech&quot;,
-        ///    &quot;building&quot;: &quot;機械工学科実験実習棟&quot;,
-        ///    &quot;floor&quot;: 1,
-        ///    &quot;department&quot;: &quot;mech&quot;,
-        ///    &quot;tags&quot;: [&quot;技術職員室&quot;, &quot;機械工学科実験実習棟&quot;, &quot;機械工学科&quot;, &quot;mech&quot;]
+        ///    &quot;Id&quot;: &quot;room_1f_mech_office_tech&quot;,
+        ///    &quot;Name&quot;: &quot;技術職員室&quot;,
+        ///    &quot;Type&quot;: &quot;office_tech&quot;,
+        ///    &quot;Building&quot;: &quot;機械工学科実験実習棟&quot;,
+        ///    &quot;Floor&quot;: 1,
+        ///    &quot;Department&quot;: &quot;mech&quot;,
+        ///    &quot;Tags&quot;: [&quot;技術職員室&quot;, &quot;機械工学科実験実習棟&quot;, &quot;機械工学科&quot;, &quot;mech&quot;]
         ///  },
         ///  {
-        ///    &quot;id&quot;: &quot;room_1f_mech_lab_energy&quot;,
-        ///    &quot;name&quot;: &quot;エネルギー実験室&quot;,
-        ///    &quot;type&quot;: &quot;lab&quot;,
-        ///    &quot;building&quot;: &quot;機械工学科棟&quot;,
-        ///    &quot;floor&quot;: 1,
-        ///    &quot;department&quot;: &quot;mech&quot;,
-        ///    &quot;tags&quot;: [&quot;エネルギー実験室&quot;, &quot;機械工学科棟&quot;, &quot;機械工学科&quot;, &quot;mech&quot;, &quot;実験室&quot;]
+        ///    &quot;Id&quot;: &quot;room_1f_mech_lab_energy&quot;,
+        ///    &quot;Name&quot;: &quot;エネルギー実験室&quot;,
+        ///    &quot;Type&quot;: &quot;lab&quot;,
+        ///    &quot;Building&quot;: &quot;機械工学科棟&quot;,
+        ///    &quot;Floor&quot;: 1,
+        ///    &quot;Department&quot;: &quot;mech&quot;,
+        ///    &quot;Tags&quot;: [&quot;エネルギー実験室&quot;, &quot;機械工学科棟&quot;, &quot;機械工学科&quot;, &quot;mech&quot;, &quot;実験室&quot;]
         ///  },
         ///  {
-        ///    &quot;id&quot;: &quot;room_1f_mech_facility_production_3&quot;,
-        ///    &quot;name&quot;: &quot;生産加工3&quot;,
+        ///    &quot;Id&quot;: &quot;room_1f_mech_facility_production_3&quot;,
+        ///    &quot;Name&quot;: &quot;生産加工3&quot;,
         ///  [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        internal static string mech_json {
+        public static string mech_json {
             get {
                 return ResourceManager.GetString("mech_json", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static byte[] other_json {
-            get {
-                object obj = ResourceManager.GetObject("other_json", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
         ///   [
-        ///  
         ///  {
-        ///    &quot;id&quot;: &quot;room_1f_toshi_facility_surveying&quot;,
-        ///    &quot;name&quot;: &quot;測量準備室&quot;,
-        ///    &quot;type&quot;: &quot;facility&quot;,
-        ///    &quot;building&quot;: &quot;都市工学科棟&quot;,
-        ///    &quot;floor&quot;: 1,
-        ///    &quot;department&quot;: &quot;toshi&quot;,
-        ///    &quot;tags&quot;: [&quot;測量準備室&quot;, &quot;都市工学科棟&quot;, &quot;都市工学科&quot;, &quot;toshi&quot;]
+        ///    &quot;Id&quot;: &quot;room_1f_toshi_facility_surveying&quot;,
+        ///    &quot;Name&quot;: &quot;測量準備室&quot;,
+        ///    &quot;Type&quot;: &quot;facility&quot;,
+        ///    &quot;Building&quot;: &quot;都市工学科棟&quot;,
+        ///    &quot;Floor&quot;: 1,
+        ///    &quot;Department&quot;: &quot;toshi&quot;,
+        ///    &quot;Tags&quot;: [&quot;測量準備室&quot;, &quot;都市工学科棟&quot;, &quot;都市工学科&quot;, &quot;toshi&quot;]
         ///  },
         ///  {
-        ///    &quot;id&quot;: &quot;room_1f_toshi_facility_surveying_2&quot;,
-        ///    &quot;name&quot;: &quot;測量学実習室&quot;,
-        ///    &quot;type&quot;: &quot;facility&quot;,
-        ///    &quot;building&quot;: &quot;都市工学科棟&quot;,
-        ///    &quot;floor&quot;: 1,
-        ///    &quot;department&quot;: &quot;toshi&quot;,
-        ///    &quot;tags&quot;: [&quot;測量学実習室&quot;, &quot;都市工学科棟&quot;, &quot;都市工学科&quot;, &quot;toshi&quot;]
+        ///    &quot;Id&quot;: &quot;room_1f_toshi_facility_surveying_2&quot;,
+        ///    &quot;Name&quot;: &quot;測量学実習室&quot;,
+        ///    &quot;Type&quot;: &quot;facility&quot;,
+        ///    &quot;Building&quot;: &quot;都市工学科棟&quot;,
+        ///    &quot;Floor&quot;: 1,
+        ///    &quot;Department&quot;: &quot;toshi&quot;,
+        ///    &quot;Tags&quot;: [&quot;測量学実習室&quot;, &quot;都市工学科棟&quot;, &quot;都市工学科&quot;, &quot;toshi&quot;]
         ///  },
         ///  {
-        ///    &quot;id&quot;: &quot;room_1f_toshi_lab_material_1&quot;,
-        ///    &quot;name&quot;: &quot;材料実験室1 [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
+        ///    &quot;Id&quot;: &quot;room_1f_toshi_lab_material_1&quot;,
+        ///    &quot;Name&quot;: &quot;材料実験室1&quot;,
+        /// [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        internal static string toshi_json {
+        public static string toshi_json {
             get {
                 return ResourceManager.GetString("toshi_json", resourceCulture);
             }
