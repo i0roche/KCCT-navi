@@ -1,237 +1,281 @@
 [
-  
   {
-    "id": "room_1f_toshi_facility_surveying",
-    "name": "測量準備室",
-    "type": "facility",
-    "building": "都市工学科棟",
-    "floor": 1,
-    "department": "toshi",
-    "tags": ["測量準備室", "都市工学科棟", "都市工学科", "toshi"]
+    "Id": "room_1f_toshi_facility_surveying",
+    "Name": "測量準備室",
+    "Type": "facility",
+    "Building": "都市工学科棟",
+    "Floor": 1,
+    "Department": "toshi",
+    "Tags": ["測量準備室", "都市工学科棟", "都市工学科", "toshi"]
   },
   {
-    "id": "room_1f_toshi_facility_surveying_2",
-    "name": "測量学実習室",
-    "type": "facility",
-    "building": "都市工学科棟",
-    "floor": 1,
-    "department": "toshi",
-    "tags": ["測量学実習室", "都市工学科棟", "都市工学科", "toshi"]
+    "Id": "room_1f_toshi_facility_surveying_2",
+    "Name": "測量学実習室",
+    "Type": "facility",
+    "Building": "都市工学科棟",
+    "Floor": 1,
+    "Department": "toshi",
+    "Tags": ["測量学実習室", "都市工学科棟", "都市工学科", "toshi"]
   },
   {
-    "id": "room_1f_toshi_lab_material_1",
-    "name": "材料実験室1",
-    "type": "lab",
-    "building": "都市工学科棟",
-    "floor": 1,
-    "department": "toshi",
-    "tags": ["材料実験室1", "都市工学科棟", "都市工学科", "toshi", "実験室"]
+    "Id": "room_1f_toshi_lab_material_1",
+    "Name": "材料実験室1",
+    "Type": "lab",
+    "Building": "都市工学科棟",
+    "Floor": 1,
+    "Department": "toshi",
+    "Tags": ["材料実験室1", "都市工学科棟", "都市工学科", "toshi", "実験室"]
   },
   {
-    "id": "room_1f_toshi_lab_structure",
-    "name": "構造実験室",
-    "type": "lab",
-    "building": "都市工学科棟",
-    "floor": 1,
-    "department": "toshi",
-    "tags": ["構造実験室", "都市工学科棟", "都市工学科", "toshi", "実験室"]
+    "Id": "room_1f_toshi_lab_structure",
+    "Name": "構造実験室",
+    "Type": "lab",
+    "Building": "都市工学科棟",
+    "Floor": 1,
+    "Department": "toshi",
+    "Tags": ["構造実験室", "都市工学科棟", "都市工学科", "toshi", "実験室"]
   },
   {
-    "id": "room_2f_toshi_lab_material_2",
-    "name": "材料実験室2",
-    "type": "lab",
-    "building": "都市工学科棟",
-    "floor": 2,
-    "department": "toshi",
-    "tags": ["材料実験室2", "都市工学科棟", "都市工学科", "toshi", "実験室"]
+    "Id": "room_1f_toshi_lab_hydraulics",
+    "Name": "水理実験室",
+    "Type": "lab",
+    "Building": "実験廃水処理施設棟",
+    "Floor": 1,
+    "Department": "toshi",
+    "Tags": ["水理実験室", "実験廃水処理施設棟", "都市工学科", "toshi", "実験室"]
   },
   {
-    "id": "room_2f_toshi_lab_soil",
-    "name": "土質工学実験室",
-    "type": "lab",
-    "building": "都市工学科棟",
-    "floor": 2,
-    "department": "toshi",
-    "tags": ["土質工学実験室", "都市工学科棟", "都市工学科", "toshi", "実験室"]
+    "Id": "room_2f_toshi_lab_material_2",
+    "Name": "材料実験室2",
+    "Type": "lab",
+    "Building": "都市工学科棟",
+    "Floor": 2,
+    "Department": "toshi",
+    "Tags": ["材料実験室2", "都市工学科棟", "都市工学科", "toshi", "実験室"]
   },
   {
-    "id": "room_2f_toshi_lab_sanitary",
-    "name": "衛生工学実験室",
-    "type": "lab",
-    "building": "都市工学科棟",
-    "floor": 2,
-    "department": "toshi",
-    "tags": ["衛生工学実験室", "都市工学科棟", "都市工学科", "toshi", "実験室"]
+    "Id": "room_2f_toshi_lab_soil",
+    "Name": "土質工学実験室",
+    "Type": "lab",
+    "Building": "都市工学科棟",
+    "Floor": 2,
+    "Department": "toshi",
+    "Tags": ["土質工学実験室", "都市工学科棟", "都市工学科", "toshi", "実験室"]
   },
   {
-    "id": "room_3f_toshi_office_tech",
-    "name": "技術職員室",
-    "type": "office_tech",
-    "building": "都市工学科棟",
-    "floor": 3,
-    "department": "toshi",
-    "tags": ["技術職員室", "都市工学科棟", "都市工学科", "toshi", "技術職員室"]
+    "Id": "room_2f_toshi_lab_sanitary",
+    "Name": "衛生工学実験室",
+    "Type": "lab",
+    "Building": "都市工学科棟",
+    "Floor": 2,
+    "Department": "toshi",
+    "Tags": ["衛生工学実験室", "都市工学科棟", "都市工学科", "toshi", "実験室"]
   },
   {
-    "id": "room_3f_toshi_facility_meeting",
-    "name": "会議室",
-    "type": "facility",
-    "building": "都市工学科棟",
-    "floor": 3,
-    "department": "toshi",
-    "tags": ["会議室", "都市工学科棟", "都市工学科", "toshi"]
+    "Id": "room_2f_toshi_lab_imai",
+    "Name": "今井 研究室",
+    "Type": "lab",
+    "Building": "都市工学科棟",
+    "Floor": 2,
+    "Department": "toshi",
+    "Tags": ["今井 研究室", "都市工学科棟", "都市工学科", "toshi", "研究室", "今井"]
   },
   {
-    "id": "room_4f_toshi_classroom_classroom",
-    "name": "小演習室",
-    "type": "classroom",
-    "building": "都市工学科棟",
-    "floor": 4,
-    "department": "toshi",
-    "tags": ["小演習室", "都市工学科棟", "都市工学科", "toshi"]
+    "Id": "room_2f_toshi_lab_nonami",
+    "Name": "野並 研究室",
+    "Type": "lab",
+    "Building": "都市工学科棟",
+    "Floor": 2,
+    "Department": "toshi",
+    "Tags": ["野並 研究室", "都市工学科棟", "都市工学科", "toshi", "研究室", "野並"]
   },
   {
-    "id": "room_4f_toshi_lab_planning",
-    "name": "計画学実験室",
-    "type": "lab",
-    "building": "都市工学科棟",
-    "floor": 4,
-    "department": "toshi",
-    "tags": ["計画学実験室", "都市工学科棟", "都市工学科", "toshi", "実験室"]
+    "Id": "room_2f_toshi_hr_s3",
+    "Name": "S3 ホームルーム",
+    "Type": "classroom",
+    "Building": "一般科A棟",
+    "Floor": 2,
+    "Department": "toshi",
+    "Tags": ["S3 ホームルーム", "一般科A棟", "一般科", "HR"]
   },
   {
-    "id": "room_4f_toshi_facility_drawing",
-    "name": "製図室",
-    "type": "facility",
-    "building": "都市工学科棟",
-    "floor": 4,
-    "department": "toshi",
-    "tags": ["製図室", "都市工学科棟", "都市工学科", "toshi"]
+    "Id": "room_3f_toshi_office_tech",
+    "Name": "技術職員室",
+    "Type": "office_tech",
+    "Building": "都市工学科棟",
+    "Floor": 3,
+    "Department": "toshi",
+    "Tags": ["技術職員室", "都市工学科棟", "都市工学科", "toshi", "技術職員室"]
   },
   {
-    "id": "room_4f_toshi_facility_info_proc",
-    "name": "情報処理室",
-    "type": "facility",
-    "building": "都市工学科棟",
-    "floor": 4,
-    "department": "toshi",
-    "tags": ["情報処理室", "都市工学科棟", "都市工学科", "toshi"]
+    "Id": "room_3f_toshi_facility_meeting",
+    "Name": "会議室",
+    "Type": "facility",
+    "Building": "都市工学科棟",
+    "Floor": 3,
+    "Department": "toshi",
+    "Tags": ["会議室", "都市工学科棟", "都市工学科", "toshi"]
   },
   {
-    "id": "room_4f_toshi_classroom_classroom_2",
-    "name": "演習室",
-    "type": "classroom",
-    "building": "都市工学科棟",
-    "floor": 4,
-    "department": "toshi",
-    "tags": ["演習室", "都市工学科棟", "都市工学科", "toshi"]
+    "Id": "room_3f_toshi_lab_uno",
+    "Name": "宇野 研究室",
+    "Type": "lab",
+    "Building": "都市工学科棟",
+    "Floor": 3,
+    "Department": "toshi",
+    "Tags": ["宇野 研究室", "都市工学科棟", "都市工学科", "toshi", "研究室", "宇野"]
   },
   {
-    "id": "room_4f_toshi_facility_meeting_4",
-    "name": "4階会議室",
-    "type": "facility",
-    "building": "都市工学科棟",
-    "floor": 4,
-    "department": "toshi",
-    "tags": ["4階会議室", "都市工学科棟", "都市工学科", "toshi"]
+    "Id": "room_3f_toshi_lab_mizukoshi",
+    "Name": "水越 研究室",
+    "Type": "lab",
+    "Building": "都市工学科棟",
+    "Floor": 3,
+    "Department": "toshi",
+    "Tags": ["水越 研究室", "都市工学科棟", "都市工学科", "toshi", "研究室", "水越"]
   },
   {
-    "id": "room_1f_toshi_lab_hydraulics",
-    "name": "水理実験室",
-    "type": "lab",
-    "building": "実験廃水処理施設棟",
-    "floor": 1,
-    "department": "toshi",
-    "tags": ["水理実験室", "実験廃水処理施設棟", "都市工学科", "toshi", "実験室"]
+    "Id": "room_3f_toshi_lab_torii",
+    "Name": "鳥居 研究室",
+    "Type": "lab",
+    "Building": "都市工学科棟",
+    "Floor": 3,
+    "Department": "toshi",
+    "Tags": ["鳥居 研究室", "都市工学科棟", "都市工学科", "toshi", "研究室", "鳥居"]
   },
   {
-    "id": "room_2f_toshi_lab_imai",
-    "name": "今井 研究室",
-    "type": "lab",
-    "building": "都市工学科棟",
-    "floor": 2,
-    "department": "toshi",
-    "tags": ["今井 研究室", "都市工学科棟", "都市工学科", "toshi", "研究室", "今井"]
+    "Id": "room_3f_toshi_lab_kozuka",
+    "Name": "小塚 研究室",
+    "Type": "lab",
+    "Building": "都市工学科棟",
+    "Floor": 3,
+    "Department": "toshi",
+    "Tags": ["小塚 研究室", "都市工学科棟", "都市工学科", "toshi", "研究室", "小塚"]
   },
   {
-    "id": "room_2f_toshi_lab_nonami",
-    "name": "野並 研究室",
-    "type": "lab",
-    "building": "都市工学科棟",
-    "floor": 2,
-    "department": "toshi",
-    "tags": ["野並 研究室", "都市工学科棟", "都市工学科", "toshi", "研究室", "野並"]
+    "Id": "room_3f_toshi_lab_ihara",
+    "Name": "伊原 研究室",
+    "Type": "lab",
+    "Building": "都市工学科棟",
+    "Floor": 3,
+    "Department": "toshi",
+    "Tags": ["伊原 研究室", "都市工学科棟", "都市工学科", "toshi", "研究室", "伊原"]
   },
   {
-    "id": "room_3f_toshi_lab_uno",
-    "name": "宇野 研究室",
-    "type": "lab",
-    "building": "都市工学科棟",
-    "floor": 3,
-    "department": "toshi",
-    "tags": ["宇野 研究室", "都市工学科棟", "都市工学科", "toshi", "研究室", "宇野"]
+    "Id": "room_3f_toshi_lab_kakiki",
+    "Name": "柿木 研究室",
+    "Type": "lab",
+    "Building": "都市工学科棟",
+    "Floor": 3,
+    "Department": "toshi",
+    "Tags": ["柿木 研究室", "都市工学科棟", "都市工学科", "toshi", "研究室", "柿木"]
   },
   {
-    "id": "room_3f_toshi_lab_mizukoshi",
-    "name": "水越 研究室",
-    "type": "lab",
-    "building": "都市工学科棟",
-    "floor": 3,
-    "department": "toshi",
-    "tags": ["水越 研究室", "都市工学科棟", "都市工学科", "toshi", "研究室", "水越"]
+    "Id": "room_3f_toshi_lab_kaminaka",
+    "Name": "上中 研究室",
+    "Type": "lab",
+    "Building": "都市工学科棟",
+    "Floor": 3,
+    "Department": "toshi",
+    "Tags": ["上中 研究室", "都市工学科棟", "都市工学科", "toshi", "研究室", "上中"]
   },
   {
-    "id": "room_3f_toshi_lab_torii",
-    "name": "鳥居 研究室",
-    "type": "lab",
-    "building": "都市工学科棟",
-    "floor": 3,
-    "department": "toshi",
-    "tags": ["鳥居 研究室", "都市工学科棟", "都市工学科", "toshi", "研究室", "鳥居"]
+    "Id": "room_3f_toshi_lab_takashina",
+    "Name": "高科 研究室",
+    "Type": "lab",
+    "Building": "都市工学科棟",
+    "Floor": 3,
+    "Department": "toshi",
+    "Tags": ["高科 研究室", "都市工学科棟", "都市工学科", "toshi", "研究室", "高科"]
   },
   {
-    "id": "room_3f_toshi_lab_kozuka",
-    "name": "小塚 研究室",
-    "type": "lab",
-    "building": "都市工学科棟",
-    "floor": 3,
-    "department": "toshi",
-    "tags": ["小塚 研究室", "都市工学科棟", "都市工学科", "toshi", "研究室", "小塚"]
+    "Id": "room_3f_urban_hr_s2",
+    "Name": "S2 ホームルーム",
+    "Type": "classroom",
+    "Building": "一般科A棟",
+    "Floor": 3,
+    "Department": "urban",
+    "Tags": ["S2 ホームルーム", "一般科A棟", "一般科", "HR"]
   },
   {
-    "id": "room_3f_toshi_lab_ihara",
-    "name": "伊原 研究室",
-    "type": "lab",
-    "building": "都市工学科棟",
-    "floor": 3,
-    "department": "toshi",
-    "tags": ["伊原 研究室", "都市工学科棟", "都市工学科", "toshi", "研究室", "伊原"]
+    "Id": "room_3f_toshi_hr_s4",
+    "Name": "S4 ホームルーム",
+    "Type": "classroom",
+    "Building": "専門科講義棟",
+    "Floor": 3,
+    "Department": "toshi",
+    "Tags": ["S4 ホームルーム", "専門科講義棟", "toshi", "HR"]
   },
   {
-    "id": "room_3f_toshi_lab_kakiki",
-    "name": "柿木 研究室",
-    "type": "lab",
-    "building": "都市工学科棟",
-    "floor": 3,
-    "department": "toshi",
-    "tags": ["柿木 研究室", "都市工学科棟", "都市工学科", "toshi", "研究室", "柿木"]
+    "Id": "room_3f_toshi_hr_s5",
+    "Name": "S5 ホームルーム",
+    "Type": "classroom",
+    "Building": "専門科講義棟",
+    "Floor": 3,
+    "Department": "toshi",
+    "Tags": ["S5 ホームルーム", "専門科講義棟", "toshi", "HR"]
   },
   {
-    "id": "room_3f_toshi_lab_kaminaka",
-    "name": "上中 研究室",
-    "type": "lab",
-    "building": "都市工学科棟",
-    "floor": 3,
-    "department": "toshi",
-    "tags": ["上中 研究室", "都市工学科棟", "都市工学科", "toshi", "研究室", "上中"]
+    "Id": "room_4f_toshi_classroom_classroom",
+    "Name": "小演習室",
+    "Type": "classroom",
+    "Building": "都市工学科棟",
+    "Floor": 4,
+    "Department": "toshi",
+    "Tags": ["小演習室", "都市工学科棟", "都市工学科", "toshi"]
   },
   {
-    "id": "room_3f_toshi_lab_takashina",
-    "name": "高科 研究室",
-    "type": "lab",
-    "building": "都市工学科棟",
-    "floor": 3,
-    "department": "toshi",
-    "tags": ["高科 研究室", "都市工学科棟", "都市工学科", "toshi", "研究室", "高科"]
+    "Id": "room_4f_toshi_lab_planning",
+    "Name": "計画学実験室",
+    "Type": "lab",
+    "Building": "都市工学科棟",
+    "Floor": 4,
+    "Department": "toshi",
+    "Tags": ["計画学実験室", "都市工学科棟", "都市工学科", "toshi", "実験室"]
+  },
+  {
+    "Id": "room_4f_toshi_facility_drawing",
+    "Name": "製図室",
+    "Type": "facility",
+    "Building": "都市工学科棟",
+    "Floor": 4,
+    "Department": "toshi",
+    "Tags": ["製図室", "都市工学科棟", "都市工学科", "toshi"]
+  },
+  {
+    "Id": "room_4f_toshi_facility_info_proc",
+    "Name": "情報処理室",
+    "Type": "facility",
+    "Building": "都市工学科棟",
+    "Floor": 4,
+    "Department": "toshi",
+    "Tags": ["情報処理室", "都市工学科棟", "都市工学科", "toshi"]
+  },
+  {
+    "Id": "room_4f_toshi_classroom_classroom_2",
+    "Name": "演習室",
+    "Type": "classroom",
+    "Building": "都市工学科棟",
+    "Floor": 4,
+    "Department": "toshi",
+    "Tags": ["演習室", "都市工学科棟", "都市工学科", "toshi"]
+  },
+  {
+    "Id": "room_4f_toshi_facility_meeting_4",
+    "Name": "4階会議室",
+    "Type": "facility",
+    "Building": "都市工学科棟",
+    "Floor": 4,
+    "Department": "toshi",
+    "Tags": ["4階会議室", "都市工学科棟", "都市工学科", "toshi"]
+  },
+  {
+    "Id": "room_4f_toshi_hr_s1",
+    "Name": "S1 ホームルーム",
+    "Type": "classroom",
+    "Building": "一般科A棟",
+    "Floor": 4,
+    "Department": "toshi",
+    "Tags": ["S1 ホームルーム", "一般科A棟", "一般科", "HR"]
   }
 ]
