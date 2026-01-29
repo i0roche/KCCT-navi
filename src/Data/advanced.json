@@ -36,16 +36,7 @@
     "Tags": ["工房技術職員室", "専攻科棟", "専攻科", "advanced", "技術職員室"]
   },
   {
-    "Id": "room_1f_advanced_souko",
-    "Name": "倉庫",
-    "Type": "facility",
-    "Building": "専攻科棟",
-    "Floor": 1,
-    "Department": "advanced",
-    "Tags": [ "専攻科棟", "専攻科", "advanced", "倉庫"]
-  },
-  {
-    "Id": "room_1f_advanced_lab_teacher_1",
+    "Id": "room_1f_advanced_lab_hayashida",
     "Name": "林田研究室",
     "Type": "lab",
     "Building": "専攻科棟",
@@ -54,7 +45,7 @@
     "Tags": ["林田","林田 研究室","研究室" ,"専攻科棟", "専攻科", "advanced"]
   },
   {
-    "Id": "room_1f_advanced_AED_lab_1",
+    "Id": "room_1f_advanced_lab_AED1",
     "Name": "学生研究室AED1",
     "Type": "lab",
     "Building": "専攻科棟",
@@ -63,31 +54,13 @@
     "Tags": ["学生研究室","AED", "専攻科棟", "専攻科", "advanced"]
   },
   {
-    "Id": "room_1f_advanced_NVC_lab",
+    "Id": "room_1f_advanced_lab_NVC",
     "Name": "NVC研究室",
     "Type": "lab",
     "Building": "専攻科棟",
     "Floor": 1,
     "Department": "advanced",
     "Tags": ["NVC", "専攻科棟", "専攻科", "advanced", "研究室"]
-  },
-  {
-    "Id": "room_1f_advanced_EV_mach",
-    "Name": "EV機械室",
-    "Type": "facility",
-    "Building": "専攻科棟",
-    "Floor": 1,
-    "Department": "advanced",
-    "Tags": ["EV", "専攻科棟", "専攻科", "advanced", "機械室"]
-  },
-  {
-    "Id": "restroom_1f_advanced_WC_man",
-    "Name": "男子トイレ",
-    "Type": "restroom",
-    "Building": "専攻科棟",
-    "Floor": 1,
-    "Department": "advanced",
-    "Tags": ["トイレ", "専攻科棟", "専攻科", "advanced", "男子"]
   },
   {
     "Id": "room_2f_advanced_classroom_lecture_large",
@@ -135,24 +108,6 @@
     "Tags": ["研究渉外主事室", "専攻科棟", "専攻科", "advanced"]
   },
   {
-    "Id": "restroom_2f_advanced_WC_man",
-    "Name": "男子トイレ",
-    "Type": "restroom",
-    "Building": "専攻科棟",
-    "Floor": 2,
-    "Department": "advanced",
-    "Tags": ["トイレ", "専攻科棟", "専攻科", "advanced", "男子"]
-  },
-  {
-    "Id": "restroom_2f_advanced_WC_woman",
-    "Name": "女子トイレ",
-    "Type": "restroom",
-    "Building": "専攻科棟",
-    "Floor": 2,
-    "Department": "advanced",
-    "Tags": ["トイレ", "専攻科棟", "専攻科", "advanced", "女子"]
-  },
-  {
     "Id": "room_3f_advanced_lab_energy",
     "Name": "エネルギー工学実験室",
     "Type": "lab",
@@ -180,7 +135,7 @@
     "Tags": ["生物物理化学実験室", "専攻科棟", "専攻科", "advanced", "実験室"]
   },
   {
-    "Id": "room_3f_advanced_lab_stu_AE_2",
+    "Id": "room_3f_advanced_lab_AE2",
     "Name": "学生研究室AE2",
     "Type": "lab",
     "Building": "専攻科棟",
@@ -189,7 +144,7 @@
     "Tags": ["学生研究室", "専攻科棟", "専攻科", "advanced", "AE2"]
   },  
   {
-    "Id": "room_3f_advanced_lab_stu_AC",
+    "Id": "room_3f_advanced_lab_AC",
     "Name": "学生研究室AC",
     "Type": "lab",
     "Building": "専攻科棟",
@@ -198,7 +153,7 @@
     "Tags": ["学生研究室AC", "専攻科棟", "専攻科", "advanced", "学生研究室"]
   },  
   {
-    "Id": "room_3f_advanced_lab_teature_2",
+    "Id": "room_3f_advanced_lab_tsuyoshi",
     "Name": "津吉研究室",
     "Type": "lab",
     "Building": "専攻科棟",
@@ -207,7 +162,7 @@
     "Tags": ["津吉 研究室", "専攻科棟", "専攻科", "advanced", "研究室"]
   },
   {
-    "Id": "room_3f_advanced_lab_teature_3",
+    "Id": "room_3f_advanced_lab_kuki",
     "Name": "九鬼研究室",
     "Type": "lab",
     "Building": "専攻科棟",

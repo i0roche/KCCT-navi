@@ -27,12 +27,22 @@ namespace team1
 
             _mapViewer = new MapViewer();
             _mapViewer.Dock = DockStyle.Fill;
+            _mapViewer.TabStop = true;
             this.Controls.Add(_mapViewer);
 
-            TextBox1.BringToFront();
+            textBox1.BringToFront();
+
+            Shown += OnFormShown;
         }
 
-        private void Form1_Load(object? sender, EventArgs e)
+        private void OnFormShown(object? sender, EventArgs e)
+        {
+            _mapViewer.Focus();
+            _mapViewer.FitToScreen();
+            _mapViewer.Invalidate();
+        }
+
+        private void OnFormLoad(object? sender, EventArgs e)
         {
             LoadJsonData();
             string svgPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "map.svg");
@@ -52,7 +62,7 @@ namespace team1
             }
 
             _finder.LoadFromSvg(svgPath);
-            
+
             // MapViewerに部屋データとノード情報を渡す
             _mapViewer.Places = _places;
             _mapViewer.AllNodes = _finder.AllNodes;
@@ -122,8 +132,16 @@ namespace team1
 
         }
 
-        private void button1_Click(object? sender, EventArgs e) => DoSearch();
-        private void textBox1_KeyDown(object? sender, KeyEventArgs e) { if (e.KeyCode == Keys.Enter) { e.SuppressKeyPress = true; DoSearch(); } }
+        private void OnSearchButtonClick(object? sender, EventArgs e) => DoSearch();
+
+        private void OnSearchTextBoxKeyDown(object? sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                DoSearch();
+            }
+        }
 
         private void MoveToBuilding(string building, int floor)
         {
@@ -160,80 +178,72 @@ namespace team1
             _mapViewer.ZoomToRect(rX, rY, rW, rH);
         }
 
-        private void 一般科棟ToolStripMenuItem_Click(object sender, EventArgs e) { }
-        private void fToolStripMenuItem0_Click(object sender, EventArgs e) => MoveToBuilding("一般科", 1);
-        private void fToolStripMenuItem1_Click(object sender, EventArgs e) => MoveToBuilding("一般科", 2);
-        private void fToolStripMenuItem2_Click(object sender, EventArgs e) => MoveToBuilding("一般科", 3);
-        private void fToolStripMenuItem3_Click(object sender, EventArgs e) => MoveToBuilding("一般科", 4);
-        private void fToolStripMenuItem4_Click(object sender, EventArgs e) => MoveToBuilding("一般科", 5);
-        private void fToolStripMenuItem5_Click(object sender, EventArgs e) => MoveToBuilding("一般科", 6);
-        private void 専門学科棟ToolStripMenuItem_Click(object sender, EventArgs e) { }
-        private void 電気工学科棟ToolStripMenuItem_Click(object sender, EventArgs e) { }
-        private void fToolStripMenuItem6_Click(object sender, EventArgs e) => MoveToBuilding("電気工学科棟", 1);
-        private void fToolStripMenuItem7_Click(object sender, EventArgs e) => MoveToBuilding("電気工学科棟", 2);
-        private void fToolStripMenuItem8_Click(object sender, EventArgs e) => MoveToBuilding("電気工学科棟", 3);
-        private void fToolStripMenuItem9_Click(object sender, EventArgs e) => MoveToBuilding("電気工学科棟", 4);
-        private void fToolStripMenuItem10_Click(object sender, EventArgs e) => MoveToBuilding("電子工学科棟", 1);
-        private void fToolStripMenuItem11_Click(object sender, EventArgs e) => MoveToBuilding("電子工学科棟", 2);
-        private void fToolStripMenuItem12_Click(object sender, EventArgs e) => MoveToBuilding("電子工学科棟", 3);
-        private void fToolStripMenuItem13_Click(object sender, EventArgs e) => MoveToBuilding("電子工学科棟", 4);
-        private void fToolStripMenuItem14_Click(object sender, EventArgs e) => MoveToBuilding("都市システム工学科棟", 1);
-        private void fToolStripMenuItem15_Click(object sender, EventArgs e) => MoveToBuilding("都市システム工学科棟", 2);
-        private void fToolStripMenuItem16_Click(object sender, EventArgs e) => MoveToBuilding("都市システム工学科棟", 3);
-        private void fToolStripMenuItem17_Click(object sender, EventArgs e) => MoveToBuilding("都市システム工学科棟", 4);
-        private void fToolStripMenuItem18_Click(object sender, EventArgs e) => MoveToBuilding("機械工学科棟", 1);
-        private void fToolStripMenuItem19_Click(object sender, EventArgs e) => MoveToBuilding("機械工学科棟", 2);
-        private void fToolStripMenuItem20_Click(object sender, EventArgs e) => MoveToBuilding("機械工学科棟", 3);
-        private void fToolStripMenuItem21_Click(object sender, EventArgs e) => MoveToBuilding("機械工学科棟", 4);
-        private void 応用化学科棟ToolStripMenuItem_Click(object sender, EventArgs e) { }
-        private void fToolStripMenuItem22_Click(object sender, EventArgs e) => MoveToBuilding("応用化学科棟", 1);
-        private void fToolStripMenuItem23_Click(object sender, EventArgs e) => MoveToBuilding("応用化学科棟", 2);
-        private void fToolStripMenuItem24_Click(object sender, EventArgs e) => MoveToBuilding("応用化学科棟", 3);
-        private void fToolStripMenuItem25_Click(object sender, EventArgs e) => MoveToBuilding("応用化学科棟", 4);
-        private void 専攻科棟ToolStripMenuItem_Click(object sender, EventArgs e) { }
-        private void fToolStripMenuItem41_Click(object sender, EventArgs e) => MoveToBuilding("専攻科棟", 1);
-        private void fToolStripMenuItem26_Click(object sender, EventArgs e) => MoveToBuilding("専攻科棟", 2);
-        private void fToolStripMenuItem27_Click(object sender, EventArgs e) => MoveToBuilding("専攻科棟", 3);
-        private void 本部棟ToolStripMenuItem_Click(object sender, EventArgs e) { }
-        private void fToolStripMenuItem28_Click(object sender, EventArgs e) => MoveToBuilding("本部棟", 1);
-        private void fToolStripMenuItem29_Click(object sender, EventArgs e) => MoveToBuilding("本部棟", 2);
-        private void 講義棟ToolStripMenuItem_Click(object sender, EventArgs e) { }
-        private void fToolStripMenuItem30_Click(object sender, EventArgs e) => MoveToBuilding("講義棟", 1);
-        private void fToolStripMenuItem31_Click(object sender, EventArgs e) => MoveToBuilding("講義棟", 2);
-        private void fToolStripMenuItem32_Click(object sender, EventArgs e) => MoveToBuilding("講義棟", 3);
-        private void fToolStripMenuItem33_Click(object sender, EventArgs e) => MoveToBuilding("講義棟", 4);
-        private void 学生会館ToolStripMenuItem_Click(object sender, EventArgs e) { }
-        private void fToolStripMenuItem34_Click(object sender, EventArgs e) => MoveToBuilding("学生会館", 1);
-        private void fToolStripMenuItem35_Click(object sender, EventArgs e) => MoveToBuilding("学生会館", 2);
-        private void fToolStripMenuItem36_Click(object sender, EventArgs e) => MoveToBuilding("学生会館", 3);
-        private void 図書館ToolStripMenuItem_Click(object sender, EventArgs e) { }
-        private void fToolStripMenuItem37_Click(object sender, EventArgs e) => MoveToBuilding("図書館", 1);
-        private void fToolStripMenuItem38_Click(object sender, EventArgs e) => MoveToBuilding("図書館", 2);
-        private void textBox1_TextChanged(object sender, EventArgs e) { }
+        private void OnGeneralBuildingMenuClick(object sender, EventArgs e) { }
+        private void OnGeneralBuildingFloor1Click(object sender, EventArgs e) => MoveToBuilding("一般科", 1);
+        private void OnGeneralBuildingFloor2Click(object sender, EventArgs e) => MoveToBuilding("一般科", 2);
+        private void OnGeneralBuildingFloor3Click(object sender, EventArgs e) => MoveToBuilding("一般科", 3);
+        private void OnGeneralBuildingFloor4Click(object sender, EventArgs e) => MoveToBuilding("一般科", 4);
+        private void OnGeneralBuildingFloor5Click(object sender, EventArgs e) => MoveToBuilding("一般科", 5);
+        private void OnGeneralBuildingFloor6Click(object sender, EventArgs e) => MoveToBuilding("一般科", 6);
 
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
+        private void OnSpecializedBuildingMenuClick(object sender, EventArgs e) { }
+        private void OnElectricalBuildingMenuClick(object sender, EventArgs e) { }
+        private void OnElectricalBuildingFloor1Click(object sender, EventArgs e) => MoveToBuilding("電気工学科棟", 1);
+        private void OnElectricalBuildingFloor2Click(object sender, EventArgs e) => MoveToBuilding("電気工学科棟", 2);
+        private void OnElectricalBuildingFloor3Click(object sender, EventArgs e) => MoveToBuilding("電気工学科棟", 3);
+        private void OnElectricalBuildingFloor4Click(object sender, EventArgs e) => MoveToBuilding("電気工学科棟", 4);
 
-        }
+        private void OnElectronicBuildingFloor1Click(object sender, EventArgs e) => MoveToBuilding("電子工学科棟", 1);
+        private void OnElectronicBuildingFloor2Click(object sender, EventArgs e) => MoveToBuilding("電子工学科棟", 2);
+        private void OnElectronicBuildingFloor3Click(object sender, EventArgs e) => MoveToBuilding("電子工学科棟", 3);
+        private void OnElectronicBuildingFloor4Click(object sender, EventArgs e) => MoveToBuilding("電子工学科棟", 4);
 
-        private void Button1_Click_1(object sender, EventArgs e)
-        {
+        private void OnUrbanEngineeringBuildingFloor1Click(object sender, EventArgs e) => MoveToBuilding("都市システム工学科棟", 1);
+        private void OnUrbanEngineeringBuildingFloor2Click(object sender, EventArgs e) => MoveToBuilding("都市システム工学科棟", 2);
+        private void OnUrbanEngineeringBuildingFloor3Click(object sender, EventArgs e) => MoveToBuilding("都市システム工学科棟", 3);
+        private void OnUrbanEngineeringBuildingFloor4Click(object sender, EventArgs e) => MoveToBuilding("都市システム工学科棟", 4);
 
-        }
+        private void OnMechanicalBuildingFloor1Click(object sender, EventArgs e) => MoveToBuilding("機械工学科棟", 1);
+        private void OnMechanicalBuildingFloor2Click(object sender, EventArgs e) => MoveToBuilding("機械工学科棟", 2);
+        private void OnMechanicalBuildingFloor3Click(object sender, EventArgs e) => MoveToBuilding("機械工学科棟", 3);
+        private void OnMechanicalBuildingFloor4Click(object sender, EventArgs e) => MoveToBuilding("機械工学科棟", 4);
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        private void OnAppliedChemistryBuildingMenuClick(object sender, EventArgs e) { }
+        private void OnAppliedChemistryBuildingFloor1Click(object sender, EventArgs e) => MoveToBuilding("応用化学科棟", 1);
+        private void OnAppliedChemistryBuildingFloor2Click(object sender, EventArgs e) => MoveToBuilding("応用化学科棟", 2);
+        private void OnAppliedChemistryBuildingFloor3Click(object sender, EventArgs e) => MoveToBuilding("応用化学科棟", 3);
+        private void OnAppliedChemistryBuildingFloor4Click(object sender, EventArgs e) => MoveToBuilding("応用化学科棟", 4);
 
-        }
+        private void OnAdvancedCourseBuildingMenuClick(object sender, EventArgs e) { }
+        private void OnAdvancedCourseBuildingFloor1Click(object sender, EventArgs e) => MoveToBuilding("専攻科棟", 1);
+        private void OnAdvancedCourseBuildingFloor2Click(object sender, EventArgs e) => MoveToBuilding("専攻科棟", 2);
+        private void OnAdvancedCourseBuildingFloor3Click(object sender, EventArgs e) => MoveToBuilding("専攻科棟", 3);
 
-        private void TextBox1_TextChanged_1(object sender, EventArgs e)
-        {
+        private void OnHeadquartersBuildingMenuClick(object sender, EventArgs e) { }
+        private void OnHeadquartersBuildingFloor1Click(object sender, EventArgs e) => MoveToBuilding("本部棟", 1);
+        private void OnHeadquartersBuildingFloor2Click(object sender, EventArgs e) => MoveToBuilding("本部棟", 2);
 
-        }
+        private void OnLectureBuildingMenuClick(object sender, EventArgs e) { }
+        private void OnLectureBuildingFloor1Click(object sender, EventArgs e) => MoveToBuilding("講義棟", 1);
+        private void OnLectureBuildingFloor2Click(object sender, EventArgs e) => MoveToBuilding("講義棟", 2);
+        private void OnLectureBuildingFloor3Click(object sender, EventArgs e) => MoveToBuilding("講義棟", 3);
+        private void OnLectureBuildingFloor4Click(object sender, EventArgs e) => MoveToBuilding("講義棟", 4);
 
-        private void button2_Click(object sender, EventArgs e)
-        {
+        private void OnStudentHallBuildingMenuClick(object sender, EventArgs e) { }
+        private void OnStudentHallBuildingFloor1Click(object sender, EventArgs e) => MoveToBuilding("学生会館", 1);
+        private void OnStudentHallBuildingFloor2Click(object sender, EventArgs e) => MoveToBuilding("学生会館", 2);
+        private void OnStudentHallBuildingFloor3Click(object sender, EventArgs e) => MoveToBuilding("学生会館", 3);
 
-        }
+        private void OnLibraryBuildingMenuClick(object sender, EventArgs e) { }
+        private void OnLibraryBuildingFloor1Click(object sender, EventArgs e) => MoveToBuilding("図書館", 1);
+        private void OnLibraryBuildingFloor2Click(object sender, EventArgs e) => MoveToBuilding("図書館", 2);
+
+        private void OnSearchTextBoxTextChanged(object sender, EventArgs e) { }
+
+        private void OnLeftPanelPaint(object sender, PaintEventArgs e) { }
+
+        private void OnSearchResultsSelected(object sender, EventArgs e) { }
+
+        private void OnSecondaryButtonClick(object sender, EventArgs e) { }
     }
 }
