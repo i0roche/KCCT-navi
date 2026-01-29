@@ -160,10 +160,6 @@ namespace team1
             _mapViewer.ZoomToRect(rX, rY, rW, rH);
         }
 
-        //private void Form1_Load(object? sender,EventArgs e)
-        //{
-
-        //}
         private void 一般科棟ToolStripMenuItem_Click(object sender, EventArgs e) { }
         private void fToolStripMenuItem0_Click(object sender, EventArgs e) => MoveToBuilding("一般科", 1);
         private void fToolStripMenuItem1_Click(object sender, EventArgs e) => MoveToBuilding("一般科", 2);
