@@ -33,6 +33,8 @@ namespace team1.Controls
             this.MouseMove += OnMouseMove;
             this.MouseUp += (s, e) => _isDragging = false;
             this.MouseWheel += OnMouseWheel;
+            this.MouseEnter += (_, _) => Focus();
+            this.TabStop = true;
 
             this.SendToBack();
         }
@@ -294,6 +296,8 @@ namespace team1.Controls
         }
         private void OnMouseDown(object? sender, MouseEventArgs e)
         {
+            Focus();
+
             if (e.Button == MouseButtons.Left)
             {
                 if (TryPickPlace(e.Location, out var place))

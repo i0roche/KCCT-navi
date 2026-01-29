@@ -72,15 +72,6 @@
     "Tags": ["購買", "共通施設", "common"]
   },
   {
-    "Id": "room_1f_common_facility_student_hall",
-    "Name": "学生会館",
-    "Type": "facility",
-    "Building": "福利厚生棟",
-    "Floor": 1,
-    "Department": "common",
-    "Tags": ["学生会館", "共通施設", "common"]
-  },
-  {
     "Id": "room_1f_common_facility_library",
     "Name": "図書館",
     "Type": "facility",
@@ -99,10 +90,19 @@
     "Tags": ["情報センター", "共通施設", "common"]
   },
   {
-    "Id": "room_1f_common_office_admin",
+    "Id": "room_1f_common_office_admin_1",
     "Name": "事務室",
     "Type": "office",
-    "Building": "管理棟",
+    "Building": "本部棟",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["事務室", "共通施設", "common", "事務"]
+  },
+  {
+    "Id": "room_1f_common_office_admin_2",
+    "Name": "事務室",
+    "Type": "office",
+    "Building": "本部棟",
     "Floor": 1,
     "Department": "common",
     "Tags": ["事務室", "共通施設", "common", "事務"]
@@ -111,16 +111,16 @@
     "Id": "room_1f_common_office_student",
     "Name": "学生主事室",
     "Type": "office",
-    "Building": "管理棟",
+    "Building": "本部棟",
     "Floor": 1,
     "Department": "common",
     "Tags": ["学生主事室", "共通施設", "common", "事務"]
   },
   {
-    "Id": "room_1f_common_office_academic",
+    "Id": "room_1f_common_office_academicaffairs",
     "Name": "教務主事室",
     "Type": "office",
-    "Building": "管理棟",
+    "Building": "本部棟",
     "Floor": 1,
     "Department": "common",
     "Tags": ["教務主事室", "共通施設", "common", "事務"]
@@ -129,13 +129,103 @@
     "Id": "room_1f_common_office_principal",
     "Name": "校長室",
     "Type": "office",
-    "Building": "管理棟",
+    "Building": "本部棟",
     "Floor": 1,
     "Department": "common",
     "Tags": ["校長室", "共通施設", "common", "事務"]
   },
   {
-    "Id": "room_2f_gakisei_busitu_tamokuteki",
+    "Id": "room_1f_common_office_non_full_time_instructor",
+    "Name": "非常勤講師室",
+    "Type": "office",
+    "Building": "本部棟",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["非常勤講師室", "共通施設", "common", "事務"]
+  },
+  {
+    "Id": "room_1f_common_office_meeting",
+    "Name": "会議室",
+    "Type": "office",
+    "Building": "本部棟",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["会議室", "共通施設", "common", "事務"]
+  },
+  {
+    "Id": "room_1f_common_office_academic",
+    "Name": "教務室",
+    "Type": "office",
+    "Building": "本部棟",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["教務室", "共通施設", "common", "事務"]
+  },
+  {
+    "Id": "room_1f_common_office_health",
+    "Name": "保健室",
+    "Type": "office",
+    "Building": "本部棟",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["保健室", "共通施設", "common", "事務"]
+  },
+  {
+    "Id": "room_1f_gakusei_busitu_kizai",
+    "Name": "機材室",
+    "Type": "club",
+    "Building": "学生会館",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["部室", "機材室", "学生会館", "club"]
+  },
+  {
+    "Id": "room_1f_gakusei_busitu_suisougaku",
+    "Name": "吹奏楽部室",
+    "Type": "club",
+    "Building": "学生会館",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["部室", "吹奏楽部室", "学生会館", "club"]
+  },
+  {
+    "Id": "room_1f_gakusei_busitu_LMC",
+    "Name": "ライトミュージック部室",
+    "Type": "club",
+    "Building": "学生会館",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["部室", "ライトミュージック部室", "学生会館", "club"]
+  },
+  {
+    "Id": "room_1f_gakusei_storage",
+    "Name": "倉庫",
+    "Type": "facility",
+    "Building": "学生会館",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["倉庫", "倉庫", "学生会館", "storage"]
+  },
+  {
+    "Id": "room_1f_gakusei_busitu_jitensha_kyougi",
+    "Name": "自転車競技部室",
+    "Type": "club",
+    "Building": "学生会館",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["部室", "自転車競技部室", "学生会館", "club"]
+  },
+  {
+    "Id": "room_1f_gakusei_busitu_gakuseikai",
+    "Name": "学生会室",
+    "Type": "club",
+    "Building": "学生会館",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["部室", "学生会室", "学生会館", "club"]
+  },
+  {
+    "Id": "room_2f_gakusei_busitu_tamokuteki",
     "Name": "多目的室",
     "Type": "club",
     "Building": "学生会館",
@@ -144,7 +234,7 @@
     "Tags": ["部室", "多目的室", "学生会館", "club"]
   },
   {
-    "Id": "room_2f_gakisei_busitu_kadou",
+    "Id": "room_2f_gakusei_busitu_kadou",
     "Name": "華道部室",
     "Type": "club",
     "Building": "学生会館",
@@ -153,7 +243,7 @@
     "Tags": ["部室", "華道部室", "学生会館", "club"]
   },
   {
-    "Id": "room_2f_gakisei_busitu_sizen",
+    "Id": "room_2f_gakusei_busitu_sizen",
     "Name": "自然科学部室",
     "Type": "club",
     "Building": "学生会館",
@@ -162,7 +252,7 @@
     "Tags": ["部室", "自然科学部室", "学生会館", "club"]
   },
   {
-    "Id": "room_2f_gakisei_busitu_densan_1",
+    "Id": "room_2f_gakusei_busitu_densan_1",
     "Name": "電子計算機部室1",
     "Type": "club",
     "Building": "学生会館",
@@ -171,7 +261,7 @@
     "Tags": ["部室", "電子計算機部室1", "学生会館", "club"]
   },
   {
-    "Id": "room_2f_gakisei_busitu_densan_2",
+    "Id": "room_2f_gakusei_busitu_densan_2",
     "Name": "電子計算機部室2",
     "Type": "club",
     "Building": "学生会館",
@@ -180,7 +270,7 @@
     "Tags": ["部室", "電子計算機部室2", "学生会館", "club"]
   },
   {
-    "Id": "room_2f_gakisei_busitu_ESS",
+    "Id": "room_2f_gakusei_busitu_ESS",
     "Name": "ESS部室",
     "Type": "club",
     "Building": "学生会館",
@@ -189,7 +279,7 @@
     "Tags": ["部室", "ESS部室", "学生会館", "club"]
   },
   {
-    "Id": "room_2f_gakisei_busitu_denkou",
+    "Id": "room_2f_gakusei_busitu_denkou",
     "Name": "電気工学実験部室",
     "Type": "club",
     "Building": "学生会館",
@@ -198,7 +288,7 @@
     "Tags": ["部室", "電気工学実験部室", "学生会館", "club"]
   },
   {
-    "Id": "room_2f_gakisei_busitu_MRC",
+    "Id": "room_2f_gakusei_busitu_MRC",
     "Name": "MRC部室",
     "Type": "club",
     "Building": "学生会館",
@@ -207,7 +297,7 @@
     "Tags": ["部室", "MRC部室", "学生会館", "club"]
   },
   {
-    "Id": "room_2f_gakisei_busitu_suiei",
+    "Id": "room_2f_gakusei_busitu_suiei",
     "Name": "水泳部室",
     "Type": "club",
     "Building": "学生会館",
@@ -216,7 +306,7 @@
     "Tags": ["部室", "水泳部室", "学生会館", "club"]
   },
   {
-    "Id": "room_2f_gakisei_busitu_robot",
+    "Id": "room_2f_gakusei_busitu_robot",
     "Name": "ロボット部室",
     "Type": "club",
     "Building": "学生会館",
@@ -225,7 +315,7 @@
     "Tags": ["部室", "ロボット部室", "学生会館", "club"]
   },
   {
-    "Id": "room_2f_gakisei_busitu_bijutu",
+    "Id": "room_2f_gakusei_busitu_bijutu",
     "Name": "美術部室",
     "Type": "club",
     "Building": "学生会館",
@@ -234,7 +324,7 @@
     "Tags": ["部室", "美術部室", "学生会館", "club"]
   },
   {
-    "Id": "room_2f_gakisei_busitu_syashin",
+    "Id": "room_2f_gakusei_busitu_syashin",
     "Name": "写真部室",
     "Type": "club",
     "Building": "学生会館",

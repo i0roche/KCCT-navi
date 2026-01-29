@@ -54,6 +54,15 @@
     "Tags": ["熱工学実験室", "機械工学科棟", "機械工学科", "mech", "実験室"]
   },
   {
+    "Id": "room_1f_mech_lab_robotkenkyu",
+    "Name": "ロボット工学研究会",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 1,
+    "Department": "mech",
+    "Tags": ["ロボット工学研究会", "機械工学科棟", "機械工学科", "mech", "研究室"]
+  },
+  {
     "Id": "room_1f_mech_lab_material_proc1",
     "Name": "材料加工実験室1",
     "Type": "lab",
