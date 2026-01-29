@@ -52,6 +52,11 @@ namespace team1
             }
 
             _finder.LoadFromSvg(svgPath);
+            
+            // MapViewerに部屋データとノード情報を渡す
+            _mapViewer.Places = _places;
+            _mapViewer.AllNodes = _finder.AllNodes;
+            _mapViewer.Invalidate();
         }
 
         private void LoadJsonData()
