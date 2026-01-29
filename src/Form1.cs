@@ -204,5 +204,30 @@ namespace team1
         private void fToolStripMenuItem37_Click(object sender, EventArgs e) => MoveToBuilding("図書館", 1);
         private void fToolStripMenuItem38_Click(object sender, EventArgs e) => MoveToBuilding("図書館", 2);
         private void textBox1_TextChanged(object sender, EventArgs e) { }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
