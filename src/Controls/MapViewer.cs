@@ -16,6 +16,11 @@ namespace team1.Controls
         public SKSvg? SvgMap { get; set; }
         public List<Edge>? CurrentRoute {  get; set; }
         public int CurrentFloor { get; set; } = 1;
+        public List<Place> Places { get; set; } = new List<Place>();
+        public List<MapNode> AllNodes { get; set; } = new List<MapNode>();
+        public bool ShowRoomNames { get; set; } = true;
+
+        public event Action<Place>? RoomNodeClicked;
 
         private SKMatrix _currentMatrix = SKMatrix.CreateIdentity();
         private bool _isDragging = false;
@@ -34,10 +39,7 @@ namespace team1.Controls
 
         public void FitToScreen()
         {
-            if (SvgMap?.Picture != null)
-            {
-                return;
-            }
+            if (SvgMap?.Picture == null) return;
 
             var svgRect = SvgMap.Picture.CullRect;
 
@@ -77,10 +79,124 @@ namespace team1.Controls
                 canvas.DrawPicture(SvgMap.Picture);
             }
 
+            // 部屋名の描画
+            float currentScale = _currentMatrix.ScaleX;
+            if (ShowRoomNames && Places.Count > 0 && AllNodes.Count > 0)
+            {
+                DrawRoomNames(canvas, currentScale);
+            }
+
             if (CurrentRoute != null && CurrentRoute.Count > 0)
             {
                 DrawRoute(canvas);
             }
+        }
+
+        private void DrawRoomNames(SKCanvas canvas, float scale)
+        {
+            using var typeface = SKTypeface.FromFamilyName("Yu Gothic UI")
+                ?? SKTypeface.FromFamilyName("Meiryo UI")
+                ?? SKTypeface.FromFamilyName("MS Gothic")
+                ?? SKTypeface.Default;
+
+            float fontSize = 12f / scale;
+            float padding = 3f / scale;
+            float labelOffset = 12f / scale;
+
+            using var textPaint = new SKPaint
+            {
+                Color = SKColors.Black,
+                IsAntialias = true,
+                TextSize = fontSize,
+                TextAlign = SKTextAlign.Center,
+                Typeface = typeface
+            };
+
+            using var bgPaint = new SKPaint
+            {
+                Color = SKColors.White.WithAlpha(220),
+                IsAntialias = true,
+                Style = SKPaintStyle.Fill
+            };
+
+            using var borderPaint = new SKPaint
+            {
+                Color = SKColors.Gray.WithAlpha(160),
+                IsAntialias = true,
+                Style = SKPaintStyle.Stroke,
+                StrokeWidth = 0.5f / scale
+            };
+
+            var roomsOnFloor = Places.Where(p => p.Floor == CurrentFloor && p.Id.StartsWith("room_")).ToList();
+
+            foreach (var place in roomsOnFloor)
+            {
+                var node = AllNodes.FirstOrDefault(n => n.Id == place.Id && n.Floor == CurrentFloor);
+                if (node == null) continue;
+
+                float textWidth = textPaint.MeasureText(place.Name);
+                var metrics = textPaint.FontMetrics;
+                float textHeight = metrics.Descent - metrics.Ascent;
+
+                float textTop = node.Y - labelOffset - textHeight;
+                float textBottom = node.Y - labelOffset;
+
+                SKRect bgRect = new SKRect(
+                    node.X - textWidth / 2 - padding,
+                    textTop - padding,
+                    node.X + textWidth / 2 + padding,
+                    textBottom + padding
+                );
+
+                canvas.DrawRoundRect(bgRect, 2f / scale, 2f / scale, bgPaint);
+                canvas.DrawRoundRect(bgRect, 2f / scale, 2f / scale, borderPaint);
+
+                float textY = textBottom - metrics.Descent;
+                canvas.DrawText(place.Name, node.X, textY, textPaint);
+
+                DrawRoomNode(canvas, node.X, node.Y, scale);
+            }
+        }
+
+        private void DrawRoomNode(SKCanvas canvas, float x, float y, float scale)
+        {
+            float radius = 5f / scale;
+            using var fill = new SKPaint { Color = SKColors.DodgerBlue, IsAntialias = true, Style = SKPaintStyle.Fill };
+            using var border = new SKPaint { Color = SKColors.White, IsAntialias = true, Style = SKPaintStyle.Stroke, StrokeWidth = 1.5f / scale };
+            canvas.DrawCircle(x, y, radius, fill);
+            canvas.DrawCircle(x, y, radius, border);
+        }
+
+        private bool TryPickPlace(Point screenPoint, out Place place)
+        {
+            place = null!;
+            if (Places.Count == 0 || AllNodes.Count == 0) return false;
+
+            if (!_currentMatrix.TryInvert(out var inverse))
+            {
+                return false;
+            }
+
+            var world = inverse.MapPoint(new SKPoint(screenPoint.X, screenPoint.Y));
+            float scale = _currentMatrix.ScaleX;
+            float radius = 12f / scale;
+            float radiusSq = radius * radius;
+
+            foreach (var p in Places.Where(p => p.Floor == CurrentFloor && p.Id.StartsWith("room_")))
+            {
+                var node = AllNodes.FirstOrDefault(n => n.Id == p.Id && n.Floor == CurrentFloor);
+                if (node == null) continue;
+
+                float dx = world.X - node.X;
+                float dy = world.Y - node.Y;
+                if (dx * dx + dy * dy <= radiusSq)
+                {
+                    place = p;
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         private void DrawRoute(SKCanvas canvas)
@@ -180,6 +296,12 @@ namespace team1.Controls
         {
             if (e.Button == MouseButtons.Left)
             {
+                if (TryPickPlace(e.Location, out var place))
+                {
+                    RoomNodeClicked?.Invoke(place);
+                    return;
+                }
+
                 _isDragging = true;
                 _lastMousePos = e.Location;
             }
