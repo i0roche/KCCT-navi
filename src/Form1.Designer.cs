@@ -28,7 +28,6 @@ namespace team1
         /// </summary>
         private void InitializeComponent()
         {
-            TextBox1 = new TextBox();
             Button1 = new Button();
             FlowLayoutPanel1 = new FlowLayoutPanel();
             MenuStrip1 = new MenuStrip();
@@ -84,7 +83,13 @@ namespace team1
             fToolStripMenuItem37 = new ToolStripMenuItem();
             fToolStripMenuItem38 = new ToolStripMenuItem();
             fToolStripMenuItem25 = new ToolStripMenuItem();
+            TextBox1 = new RichTextBox();
+            button2 = new Button();
+            panel1 = new Panel();
+            panel2 = new Panel();
             MenuStrip1.SuspendLayout();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // TextBox1
@@ -103,8 +108,8 @@ namespace team1
             Button1.Name = "Button1";
             Button1.Size = new Size(81, 22);
             Button1.TabIndex = 1;
-            Button1.Text = "Search";
-            Button1.UseVisualStyleBackColor = true;
+            Button1.UseVisualStyleBackColor = false;
+            Button1.Click += Button1_Click_1;
             // 
             // FlowLayoutPanel1
             // 
@@ -118,9 +123,10 @@ namespace team1
             // 
             // MenuStrip1
             // 
+            MenuStrip1.Font = new Font("メイリオ", 9F, FontStyle.Regular, GraphicsUnit.Point, 128);
             MenuStrip1.ImageScalingSize = new Size(20, 20);
             MenuStrip1.Items.AddRange(new ToolStripItem[] { 一般科棟ToolStripMenuItem, 専門学科棟ToolStripMenuItem, 専攻科棟ToolStripMenuItem, 本部棟ToolStripMenuItem, 講義棟ToolStripMenuItem, 学生会館ToolStripMenuItem, 図書館ToolStripMenuItem });
-            MenuStrip1.Location = new Point(0, 0);
+            MenuStrip1.Location = new Point(256, 0);
             MenuStrip1.Name = "MenuStrip1";
             MenuStrip1.Padding = new Padding(5, 1, 0, 1);
             MenuStrip1.Size = new Size(876, 24);
@@ -495,6 +501,58 @@ namespace team1
             fToolStripMenuItem25.Text = "４F";
             fToolStripMenuItem25.Click += fToolStripMenuItem25_Click;
             // 
+            // TextBox1
+            // 
+            TextBox1.BorderStyle = BorderStyle.FixedSingle;
+            TextBox1.CausesValidation = false;
+            TextBox1.Dock = DockStyle.Fill;
+            TextBox1.Font = new Font("Yu Gothic UI", 10F);
+            TextBox1.Location = new Point(0, 0);
+            TextBox1.Name = "TextBox1";
+            TextBox1.ScrollBars = RichTextBoxScrollBars.None;
+            TextBox1.Size = new Size(230, 39);
+            TextBox1.TabIndex = 6;
+            TextBox1.Text = "";
+            TextBox1.TextChanged += TextBox1_TextChanged_1;
+            // 
+            // button2
+            // 
+            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button2.BackColor = SystemColors.Window;
+            button2.BackgroundImageLayout = ImageLayout.None;
+            button2.FlatAppearance.BorderColor = SystemColors.Control;
+            button2.FlatAppearance.MouseDownBackColor = SystemColors.Control;
+            button2.FlatAppearance.MouseOverBackColor = SystemColors.Control;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Image = Properties.Resources.close;
+            button2.Location = new Point(195, 3);
+            button2.Margin = new Padding(2, 0, 2, 0);
+            button2.Name = "button2";
+            button2.Size = new Size(33, 33);
+            button2.TabIndex = 7;
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // panel1
+            // 
+            panel1.AutoScroll = true;
+            panel1.Controls.Add(panel2);
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(256, 534);
+            panel1.TabIndex = 8;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(button2);
+            panel2.Controls.Add(Button1);
+            panel2.Controls.Add(TextBox1);
+            panel2.Location = new Point(12, 16);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(230, 39);
+            panel2.TabIndex = 9;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -504,6 +562,8 @@ namespace team1
             Controls.Add(TextBox1);
             Controls.Add(FlowLayoutPanel1);
             Controls.Add(MenuStrip1);
+            Controls.Add(FlowLayoutPanel1);
+            Controls.Add(panel1);
             MainMenuStrip = MenuStrip1;
             Margin = new Padding(2, 1, 2, 1);
             Name = "Form1";
@@ -511,13 +571,13 @@ namespace team1
             Load += Form1_Load;
             MenuStrip1.ResumeLayout(false);
             MenuStrip1.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private TextBox TextBox1;
         private Button Button1;
         private FlowLayoutPanel FlowLayoutPanel1;
         private MenuStrip MenuStrip1;
@@ -573,5 +633,9 @@ namespace team1
         private ToolStripMenuItem fToolStripMenuItem37;
         private ToolStripMenuItem fToolStripMenuItem38;
         private ToolStripMenuItem fToolStripMenuItem41;
+        private RichTextBox TextBox1;
+        private Button button2;
+        private Panel panel1;
+        private Panel panel2;
     }
 }
