@@ -72,24 +72,29 @@ namespace team1
         {
             if (_svgXml == null) return;
 
-            XNamespace ns = "http://www.w3.org/2000/svg";
+            XNamespace ns = _svgXml.Root?.Name.Namespace ?? "";
             foreach (var group in _svgXml.Descendants(ns + "g"))
             {
                 var id = group.Attribute("id")?.Value;
                 if (string.IsNullOrEmpty(id)) continue;
 
-                if (id.StartsWith("floor_"))
+                if (id.StartsWith("floor_", StringComparison.OrdinalIgnoreCase))
                 {
                     string numPart = new string(id.Where(char.IsDigit).ToArray());
                     if (int.TryParse(numPart, out int groupFloor))
-                    {
-                        if (groupFloor == floor) group.SetAttributeValue("style", "display:inline");
-                        else group.SetAttributeValue("style", "display:none");
-                    }
+                        group.SetAttributeValue("style", groupFloor == floor ? "display:inline" : "display:none");
                 }
-                else if (id.StartsWith("nodes_") || id.StartsWith("edges_"))
+            }
+
+            foreach (var element in _svgXml.Descendants())
+            {
+                var id = element.Attribute("id")?.Value;
+                if (string.IsNullOrEmpty(id)) continue;
+
+                if (id.StartsWith("nodes_", StringComparison.OrdinalIgnoreCase) ||
+                    id.StartsWith("edges_", StringComparison.OrdinalIgnoreCase))
                 {
-                    group.SetAttributeValue("style", "display:none");
+                    element.SetAttributeValue("style", "display:none");
                 }
             }
 

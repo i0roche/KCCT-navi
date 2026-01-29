@@ -34,10 +34,7 @@ namespace team1.Controls
 
         public void FitToScreen()
         {
-            if (SvgMap?.Picture != null)
-            {
-                return;
-            }
+            if (SvgMap?.Picture == null) return;
 
             var svgRect = SvgMap.Picture.CullRect;
 
