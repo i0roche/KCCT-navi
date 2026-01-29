@@ -5,50 +5,13 @@ using System.Xml.Linq;
 using System.IO;
 using SkiaSharp;
 
+using team1.Models;
+
 namespace team1.Logic
-{
-    public class MapNode
-    {
-        public string Id { get; set; } = "";
-        public float X { get; set; }
-        public float Y { get; set; }
-        public int Floor { get; set; }
-
-        // 隣接ノードだけでなくそこへ至る形状も管理
-        // 単なる List<MapNode> ではなく専用の接続クラスを使用
-        public List<Edge> Edges { get; set; } = new();
-
-        // 互換性のために Neighbors プロパティは Edges から取得するように残します
-        public IEnumerable<MapNode> Neighbors => Edges.Select(e => e.To);
-
-        public float G { get; set; }
-        public float H { get; set; }
-        public float F => G + H;
-        public MapNode? Parent { get; set; }
-
-        // 経路復元時にどのエッジを通ってきたかを記録する用
-        public Edge? ParentEdge { get; set; }
-    }
-
-    // ノード間の接続を表すクラス
-    public class Edge
-    {
-        public MapNode From { get; set; }
-        public MapNode To { get; set; }
-        public float Cost { get; set; }
-        public List<SKPoint> Points { get; set; } = new();
-
-        public Edge(MapNode from, MapNode to, float cost)
-        {
-            From = from;
-            To = to;
-            Cost = cost;
-        }
-    }
-
+{ 
     public class PathFinder
     {
-        public List<MapNode> AllNodes { get; private set; } = new();
+        public List<MapNode> AllNodes { get; private set; } = new List<MapNode>();
 
         public void LoadFromSvg(string filePath)
         {
