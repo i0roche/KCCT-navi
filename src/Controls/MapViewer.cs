@@ -18,9 +18,12 @@ namespace team1.Controls
         public int CurrentFloor { get; set; } = 1;
         public List<Place> Places { get; set; } = new List<Place>();
         public List<MapNode> AllNodes { get; set; } = new List<MapNode>();
+        public HashSet<string> FavoritePlaceIds { get; set; } = new();
         public bool ShowRoomNames { get; set; } = true;
+        public bool ShowGraphDebug { get; set; }
 
         public event Action<Place>? RoomNodeClicked;
+        public event Action? MapBackgroundClicked;
 
         private SKMatrix _currentMatrix = SKMatrix.CreateIdentity();
         private bool _isDragging = false;
@@ -92,6 +95,99 @@ namespace team1.Controls
             {
                 DrawRoute(canvas);
             }
+
+            if (ShowGraphDebug)
+            {
+                DrawDebugGraph(canvas, currentScale);
+            }
+        }
+
+        private void DrawDebugGraph(SKCanvas canvas, float scale)
+        {
+            if (AllNodes.Count == 0) return;
+
+            using var edgePaint = new SKPaint
+            {
+                Color = SKColors.Gray.WithAlpha(140),
+                StrokeWidth = 2f / scale,
+                IsStroke = true,
+                StrokeCap = SKStrokeCap.Round,
+                StrokeJoin = SKStrokeJoin.Round,
+                IsAntialias = true
+            };
+
+            using var stairPaint = new SKPaint
+            {
+                Color = SKColors.Orange.WithAlpha(180),
+                StrokeWidth = 2.5f / scale,
+                IsStroke = true,
+                StrokeCap = SKStrokeCap.Round,
+                StrokeJoin = SKStrokeJoin.Round,
+                IsAntialias = true
+            };
+
+            using var nodePaint = new SKPaint
+            {
+                Color = SKColors.MediumPurple,
+                IsAntialias = true,
+                Style = SKPaintStyle.Fill
+            };
+
+            using var nodeBorder = new SKPaint
+            {
+                Color = SKColors.White,
+                IsAntialias = true,
+                Style = SKPaintStyle.Stroke,
+                StrokeWidth = 1.2f / scale
+            };
+
+            using var textPaint = new SKPaint
+            {
+                Color = SKColors.Black,
+                IsAntialias = true,
+                TextSize = 9f / scale,
+                TextAlign = SKTextAlign.Left
+            };
+
+            var drawn = new HashSet<string>();
+
+            foreach (var node in AllNodes)
+            {
+                foreach (var edge in node.Edges)
+                {
+                    var key = $"{edge.From.Id}|{edge.To.Id}";
+                    var reverseKey = $"{edge.To.Id}|{edge.From.Id}";
+                    if (drawn.Contains(key) || drawn.Contains(reverseKey)) continue;
+
+                    bool isCurrent = edge.From.Floor == CurrentFloor && edge.To.Floor == CurrentFloor;
+                    bool isStair = (edge.From.Floor == CurrentFloor || edge.To.Floor == CurrentFloor) && edge.From.Floor != edge.To.Floor;
+
+                    if (!isCurrent && !isStair) continue;
+
+                    DrawDebugEdge(canvas, edge, isStair ? stairPaint : edgePaint);
+                    drawn.Add(key);
+                }
+            }
+
+            foreach (var node in AllNodes.Where(n => n.Floor == CurrentFloor))
+            {
+                float radius = 4.5f / scale;
+                canvas.DrawCircle(node.X, node.Y, radius, nodePaint);
+                canvas.DrawCircle(node.X, node.Y, radius, nodeBorder);
+                canvas.DrawText(node.Id, node.X + (6f / scale), node.Y - (6f / scale), textPaint);
+            }
+        }
+
+        private static void DrawDebugEdge(SKCanvas canvas, Edge edge, SKPaint paint)
+        {
+            using var path = new SKPath();
+            path.MoveTo(edge.From.X, edge.From.Y);
+            if (edge.Points != null && edge.Points.Count > 0)
+            {
+                foreach (var p in edge.Points) path.LineTo(p);
+            }
+            path.LineTo(edge.To.X, edge.To.Y);
+            canvas.DrawPath(path, paint);
         }
 
         private void DrawRoomNames(SKCanvas canvas, float scale)
@@ -156,14 +252,16 @@ namespace team1.Controls
                 float textY = textBottom - metrics.Descent;
                 canvas.DrawText(place.Name, node.X, textY, textPaint);
 
-                DrawRoomNode(canvas, node.X, node.Y, scale);
+                bool isFavorite = FavoritePlaceIds.Contains(place.Id);
+                DrawRoomNode(canvas, node.X, node.Y, scale, isFavorite);
             }
         }
 
-        private void DrawRoomNode(SKCanvas canvas, float x, float y, float scale)
+        private void DrawRoomNode(SKCanvas canvas, float x, float y, float scale, bool isFavorite)
         {
             float radius = 5f / scale;
-            using var fill = new SKPaint { Color = SKColors.DodgerBlue, IsAntialias = true, Style = SKPaintStyle.Fill };
+            var fillColor = isFavorite ? SKColors.OrangeRed : SKColors.DodgerBlue;
+            using var fill = new SKPaint { Color = fillColor, IsAntialias = true, Style = SKPaintStyle.Fill };
             using var border = new SKPaint { Color = SKColors.White, IsAntialias = true, Style = SKPaintStyle.Stroke, StrokeWidth = 1.5f / scale };
             canvas.DrawCircle(x, y, radius, fill);
             canvas.DrawCircle(x, y, radius, border);
@@ -266,17 +364,22 @@ namespace team1.Controls
         }
         private void DrawMarker(SKCanvas canvas, float x, float y, string text, SKColor color)
         {
-            float pinSize = 30;
-            float pinWidth = 20;
-            using var path = new SKPath();
-            path.MoveTo(x, y);
-            path.LineTo(x - pinWidth / 2, y - pinSize * 0.6f);
-            path.ArcTo(new SKRect(x - pinWidth / 2, y - pinSize, x + pinWidth / 2, y - pinSize * 0.2f), -180, 180, false);
-            path.LineTo(x, y);
-            path.Close();
+            const string pathData = "m 480,-480 q 33,0 56.5,-23.5 Q 560,-527 560,-560 560,-593 536.5,-616.5 513,-640 480,-640 q -33,0 -56.5,23.5 -23.5,23.5 -23.5,56.5 0,33 23.5,56.5 23.5,23.5 56.5,23.5 z m 0,294 Q 602,-298 661,-389.5 720,-481 720,-552 720,-661 650.5,-730.5 581,-800 480,-800 379,-800 309.5,-730.5 240,-661 240,-552 q 0,71 59,162.5 59,91.5 181,203.5 z m 0,106 Q 319,-217 239.5,-334.5 160,-452 160,-552 q 0,-150 96.5,-239 96.5,-89 223.5,-89 127,0 223.5,89 96.5,89 96.5,239 0,100 -79.5,217.5 Q 641,-217 480,-80 Z";
+
+            using var path = SKPath.ParseSvgPathData(pathData);
+
+            float pinSize = 30f;
+            float scale = pinSize / 960f;
+
+            var matrix = SKMatrix.CreateTranslation(-480f, 0f);
+            matrix = matrix.PostConcat(SKMatrix.CreateScale(scale, scale));
+            matrix = matrix.PostConcat(SKMatrix.CreateTranslation(x, y));
+
+            path.Transform(matrix);
 
             using var paint = new SKPaint { Color = color, IsAntialias = true, Style = SKPaintStyle.Fill };
-            using var border = new SKPaint { Color = SKColors.White, IsAntialias = true, Style = SKPaintStyle.Stroke, StrokeWidth = 2 };
+            using var border = new SKPaint { Color = SKColors.White, IsAntialias = true, Style = SKPaintStyle.Stroke, StrokeWidth = 2f };
+
             canvas.DrawPath(path, paint);
             canvas.DrawPath(path, border);
         }
@@ -305,6 +408,8 @@ namespace team1.Controls
                     RoomNodeClicked?.Invoke(place);
                     return;
                 }
+
+                MapBackgroundClicked?.Invoke();
 
                 _isDragging = true;
                 _lastMousePos = e.Location;
