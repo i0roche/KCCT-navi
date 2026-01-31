@@ -1,6 +1,6 @@
 using System;
 
-namespace team1
+namespace team1 //stripmenuのイベントハンドラたち
 {
     public partial class Form1
     {

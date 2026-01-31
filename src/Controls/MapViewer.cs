@@ -16,18 +16,25 @@ namespace team1.Controls
         public SKSvg? SvgMap { get; set; }
         public List<Edge>? CurrentRoute {  get; set; }
         public int CurrentFloor { get; set; } = 1;
+        public int MaxFloor { get; set; } = 6;  // 最大階数
         public List<Place> Places { get; set; } = new List<Place>();
         public List<MapNode> AllNodes { get; set; } = new List<MapNode>();
         public HashSet<string> FavoritePlaceIds { get; set; } = new();
         public bool ShowRoomNames { get; set; } = true;
-        public bool ShowGraphDebug { get; set; }
 
         public event Action<Place>? RoomNodeClicked;
         public event Action? MapBackgroundClicked;
+        public event Action<int>? FloorChangeRequested;  // 階数変更リクエスト
 
         private SKMatrix _currentMatrix = SKMatrix.CreateIdentity();
+        private float _minScale = 0.1f;  // FitToScreenで計算されたスケールを最小値として記録
         private bool _isDragging = false;
         private Point _lastMousePos;
+
+        // 階数ボタンの領域
+        private Rectangle _floorUpButtonRect;
+        private Rectangle _floorDownButtonRect;
+        private Rectangle _floorLabelRect;
 
         public MapViewer()
         {
@@ -37,9 +44,25 @@ namespace team1.Controls
             this.MouseUp += (s, e) => _isDragging = false;
             this.MouseWheel += OnMouseWheel;
             this.MouseEnter += (_, _) => Focus();
+            this.Resize += (_, _) => UpdateFloorButtonRects();
             this.TabStop = true;
+        }
 
-            this.SendToBack();
+        /// <summary>
+        /// 階数ボタンの位置を更新
+        /// </summary>
+        private void UpdateFloorButtonRects()
+        {
+            int buttonSize = 36;
+            int margin = 16;
+            int spacing = 4;
+
+            int right = this.Width - margin - buttonSize;
+            int bottom = this.Height - margin;
+
+            _floorDownButtonRect = new Rectangle(right, bottom - buttonSize, buttonSize, buttonSize);
+            _floorLabelRect = new Rectangle(right, bottom - buttonSize * 2 - spacing, buttonSize, buttonSize);
+            _floorUpButtonRect = new Rectangle(right, bottom - buttonSize * 3 - spacing * 2, buttonSize, buttonSize);
         }
 
         public void FitToScreen()
@@ -64,6 +87,9 @@ namespace team1.Controls
             _currentMatrix = _currentMatrix.PostConcat(SKMatrix.CreateScale(scale, scale));
             _currentMatrix = _currentMatrix.PostConcat(SKMatrix.CreateTranslation(tx, ty));
 
+            // 全体表示時のスケールを最小値として記録
+            _minScale = scale;
+
             this.Invalidate();
         }
         private void OnPaintSurface(object? sender, SKPaintSurfaceEventArgs e)
@@ -71,16 +97,16 @@ namespace team1.Controls
             var canvas = e.Surface.Canvas;
             canvas.Clear(SKColors.White);
 
-            canvas.ClipRect(new SKRect(0, 0, this.Width, this.Height));
+            // マップ描画用に状態を保存
+            canvas.Save();
 
+            canvas.ClipRect(new SKRect(0, 0, this.Width, this.Height));
             canvas.SetMatrix(_currentMatrix);
 
             if (SvgMap?.Picture != null)
             {
-                var mapRect = SvgMap.Picture.CullRect; //svgファイルのいらない部分のクリッピング
-
+                var mapRect = SvgMap.Picture.CullRect;
                 canvas.ClipRect(mapRect);
-
                 canvas.DrawPicture(SvgMap.Picture);
             }
 
@@ -96,98 +122,106 @@ namespace team1.Controls
                 DrawRoute(canvas);
             }
 
-            if (ShowGraphDebug)
-            {
-                DrawDebugGraph(canvas, currentScale);
-            }
+            // ClipRectを含む状態を復元
+            canvas.Restore();
+
+            // 階数ボタンの描画（ClipRectの外で描画）
+            canvas.ResetMatrix();
+            DrawFloorButtons(canvas);
         }
 
-        private void DrawDebugGraph(SKCanvas canvas, float scale)
+        /// <summary>
+        /// 階数切り替えボタンを描画
+        /// </summary>
+        private void DrawFloorButtons(SKCanvas canvas)
         {
-            if (AllNodes.Count == 0) return;
+            UpdateFloorButtonRects();
 
-            using var edgePaint = new SKPaint
+            // 背景パネル
+            var panelRect = new SKRect(
+                _floorUpButtonRect.Left - 4,
+                _floorUpButtonRect.Top - 4,
+                _floorDownButtonRect.Right + 4,
+                _floorDownButtonRect.Bottom + 4
+            );
+
+            using var panelPaint = new SKPaint
             {
-                Color = SKColors.Gray.WithAlpha(140),
-                StrokeWidth = 2f / scale,
-                IsStroke = true,
-                StrokeCap = SKStrokeCap.Round,
-                StrokeJoin = SKStrokeJoin.Round,
-                IsAntialias = true
+                Color = new SKColor(255, 255, 255, 230),
+                IsAntialias = true,
+                Style = SKPaintStyle.Fill
             };
-
-            using var stairPaint = new SKPaint
+            using var panelBorder = new SKPaint
             {
-                Color = SKColors.Orange.WithAlpha(180),
-                StrokeWidth = 2.5f / scale,
-                IsStroke = true,
-                StrokeCap = SKStrokeCap.Round,
-                StrokeJoin = SKStrokeJoin.Round,
-                IsAntialias = true
+                Color = new SKColor(200, 200, 200),
+                IsAntialias = true,
+                Style = SKPaintStyle.Stroke,
+                StrokeWidth = 1
             };
+            canvas.DrawRoundRect(panelRect, 8, 8, panelPaint);
+            canvas.DrawRoundRect(panelRect, 8, 8, panelBorder);
 
-            using var nodePaint = new SKPaint
+            // 上ボタン
+            DrawFloorButton(canvas, _floorUpButtonRect, "▲", CurrentFloor < MaxFloor);
+
+            // 階数表示
+            DrawFloorLabel(canvas, _floorLabelRect, $"{CurrentFloor}F");
+
+            // 下ボタン
+            DrawFloorButton(canvas, _floorDownButtonRect, "▼", CurrentFloor > 1);
+        }
+
+        private void DrawFloorButton(SKCanvas canvas, Rectangle rect, string symbol, bool enabled)
+        {
+            SKColor bgColor = enabled ? new SKColor(66, 133, 244) : new SKColor(180, 180, 180);
+            SKColor textColor = SKColors.White;
+
+            using var bgPaint = new SKPaint
             {
-                Color = SKColors.MediumPurple,
+                Color = bgColor,
                 IsAntialias = true,
                 Style = SKPaintStyle.Fill
             };
 
-            using var nodeBorder = new SKPaint
-            {
-                Color = SKColors.White,
-                IsAntialias = true,
-                Style = SKPaintStyle.Stroke,
-                StrokeWidth = 1.2f / scale
-            };
+            var skRect = new SKRect(rect.Left, rect.Top, rect.Right, rect.Bottom);
+            canvas.DrawRoundRect(skRect, 6, 6, bgPaint);
 
             using var textPaint = new SKPaint
             {
-                Color = SKColors.Black,
+                Color = textColor,
                 IsAntialias = true,
-                TextSize = 9f / scale,
-                TextAlign = SKTextAlign.Left
+                TextSize = 16,
+                TextAlign = SKTextAlign.Center,
+                FakeBoldText = true
             };
 
-            var drawn = new HashSet<string>();
-
-            foreach (var node in AllNodes)
-            {
-                foreach (var edge in node.Edges)
-                {
-                    var key = $"{edge.From.Id}|{edge.To.Id}";
-                    var reverseKey = $"{edge.To.Id}|{edge.From.Id}";
-                    if (drawn.Contains(key) || drawn.Contains(reverseKey)) continue;
-
-                    bool isCurrent = edge.From.Floor == CurrentFloor && edge.To.Floor == CurrentFloor;
-                    bool isStair = (edge.From.Floor == CurrentFloor || edge.To.Floor == CurrentFloor) && edge.From.Floor != edge.To.Floor;
-
-                    if (!isCurrent && !isStair) continue;
-
-                    DrawDebugEdge(canvas, edge, isStair ? stairPaint : edgePaint);
-                    drawn.Add(key);
-                }
-            }
-
-            foreach (var node in AllNodes.Where(n => n.Floor == CurrentFloor))
-            {
-                float radius = 4.5f / scale;
-                canvas.DrawCircle(node.X, node.Y, radius, nodePaint);
-                canvas.DrawCircle(node.X, node.Y, radius, nodeBorder);
-                canvas.DrawText(node.Id, node.X + (6f / scale), node.Y - (6f / scale), textPaint);
-            }
+            float textY = rect.Top + rect.Height / 2 - (textPaint.FontMetrics.Ascent + textPaint.FontMetrics.Descent) / 2;
+            canvas.DrawText(symbol, rect.Left + rect.Width / 2, textY, textPaint);
         }
 
-        private static void DrawDebugEdge(SKCanvas canvas, Edge edge, SKPaint paint)
+        private void DrawFloorLabel(SKCanvas canvas, Rectangle rect, string text)
         {
-            using var path = new SKPath();
-            path.MoveTo(edge.From.X, edge.From.Y);
-            if (edge.Points != null && edge.Points.Count > 0)
+            using var bgPaint = new SKPaint
             {
-                foreach (var p in edge.Points) path.LineTo(p);
-            }
-            path.LineTo(edge.To.X, edge.To.Y);
-            canvas.DrawPath(path, paint);
+                Color = new SKColor(245, 245, 245),
+                IsAntialias = true,
+                Style = SKPaintStyle.Fill
+            };
+
+            var skRect = new SKRect(rect.Left, rect.Top, rect.Right, rect.Bottom);
+            canvas.DrawRoundRect(skRect, 6, 6, bgPaint);
+
+            using var textPaint = new SKPaint
+            {
+                Color = new SKColor(33, 33, 33),
+                IsAntialias = true,
+                TextSize = 14,
+                TextAlign = SKTextAlign.Center,
+                FakeBoldText = true
+            };
+
+            float textY = rect.Top + rect.Height / 2 - (textPaint.FontMetrics.Ascent + textPaint.FontMetrics.Descent) / 2;
+            canvas.DrawText(text, rect.Left + rect.Width / 2, textY, textPaint);
         }
 
         private void DrawRoomNames(SKCanvas canvas, float scale)
@@ -252,16 +286,14 @@ namespace team1.Controls
                 float textY = textBottom - metrics.Descent;
                 canvas.DrawText(place.Name, node.X, textY, textPaint);
 
-                bool isFavorite = FavoritePlaceIds.Contains(place.Id);
-                DrawRoomNode(canvas, node.X, node.Y, scale, isFavorite);
+                DrawRoomNode(canvas, node.X, node.Y, scale);
             }
         }
 
-        private void DrawRoomNode(SKCanvas canvas, float x, float y, float scale, bool isFavorite)
+        private void DrawRoomNode(SKCanvas canvas, float x, float y, float scale)
         {
             float radius = 5f / scale;
-            var fillColor = isFavorite ? SKColors.OrangeRed : SKColors.DodgerBlue;
-            using var fill = new SKPaint { Color = fillColor, IsAntialias = true, Style = SKPaintStyle.Fill };
+            using var fill = new SKPaint { Color = SKColors.DodgerBlue, IsAntialias = true, Style = SKPaintStyle.Fill };
             using var border = new SKPaint { Color = SKColors.White, IsAntialias = true, Style = SKPaintStyle.Stroke, StrokeWidth = 1.5f / scale };
             canvas.DrawCircle(x, y, radius, fill);
             canvas.DrawCircle(x, y, radius, border);
@@ -362,54 +394,222 @@ namespace team1.Controls
                 }
             }
         }
+
+        /// <summary>
+        /// START/GOALマーカーを描画（Material Design Location Pin）
+        /// 画面上で常に同じサイズで表示される
+        /// </summary>
         private void DrawMarker(SKCanvas canvas, float x, float y, string text, SKColor color)
         {
-            const string pathData = "m 480,-480 q 33,0 56.5,-23.5 Q 560,-527 560,-560 560,-593 536.5,-616.5 513,-640 480,-640 q -33,0 -56.5,23.5 -23.5,23.5 -23.5,56.5 0,33 23.5,56.5 23.5,23.5 56.5,23.5 z m 0,294 Q 602,-298 661,-389.5 720,-481 720,-552 720,-661 650.5,-730.5 581,-800 480,-800 379,-800 309.5,-730.5 240,-661 240,-552 q 0,71 59,162.5 59,91.5 181,203.5 z m 0,106 Q 319,-217 239.5,-334.5 160,-452 160,-552 q 0,-150 96.5,-239 96.5,-89 223.5,-89 127,0 223.5,89 96.5,89 96.5,239 0,100 -79.5,217.5 Q 641,-217 480,-80 Z";
+            // ワールド座標をスクリーン座標に変換
+            var screenPoint = _currentMatrix.MapPoint(new SKPoint(x, y));
 
-            using var path = SKPath.ParseSvgPathData(pathData);
+            // マトリックスをリセットしてスクリーン座標で描画
+            canvas.Save();
+            canvas.ResetMatrix();
 
-            float pinSize = 30f;
-            float scale = pinSize / 960f;
+            float markerSize = 40f;  // 画面上での固定サイズ
+            float pathScale = markerSize / 720f;
 
-            var matrix = SKMatrix.CreateTranslation(-480f, 0f);
-            matrix = matrix.PostConcat(SKMatrix.CreateScale(scale, scale));
-            matrix = matrix.PostConcat(SKMatrix.CreateTranslation(x, y));
+            canvas.Translate(screenPoint.X, screenPoint.Y);
+            canvas.Scale(pathScale, pathScale);
+            canvas.Translate(-480, 80);
 
-            path.Transform(matrix);
+            using var path = SKPath.ParseSvgPathData(
+                "M 480,-80 Q 319,-217 239.5,-334.5 160,-452 160,-552 " +
+                "q 0,-150 96.5,-239 96.5,-89 223.5,-89 127,0 223.5,89 96.5,89 96.5,239 " +
+                "0,100 -79.5,217.5 Q 641,-217 480,-80 Z"
+            );
 
-            using var paint = new SKPaint { Color = color, IsAntialias = true, Style = SKPaintStyle.Fill };
-            using var border = new SKPaint { Color = SKColors.White, IsAntialias = true, Style = SKPaintStyle.Stroke, StrokeWidth = 2f };
+            // 影
+            canvas.Save();
+            canvas.Translate(3, 3);
+            using var shadowPaint = new SKPaint
+            {
+                Color = new SKColor(0, 0, 0, 80),
+                IsAntialias = true,
+                Style = SKPaintStyle.Fill
+            };
+            canvas.DrawPath(path, shadowPaint);
+            canvas.Restore();
 
-            canvas.DrawPath(path, paint);
-            canvas.DrawPath(path, border);
+            // メインのピン
+            using var fillPaint = new SKPaint
+            {
+                Color = color,
+                IsAntialias = true,
+                Style = SKPaintStyle.Fill
+            };
+            canvas.DrawPath(path, fillPaint);
+
+            // 白い縁取り
+            using var borderPaint = new SKPaint
+            {
+                Color = SKColors.White,
+                IsAntialias = true,
+                Style = SKPaintStyle.Stroke,
+                StrokeWidth = 20
+            };
+            canvas.DrawPath(path, borderPaint);
+
+            // 中央の白い円
+            using var circlePaint = new SKPaint
+            {
+                Color = SKColors.White,
+                IsAntialias = true,
+                Style = SKPaintStyle.Fill
+            };
+            canvas.DrawCircle(480, -552, 80, circlePaint);
+
+            canvas.Restore();
         }
 
+        /// <summary>
+        /// 階段マーカーを描画（画面上で常に同じサイズ）
+        /// </summary>
         private void DrawStairMarker(SKCanvas canvas, float x, float y, string label)
         {
-            float size = 24;
-            SKRect rect = new SKRect(x - size / 2, y - size / 2, x + size / 2, y + size / 2);
-            using var paint = new SKPaint { Color = SKColors.Gold, IsAntialias = true, Style = SKPaintStyle.Fill };
-            using var border = new SKPaint { Color = SKColors.Black, IsAntialias = true, Style = SKPaintStyle.Stroke, StrokeWidth = 2 };
-            canvas.DrawRect(rect, paint);
-            canvas.DrawRect(rect, border);
+            // ワールド座標をスクリーン座標に変換
+            var screenPoint = _currentMatrix.MapPoint(new SKPoint(x, y));
 
-            using var textPaint = new SKPaint { Color = SKColors.Black, IsAntialias = true, TextSize = 10, TextAlign = SKTextAlign.Center };
-            float textY = y - (textPaint.FontMetrics.Ascent + textPaint.FontMetrics.Descent) / 2;
-            canvas.DrawText(label, x, textY, textPaint);
+            // マトリックスをリセットしてスクリーン座標で描画
+            canvas.Save();
+            canvas.ResetMatrix();
+
+            float size = 32;
+            float radius = size / 2;
+
+            float sx = screenPoint.X;
+            float sy = screenPoint.Y;
+
+            // 背景の影
+            using var shadowPaint = new SKPaint
+            {
+                Color = new SKColor(0, 0, 0, 60),
+                IsAntialias = true,
+                Style = SKPaintStyle.Fill
+            };
+            canvas.DrawCircle(sx + 2, sy + 2, radius, shadowPaint);
+
+            // メインの円
+            SKColor baseColor = label switch
+            {
+                "UP" => new SKColor(76, 175, 80),      // 緑 (上へ)
+                "DOWN" => new SKColor(255, 152, 0),   // オレンジ (下へ)
+                _ => new SKColor(33, 150, 243)         // 青 (リンク)
+            };
+
+            using var circlePaint = new SKPaint
+            {
+                Color = baseColor,
+                IsAntialias = true,
+                Style = SKPaintStyle.Fill
+            };
+            canvas.DrawCircle(sx, sy, radius, circlePaint);
+
+            // 白い縁取り
+            using var borderPaint = new SKPaint
+            {
+                Color = SKColors.White,
+                IsAntialias = true,
+                Style = SKPaintStyle.Stroke,
+                StrokeWidth = 2.5f
+            };
+            canvas.DrawCircle(sx, sy, radius, borderPaint);
+
+            // 矢印を描画
+            DrawArrowIcon(canvas, sx, sy, size * 0.5f, label);
+
+            canvas.Restore();
         }
+
+        /// <summary>
+        /// 階段マーカー内の矢印アイコンを描画
+        /// </summary>
+        private static void DrawArrowIcon(SKCanvas canvas, float x, float y, float arrowSize, string direction)
+        {
+            using var arrowPaint = new SKPaint
+            {
+                Color = SKColors.White,
+                IsAntialias = true,
+                Style = SKPaintStyle.Fill
+            };
+
+            using var path = new SKPath();
+
+            if (direction == "UP")
+            {
+                // 上向き矢印
+                path.MoveTo(x, y - arrowSize * 0.5f);           // 頂点
+                path.LineTo(x - arrowSize * 0.4f, y + arrowSize * 0.1f);  // 左
+                path.LineTo(x - arrowSize * 0.15f, y + arrowSize * 0.1f);
+                path.LineTo(x - arrowSize * 0.15f, y + arrowSize * 0.5f); // 軸左下
+                path.LineTo(x + arrowSize * 0.15f, y + arrowSize * 0.5f); // 軸右下
+                path.LineTo(x + arrowSize * 0.15f, y + arrowSize * 0.1f);
+                path.LineTo(x + arrowSize * 0.4f, y + arrowSize * 0.1f);  // 右
+                path.Close();
+            }
+            else if (direction == "DOWN")
+            {
+                // 下向き矢印
+                path.MoveTo(x, y + arrowSize * 0.5f);           // 頂点
+                path.LineTo(x - arrowSize * 0.4f, y - arrowSize * 0.1f);  // 左
+                path.LineTo(x - arrowSize * 0.15f, y - arrowSize * 0.1f);
+                path.LineTo(x - arrowSize * 0.15f, y - arrowSize * 0.5f); // 軸左上
+                path.LineTo(x + arrowSize * 0.15f, y - arrowSize * 0.5f); // 軸右上
+                path.LineTo(x + arrowSize * 0.15f, y - arrowSize * 0.1f);
+                path.LineTo(x + arrowSize * 0.4f, y - arrowSize * 0.1f);  // 右
+                path.Close();
+            }
+            else
+            {
+                // LINK: 両方向矢印（縦線 + 点）
+                float lineWidth = arrowSize * 0.15f;
+                float lineHeight = arrowSize * 0.6f;
+                canvas.DrawRoundRect(
+                    new SKRoundRect(new SKRect(x - lineWidth, y - lineHeight, x + lineWidth, y + lineHeight), 3, 3),
+                    arrowPaint);
+
+                // 上下に小さな三角
+                float triSize = arrowSize * 0.25f;
+                path.MoveTo(x, y - lineHeight - triSize * 0.8f);
+                path.LineTo(x - triSize, y - lineHeight + triSize * 0.3f);
+                path.LineTo(x + triSize, y - lineHeight + triSize * 0.3f);
+                path.Close();
+
+                path.MoveTo(x, y + lineHeight + triSize * 0.8f);
+                path.LineTo(x - triSize, y + lineHeight - triSize * 0.3f);
+                path.LineTo(x + triSize, y + lineHeight - triSize * 0.3f);
+                path.Close();
+            }
+
+            canvas.DrawPath(path, arrowPaint);
+        }
+
         private void OnMouseDown(object? sender, MouseEventArgs e)
         {
             Focus();
 
             if (e.Button == MouseButtons.Left)
             {
+                // 階数ボタンのクリック判定
+                if (_floorUpButtonRect.Contains(e.Location) && CurrentFloor < MaxFloor)
+                {
+                    FloorChangeRequested?.Invoke(CurrentFloor + 1);
+                    return;
+                }
+                if (_floorDownButtonRect.Contains(e.Location) && CurrentFloor > 1)
+                {
+                    FloorChangeRequested?.Invoke(CurrentFloor - 1);
+                    return;
+                }
+
+                // 部屋のクリック判定
                 if (TryPickPlace(e.Location, out var place))
                 {
                     RoomNodeClicked?.Invoke(place);
                     return;
                 }
-
-                MapBackgroundClicked?.Invoke();
 
                 _isDragging = true;
                 _lastMousePos = e.Location;
@@ -435,7 +635,8 @@ namespace team1.Controls
             float scaleFactor = e.Delta > 0 ? 1.1f : 0.9f;
             float nextScale = currentScale * scaleFactor;
 
-            if (nextScale < 0.8f || nextScale > 10.0f) return;
+            // 最小値はFitToScreenで計算されたスケール、最大値は10倍
+            if (nextScale < _minScale || nextScale > 10.0f) return;
 
             var scale = SKMatrix.CreateScale(scaleFactor, scaleFactor, e.Location.X, e.Location.Y);
             _currentMatrix = _currentMatrix.PostConcat(scale);

@@ -29,7 +29,6 @@ namespace team1
         private void InitializeComponent()
         {
             Button1 = new Button();
-            FlowLayoutPanel1 = new FlowLayoutPanel();
             MenuStrip1 = new MenuStrip();
             MenuItem_General = new ToolStripMenuItem();
             MenuItem_General_1F = new ToolStripMenuItem();
@@ -118,16 +117,6 @@ namespace team1
             Button1.Text = "検索";
             Button1.UseVisualStyleBackColor = false;
             Button1.Click += OnSearchButtonClick;
-            // 
-            // FlowLayoutPanel1
-            // 
-            FlowLayoutPanel1.AutoSize = true;
-            FlowLayoutPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            FlowLayoutPanel1.Location = new Point(0, 0);
-            FlowLayoutPanel1.Margin = new Padding(2, 1, 2, 1);
-            FlowLayoutPanel1.Name = "FlowLayoutPanel1";
-            FlowLayoutPanel1.Size = new Size(0, 0);
-            FlowLayoutPanel1.TabIndex = 3;
             // 
             // MenuStrip1
             // 
@@ -581,11 +570,14 @@ namespace team1
             // 
             // labelBuildingDescription
             // 
+            labelBuildingDescription.AutoSize = false;
             labelBuildingDescription.Location = new Point(12, 44);
             labelBuildingDescription.Name = "labelBuildingDescription";
             labelBuildingDescription.Size = new Size(159, 56);
             labelBuildingDescription.TabIndex = 1;
             labelBuildingDescription.Text = "説明";
+            labelBuildingDescription.TextAlign = ContentAlignment.TopLeft;
+            labelBuildingDescription.AutoEllipsis = true;
             // 
             // labelBuildingTitle
             // 
@@ -720,7 +712,6 @@ namespace team1
             ClientSize = new Size(951, 616);
             Controls.Add(panel1);
             Controls.Add(MenuStrip1);
-            Controls.Add(FlowLayoutPanel1);
             MainMenuStrip = MenuStrip1;
             Margin = new Padding(2, 1, 2, 1);
             Name = "Form1";
@@ -740,7 +731,6 @@ namespace team1
 
         #endregion
         private Button Button1;
-        private FlowLayoutPanel FlowLayoutPanel1;
         private MenuStrip MenuStrip1;
         private ToolStripMenuItem MenuItem_General;
         private ToolStripMenuItem MenuItem_Senmon;

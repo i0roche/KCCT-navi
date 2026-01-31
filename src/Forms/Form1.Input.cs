@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace team1
+namespace team1 //申し訳程度にショートカットがある，必要なのか？
 {
     public partial class Form1
     {

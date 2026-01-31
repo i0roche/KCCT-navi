@@ -145,7 +145,7 @@ namespace team1
                 return;
             }
 
-            var route = _finder.FindPath(start.Id, goal.Id);
+            var route = _pathFinder.FindPath(start.Id, goal.Id);
             if (route == null || route.Count == 0)
             {
                 MessageBox.Show("経路が見つかりませんでした。");
