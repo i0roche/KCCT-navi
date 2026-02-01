@@ -76,6 +76,23 @@
 | `FavoritePlaceIds` | `HashSet<string>` | お気に入り施設ID |
 | `ShowRoomNames` | `bool` | 部屋名表示フラグ |
 
+#### 部屋ノードの色分け
+
+| 色 | PlaceID | 説明 |
+|---|---------|------|
+| 青 (`DodgerBlue`) | `room_*` | 一般の部屋 |
+| 緑 (`#4CAF50`) | `wc_*` | トイレ |
+| 紫 (`#9C27B0`) | `stair_*` | 階段 |
+| 黄 (`#FFC107`) | （お気に入り） | お気に入り登録済み |
+
+#### ズームレベルによるラベル表示
+
+| スケール | 表示内容 |
+|---------|----------|
+| 1.2倍以上 | すべての部屋名を表示 |
+| 0.6〜1.2倍 | お気に入りの部屋のみ表示 |
+| 0.6倍未満 | ラベル非表示（ノードのみ） |
+
 #### イベント
 
 | イベント | 説明 |
@@ -118,7 +135,14 @@ MapNode {
     X, Y: float      // SVG座標
     Floor: int       // 階数
     Edges: List<Edge>  // 接続エッジ
-    G, H, F: float   // A*探索用コスト
+    Neighbors: IEnumerable<MapNode>  // 隣接ノード（Edgesから導出）
+    
+    // A*探索用プロパティ
+    G: float         // 開始地点からの実コスト
+    H: float         // ゴールまでの推定距離
+    F: float         // G + H（総合評価値）
+    Parent: MapNode? // 経路復元用親ノード
+    ParentEdge: Edge?  // 経路復元用親エッジ
 }
 ```
 
@@ -140,12 +164,23 @@ Edge {
 ```csharp
 Place {
     Id: string       // ノードIDと対応
-    Name: string     // "3E教室", "電子情報科 男子トイレ(2F)"
-    Type: string     // "room", "stairs", "elevator", "restroom"
-    Building: string // "一般科棟", "電子情報科棟"
+    Name: string     // "電子基礎実験室", "一般科 男子トイレ(2F)"
+    Type: string     // "lab", "classroom", "facility", "stairs", "elevator", "restroom"
+    Building: string // "一般科A棟", "電子工学科棟"
     Floor: int       // 階数
     Department: string  // "denshi", "common"
+    Description: string // 説明文
     Tags: List<string>  // 検索用タグ
+}
+```
+
+### SuggestionItem（サジェスト項目）
+検索候補表示用データ
+
+```csharp
+SuggestionItem {
+    Place: Place     // 場所情報
+    ToString(): string  // リストボックス表示用（Place.Nameを返す）
 }
 ```
 
@@ -155,24 +190,31 @@ Place {
 
 ```
 OnPaintSurface() 実行
-    │
-    ├─① canvas.Clear(White)         // 背景クリア
-    │
-    ├─② canvas.SetMatrix(_currentMatrix)  // 変換行列適用
-    │                                       // （パン・ズーム状態）
-    │
-    ├─③ DrawPicture(SvgMap)          // SVG地図描画
-    │
-    ├─④ DrawRoomNames()              // 部屋名ラベル描画
-    │   └─ DrawRoomNode()            // 青い丸マーカー
-    │
-    ├─⑤ DrawRoute()                  // 経路描画
-    │   ├─ DrawPath(floorPath)       // 経路線（青）
-    │   ├─ DrawMarker(START)         // 開始ピン（青）
-    │   ├─ DrawMarker(GOAL)          // 終点ピン（赤）
-    │   └─ DrawStairMarker()         // 階段マーカー
-    │
-    └─⑥ DrawFloorButtons()           // 階数切替ボタン（UI固定位置）
+│
+├─① canvas.Clear(White)         // 背景クリア
+│
+├─② canvas.Save()               // 状態保存
+│   canvas.SetMatrix(_currentMatrix)  // 変換行列適用（パン・ズーム）
+│
+├─③ DrawPicture(SvgMap)          // SVG地図描画
+│
+├─④ DrawRoomNodes()              // 部屋ノード描画（常に表示）
+│   └─ 色分け: 青（部屋）/緑（トイレ）/紫（階段）/黄（お気に入り）
+│
+├─⑤ DrawRoomNames()              // 部屋名ラベル描画（ズームレベル依存）
+│   ├─ scale >= 1.2: すべての部屋名
+│   ├─ 0.6 <= scale < 1.2: お気に入りのみ
+│   └─ scale < 0.6: 非表示
+│
+├─⑥ DrawRoute()                  // 経路描画
+│   ├─ DrawPath(floorPath)       // 経路線（青）
+│   ├─ DrawMarker(START)         // 開始ピン（青）
+│   ├─ DrawMarker(GOAL)          // 終点ピン（赤）
+│   └─ DrawStairMarker()         // 階段マーカー（緑/オレンジ/青）
+│
+├─⑦ canvas.Restore()             // 状態復元
+│
+└─⑧ DrawFloorButtons()           // 階数切替ボタン（スクリーン座標で固定位置）
 ```
 
 ---
@@ -229,31 +271,42 @@ OnPaintSurface() 実行
 ```
 team1/
 ├── Controls/           # カスタムコントロール
-│   └── MapViewer.cs    # マップ表示・操作コントロール
+│   └── MapViewer.cs    # マップ表示・操作コントロール（SkiaSharp使用）
 ├── Data/               # データファイル
-│   ├── map.svg         # キャンパスマップ
-│   ├── facilities.json # 共通施設（階段・トイレ・EV）
-│   ├── denshi.json     # 電子情報科
-│   ├── chem.json       # 化学科
-│   ├── advanced.json   # 専攻科
-│   └── common.json     # 共通教室
-├── Forms/              # フォーム関連
-│   ├── Form1.cs        # メインフォーム
+│   ├── common.json     # 共通棟の場所データ
+│   ├── advanced.json   # 専攻科棟の場所データ
+│   ├── chem.json       # 化学棟の場所データ
+│   ├── denshi.json     # 電子棟の場所データ
+│   ├── facilities.json # 施設の場所データ
+│   └── general.json    # 一般教室棟の場所データ
+├── Forms/              # フォーム関連（partial class分割）
+│   ├── Form1.cs        # メインフォーム（初期化）
+│   ├── Form1.Designer.cs # デザイナー生成コード
+│   ├── Form1.Lifecycle.cs # ライフサイクル管理
 │   ├── Form1.Map.cs    # 地図表示・操作
 │   ├── Form1.Search.cs # 検索機能
-│   └── Form1.Favorites.cs # お気に入り管理
+│   ├── Form1.Input.cs  # 入力処理
+│   ├── Form1.Favorites.cs # お気に入り管理
+│   ├── Form1.Panels.cs # パネル切替
+│   └── Form1.BuildingMenu.cs # 建物メニュー
 ├── Logic/              # ビジネスロジック
-│   ├── PathFinder.cs   # A*経路探索
-│   ├── SvgGraphLoader.cs # SVGグラフ読込
-│   └── MapGeometry.cs  # 座標計算
+│   ├── PathFinder.cs   # A*経路探索アルゴリズム
+│   ├── SvgGraphLoader.cs # SVGからグラフ構造読込
+│   └── MapGeometry.cs  # 座標計算・変換
 ├── Models/             # データモデル
-│   ├── Place.cs        # 場所情報
-│   ├── MapNode.cs      # ノード
-│   └── Edge.cs         # エッジ
+│   ├── Place.cs        # 場所情報（ID, 名前, 階, タグ）
+│   ├── MapNode.cs      # グラフノード（座標, 階）
+│   ├── Edge.cs         # グラフエッジ（重み, 経由点）
+│   └── SuggestionItem.cs # サジェスト項目
 ├── Services/           # サービス層
-│   └── PlaceDataService.cs # 場所データ読込
+│   └── PlaceDataService.cs # JSONから場所データ読込
+├── Properties/         # プロジェクト設定
+│   ├── Resources.resx  # リソース定義（map.svg含む）
+│   └── Resources.Designer.cs # リソースアクセスコード
 └── Program.cs          # エントリーポイント
 ```
+
+**注記**: `map.svg`は`Properties/Resources.resx`に埋め込みリソースとして含まれています。
 
 ---
 
@@ -287,4 +340,4 @@ team1/
 
 ---
 
-*このドキュメントは2025年に作成されました*
+*このドキュメントは2026年に作成されました*
