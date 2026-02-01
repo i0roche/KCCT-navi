@@ -319,7 +319,9 @@ namespace team1.Controls
 
         private void DrawRoomNode(SKCanvas canvas, float x, float y, float scale, bool isFavorite, string placeId)
         {
-            float radius = 5f / scale;
+            float dpiScale = DeviceDpi / 96f;
+
+            float radius = dpiScale * 5f / scale;
             
             // IDに基づいて色を決定
             SKColor fillColor;
