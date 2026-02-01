@@ -53,9 +53,10 @@ namespace team1.Controls
         /// </summary>
         private void UpdateFloorButtonRects()
         {
-            int buttonSize = 36;
-            int margin = 16;
-            int spacing = 4;
+            float dpiScale = DeviceDpi / 96f;
+            int buttonSize = (int)(44 * dpiScale);
+            int margin = (int)(16 * dpiScale);
+            int spacing = (int)(4 * dpiScale);
 
             int right = this.Width - margin - buttonSize;
             int bottom = this.Height - margin;
@@ -184,11 +185,12 @@ namespace team1.Controls
             var skRect = new SKRect(rect.Left, rect.Top, rect.Right, rect.Bottom);
             canvas.DrawRoundRect(skRect, 6, 6, bgPaint);
 
+            float dpiScale = DeviceDpi / 96f;
             using var textPaint = new SKPaint
             {
                 Color = textColor,
                 IsAntialias = true,
-                TextSize = 16,
+                TextSize = 20 * dpiScale,
                 TextAlign = SKTextAlign.Center,
                 FakeBoldText = true
             };
@@ -209,11 +211,12 @@ namespace team1.Controls
             var skRect = new SKRect(rect.Left, rect.Top, rect.Right, rect.Bottom);
             canvas.DrawRoundRect(skRect, 6, 6, bgPaint);
 
+            float dpiScale = DeviceDpi / 96f;
             using var textPaint = new SKPaint
             {
                 Color = new SKColor(33, 33, 33),
                 IsAntialias = true,
-                TextSize = 14,
+                TextSize = 18 * dpiScale,
                 TextAlign = SKTextAlign.Center,
                 FakeBoldText = true
             };
