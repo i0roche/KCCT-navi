@@ -24,7 +24,6 @@ namespace team1
 
         // サービス
         private readonly PlaceDataService _placeDataService = new();
-        private readonly FavoritesService _favoritesService = new();
 
         // ロジック
         private readonly PathFinder _pathFinder = new();
