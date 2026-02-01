@@ -6,6 +6,8 @@
   { "Id": "elv_1f_general", "Name": "一般科 エレベーター(1F)", "Type": "elevator", "Building": "一般科棟", "Floor": 1, "Department": "common", "Tags": ["エレベーター", "EV", "一般科"] },
   { "Id": "wc_1f_men_general", "Name": "一般科 男子トイレ(1F)", "Type": "restroom", "Building": "一般科棟", "Floor": 1, "Department": "common", "Tags": ["トイレ", "男子", "一般科"] },
   { "Id": "wc_1f_women_general", "Name": "一般科 女子トイレ(1F)", "Type": "restroom", "Building": "一般科棟", "Floor": 1, "Department": "common", "Tags": ["トイレ", "女子", "一般科"] },
+  { "Id": "wc_1f_multi_general_1", "Name": "一般科 多目的トイレ(1F)", "Type": "restroom", "Building": "一般科棟", "Floor": 1, "Department": "common", "Tags": ["トイレ", "多目的", "一般科"] },
+  { "Id": "wc_1f_multi_general_2", "Name": "一般科 多目的トイレ(1F)", "Type": "restroom", "Building": "一般科棟", "Floor": 1, "Department": "common", "Tags": ["トイレ", "多目的", "一般科"] },
 
   { "Id": "stair_2f_general_north", "Name": "一般科 北階段(2F)", "Type": "stairs", "Building": "一般科棟", "Floor": 2, "Department": "common", "Tags": ["階段", "一般科"] },
   { "Id": "stair_2f_general_center", "Name": "一般科 中央階段(2F)", "Type": "stairs", "Building": "一般科棟", "Floor": 2, "Department": "common", "Tags": ["階段", "一般科"] },
@@ -107,6 +109,8 @@
   { "Id": "wc_3f_women_kougi", "Name": "講義棟 女子トイレ(3F)", "Type": "restroom", "Building": "講義棟", "Floor": 3, "Department": "common", "Tags": ["トイレ", "女子", "講義棟"] },
   { "Id": "wc_4f_men_kougi", "Name": "講義棟 男子トイレ(4F)", "Type": "restroom", "Building": "講義棟", "Floor": 4, "Department": "common", "Tags": ["トイレ", "男子", "講義棟"] },
   { "Id": "wc_4f_women_kougi", "Name": "講義棟 女子トイレ(4F)", "Type": "restroom", "Building": "講義棟", "Floor": 4, "Department": "common", "Tags": ["トイレ", "女子", "講義棟"] },
+  { "Id": "wc_1f_multi_kougi_1", "Name": "講義棟 多目的トイレ(1F)", "Type": "restroom", "Building": "講義棟", "Floor": 1, "Department": "common", "Tags": ["トイレ", "多目的", "講義棟"] },
+  { "Id": "wc_1f_multi_kougi_2", "Name": "講義棟 多目的トイレ(2F)", "Type": "restroom", "Building": "講義棟", "Floor": 1, "Department": "common", "Tags": ["トイレ", "多目的", "講義棟"] },
 
   { "Id": "stair_1f_gakusei_east", "Name": "学生会館 東階段(1F)", "Type": "stairs", "Building": "学生会館", "Floor": 1, "Department": "common", "Tags": ["階段", "学生会館"] },
   { "Id": "stair_1f_gakusei_west", "Name": "学生会館 西階段(1F)", "Type": "stairs", "Building": "学生会館", "Floor": 1, "Department": "common", "Tags": ["階段", "学生会館"] },
@@ -135,5 +139,12 @@
   { "Id": "wc_3f_women_advanced", "Name": "専攻科棟 女子トイレ(3F)", "Type": "restroom", "Building": "専攻科棟", "Floor": 3, "Department": "common", "Tags": ["トイレ", "女子", "専攻科棟"] },
 
   { "Id": "stair_1f_liblary", "Name": "図書館 階段(1F)", "Type": "stairs", "Building": "図書館", "Floor": 1, "Department": "common", "Tags": ["階段", "図書館"] },
-  { "Id": "stair_2f_liblary", "Name": "図書館 階段(2F)", "Type": "stairs", "Building": "図書館", "Floor": 2, "Department": "common", "Tags": ["階段", "図書館"] }
+  { "Id": "stair_2f_liblary", "Name": "図書館 階段(2F)", "Type": "stairs", "Building": "図書館", "Floor": 2, "Department": "common", "Tags": ["階段", "図書館"] },
+
+  { "Id": "wc_1f_men_honbu", "Name": "本部棟 男子トイレ(1F)", "Type": "restroom", "Building": "本部棟", "Floor": 1, "Department": "common", "Tags": ["トイレ", "男子", "本部棟"] },
+  { "Id": "wc_1f_women_honbu", "Name": "本部棟 女子トイレ(1F)", "Type": "restroom", "Building": "本部棟", "Floor": 1, "Department": "common", "Tags": ["トイレ", "女子", "本部棟"] },
+  { "Id": "wc_2f_men_honbu", "Name": "本部棟 男子トイレ(2F)", "Type": "restroom", "Building": "本部棟", "Floor": 2, "Department": "common", "Tags": ["トイレ", "男子", "本部棟"] },
+  { "Id": "wc_2f_women_honbu", "Name": "本部棟 女子トイレ(2F)", "Type": "restroom", "Building": "本部棟", "Floor": 2, "Department": "common", "Tags": ["トイレ", "女子", "本部棟"] },
+  { "Id": "wc_1f_multi_honbu", "Name": "本部棟 多目的トイレ(1F)", "Type": "restroom", "Building": "本部棟", "Floor": 1, "Department": "common", "Tags": ["トイレ", "多目的", "本部棟"]}
+   
 ]

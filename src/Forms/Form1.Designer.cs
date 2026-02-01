@@ -707,8 +707,8 @@ namespace team1
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(951, 616);
             Controls.Add(panel1);
             Controls.Add(MenuStrip1);

@@ -130,9 +130,7 @@ namespace team1.Controls
             DrawFloorButtons(canvas);
         }
 
-        /// <summary>
         /// 階数切り替えボタンを描画
-        /// </summary>
         private void DrawFloorButtons(SKCanvas canvas)
         {
             UpdateFloorButtonRects();
@@ -395,10 +393,8 @@ namespace team1.Controls
             }
         }
 
-        /// <summary>
-        /// START/GOALマーカーを描画（Material Design Location Pin）
-        /// 画面上で常に同じサイズで表示される
-        /// </summary>
+        // START/GOALマーカーを描画（Material Design Location Pin）
+        // 画面上で常に同じサイズで表示される
         private void DrawMarker(SKCanvas canvas, float x, float y, string text, SKColor color)
         {
             // ワールド座標をスクリーン座標に変換
@@ -464,9 +460,7 @@ namespace team1.Controls
             canvas.Restore();
         }
 
-        /// <summary>
-        /// 階段マーカーを描画（画面上で常に同じサイズ）
-        /// </summary>
+        // 階段マーカーを描画（画面上で常に同じサイズ）
         private void DrawStairMarker(SKCanvas canvas, float x, float y, string label)
         {
             // ワールド座標をスクリーン座標に変換
@@ -523,9 +517,7 @@ namespace team1.Controls
             canvas.Restore();
         }
 
-        /// <summary>
-        /// 階段マーカー内の矢印アイコンを描画
-        /// </summary>
+        // 階段マーカー内の矢印アイコンを描画
         private static void DrawArrowIcon(SKCanvas canvas, float x, float y, float arrowSize, string direction)
         {
             using var arrowPaint = new SKPaint

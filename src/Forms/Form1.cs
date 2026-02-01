@@ -76,9 +76,7 @@ namespace team1
             return viewer;
         }
 
-        /// <summary>
         /// 階数変更リクエストを処理（ズームなしで階を切り替え）
-        /// </summary>
         private void OnFloorChangeRequested(int newFloor)
         {
             UpdateMapDisplay(newFloor);
