@@ -115,7 +115,8 @@ namespace team1.Controls
             float currentScale = _currentMatrix.ScaleX;
             if (ShowRoomNames && Places.Count > 0 && AllNodes.Count > 0)
             {
-                DrawRoomNames(canvas, currentScale);
+                DrawRoomNodes(canvas, currentScale); // 点は常に表示
+                DrawRoomNames(canvas, currentScale);  // ラベルはズーム時のみ
             }
 
             if (CurrentRoute != null && CurrentRoute.Count > 0)
@@ -227,14 +228,17 @@ namespace team1.Controls
 
         private void DrawRoomNames(SKCanvas canvas, float scale)
         {
+            if (scale < 0.6f) return;
+
             using var typeface = SKTypeface.FromFamilyName("Yu Gothic UI")
                 ?? SKTypeface.FromFamilyName("Meiryo UI")
                 ?? SKTypeface.FromFamilyName("MS Gothic")
                 ?? SKTypeface.Default;
 
-            float fontSize = 12f / scale;
-            float padding = 3f / scale;
-            float labelOffset = 12f / scale;
+            float dpiScale = DeviceDpi / 96f;
+            float fontSize = 12f * dpiScale / scale;
+            float padding = 3f * dpiScale / scale;
+            float labelOffset = 12f * dpiScale / scale;
 
             using var textPaint = new SKPaint
             {
@@ -262,6 +266,15 @@ namespace team1.Controls
 
             var roomsOnFloor = Places.Where(p => p.Floor == CurrentFloor && p.Id.StartsWith("room_")).ToList();
 
+
+            if (scale < 1.2f)
+            {
+                // 中間ズーム → お気に入りだけ表示
+                var beforeCount = roomsOnFloor.Count;
+                roomsOnFloor = roomsOnFloor.Where(p => FavoritePlaceIds.Contains(p.Id)).ToList();
+                System.Diagnostics.Debug.WriteLine($"Scale={scale:F2}, Favorites={FavoritePlaceIds.Count}, Showing {roomsOnFloor.Count}/{beforeCount} rooms");
+            }
+
             foreach (var place in roomsOnFloor)
             {
                 var node = AllNodes.FirstOrDefault(n => n.Id == place.Id && n.Floor == CurrentFloor);
@@ -287,14 +300,47 @@ namespace team1.Controls
                 float textY = textBottom - metrics.Descent;
                 canvas.DrawText(place.Name, node.X, textY, textPaint);
 
-                DrawRoomNode(canvas, node.X, node.Y, scale);
+                //DrawRoomNode(canvas, node.X, node.Y, scale, FavoritePlaceIds.Contains(place.Id));
+            }
+
+        }
+        private void DrawRoomNodes(SKCanvas canvas, float scale)
+        {
+            var roomsOnFloor = Places.Where(p => p.Floor == CurrentFloor && (p.Id.StartsWith("room_") || p.Id.StartsWith("wc_") || p.Id.StartsWith("stair_"))).ToList();
+
+            foreach (var place in roomsOnFloor)
+            {
+                var node = AllNodes.FirstOrDefault(n => n.Id == place.Id && n.Floor == CurrentFloor);
+                if (node == null) continue;
+
+                DrawRoomNode(canvas, node.X, node.Y, scale, FavoritePlaceIds.Contains(place.Id), place.Id);
             }
         }
 
-        private void DrawRoomNode(SKCanvas canvas, float x, float y, float scale)
+        private void DrawRoomNode(SKCanvas canvas, float x, float y, float scale, bool isFavorite, string placeId)
         {
             float radius = 5f / scale;
-            using var fill = new SKPaint { Color = SKColors.DodgerBlue, IsAntialias = true, Style = SKPaintStyle.Fill };
+            
+            // IDに基づいて色を決定
+            SKColor fillColor;
+            if (isFavorite)
+            {
+                fillColor = new SKColor(255, 193, 7); // お気に入りは黄色
+            }
+            else if (placeId.StartsWith("wc_"))
+            {
+                fillColor = new SKColor(76, 175, 80); // トイレは緑
+            }
+            else if (placeId.StartsWith("stair_"))
+            {
+                fillColor = new SKColor(156, 39, 176); // 階段は紫
+            }
+            else
+            {
+                fillColor = SKColors.DodgerBlue; // 部屋は青
+            }
+            
+            using var fill = new SKPaint { Color = fillColor, IsAntialias = true, Style = SKPaintStyle.Fill };
             using var border = new SKPaint { Color = SKColors.White, IsAntialias = true, Style = SKPaintStyle.Stroke, StrokeWidth = 1.5f / scale };
             canvas.DrawCircle(x, y, radius, fill);
             canvas.DrawCircle(x, y, radius, border);

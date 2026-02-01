@@ -334,7 +334,7 @@
     "Tags": ["武久 研究室", "一般科A棟", "一般科", "研究室", "武久", "国語"]
   },
   {
-    "Id": "room_6f_general_lab_teacher",
+    "Id": "room_6f_general_lab_doi",
     "Name": "土居 研究室",
     "Type": "lab",
     "Building": "一般科A棟",
