@@ -9,14 +9,6 @@ namespace team1
 {
     public partial class Form1
     {
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            LoadFavorites(); // お気に入りの読み込み
-            UpdateFavoriteButtons(); // お気に入りボタンの状態を更新
-            UpdateFavoriteMap(); // マップビューアのお気に入り情報を更新
-            RefreshFavoriteList(); // お気に入りリストを更新
-        }
-
         private void UpdateFavoriteButtons() // お気に入りボタンの状態を更新
         {
             var isFavorite = _currentFavoriteKey != null && _favoriteKeys.Contains(_currentFavoriteKey);

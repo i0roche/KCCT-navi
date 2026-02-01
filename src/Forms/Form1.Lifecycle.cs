@@ -42,6 +42,7 @@ namespace team1
         private void LoadData()
         {
             _places = _placeDataService.LoadAllPlaces();
+            LoadFavorites(); // お気に入りを読み込み
         }
 
         /// <summary>
@@ -70,6 +71,7 @@ namespace team1
             _mapViewer.AllNodes = _pathFinder.AllNodes;
             _mapViewer.Invalidate();
 
+            UpdateFavoriteMap(); // お気に入り情報をMapViewerに反映
             RefreshFavoriteList();
         }
 
