@@ -1,4 +1,7 @@
 using System;
+using System.IO;
+using System.Text.Json;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -6,6 +9,14 @@ namespace team1
 {
     public partial class Form1
     {
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            LoadFavorites(); // お気に入りの読み込み
+            UpdateFavoriteButtons(); // お気に入りボタンの状態を更新
+            UpdateFavoriteMap(); // マップビューアのお気に入り情報を更新
+            RefreshFavoriteList(); // お気に入りリストを更新
+        }
+
         private void UpdateFavoriteButtons() // お気に入りボタンの状態を更新
         {
             var isFavorite = _currentFavoriteKey != null && _favoriteKeys.Contains(_currentFavoriteKey);
@@ -25,6 +36,7 @@ namespace team1
         {
             if (_currentFavoriteKey == null) return;
             _favoriteKeys.Add(_currentFavoriteKey);
+            SaveFavorites();
             UpdateFavoriteButtons();
             UpdateFavoriteMap();
         }
@@ -33,6 +45,7 @@ namespace team1
         {
             if (_currentFavoriteKey == null) return;
             _favoriteKeys.Remove(_currentFavoriteKey);
+            SaveFavorites();
             UpdateFavoriteButtons();
             UpdateFavoriteMap();
         }
@@ -83,6 +96,45 @@ namespace team1
 
             target.Text = item.Place.Name;
             target.SelectionStart = target.Text.Length;
+        }
+
+        // Save/Load機能
+        private readonly string _saveFilePath = Path.Combine(Application.StartupPath, "favorite.json");
+
+        private void SaveFavorites() // お気に入りをファイルに保存
+        {
+            try
+            {
+                // _favoriteKeysをJSON文字列に変換
+                string jsonString = JsonSerializer.Serialize(_favoriteKeys);
+                File.WriteAllText(_saveFilePath, jsonString);
+            }
+            catch (Exception ex) //エラー処理
+            {
+                MessageBox.Show($"お気に入りの保存に失敗しました: {ex.Message}");
+            }
+        }
+
+        private void LoadFavorites()
+        {
+            try
+            {
+                if (File.Exists(_saveFilePath))
+                {
+                    string jsonString = File.ReadAllText(_saveFilePath);
+                    // JSON から HashSet<string> (またはお使いの型) に戻す
+                    var loadedData = JsonSerializer.Deserialize<HashSet<string>>(jsonString);
+                    if (loadedData != null)
+                    {
+                        _favoriteKeys = loadedData;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // ファイルが破損している場合などの処理
+                _favoriteKeys = new HashSet<string>();
+            }
         }
     }
 }

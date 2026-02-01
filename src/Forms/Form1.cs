@@ -31,7 +31,7 @@ namespace team1
         // データ
         private List<Place> _places = new();
         private XDocument? _svgXml;
-        private readonly HashSet<string> _favoriteKeys = new();
+        private HashSet<string> _favoriteKeys = new HashSet<string>();
 
         // UI
         private readonly MapViewer _mapViewer;
@@ -53,6 +53,9 @@ namespace team1
             this.Controls.Add(_mapViewer);
 
             SetupKeyboardShortcuts();
+
+            LoadFavorites();
+            RefreshFavoriteList();
         }
 
         #endregion
