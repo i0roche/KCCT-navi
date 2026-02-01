@@ -36,6 +36,15 @@
     "Tags": ["電気機械実験室1", "電気工学科棟", "電気工学科", "elec", "実験室"]
   },
   {
+    "Id": "room_1f_elec_lab_machine_2",
+    "Name": "電気機械実験室2",
+    "Type": "lab",
+    "Building": "電気工学科棟",
+    "Floor": 1,
+    "Department": "elec",
+    "Tags": ["電気機械実験室2", "電気工学科棟", "電気工学科", "elec", "実験室"]
+  },
+  {
     "Id": "room_1f_elec_lab_nano_device",
     "Name": "ナノデバイス実験室",
     "Type": "lab",
@@ -216,7 +225,7 @@
     "Tags": ["卒研室4", "電気工学科棟", "電気工学科", "elec"]
   },
   {
-    "Id": "room_3f_elec_lab_murata",
+    "Id": "room_3f_elec_lab_kawai",
     "Name": "河合 研究室",
     "Type": "lab",
     "Building": "電気工学科棟",
@@ -225,7 +234,7 @@
     "Tags": ["河合 研究室", "電気工学科棟", "電気工学科", "elec", "研究室", "河合"]
   },
   {
-    "Id": "room_3f_elec_lab_yamashita",
+    "Id": "room_3f_elec_lab_akamatsu",
     "Name": "赤松 研究室",
     "Type": "lab",
     "Building": "電気工学科棟",
@@ -234,7 +243,7 @@
     "Tags": ["赤松 研究室", "電気工学科棟", "電気工学科", "elec", "研究室", "赤松"]
   },
   {
-    "Id": "room_3f_elec_lab_ishimaru",
+    "Id": "room_3f_elec_lab_sakai",
     "Name": "酒井 研究室",
     "Type": "lab",
     "Building": "電気工学科棟",
@@ -324,7 +333,7 @@
     "Tags": ["卒研室10", "電気工学科棟", "電気工学科", "elec"]
   },
   {
-    "Id": "room_4_elec_lab_mishima",
+    "Id": "room_4f_elec_lab_michihira",
     "Name": "道平 研究室",
     "Type": "lab",
     "Building": "電気工学科棟",
@@ -333,7 +342,7 @@
     "Tags": ["道平 研究室", "電気工学科棟", "電気工学科", "elec", "研究室", "道平"]
   },
   {
-    "Id": "room_4f_elec_lab_uchIda",
+    "Id": "room_4f_elec_lab_satou",
     "Name": "佐藤(徹) 研究室",
     "Type": "lab",
     "Building": "電気工学科棟",
@@ -342,7 +351,7 @@
     "Tags": ["佐藤(徹) 研究室", "電気工学科棟", "電気工学科", "elec", "研究室", "佐藤(徹)"]
   },
   {
-    "Id": "room_4f_elec_lab_minamIde",
+    "Id": "room_4f_elec_lab_morita",
     "Name": "森田 研究室",
     "Type": "lab",
     "Building": "電気工学科棟",
@@ -351,7 +360,7 @@
     "Tags": ["森田 研究室", "電気工学科棟", "電気工学科", "elec", "研究室", "森田"]
   },
   {
-    "Id": "room_4f_elec_lab_matsushima",
+    "Id": "room_4f_elec_lab_katou",
     "Name": "加藤 研究室",
     "Type": "lab",
     "Building": "電気工学科棟",
@@ -360,7 +369,7 @@
     "Tags": ["加藤 研究室", "電気工学科棟", "電気工学科", "elec", "研究室", "加藤"]
   },
   {
-    "Id": "room_4f_elec_lab_satou",
+    "Id": "room_4f_elec_lab_nakamura",
     "Name": "中村 研究室",
     "Type": "lab",
     "Building": "電気工学科棟",

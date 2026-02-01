@@ -108,6 +108,15 @@
     "Tags": ["物理実験室", "一般科B棟", "一般科"]
   },
   {
+    "Id": "room_4f_general_lab_optics",
+    "Name": "光学実験室",
+    "Type": "lab",
+    "Building": "一般科B棟",
+    "Floor": 4,
+    "Department": "general",
+    "Tags": ["光学実験室", "一般科B棟", "一般科"]
+  },
+  {
     "Id": "room_5f_general_classroom_chem",
     "Name": "化学階段教室",
     "Type": "classroom",
@@ -135,70 +144,17 @@
     "Tags": ["外国人講師室", "一般科A棟", "一般科"]
   },
   {
-    "Id": "room_5f_general_lab_teacher",
-    "Name": "佐藤(洋) 研究室",
+    "Id": "room_5f_general_lab_ijima",
+    "Name": "飯島 研究室",
     "Type": "lab",
     "Building": "一般科A棟",
     "Floor": 5,
     "Department": "general",
-    "Tags": ["佐藤(洋) 研究室", "一般科A棟", "一般科", "研究室", "佐藤", "理科"]
+    "Tags": ["飯島 研究室", "一般科A棟", "一般科", "研究室", "飯島", "英語"]
   },
+  
   {
-    "Id": "room_5f_general_lab_teacher_2",
-    "Name": "大塩 研究室",
-    "Type": "lab",
-    "Building": "一般科A棟",
-    "Floor": 5,
-    "Department": "general",
-    "Tags": ["大塩 研究室", "一般科A棟", "一般科", "研究室", "大塩", "理科"]
-  },
-  {
-    "Id": "room_5f_general_lab_teacher_3",
-    "Name": "髙見 研究室",
-    "Type": "lab",
-    "Building": "一般科A棟",
-    "Floor": 5,
-    "Department": "general",
-    "Tags": ["髙見 研究室", "一般科A棟", "一般科", "研究室", "髙見", "理科"]
-  },
-  {
-    "Id": "room_5f_general_lab_teacher_4",
-    "Name": "小倉 研究室",
-    "Type": "lab",
-    "Building": "一般科A棟",
-    "Floor": 5,
-    "Department": "general",
-    "Tags": ["小倉 研究室", "一般科A棟", "一般科", "研究室", "小倉", "理科"]
-  },
-  {
-    "Id": "room_5f_general_lab_teacher_5",
-    "Name": "今里 研究室",
-    "Type": "lab",
-    "Building": "一般科A棟",
-    "Floor": 5,
-    "Department": "general",
-    "Tags": ["今里 研究室", "一般科A棟", "一般科", "研究室", "今里", "英語"]
-  },
-  {
-    "Id": "room_5f_general_lab_teacher_6",
-    "Name": "上垣 研究室",
-    "Type": "lab",
-    "Building": "一般科A棟",
-    "Floor": 5,
-    "Department": "general",
-    "Tags": ["上垣 研究室", "一般科A棟", "一般科", "研究室", "上垣", "英語"]
-  },
-  {
-    "Id": "room_5f_general_lab_teacher_7",
-    "Name": "Pileggi 研究室",
-    "Type": "lab",
-    "Building": "一般科A棟",
-    "Floor": 5,
-    "Department": "general",
-    "Tags": ["Pileggi 研究室", "一般科A棟", "一般科", "研究室", "Pileggi", "英語"]
-  },
-  {
-    "Id": "room_5f_general_lab_teacher_8",
+    "Id": "room_5f_general_lab_hirano",
     "Name": "平野 研究室",
     "Type": "lab",
     "Building": "一般科A棟",
@@ -207,16 +163,16 @@
     "Tags": ["平野 研究室", "一般科A棟", "一般科", "研究室", "平野", "英語"]
   },
   {
-    "Id": "room_5f_general_lab_teacher_9",
-    "Name": "山本 研究室",
+    "Id": "room_5f_general_lab_imasato",
+    "Name": "今里 研究室",
     "Type": "lab",
     "Building": "一般科A棟",
     "Floor": 5,
     "Department": "general",
-    "Tags": ["山本 研究室", "一般科A棟", "一般科", "研究室", "山本", "英語"]
+    "Tags": ["今里 研究室", "一般科A棟", "一般科", "研究室", "今里", "英語"]
   },
   {
-    "Id": "room_5f_general_lab_teacher_10",
+    "Id": "room_5f_general_lab_minami",
     "Name": "南 研究室",
     "Type": "lab",
     "Building": "一般科A棟",
@@ -225,142 +181,70 @@
     "Tags": ["南 研究室", "一般科A棟", "一般科", "研究室", "南", "英語"]
   },
   {
-    "Id": "room_5f_general_lab_teacher_11",
-    "Name": "飯島 研究室",
+    "Id": "room_5f_general_lab_uegaki",
+    "Name": "上垣 研究室",
     "Type": "lab",
     "Building": "一般科A棟",
     "Floor": 5,
     "Department": "general",
-    "Tags": ["飯島 研究室", "一般科A棟", "一般科", "研究室", "飯島", "英語"]
+    "Tags": ["上垣 研究室", "一般科A棟", "一般科", "研究室", "上垣", "英語"]
   },
   {
-    "Id": "room_6f_general_lab_teacher",
-    "Name": "土居 研究室",
+    "Id": "room_5f_general_lab_pileggi",
+    "Name": "Pileggi 研究室",
     "Type": "lab",
     "Building": "一般科A棟",
-    "Floor": 6,
+    "Floor": 5,
     "Department": "general",
-    "Tags": ["土居 研究室", "一般科A棟", "一般科", "研究室", "土居", "国語"]
+    "Tags": ["Pileggi 研究室", "一般科A棟", "一般科", "研究室", "Pileggi", "英語"]
   },
   {
-    "Id": "room_6f_general_lab_teacher_2",
-    "Name": "石原 研究室",
+    "Id": "room_5f_general_lab_yamamoto_t",
+    "Name": "山本(長) 研究室",
     "Type": "lab",
     "Building": "一般科A棟",
-    "Floor": 6,
+    "Floor": 5,
     "Department": "general",
-    "Tags": ["石原 研究室", "一般科A棟", "一般科", "研究室", "石原", "国語"]
+    "Tags": ["山本(長) 研究室", "一般科A棟", "一般科", "研究室", "山本", "英語"]
   },
   {
-    "Id": "room_6f_general_lab_teacher_3",
-    "Name": "武久 研究室",
+    "Id": "room_5f_general_lab_sato_y",
+    "Name": "佐藤(洋) 研究室",
     "Type": "lab",
     "Building": "一般科A棟",
-    "Floor": 6,
+    "Floor": 5,
     "Department": "general",
-    "Tags": ["武久 研究室", "一般科A棟", "一般科", "研究室", "武久", "国語"]
+    "Tags": ["佐藤(洋) 研究室", "一般科A棟", "一般科", "研究室", "佐藤", "理科"]
   },
   {
-    "Id": "room_6f_general_lab_teacher_4",
-    "Name": "町田 研究室",
-    "Type": "lab",
-    "Building": "一般科B棟",
-    "Floor": 6,
-    "Department": "general",
-    "Tags": ["町田 研究室", "一般科B棟", "一般科", "研究室", "町田", "人文社会"]
-  },
-  {
-    "Id": "room_6f_general_lab_teacher_5",
-    "Name": "八百 研究室",
-    "Type": "lab",
-    "Building": "一般科B棟",
-    "Floor": 6,
-    "Department": "general",
-    "Tags": ["八百 研究室", "一般科B棟", "一般科", "研究室", "八百", "人文社会"]
-  },
-  {
-    "Id": "room_6f_general_lab_teacher_6",
-    "Name": "深見 研究室",
-    "Type": "lab",
-    "Building": "一般科B棟",
-    "Floor": 6,
-    "Department": "general",
-    "Tags": ["深見 研究室", "一般科B棟", "一般科", "研究室", "深見", "人文社会"]
-  },
-  {
-    "Id": "room_6f_general_lab_teacher_7",
-    "Name": "山本(舜) 研究室",
-    "Type": "lab",
-    "Building": "一般科B棟",
-    "Floor": 6,
-    "Department": "general",
-    "Tags": ["山本(舜) 研究室", "一般科B棟", "一般科", "研究室", "山本", "人文社会"]
-  },
-  {
-    "Id": "room_6f_general_lab_teacher_8",
-    "Name": "横山 研究室",
+    "Id": "room_5f_general_lab_takami",
+    "Name": "髙見 研究室",
     "Type": "lab",
     "Building": "一般科A棟",
-    "Floor": 6,
+    "Floor": 5,
     "Department": "general",
-    "Tags": ["横山 研究室", "一般科A棟", "一般科", "研究室", "横山", "数学"]
+    "Tags": ["髙見 研究室", "一般科A棟", "一般科", "研究室", "髙見", "理科"]
   },
   {
-    "Id": "room_6f_general_lab_teacher_9",
-    "Name": "菅野 研究室",
+    "Id": "room_5f_general_lab_ooshio",
+    "Name": "大塩 研究室",
     "Type": "lab",
     "Building": "一般科A棟",
-    "Floor": 6,
+    "Floor": 5,
     "Department": "general",
-    "Tags": ["菅野 研究室", "一般科A棟", "一般科", "研究室", "菅野", "数学"]
+    "Tags": ["大塩 研究室", "一般科A棟", "一般科", "研究室", "大塩", "理科"]
   },
   {
-    "Id": "room_6f_general_lab_teacher_10",
-    "Name": "吉村 研究室",
+    "Id": "room_5f_general_lab_ogura",
+    "Name": "小倉 研究室",
     "Type": "lab",
     "Building": "一般科A棟",
-    "Floor": 6,
+    "Floor": 5,
     "Department": "general",
-    "Tags": ["吉村 研究室", "一般科A棟", "一般科", "研究室", "吉村", "数学"]
+    "Tags": ["小倉 研究室", "一般科A棟", "一般科", "研究室", "小倉", "理科"]
   },
   {
-    "Id": "room_6f_general_lab_teacher_11",
-    "Name": "北村 研究室",
-    "Type": "lab",
-    "Building": "一般科A棟",
-    "Floor": 6,
-    "Department": "general",
-    "Tags": ["北村 研究室", "一般科A棟", "一般科", "研究室", "北村", "数学"]
-  },
-  {
-    "Id": "room_6f_general_lab_teacher_12",
-    "Name": "児玉 研究室",
-    "Type": "lab",
-    "Building": "一般科A棟",
-    "Floor": 6,
-    "Department": "general",
-    "Tags": ["児玉 研究室", "一般科A棟", "一般科", "研究室", "児玉", "数学"]
-  },
-  {
-    "Id": "room_6f_general_lab_teacher_13",
-    "Name": "谷口(公) 研究室",
-    "Type": "lab",
-    "Building": "一般科A棟",
-    "Floor": 6,
-    "Department": "general",
-    "Tags": ["谷口(公) 研究室", "一般科A棟", "一般科", "研究室", "谷口", "数学"]
-  },
-  {
-    "Id": "room_6f_general_lab_teacher_14",
-    "Name": "山路 研究室",
-    "Type": "lab",
-    "Building": "一般科A棟",
-    "Floor": 6,
-    "Department": "general",
-    "Tags": ["山路 研究室", "一般科A棟", "一般科", "研究室", "山路", "数学"]
-  },
-  {
-    "Id": "room_6f_general_lab_teacher_15",
+    "Id": "room_6f_general_lab_shoro",
     "Name": "松露 研究室",
     "Type": "lab",
     "Building": "一般科A棟",
@@ -369,7 +253,133 @@
     "Tags": ["松露 研究室", "一般科A棟", "一般科", "研究室", "松露", "情報"]
   },
   {
-    "Id": "room_6f_general_lab_teacher_16",
+    "Id": "room_6f_general_lab_yokoyama",
+    "Name": "横山 研究室",
+    "Type": "lab",
+    "Building": "一般科A棟",
+    "Floor": 6,
+    "Department": "general",
+    "Tags": ["横山 研究室", "一般科A棟", "一般科", "研究室", "横山", "数学"]
+  },
+  {
+    "Id": "room_6f_general_lab_kitamura",
+    "Name": "北村 研究室",
+    "Type": "lab",
+    "Building": "一般科A棟",
+    "Floor": 6,
+    "Department": "general",
+    "Tags": ["北村 研究室", "一般科A棟", "一般科", "研究室", "北村", "数学"]
+  },
+  {
+    "Id": "room_6f_general_lab_kodama",
+    "Name": "児玉 研究室",
+    "Type": "lab",
+    "Building": "一般科A棟",
+    "Floor": 6,
+    "Department": "general",
+    "Tags": ["児玉 研究室", "一般科A棟", "一般科", "研究室", "児玉", "数学"]
+  },
+  {
+    "Id": "room_6f_general_lab_taniguchi_k",
+    "Name": "谷口(公) 研究室",
+    "Type": "lab",
+    "Building": "一般科A棟",
+    "Floor": 6,
+    "Department": "general",
+    "Tags": ["谷口(公) 研究室", "一般科A棟", "一般科", "研究室", "谷口", "数学"]
+  },
+  {
+    "Id": "room_6f_general_lab_yoshimura",
+    "Name": "吉村 研究室",
+    "Type": "lab",
+    "Building": "一般科A棟",
+    "Floor": 6,
+    "Department": "general",
+    "Tags": ["吉村 研究室", "一般科A棟", "一般科", "研究室", "吉村", "数学"]
+  },
+  {
+    "Id": "room_6f_general_lab_sugano",
+    "Name": "菅野 研究室",
+    "Type": "lab",
+    "Building": "一般科A棟",
+    "Floor": 6,
+    "Department": "general",
+    "Tags": ["菅野 研究室", "一般科A棟", "一般科", "研究室", "菅野", "数学"]
+  },
+  {
+    "Id": "room_6f_general_lab_yamaji",
+    "Name": "山路 研究室",
+    "Type": "lab",
+    "Building": "一般科A棟",
+    "Floor": 6,
+    "Department": "general",
+    "Tags": ["山路 研究室", "一般科A棟", "一般科", "研究室", "山路", "数学"]
+  },
+  {
+    "Id": "room_6f_general_lab_ishihara",
+    "Name": "石原 研究室",
+    "Type": "lab",
+    "Building": "一般科A棟",
+    "Floor": 6,
+    "Department": "general",
+    "Tags": ["石原 研究室", "一般科A棟", "一般科", "研究室", "石原", "国語"]
+  },
+  {
+    "Id": "room_6f_general_lab_takehisa",
+    "Name": "武久 研究室",
+    "Type": "lab",
+    "Building": "一般科A棟",
+    "Floor": 6,
+    "Department": "general",
+    "Tags": ["武久 研究室", "一般科A棟", "一般科", "研究室", "武久", "国語"]
+  },
+  {
+    "Id": "room_6f_general_lab_doi",
+    "Name": "土居 研究室",
+    "Type": "lab",
+    "Building": "一般科A棟",
+    "Floor": 6,
+    "Department": "general",
+    "Tags": ["土居 研究室", "一般科A棟", "一般科", "研究室", "土居", "国語"]
+  },
+  {
+    "Id": "room_6f_general_lab_machida",
+    "Name": "町田 研究室",
+    "Type": "lab",
+    "Building": "一般科B棟",
+    "Floor": 6,
+    "Department": "general",
+    "Tags": ["町田 研究室", "一般科B棟", "一般科", "研究室", "町田", "人文社会"]
+  },
+  {
+    "Id": "room_6f_general_lab_yao",
+    "Name": "八百 研究室",
+    "Type": "lab",
+    "Building": "一般科B棟",
+    "Floor": 6,
+    "Department": "general",
+    "Tags": ["八百 研究室", "一般科B棟", "一般科", "研究室", "八百", "人文社会"]
+  },
+  {
+    "Id": "room_6f_general_lab_fukami",
+    "Name": "深見 研究室",
+    "Type": "lab",
+    "Building": "一般科B棟",
+    "Floor": 6,
+    "Department": "general",
+    "Tags": ["深見 研究室", "一般科B棟", "一般科", "研究室", "深見", "人文社会"]
+  },
+  {
+    "Id": "room_6f_general_lab_yamamoto_s",
+    "Name": "山本(舜) 研究室",
+    "Type": "lab",
+    "Building": "一般科B棟",
+    "Floor": 6,
+    "Department": "general",
+    "Tags": ["山本(舜) 研究室", "一般科B棟", "一般科", "研究室", "山本", "人文社会"]
+  },
+  {
+    "Id": "room_6f_general_lab_fujita",
     "Name": "藤田 研究室",
     "Type": "lab",
     "Building": "一般科B棟",

@@ -6,57 +6,8 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="Data\denki1.png" />
-    <None Remove="Data\denki2.png" />
-    <None Remove="Data\denki3.png" />
-    <None Remove="Data\denki4.png" />
-    <None Remove="Data\densi1.png" />
-    <None Remove="Data\densi2.png" />
-    <None Remove="Data\densi3.png" />
-    <None Remove="Data\densi4.png" />
-    <None Remove="Data\gakuseikaikan_1.png" />
-    <None Remove="Data\gakuseikaikan_2.png" />
-    <None Remove="Data\gakuseikaikan_3.png" />
-    <None Remove="Data\honbutou_1.png" />
-    <None Remove="Data\honbutou_2.png" />
-    <None Remove="Data\info-center.png" />
-    <None Remove="Data\ippan_1.png" />
-    <None Remove="Data\ippan_2.png" />
-    <None Remove="Data\ippan_3.png" />
-    <None Remove="Data\ippan_4.png" />
-    <None Remove="Data\ippan_5.png" />
-    <None Remove="Data\ippan_6.png" />
-    <None Remove="Data\kagaku1.png" />
-    <None Remove="Data\kagaku2.png" />
-    <None Remove="Data\kagaku3.png" />
-    <None Remove="Data\kagaku4.png" />
-    <None Remove="Data\kikai1.png" />
-    <None Remove="Data\kikai2.png" />
-    <None Remove="Data\kikai3.png" />
-    <None Remove="Data\kikai4.png" />
-    <None Remove="Data\kougi1.png" />
-    <None Remove="Data\kougi2.png" />
-    <None Remove="Data\kougi3.png" />
-    <None Remove="Data\kougi4.png" />
-    <None Remove="Data\koujyou_1.png" />
-    <None Remove="Data\koujyou_2.png" />
-    <None Remove="Data\library_1.png" />
-    <None Remove="Data\library_2.png" />
-    <None Remove="Data\map_notext_4K.png" />
-    <None Remove="Data\map_text_4K.png" />
-    <None Remove="Data\senkou_1.png" />
-    <None Remove="Data\senkou_2.png" />
-    <None Remove="Data\senkou_3.png" />
-    <None Remove="Data\syokudo.png" />
-    <None Remove="Data\tosi1.png" />
-    <None Remove="Data\tosi2.png" />
-    <None Remove="Data\tosi3.png" />
-    <None Remove="Data\tosi4.png" />
-    <None Remove="Data\施設一覧.xlsx" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="SkiaSharp.Views.Desktop.Common" Version="3.119.1" />
@@ -83,7 +34,34 @@
     <None Update="Data\advanced.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Data\chem.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\common.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\denshi.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\elec.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\facilities.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\factory.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\general.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Data\map.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\mech.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\toshi.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

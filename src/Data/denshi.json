@@ -150,7 +150,8 @@
     "Building": "一般科A棟",
     "Floor": 2,
     "Department": "denshi",
-    "Tags": ["D3 ホームルーム", "一般科A棟", "一般科", "HR"]
+    "Tags": ["D3 ホームルーム", "一般科A棟", "一般科", "HR"],
+    "Description": "Description Test"
   },
   {
     "Id": "room_3f_denshi_lab_computer",
