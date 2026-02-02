@@ -348,23 +348,23 @@ namespace team1.Controls
 
             float radius = dpiScale * 5f / scale;
             
-            // IDに基づいて色を決定
+            // IDに基づいて色を決定（落ち着いた中間色）
             SKColor fillColor;
             if (isFavorite)
             {
-                fillColor = new SKColor(255, 193, 7); // お気に入りは黄色
+                fillColor = new SKColor(245, 158, 11);  // アンバー
             }
             else if (placeId.StartsWith("wc_"))
             {
-                fillColor = new SKColor(76, 175, 80); // トイレは緑
+                fillColor = new SKColor(34, 197, 94);   // グリーン
             }
             else if (placeId.StartsWith("stair_"))
             {
-                fillColor = new SKColor(156, 39, 176); // 階段は紫
+                fillColor = new SKColor(139, 92, 246);  // バイオレット
             }
             else
             {
-                fillColor = SKColors.DodgerBlue; // 部屋は青
+                fillColor = new SKColor(59, 130, 246);  // ブルー
             }
             
             using var fill = new SKPaint { Color = fillColor, IsAntialias = true, Style = SKPaintStyle.Fill };
@@ -480,7 +480,7 @@ namespace team1.Controls
             canvas.Save();
             canvas.ResetMatrix();
 
-            float markerSize = 40f;  // 画面上での固定サイズ
+            float markerSize = 44f;  // 画面上での固定サイズ
             float pathScale = markerSize / 720f;
 
             canvas.Translate(screenPoint.X, screenPoint.Y);
@@ -493,34 +493,53 @@ namespace team1.Controls
                 "0,100 -79.5,217.5 Q 641,-217 480,-80 Z"
             );
 
-            // 影
+            // モダンな配色（グラデーション）
+            SKColor primaryColor, darkColor;
+            if (text == "START")
+            {
+                primaryColor = new SKColor(59, 130, 246);   // ブルー
+                darkColor = new SKColor(37, 99, 235);       // ディープブルー
+            }
+            else
+            {
+                primaryColor = new SKColor(239, 100, 95);   // サーモンレッド
+                darkColor = new SKColor(220, 75, 75);       // ミディアムレッド
+            }
+
+            // 影（ぼかし付き）
             canvas.Save();
-            canvas.Translate(3, 3);
+            canvas.Translate(4, 5);
             using var shadowPaint = new SKPaint
             {
-                Color = new SKColor(0, 0, 0, 80),
+                Color = new SKColor(0, 0, 0, 50),
                 IsAntialias = true,
-                Style = SKPaintStyle.Fill
+                Style = SKPaintStyle.Fill,
+                MaskFilter = SKMaskFilter.CreateBlur(SKBlurStyle.Normal, 8)
             };
             canvas.DrawPath(path, shadowPaint);
             canvas.Restore();
 
-            // メインのピン
-            using var fillPaint = new SKPaint
+            // グラデーション塗り
+            using var gradientPaint = new SKPaint
             {
-                Color = color,
                 IsAntialias = true,
-                Style = SKPaintStyle.Fill
+                Style = SKPaintStyle.Fill,
+                Shader = SKShader.CreateLinearGradient(
+                    new SKPoint(320, -700),
+                    new SKPoint(640, -200),
+                    new SKColor[] { primaryColor, darkColor },
+                    null,
+                    SKShaderTileMode.Clamp)
             };
-            canvas.DrawPath(path, fillPaint);
+            canvas.DrawPath(path, gradientPaint);
 
             // 白い縁取り
             using var borderPaint = new SKPaint
             {
-                Color = SKColors.White,
+                Color = SKColors.White.WithAlpha(230),
                 IsAntialias = true,
                 Style = SKPaintStyle.Stroke,
-                StrokeWidth = 20
+                StrokeWidth = 18
             };
             canvas.DrawPath(path, borderPaint);
 
@@ -531,7 +550,19 @@ namespace team1.Controls
                 IsAntialias = true,
                 Style = SKPaintStyle.Fill
             };
-            canvas.DrawCircle(480, -552, 80, circlePaint);
+            canvas.DrawCircle(480, -552, 85, circlePaint);
+
+            // 円の中にアイコン（S / G）
+            using var iconPaint = new SKPaint
+            {
+                Color = primaryColor,
+                IsAntialias = true,
+                TextSize = 100,
+                TextAlign = SKTextAlign.Center,
+                FakeBoldText = true
+            };
+            string icon = text == "START" ? "S" : "G";
+            canvas.DrawText(icon, 480, -520, iconPaint);
 
             canvas.Restore();
         }
@@ -546,112 +577,140 @@ namespace team1.Controls
             canvas.Save();
             canvas.ResetMatrix();
 
-            float size = 32;
-            float radius = size / 2;
-
+            float size = 36;
             float sx = screenPoint.X;
             float sy = screenPoint.Y;
 
-            // 背景の影
+            // 色設定
+            SKColor primaryColor = label switch
+            {
+                "UP" => new SKColor(16, 185, 129),    // エメラルドグリーン
+                "DOWN" => new SKColor(245, 158, 11),  // アンバー
+                _ => new SKColor(99, 102, 241)        // インディゴ
+            };
+            SKColor darkColor = label switch
+            {
+                "UP" => new SKColor(5, 150, 105),
+                "DOWN" => new SKColor(217, 119, 6),
+                _ => new SKColor(79, 70, 229)
+            };
+
+            // 角丸四角形の背景
+            var bgRect = new SKRect(sx - size / 2, sy - size / 2, sx + size / 2, sy + size / 2);
+
+            // 影（ぼかし効果）
             using var shadowPaint = new SKPaint
             {
-                Color = new SKColor(0, 0, 0, 60),
+                Color = new SKColor(0, 0, 0, 40),
                 IsAntialias = true,
-                Style = SKPaintStyle.Fill
+                Style = SKPaintStyle.Fill,
+                MaskFilter = SKMaskFilter.CreateBlur(SKBlurStyle.Normal, 3)
             };
-            canvas.DrawCircle(sx + 2, sy + 2, radius, shadowPaint);
+            canvas.DrawRoundRect(bgRect.Left + 2, bgRect.Top + 3, size, size, 8, 8, shadowPaint);
 
-            // メインの円
-            SKColor baseColor = label switch
+            // グラデーション背景
+            using var gradientPaint = new SKPaint
             {
-                "UP" => new SKColor(76, 175, 80),      // 緑 (上へ)
-                "DOWN" => new SKColor(255, 152, 0),   // オレンジ (下へ)
-                _ => new SKColor(33, 150, 243)         // 青 (リンク)
-            };
-
-            using var circlePaint = new SKPaint
-            {
-                Color = baseColor,
                 IsAntialias = true,
-                Style = SKPaintStyle.Fill
+                Style = SKPaintStyle.Fill,
+                Shader = SKShader.CreateLinearGradient(
+                    new SKPoint(bgRect.Left, bgRect.Top),
+                    new SKPoint(bgRect.Right, bgRect.Bottom),
+                    new SKColor[] { primaryColor, darkColor },
+                    null,
+                    SKShaderTileMode.Clamp)
             };
-            canvas.DrawCircle(sx, sy, radius, circlePaint);
+            canvas.DrawRoundRect(bgRect, 8, 8, gradientPaint);
 
             // 白い縁取り
             using var borderPaint = new SKPaint
             {
-                Color = SKColors.White,
+                Color = SKColors.White.WithAlpha(200),
                 IsAntialias = true,
                 Style = SKPaintStyle.Stroke,
-                StrokeWidth = 2.5f
+                StrokeWidth = 2f
             };
-            canvas.DrawCircle(sx, sy, radius, borderPaint);
+            canvas.DrawRoundRect(bgRect, 8, 8, borderPaint);
 
-            // 矢印を描画
-            DrawArrowIcon(canvas, sx, sy, size * 0.5f, label);
+            // アイコン描画
+            DrawStairIcon(canvas, sx, sy, size * 0.55f, label);
 
             canvas.Restore();
         }
 
-        // 階段マーカー内の矢印アイコンを描画
-        private static void DrawArrowIcon(SKCanvas canvas, float x, float y, float arrowSize, string direction)
+        // 階段アイコンを描画（大きな矢印メイン）
+        private static void DrawStairIcon(SKCanvas canvas, float x, float y, float iconSize, string direction)
         {
-            using var arrowPaint = new SKPaint
+            using var iconPaint = new SKPaint
             {
                 Color = SKColors.White,
                 IsAntialias = true,
                 Style = SKPaintStyle.Fill
             };
 
-            using var path = new SKPath();
+            using var strokePaint = new SKPaint
+            {
+                Color = SKColors.White,
+                IsAntialias = true,
+                Style = SKPaintStyle.Stroke,
+                StrokeWidth = 3f,
+                StrokeCap = SKStrokeCap.Round,
+                StrokeJoin = SKStrokeJoin.Round
+            };
 
-            if (direction == "UP")
+            float s = iconSize;
+
+            if (direction == "UP" || direction == "DOWN")
             {
-                // 上向き矢印
-                path.MoveTo(x, y - arrowSize * 0.5f);           // 頂点
-                path.LineTo(x - arrowSize * 0.4f, y + arrowSize * 0.1f);  // 左
-                path.LineTo(x - arrowSize * 0.15f, y + arrowSize * 0.1f);
-                path.LineTo(x - arrowSize * 0.15f, y + arrowSize * 0.5f); // 軸左下
-                path.LineTo(x + arrowSize * 0.15f, y + arrowSize * 0.5f); // 軸右下
-                path.LineTo(x + arrowSize * 0.15f, y + arrowSize * 0.1f);
-                path.LineTo(x + arrowSize * 0.4f, y + arrowSize * 0.1f);  // 右
-                path.Close();
-            }
-            else if (direction == "DOWN")
-            {
-                // 下向き矢印
-                path.MoveTo(x, y + arrowSize * 0.5f);           // 頂点
-                path.LineTo(x - arrowSize * 0.4f, y - arrowSize * 0.1f);  // 左
-                path.LineTo(x - arrowSize * 0.15f, y - arrowSize * 0.1f);
-                path.LineTo(x - arrowSize * 0.15f, y - arrowSize * 0.5f); // 軸左上
-                path.LineTo(x + arrowSize * 0.15f, y - arrowSize * 0.5f); // 軸右上
-                path.LineTo(x + arrowSize * 0.15f, y - arrowSize * 0.1f);
-                path.LineTo(x + arrowSize * 0.4f, y - arrowSize * 0.1f);  // 右
-                path.Close();
+                // 大きな矢印をメインに
+                using var arrowPath = new SKPath();
+                float arrowWidth = s * 0.7f;
+                float arrowHeight = s * 0.85f;
+                float shaftWidth = s * 0.25f;
+
+                if (direction == "UP")
+                {
+                    // 上向き矢印
+                    arrowPath.MoveTo(x, y - arrowHeight * 0.5f);                          // 頂点
+                    arrowPath.LineTo(x - arrowWidth * 0.5f, y + arrowHeight * 0.05f);     // 左翼
+                    arrowPath.LineTo(x - shaftWidth * 0.5f, y + arrowHeight * 0.05f);     // 左翼内側
+                    arrowPath.LineTo(x - shaftWidth * 0.5f, y + arrowHeight * 0.5f);      // 軸左下
+                    arrowPath.LineTo(x + shaftWidth * 0.5f, y + arrowHeight * 0.5f);      // 軸右下
+                    arrowPath.LineTo(x + shaftWidth * 0.5f, y + arrowHeight * 0.05f);     // 右翼内側
+                    arrowPath.LineTo(x + arrowWidth * 0.5f, y + arrowHeight * 0.05f);     // 右翼
+                    arrowPath.Close();
+                }
+                else
+                {
+                    // 下向き矢印
+                    arrowPath.MoveTo(x, y + arrowHeight * 0.5f);                          // 頂点
+                    arrowPath.LineTo(x - arrowWidth * 0.5f, y - arrowHeight * 0.05f);     // 左翼
+                    arrowPath.LineTo(x - shaftWidth * 0.5f, y - arrowHeight * 0.05f);     // 左翼内側
+                    arrowPath.LineTo(x - shaftWidth * 0.5f, y - arrowHeight * 0.5f);      // 軸左上
+                    arrowPath.LineTo(x + shaftWidth * 0.5f, y - arrowHeight * 0.5f);      // 軸右上
+                    arrowPath.LineTo(x + shaftWidth * 0.5f, y - arrowHeight * 0.05f);     // 右翼内側
+                    arrowPath.LineTo(x + arrowWidth * 0.5f, y - arrowHeight * 0.05f);     // 右翼
+                    arrowPath.Close();
+                }
+
+                canvas.DrawPath(arrowPath, iconPaint);
             }
             else
             {
-                // LINK: 両方向矢印（縦線 + 点）
-                float lineWidth = arrowSize * 0.15f;
-                float lineHeight = arrowSize * 0.6f;
-                canvas.DrawRoundRect(
-                    new SKRoundRect(new SKRect(x - lineWidth, y - lineHeight, x + lineWidth, y + lineHeight), 3, 3),
-                    arrowPaint);
+                // LINK: 階をつなぐ点（現在地マーク）
+                float dotRadius = s * 0.18f;
+                canvas.DrawCircle(x, y, dotRadius, iconPaint);
 
-                // 上下に小さな三角
-                float triSize = arrowSize * 0.25f;
-                path.MoveTo(x, y - lineHeight - triSize * 0.8f);
-                path.LineTo(x - triSize, y - lineHeight + triSize * 0.3f);
-                path.LineTo(x + triSize, y - lineHeight + triSize * 0.3f);
-                path.Close();
-
-                path.MoveTo(x, y + lineHeight + triSize * 0.8f);
-                path.LineTo(x - triSize, y + lineHeight - triSize * 0.3f);
-                path.LineTo(x + triSize, y + lineHeight - triSize * 0.3f);
-                path.Close();
+                // 外側のリング
+                using var ringPaint = new SKPaint
+                {
+                    Color = SKColors.White.WithAlpha(200),
+                    IsAntialias = true,
+                    Style = SKPaintStyle.Stroke,
+                    StrokeWidth = 2.5f
+                };
+                canvas.DrawCircle(x, y, dotRadius * 2.5f, ringPaint);
             }
-
-            canvas.DrawPath(path, arrowPaint);
         }
 
         private void OnMouseDown(object? sender, MouseEventArgs e)
