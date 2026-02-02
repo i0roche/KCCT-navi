@@ -171,7 +171,7 @@
     "Tags": ["卒研室2", "応用化学科棟", "応用化学科", "chem"]
   },
   {
-    "Id": "room_2f_chem_lab_uchIda",
+    "Id": "room_2f_chem_lab_hamada",
     "Name": "濱田 研究室",
     "Type": "lab",
     "Building": "応用化学科棟",
@@ -180,7 +180,7 @@
     "Tags": ["濱田 研究室", "応用化学科棟", "応用化学科", "chem", "研究室", "▼濱田"]
   },
   {
-    "Id": "room_2f_chem_lab_komatsu",
+    "Id": "room_2f_chem_lab_masuda",
     "Name": "増田  研究室",
     "Type": "lab",
     "Building": "応用化学科棟",
@@ -198,7 +198,7 @@
     "Tags": ["C3 ホームルーム", "一般科A棟", "一般科", "HR"]
   },
   {
-    "Id": "room_3f_chem_lab_analytical_chem",
+    "Id": "room_3f_chem_lab_analytical",
     "Name": "分析化学実験室",
     "Type": "lab",
     "Building": "応用化学科棟",
@@ -207,7 +207,7 @@
     "Tags": ["分析化学実験室", "応用化学科棟", "応用化学科", "chem", "実験室"]
   },
   {
-    "Id": "room_3f_chem_lab_inorganic_chem",
+    "Id": "room_3f_chem_lab_inorganic",
     "Name": "無機化学実験室",
     "Type": "lab",
     "Building": "応用化学科棟",
@@ -225,7 +225,7 @@
     "Tags": ["卒研室3", "応用化学科棟", "応用化学科", "chem"]
   },
   {
-    "Id": "room_3f_chem_lab_kobayashi",
+    "Id": "room_3f_chem_lab_miyashita",
     "Name": "宮下 研究室",
     "Type": "lab",
     "Building": "応用化学科棟",
@@ -234,7 +234,7 @@
     "Tags": ["宮下 研究室", "応用化学科棟", "応用化学科", "chem", "研究室", "宮下"]
   },
   {
-    "Id": "room_3f_chem_lab_miwa",
+    "Id": "room_3f_chem_lab_yasuda",
     "Name": "安田  研究室",
     "Type": "lab",
     "Building": "応用化学科棟",
@@ -252,7 +252,7 @@
     "Tags": ["C2 ホームルーム", "一般科A棟", "一般科", "HR"]
   },
   {
-    "Id": "room_4f_chem_lab_organic_chem",
+    "Id": "room_4f_chem_lab_organic",
     "Name": "有機化学実験室",
     "Type": "lab",
     "Building": "応用化学科棟",
@@ -297,7 +297,7 @@
     "Tags": ["卒研室5", "応用化学科棟", "応用化学科", "chem"]
   },
   {
-    "Id": "room_4f_chem_lab_sugahara",
+    "Id": "room_4f_chem_lab_koizumi",
     "Name": "小泉 研究室",
     "Type": "lab",
     "Building": "応用化学科棟",
@@ -306,7 +306,7 @@
     "Tags": ["小泉 研究室", "応用化学科棟", "応用化学科", "chem", "研究室", "小泉"]
   },
   {
-    "Id": "room_4f_chem_lab_kuwada",
+    "Id": "room_4f_chem_lab_nemoto",
     "Name": "根本 研究室",
     "Type": "lab",
     "Building": "応用化学科棟",
@@ -315,7 +315,7 @@
     "Tags": ["根本 研究室", "応用化学科棟", "応用化学科", "chem", "研究室", "根本"]
   },
   {
-    "Id": "room_4f_chem_lab_kusukawa",
+    "Id": "room_4f_chem_lab_watanabe",
     "Name": "渡辺 研究室",
     "Type": "lab",
     "Building": "応用化学科棟",
@@ -331,5 +331,23 @@
     "Floor": 4,
     "Department": "chem",
     "Tags": ["C1 ホームルーム", "一般科A棟", "一般科", "HR"]
+  },
+  {
+    "Id": "room_2f_chem_hr_c4",
+    "Name": "C4 ホームルーム",
+    "Type": "classroom",
+    "Building": "講義棟",
+    "Floor": 2,
+    "Department": "chem",
+    "Tags": ["C4 ホームルーム", "講義棟", "chem", "HR"]
+  },
+  {
+    "Id": "room_2f_chem_hr_c5",
+    "Name": "C5 ホームルーム",
+    "Type": "classroom",
+    "Building": "講義棟",
+    "Floor": 2,
+    "Department": "chem",
+    "Tags": ["C5 ホームルーム", "講義棟", "chem", "HR"]
   }
 ]

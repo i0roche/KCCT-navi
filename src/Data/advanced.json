@@ -72,7 +72,7 @@
     "Tags": ["大講義室", "専攻科棟", "専攻科", "advanced"]
   },
   {
-    "Id": "room_2f_advanced_classroom_lecture_mId_1",
+    "Id": "room_2f_advanced_classroom_lecture_mid_1",
     "Name": "中講義室1",
     "Type": "classroom",
     "Building": "専攻科棟",
@@ -81,7 +81,7 @@
     "Tags": ["中講義室1", "専攻科棟", "専攻科", "advanced"]
   },
   {
-    "Id": "room_2f_advanced_classroom_lecture_mId_2",
+    "Id": "room_2f_advanced_classroom_lecture_mid_2",
     "Name": "中講義室2",
     "Type": "classroom",
     "Building": "専攻科棟",
@@ -90,7 +90,7 @@
     "Tags": ["中講義室2", "専攻科棟", "専攻科", "advanced"]
   },
   {
-    "Id": "room_2f_advanced_facility_MeetingRoom",
+    "Id": "room_2f_advanced_facility_meeting_room",
     "Name": "Meeting Room",
     "Type": "facility",
     "Building": "専攻科棟",

@@ -147,19 +147,19 @@
     "Id": "room_2f_elec_hr_c4",
     "Name": "C4 ホームルーム",
     "Type": "classroom",
-    "Building": "専門科講義棟",
+    "Building": "講義棟",
     "Floor": 2,
     "Department": "elec",
-    "Tags": ["C4 ホームルーム", "専門科講義棟", "elec", "HR"]
+    "Tags": ["C4 ホームルーム", "講義棟", "elec", "HR"]
   },
   {
     "Id": "room_2f_elec_hr_c5",
     "Name": "C5 ホームルーム",
     "Type": "classroom",
-    "Building": "専門科講義棟",
+    "Building": "講義棟",
     "Floor": 2,
     "Department": "elec",
-    "Tags": ["C5 ホームルーム", "専門科講義棟", "elec", "HR"]
+    "Tags": ["C5 ホームルーム", "講義棟", "elec", "HR"]
   },
   {
     "Id": "room_3f_elec_lab_medical_image",
@@ -390,9 +390,9 @@
     "Id": "room_4f_elec_hr_e5",
     "Name": "E5 ホームルーム",
     "Type": "classroom",
-    "Building": "専門科講義棟",
+    "Building": "講義棟",
     "Floor": 4,
     "Department": "elec",
-    "Tags": ["E5 ホームルーム", "専門科講義棟", "elec", "HR"]
+    "Tags": ["E5 ホームルーム", "講義棟", "elec", "HR"]
   }
 ]

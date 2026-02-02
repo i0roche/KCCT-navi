@@ -324,7 +324,7 @@
     "Tags": ["部室", "美術部室", "学生会館", "club"]
   },
   {
-    "Id": "room_2f_gakusei_busitu_syashin",
+    "Id": "room_2f_gakusei_busitu_syasin",
     "Name": "写真部室",
     "Type": "club",
     "Building": "学生会館",

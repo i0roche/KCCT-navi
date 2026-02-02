@@ -345,19 +345,19 @@
     "Id": "room_2f_mech_hr_m4r",
     "Name": "M4R ホームルーム",
     "Type": "classroom",
-    "Building": "専門科講義棟",
+    "Building": "講義棟",
     "Floor": 2,
     "Department": "mech",
-    "Tags": ["M4R ホームルーム", "専門科講義棟", "mech", "HR"]
+    "Tags": ["M4R ホームルーム", "講義棟", "mech", "HR"]
   },
   {
     "Id": "room_2f_mech_hr_m4e",
     "Name": "M4E ホームルーム",
     "Type": "classroom",
-    "Building": "専門科講義棟",
+    "Building": "講義棟",
     "Floor": 2,
     "Department": "mech",
-    "Tags": ["M4E ホームルーム", "専門科講義棟", "mech", "HR"]
+    "Tags": ["M4E ホームルーム", "講義棟", "mech", "HR"]
   },
   {
     "Id": "room_3f_mech_facility_meeting",
@@ -489,19 +489,19 @@
     "Id": "room_3f_mech_hr_m5r",
     "Name": "M5R ホームルーム",
     "Type": "classroom",
-    "Building": "専門科講義棟",
+    "Building": "講義棟",
     "Floor": 3,
     "Department": "mech",
-    "Tags": ["M5R ホームルーム", "専門科講義棟", "mech", "HR"]
+    "Tags": ["M5R ホームルーム", "講義棟", "mech", "HR"]
   },
   {
     "Id": "room_3f_mech_hr_m5e",
     "Name": "M5E ホームルーム",
     "Type": "classroom",
-    "Building": "専門科講義棟",
+    "Building": "講義棟",
     "Floor": 3,
     "Department": "mech",
-    "Tags": ["M5E ホームルーム", "専門科講義棟", "mech", "HR"]
+    "Tags": ["M5E ホームルーム", "講義棟", "mech", "HR"]
   },
   {
     "Id": "room_4f_mech_classroom_drawing",

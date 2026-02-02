@@ -189,12 +189,39 @@
     "Tags": ["高科 研究室", "都市工学科棟", "都市工学科", "toshi", "研究室", "高科"]
   },
   {
-    "Id": "room_3f_urban_hr_s2",
+    "Id": "room_3f_toshi_facility_graduation_AS1",
+    "Name": "学生研究室 AS1",
+    "Type": "facility",
+    "Building": "都市工学科棟",
+    "Floor": 3,
+    "Department": "toshi",
+    "Tags": ["学生研究室 AS1", "都市工学科棟", "都市工学科", "toshi"]
+  },
+  {
+    "Id": "room_3f_toshi_facility_graduation_AS2",
+    "Name": "学生研究室 AS2",
+    "Type": "facility",
+    "Building": "都市工学科棟",
+    "Floor": 3,
+    "Department": "toshi",
+    "Tags": ["学生研究室 AS2", "都市工学科棟", "都市工学科", "toshi"]
+  },
+  {
+    "Id": "room_3f_toshi_facility_graduation_AS5",
+    "Name": "学生研究室 AS5",
+    "Type": "facility",
+    "Building": "都市工学科棟",
+    "Floor": 3,
+    "Department": "toshi",
+    "Tags": ["学生研究室 AS5", "都市工学科棟", "都市工学科", "toshi"]
+  },
+  {
+    "Id": "room_3f_toshi_hr_s2",
     "Name": "S2 ホームルーム",
     "Type": "classroom",
     "Building": "一般科A棟",
     "Floor": 3,
-    "Department": "urban",
+    "Department": "toshi",
     "Tags": ["S2 ホームルーム", "一般科A棟", "一般科", "HR"]
   },
   {
