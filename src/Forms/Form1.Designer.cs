@@ -109,7 +109,7 @@ namespace team1
             // 
             // Button1
             // 
-            Button1.Location = new Point(90, 370);
+            Button1.Location = new Point(110, 370);
             Button1.Margin = new Padding(2, 1, 2, 1);
             Button1.Name = "Button1";
             Button1.Size = new Size(81, 22);
@@ -507,7 +507,7 @@ namespace team1
             // 
             textBox1.Location = new Point(12, 16);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(159, 23);
+            textBox1.Size = new Size(193, 23);
             textBox1.TabIndex = 6;
             textBox1.TextChanged += OnStartTextChanged;
             textBox1.Enter += OnSearchPanelRequested;
@@ -521,7 +521,7 @@ namespace team1
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 24);
             panel1.Name = "panel1";
-            panel1.Size = new Size(182, 592);
+            panel1.Size = new Size(220, 592);
             panel1.TabIndex = 7;
             panel1.Visible = false;
             // 
@@ -535,7 +535,7 @@ namespace team1
             panelBuilding.Dock = DockStyle.Fill;
             panelBuilding.Location = new Point(0, 32);
             panelBuilding.Name = "panelBuilding";
-            panelBuilding.Size = new Size(182, 560);
+            panelBuilding.Size = new Size(220, 560);
             panelBuilding.TabIndex = 9;
             panelBuilding.Visible = false;
             // 
@@ -573,7 +573,7 @@ namespace team1
             labelBuildingDescription.AutoSize = false;
             labelBuildingDescription.Location = new Point(12, 44);
             labelBuildingDescription.Name = "labelBuildingDescription";
-            labelBuildingDescription.Size = new Size(159, 56);
+            labelBuildingDescription.Size = new Size(193, 56);
             labelBuildingDescription.TabIndex = 1;
             labelBuildingDescription.Text = "説明";
             labelBuildingDescription.TextAlign = ContentAlignment.TopLeft;
@@ -601,7 +601,7 @@ namespace team1
             panelSearch.Dock = DockStyle.Fill;
             panelSearch.Location = new Point(0, 32);
             panelSearch.Name = "panelSearch";
-            panelSearch.Size = new Size(182, 560);
+            panelSearch.Size = new Size(220, 560);
             panelSearch.TabIndex = 8;
             // 
             // listBoxFavorites
@@ -611,7 +611,7 @@ namespace team1
             listBoxFavorites.ItemHeight = 15;
             listBoxFavorites.Location = new Point(12, 252);
             listBoxFavorites.Name = "listBoxFavorites";
-            listBoxFavorites.Size = new Size(159, 110);
+            listBoxFavorites.Size = new Size(193, 110);
             listBoxFavorites.TabIndex = 12;
             listBoxFavorites.Visible = false;
             listBoxFavorites.DoubleClick += OnFavoriteListDoubleClick;
@@ -619,11 +619,11 @@ namespace team1
             // 
             // buttonFavoriteToGoal
             // 
-            buttonFavoriteToGoal.Location = new Point(96, 226);
+            buttonFavoriteToGoal.Location = new Point(110, 226);
             buttonFavoriteToGoal.Name = "buttonFavoriteToGoal";
-            buttonFavoriteToGoal.Size = new Size(75, 23);
+            buttonFavoriteToGoal.Size = new Size(95, 23);
             buttonFavoriteToGoal.TabIndex = 11;
-            buttonFavoriteToGoal.Text = "目的に設定";
+            buttonFavoriteToGoal.Text = "目的地に設定";
             buttonFavoriteToGoal.UseVisualStyleBackColor = true;
             buttonFavoriteToGoal.Click += OnFavoriteToGoalClick;
             // 
@@ -631,9 +631,9 @@ namespace team1
             // 
             buttonFavoriteToStart.Location = new Point(12, 226);
             buttonFavoriteToStart.Name = "buttonFavoriteToStart";
-            buttonFavoriteToStart.Size = new Size(75, 23);
+            buttonFavoriteToStart.Size = new Size(95, 23);
             buttonFavoriteToStart.TabIndex = 10;
-            buttonFavoriteToStart.Text = "出発に設定";
+            buttonFavoriteToStart.Text = "出発地に設定";
             buttonFavoriteToStart.UseVisualStyleBackColor = true;
             buttonFavoriteToStart.Click += OnFavoriteToStartClick;
             // 
@@ -644,7 +644,7 @@ namespace team1
             listBoxGoal.ItemHeight = 15;
             listBoxGoal.Location = new Point(12, 146);
             listBoxGoal.Name = "listBoxGoal";
-            listBoxGoal.Size = new Size(159, 70);
+            listBoxGoal.Size = new Size(193, 70);
             listBoxGoal.TabIndex = 9;
             listBoxGoal.Visible = false;
             listBoxGoal.DoubleClick += OnGoalSuggestionDoubleClick;
@@ -657,7 +657,7 @@ namespace team1
             listBoxStart.ItemHeight = 15;
             listBoxStart.Location = new Point(12, 42);
             listBoxStart.Name = "listBoxStart";
-            listBoxStart.Size = new Size(159, 70);
+            listBoxStart.Size = new Size(193, 70);
             listBoxStart.TabIndex = 7;
             listBoxStart.Visible = false;
             listBoxStart.DoubleClick += OnStartSuggestionDoubleClick;
@@ -667,7 +667,7 @@ namespace team1
             // 
             textBox2.Location = new Point(12, 120);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(159, 23);
+            textBox2.Size = new Size(193, 23);
             textBox2.TabIndex = 8;
             textBox2.TextChanged += OnGoalTextChanged;
             textBox2.Enter += OnSearchPanelRequested;
@@ -680,15 +680,15 @@ namespace team1
             panelTabs.Dock = DockStyle.Top;
             panelTabs.Location = new Point(0, 0);
             panelTabs.Name = "panelTabs";
-            panelTabs.Size = new Size(182, 32);
+            panelTabs.Size = new Size(220, 32);
             panelTabs.TabIndex = 10;
             // 
             // buttonTabInfo
             // 
             buttonTabInfo.Dock = DockStyle.Right;
-            buttonTabInfo.Location = new Point(91, 0);
+            buttonTabInfo.Location = new Point(110, 0);
             buttonTabInfo.Name = "buttonTabInfo";
-            buttonTabInfo.Size = new Size(91, 32);
+            buttonTabInfo.Size = new Size(110, 32);
             buttonTabInfo.TabIndex = 1;
             buttonTabInfo.Text = "情報";
             buttonTabInfo.UseVisualStyleBackColor = true;
@@ -699,7 +699,7 @@ namespace team1
             buttonTabSearch.Dock = DockStyle.Left;
             buttonTabSearch.Location = new Point(0, 0);
             buttonTabSearch.Name = "buttonTabSearch";
-            buttonTabSearch.Size = new Size(91, 32);
+            buttonTabSearch.Size = new Size(110, 32);
             buttonTabSearch.TabIndex = 0;
             buttonTabSearch.Text = "検索";
             buttonTabSearch.UseVisualStyleBackColor = true;
