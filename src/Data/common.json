@@ -231,7 +231,7 @@
     "Building": "学生会館",
     "Floor": 1,
     "Department": "common",
-    "Tags": ["部室", "学生会室", "学生会館", "club"]
+    "Tags": ["部室", "学生会室", "学生会館", "club","sc","Student Council"]
   },
   {
     "Id": "room_2f_gakusei_busitu_tamokuteki",
