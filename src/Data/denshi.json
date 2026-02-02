@@ -105,7 +105,8 @@
     "Building": "電子工学科棟",
     "Floor": 2,
     "Department": "denshi",
-    "Tags": ["卒研室2", "電子工学科棟", "電子工学科", "denshi"]
+    "Tags": ["卒研室2", "電子工学科棟", "電子工学科", "denshi"],
+    "Description": "最近つよめのグラボがはいりました"
   },
   {
     "Id": "room_2f_denshi_facility_graduation_3",
@@ -114,7 +115,8 @@
     "Building": "電子工学科棟",
     "Floor": 2,
     "Department": "denshi",
-    "Tags": ["卒研室3", "電子工学科棟", "電子工学科", "denshi"]
+    "Tags": ["卒研室3", "電子工学科棟", "電子工学科", "denshi"],
+    "Description": "冷蔵庫がふるい！"
   },
   {
     "Id": "room_2f_denshi_lab_ogiwara",
@@ -151,7 +153,7 @@
     "Floor": 2,
     "Department": "denshi",
     "Tags": ["D3 ホームルーム", "一般科A棟", "一般科", "HR"],
-    "Description": "Description Test"
+    "Description": "電子工学科のD3ホームルームです。"
   },
   {
     "Id": "room_3f_denshi_lab_computer",
@@ -160,7 +162,8 @@
     "Building": "電子工学科棟",
     "Floor": 3,
     "Department": "denshi",
-    "Tags": ["計算機工学実験室", "電子工学科棟", "電子工学科", "denshi", "実験室"]
+    "Tags": ["計算機工学実験室", "電子工学科棟", "電子工学科", "denshi", "実験室"],
+    "Description": "かつては某先生の城塞がありました"
   },
   {
     "Id": "room_3f_denshi_facility_DigitalFabricationLab",
@@ -169,7 +172,8 @@
     "Building": "電子工学科棟",
     "Floor": 3,
     "Department": "denshi",
-    "Tags": ["Digital Fabrication Lab.", "電子工学科棟", "電子工学科", "denshi"]
+    "Tags": ["Digital Fabrication Lab.", "電子工学科棟", "電子工学科", "denshi", "DFlab"],
+    "Description": "お高い3Dプリンタがあります"
   },
   {
     "Id": "room_3f_denshi_lab_software",
@@ -286,7 +290,8 @@
     "Building": "電子工学科棟",
     "Floor": 4,
     "Department": "denshi",
-    "Tags": ["電子応用実験室", "電子工学科棟", "電子工学科", "denshi", "実験室"]
+    "Tags": ["電子応用実験室", "電子工学科棟", "電子工学科", "denshi", "実験室"],
+    "Description": "ぬいぐるみがいっぱいあります"
   },
   {
     "Id": "room_4f_denshi_facility_part_time",
@@ -295,7 +300,8 @@
     "Building": "電子工学科棟",
     "Floor": 4,
     "Department": "denshi",
-    "Tags": ["非常勤講師室", "電子工学科棟", "電子工学科", "denshi"]
+    "Tags": ["非常勤講師室", "電子工学科棟", "電子工学科", "denshi"],
+    "Description": "よく西日が差し込みます，ぬくい"
   },
   {
     "Id": "room_4f_denshi_facility_graduation_7",
@@ -304,7 +310,8 @@
     "Building": "電子工学科棟",
     "Floor": 4,
     "Department": "denshi",
-    "Tags": ["卒研室7", "電子工学科棟", "電子工学科", "denshi"]
+    "Tags": ["卒研室7", "電子工学科棟", "電子工学科", "denshi"],
+    "Description": "ワクステあります，サイコーーー"
   },
   {
     "Id": "room_4f_denshi_facility_graduation_8",

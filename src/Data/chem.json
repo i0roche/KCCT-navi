@@ -72,7 +72,7 @@
     "Tags": ["卒研室1", "応用化学科棟", "応用化学科", "chem"]
   },
   {
-    "Id": "room_1f_chem_lab_inaba",
+    "Id": "room_1f_chem_lab_kojima",
     "Name": "小島 研究室",
     "Type": "lab",
     "Building": "応用化学科棟",
@@ -81,7 +81,7 @@
     "Tags": ["小島 研究室", "応用化学科棟", "応用化学科", "chem", "研究室", "小島"]
   },
   {
-    "Id": "room_1f_chem_lab_shimazu",
+    "Id": "room_1f_chem_lab_shimomura",
     "Name": "下村 研究室",
     "Type": "lab",
     "Building": "応用化学科棟",

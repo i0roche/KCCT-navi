@@ -90,6 +90,24 @@
     "Tags": ["野並 研究室", "都市工学科棟", "都市工学科", "toshi", "研究室", "野並"]
   },
   {
+    "Id": "room_2f_toshi_facility_graduation_AS3",
+    "Name": "学生研究室 AS3",
+    "Type": "facility",
+    "Building": "都市工学科棟",
+    "Floor": 2,
+    "Department": "toshi",
+    "Tags": ["学生研究室 AS3", "都市工学科棟", "都市工学科", "toshi"]
+  },
+  {
+    "Id": "room_2f_toshi_facility_graduation_AS4",
+    "Name": "学生研究室 AS4",
+    "Type": "facility",
+    "Building": "都市工学科棟",
+    "Floor": 2,
+    "Department": "toshi",
+    "Tags": ["学生研究室 AS4", "都市工学科棟", "都市工学科", "toshi"]
+  },
+  {
     "Id": "room_2f_toshi_hr_s3",
     "Name": "S3 ホームルーム",
     "Type": "classroom",
