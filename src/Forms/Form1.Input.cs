@@ -32,7 +32,17 @@ namespace team1 //申し訳程度にショートカットがある，必要な�
 
             if (e.KeyCode == Keys.Escape)
             {
+                _mapViewer.CurrentRoute = null; // ルート表示をクリア
+
+                textBox1.Text = ""; //textBox1と2をクリア
+                textBox2.Text = "";
+
+                HideSuggestionLists();
+
+                _mapViewer.Invalidate(); // マップビューアを再描画
+
                 _mapViewer.Focus();
+
                 e.SuppressKeyPress = true;
             }
         }
