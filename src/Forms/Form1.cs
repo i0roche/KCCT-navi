@@ -106,5 +106,10 @@ namespace team1
         }
 
         #endregion
+
+        private void labelBuildingDescription_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

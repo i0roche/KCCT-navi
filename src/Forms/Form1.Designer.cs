@@ -109,10 +109,10 @@ namespace team1
             // 
             // Button1
             // 
-            Button1.Location = new Point(110, 370);
-            Button1.Margin = new Padding(2, 1, 2, 1);
+            Button1.Location = new Point(220, 740);
+            Button1.Margin = new Padding(4, 2, 4, 2);
             Button1.Name = "Button1";
-            Button1.Size = new Size(81, 22);
+            Button1.Size = new Size(162, 44);
             Button1.TabIndex = 1;
             Button1.Text = "検索";
             Button1.UseVisualStyleBackColor = false;
@@ -120,13 +120,13 @@ namespace team1
             // 
             // MenuStrip1
             // 
-            MenuStrip1.Font = new Font("メイリオ", 9F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            MenuStrip1.Font = new Font("Meiryo", 9F, FontStyle.Regular, GraphicsUnit.Point, 128);
             MenuStrip1.ImageScalingSize = new Size(20, 20);
             MenuStrip1.Items.AddRange(new ToolStripItem[] { MenuItem_General, MenuItem_Senmon, MenuItem_Advanced, MenuItem_Honbu, MenuItem_Kougi, MenuItem_Gakusei, MenuItem_Library });
             MenuStrip1.Location = new Point(0, 0);
             MenuStrip1.Name = "MenuStrip1";
-            MenuStrip1.Padding = new Padding(5, 1, 0, 1);
-            MenuStrip1.Size = new Size(951, 24);
+            MenuStrip1.Padding = new Padding(10, 2, 0, 2);
+            MenuStrip1.Size = new Size(1902, 48);
             MenuStrip1.TabIndex = 5;
             MenuStrip1.Text = "menuStrip1";
             // 
@@ -134,49 +134,49 @@ namespace team1
             // 
             MenuItem_General.DropDownItems.AddRange(new ToolStripItem[] { MenuItem_General_1F, MenuItem_General_2F, MenuItem_General_3F, MenuItem_General_4F, MenuItem_General_5F, MenuItem_General_6F });
             MenuItem_General.Name = "MenuItem_General";
-            MenuItem_General.Size = new Size(68, 22);
+            MenuItem_General.Size = new Size(131, 44);
             MenuItem_General.Text = "一般科棟";
             MenuItem_General.Click += OnGeneralBuildingMenuClick;
             // 
             // MenuItem_General_1F
             // 
             MenuItem_General_1F.Name = "MenuItem_General_1F";
-            MenuItem_General_1F.Size = new Size(95, 22);
+            MenuItem_General_1F.Size = new Size(187, 44);
             MenuItem_General_1F.Text = "１F";
             MenuItem_General_1F.Click += OnGeneralBuildingFloor1Click;
             // 
             // MenuItem_General_2F
             // 
             MenuItem_General_2F.Name = "MenuItem_General_2F";
-            MenuItem_General_2F.Size = new Size(95, 22);
+            MenuItem_General_2F.Size = new Size(187, 44);
             MenuItem_General_2F.Text = "２F";
             MenuItem_General_2F.Click += OnGeneralBuildingFloor2Click;
             // 
             // MenuItem_General_3F
             // 
             MenuItem_General_3F.Name = "MenuItem_General_3F";
-            MenuItem_General_3F.Size = new Size(95, 22);
+            MenuItem_General_3F.Size = new Size(187, 44);
             MenuItem_General_3F.Text = "３F";
             MenuItem_General_3F.Click += OnGeneralBuildingFloor3Click;
             // 
             // MenuItem_General_4F
             // 
             MenuItem_General_4F.Name = "MenuItem_General_4F";
-            MenuItem_General_4F.Size = new Size(95, 22);
+            MenuItem_General_4F.Size = new Size(187, 44);
             MenuItem_General_4F.Text = "４F";
             MenuItem_General_4F.Click += OnGeneralBuildingFloor4Click;
             // 
             // MenuItem_General_5F
             // 
             MenuItem_General_5F.Name = "MenuItem_General_5F";
-            MenuItem_General_5F.Size = new Size(95, 22);
+            MenuItem_General_5F.Size = new Size(187, 44);
             MenuItem_General_5F.Text = "５F";
             MenuItem_General_5F.Click += OnGeneralBuildingFloor5Click;
             // 
             // MenuItem_General_6F
             // 
             MenuItem_General_6F.Name = "MenuItem_General_6F";
-            MenuItem_General_6F.Size = new Size(95, 22);
+            MenuItem_General_6F.Size = new Size(187, 44);
             MenuItem_General_6F.Text = "６F";
             MenuItem_General_6F.Click += OnGeneralBuildingFloor6Click;
             // 
@@ -184,7 +184,7 @@ namespace team1
             // 
             MenuItem_Senmon.DropDownItems.AddRange(new ToolStripItem[] { MenuItem_Mech, MenuItem_Elec, MenuItem_Denshi, MenuItem_Toshi, MenuItem_Chem });
             MenuItem_Senmon.Name = "MenuItem_Senmon";
-            MenuItem_Senmon.Size = new Size(80, 22);
+            MenuItem_Senmon.Size = new Size(155, 44);
             MenuItem_Senmon.Text = "専門学科棟";
             MenuItem_Senmon.Click += OnSpecializedBuildingMenuClick;
             // 
@@ -192,34 +192,34 @@ namespace team1
             // 
             MenuItem_Mech.DropDownItems.AddRange(new ToolStripItem[] { MenuItem_Mech_1F, MenuItem_Mech_2F, MenuItem_Mech_3F, MenuItem_Mech_4F });
             MenuItem_Mech.Name = "MenuItem_Mech";
-            MenuItem_Mech.Size = new Size(148, 22);
+            MenuItem_Mech.Size = new Size(293, 44);
             MenuItem_Mech.Text = "機械工学科棟";
             // 
             // MenuItem_Mech_1F
             // 
             MenuItem_Mech_1F.Name = "MenuItem_Mech_1F";
-            MenuItem_Mech_1F.Size = new Size(95, 22);
+            MenuItem_Mech_1F.Size = new Size(187, 44);
             MenuItem_Mech_1F.Text = "１F";
             MenuItem_Mech_1F.Click += OnMechBuildingFloor1Click;
             // 
             // MenuItem_Mech_2F
             // 
             MenuItem_Mech_2F.Name = "MenuItem_Mech_2F";
-            MenuItem_Mech_2F.Size = new Size(95, 22);
+            MenuItem_Mech_2F.Size = new Size(187, 44);
             MenuItem_Mech_2F.Text = "２F";
             MenuItem_Mech_2F.Click += OnMechBuildingFloor2Click;
             // 
             // MenuItem_Mech_3F
             // 
             MenuItem_Mech_3F.Name = "MenuItem_Mech_3F";
-            MenuItem_Mech_3F.Size = new Size(95, 22);
+            MenuItem_Mech_3F.Size = new Size(187, 44);
             MenuItem_Mech_3F.Text = "３F";
             MenuItem_Mech_3F.Click += OnMechBuildingFloor3Click;
             // 
             // MenuItem_Mech_4F
             // 
             MenuItem_Mech_4F.Name = "MenuItem_Mech_4F";
-            MenuItem_Mech_4F.Size = new Size(95, 22);
+            MenuItem_Mech_4F.Size = new Size(187, 44);
             MenuItem_Mech_4F.Text = "４F";
             MenuItem_Mech_4F.Click += OnMechBuildingFloor4Click;
             // 
@@ -227,35 +227,35 @@ namespace team1
             // 
             MenuItem_Elec.DropDownItems.AddRange(new ToolStripItem[] { MenuItem_Elec_1F, MenuItem_Elec_2F, MenuItem_Elec_3F, MenuItem_Elec_4F });
             MenuItem_Elec.Name = "MenuItem_Elec";
-            MenuItem_Elec.Size = new Size(148, 22);
+            MenuItem_Elec.Size = new Size(293, 44);
             MenuItem_Elec.Text = "電気工学科棟";
             MenuItem_Elec.Click += OnElecBuildingMenuClick;
             // 
             // MenuItem_Elec_1F
             // 
             MenuItem_Elec_1F.Name = "MenuItem_Elec_1F";
-            MenuItem_Elec_1F.Size = new Size(95, 22);
+            MenuItem_Elec_1F.Size = new Size(187, 44);
             MenuItem_Elec_1F.Text = "１F";
             MenuItem_Elec_1F.Click += OnElecBuildingFloor1Click;
             // 
             // MenuItem_Elec_2F
             // 
             MenuItem_Elec_2F.Name = "MenuItem_Elec_2F";
-            MenuItem_Elec_2F.Size = new Size(95, 22);
+            MenuItem_Elec_2F.Size = new Size(187, 44);
             MenuItem_Elec_2F.Text = "２F";
             MenuItem_Elec_2F.Click += OnElecBuildingFloor2Click;
             // 
             // MenuItem_Elec_3F
             // 
             MenuItem_Elec_3F.Name = "MenuItem_Elec_3F";
-            MenuItem_Elec_3F.Size = new Size(95, 22);
+            MenuItem_Elec_3F.Size = new Size(187, 44);
             MenuItem_Elec_3F.Text = "３F";
             MenuItem_Elec_3F.Click += OnElecBuildingFloor3Click;
             // 
             // MenuItem_Elec_4F
             // 
             MenuItem_Elec_4F.Name = "MenuItem_Elec_4F";
-            MenuItem_Elec_4F.Size = new Size(95, 22);
+            MenuItem_Elec_4F.Size = new Size(187, 44);
             MenuItem_Elec_4F.Text = "４F";
             MenuItem_Elec_4F.Click += OnElecBuildingFloor4Click;
             // 
@@ -263,34 +263,34 @@ namespace team1
             // 
             MenuItem_Denshi.DropDownItems.AddRange(new ToolStripItem[] { MenuItem_Denshi_1F, MenuItem_Denshi_2F, MenuItem_Denshi_3F, MenuItem_Denshi_4F });
             MenuItem_Denshi.Name = "MenuItem_Denshi";
-            MenuItem_Denshi.Size = new Size(148, 22);
+            MenuItem_Denshi.Size = new Size(293, 44);
             MenuItem_Denshi.Text = "電子工学科棟";
             // 
             // MenuItem_Denshi_1F
             // 
             MenuItem_Denshi_1F.Name = "MenuItem_Denshi_1F";
-            MenuItem_Denshi_1F.Size = new Size(95, 22);
+            MenuItem_Denshi_1F.Size = new Size(187, 44);
             MenuItem_Denshi_1F.Text = "１F";
             MenuItem_Denshi_1F.Click += OnDenshiBuildingFloor1Click;
             // 
             // MenuItem_Denshi_2F
             // 
             MenuItem_Denshi_2F.Name = "MenuItem_Denshi_2F";
-            MenuItem_Denshi_2F.Size = new Size(95, 22);
+            MenuItem_Denshi_2F.Size = new Size(187, 44);
             MenuItem_Denshi_2F.Text = "２F";
             MenuItem_Denshi_2F.Click += OnDenshiBuildingFloor2Click;
             // 
             // MenuItem_Denshi_3F
             // 
             MenuItem_Denshi_3F.Name = "MenuItem_Denshi_3F";
-            MenuItem_Denshi_3F.Size = new Size(95, 22);
+            MenuItem_Denshi_3F.Size = new Size(187, 44);
             MenuItem_Denshi_3F.Text = "３F";
             MenuItem_Denshi_3F.Click += OnDenshiBuildingFloor3Click;
             // 
             // MenuItem_Denshi_4F
             // 
             MenuItem_Denshi_4F.Name = "MenuItem_Denshi_4F";
-            MenuItem_Denshi_4F.Size = new Size(95, 22);
+            MenuItem_Denshi_4F.Size = new Size(187, 44);
             MenuItem_Denshi_4F.Text = "４F";
             MenuItem_Denshi_4F.Click += OnDenshiBuildingFloor4Click;
             // 
@@ -298,34 +298,34 @@ namespace team1
             // 
             MenuItem_Toshi.DropDownItems.AddRange(new ToolStripItem[] { MenuItem_Toshi_1F, MenuItem_Toshi_2F, MenuItem_Toshi_3F, MenuItem_Toshi_4F });
             MenuItem_Toshi.Name = "MenuItem_Toshi";
-            MenuItem_Toshi.Size = new Size(148, 22);
+            MenuItem_Toshi.Size = new Size(293, 44);
             MenuItem_Toshi.Text = "都市工学科棟";
             // 
             // MenuItem_Toshi_1F
             // 
             MenuItem_Toshi_1F.Name = "MenuItem_Toshi_1F";
-            MenuItem_Toshi_1F.Size = new Size(95, 22);
+            MenuItem_Toshi_1F.Size = new Size(187, 44);
             MenuItem_Toshi_1F.Text = "１F";
             MenuItem_Toshi_1F.Click += OnToshiBuildingFloor1Click;
             // 
             // MenuItem_Toshi_2F
             // 
             MenuItem_Toshi_2F.Name = "MenuItem_Toshi_2F";
-            MenuItem_Toshi_2F.Size = new Size(95, 22);
+            MenuItem_Toshi_2F.Size = new Size(187, 44);
             MenuItem_Toshi_2F.Text = "２F";
             MenuItem_Toshi_2F.Click += OnToshiBuildingFloor2Click;
             // 
             // MenuItem_Toshi_3F
             // 
             MenuItem_Toshi_3F.Name = "MenuItem_Toshi_3F";
-            MenuItem_Toshi_3F.Size = new Size(95, 22);
+            MenuItem_Toshi_3F.Size = new Size(187, 44);
             MenuItem_Toshi_3F.Text = "３F";
             MenuItem_Toshi_3F.Click += OnToshiBuildingFloor3Click;
             // 
             // MenuItem_Toshi_4F
             // 
             MenuItem_Toshi_4F.Name = "MenuItem_Toshi_4F";
-            MenuItem_Toshi_4F.Size = new Size(95, 22);
+            MenuItem_Toshi_4F.Size = new Size(187, 44);
             MenuItem_Toshi_4F.Text = "３F";
             MenuItem_Toshi_4F.Click += OnToshiBuildingFloor4Click;
             // 
@@ -333,28 +333,28 @@ namespace team1
             // 
             MenuItem_Chem.DropDownItems.AddRange(new ToolStripItem[] { MenuItem_Chem_F1, MenuItem_Chem_2F, MenuItem_Chem_3F });
             MenuItem_Chem.Name = "MenuItem_Chem";
-            MenuItem_Chem.Size = new Size(148, 22);
+            MenuItem_Chem.Size = new Size(293, 44);
             MenuItem_Chem.Text = "応用化学科棟";
             MenuItem_Chem.Click += OnChemBuildingMenuClick;
             // 
             // MenuItem_Chem_F1
             // 
             MenuItem_Chem_F1.Name = "MenuItem_Chem_F1";
-            MenuItem_Chem_F1.Size = new Size(95, 22);
+            MenuItem_Chem_F1.Size = new Size(187, 44);
             MenuItem_Chem_F1.Text = "１F";
             MenuItem_Chem_F1.Click += OnChemBuildingFloor1Click;
             // 
             // MenuItem_Chem_2F
             // 
             MenuItem_Chem_2F.Name = "MenuItem_Chem_2F";
-            MenuItem_Chem_2F.Size = new Size(95, 22);
+            MenuItem_Chem_2F.Size = new Size(187, 44);
             MenuItem_Chem_2F.Text = "２F";
             MenuItem_Chem_2F.Click += OnChemBuildingFloor2Click;
             // 
             // MenuItem_Chem_3F
             // 
             MenuItem_Chem_3F.Name = "MenuItem_Chem_3F";
-            MenuItem_Chem_3F.Size = new Size(95, 22);
+            MenuItem_Chem_3F.Size = new Size(187, 44);
             MenuItem_Chem_3F.Text = "３F";
             MenuItem_Chem_3F.Click += OnChemBuildingFloor3Click;
             // 
@@ -362,28 +362,28 @@ namespace team1
             // 
             MenuItem_Advanced.DropDownItems.AddRange(new ToolStripItem[] { MenuItem_Advanced_1F, MenuItem_Advanced_2F, MenuItem_Advanced_3F });
             MenuItem_Advanced.Name = "MenuItem_Advanced";
-            MenuItem_Advanced.Size = new Size(68, 22);
+            MenuItem_Advanced.Size = new Size(131, 44);
             MenuItem_Advanced.Text = "専攻科棟";
             MenuItem_Advanced.Click += OnAdvancedBuildingMenuClick;
             // 
             // MenuItem_Advanced_1F
             // 
             MenuItem_Advanced_1F.Name = "MenuItem_Advanced_1F";
-            MenuItem_Advanced_1F.Size = new Size(95, 22);
+            MenuItem_Advanced_1F.Size = new Size(187, 44);
             MenuItem_Advanced_1F.Text = "１F";
             MenuItem_Advanced_1F.Click += OnAdvancedBuildingFloor1Click;
             // 
             // MenuItem_Advanced_2F
             // 
             MenuItem_Advanced_2F.Name = "MenuItem_Advanced_2F";
-            MenuItem_Advanced_2F.Size = new Size(95, 22);
+            MenuItem_Advanced_2F.Size = new Size(187, 44);
             MenuItem_Advanced_2F.Text = "２F";
             MenuItem_Advanced_2F.Click += OnAdvancedBuildingFloor2Click;
             // 
             // MenuItem_Advanced_3F
             // 
             MenuItem_Advanced_3F.Name = "MenuItem_Advanced_3F";
-            MenuItem_Advanced_3F.Size = new Size(95, 22);
+            MenuItem_Advanced_3F.Size = new Size(187, 44);
             MenuItem_Advanced_3F.Text = "３F";
             MenuItem_Advanced_3F.Click += OnAdvancedBuildingFloor3Click;
             // 
@@ -391,21 +391,21 @@ namespace team1
             // 
             MenuItem_Honbu.DropDownItems.AddRange(new ToolStripItem[] { MenuItem_Honbu_1F, MenuItem_Honbu_2F });
             MenuItem_Honbu.Name = "MenuItem_Honbu";
-            MenuItem_Honbu.Size = new Size(56, 22);
+            MenuItem_Honbu.Size = new Size(107, 44);
             MenuItem_Honbu.Text = "本部棟";
             MenuItem_Honbu.Click += OnHonbuBuildingMenuClick;
             // 
             // MenuItem_Honbu_1F
             // 
             MenuItem_Honbu_1F.Name = "MenuItem_Honbu_1F";
-            MenuItem_Honbu_1F.Size = new Size(95, 22);
+            MenuItem_Honbu_1F.Size = new Size(187, 44);
             MenuItem_Honbu_1F.Text = "１F";
             MenuItem_Honbu_1F.Click += OnHonbuBuildingFloor1Click;
             // 
             // MenuItem_Honbu_2F
             // 
             MenuItem_Honbu_2F.Name = "MenuItem_Honbu_2F";
-            MenuItem_Honbu_2F.Size = new Size(95, 22);
+            MenuItem_Honbu_2F.Size = new Size(187, 44);
             MenuItem_Honbu_2F.Text = "２F";
             MenuItem_Honbu_2F.Click += OnHonbuBuildingFloor2Click;
             // 
@@ -413,35 +413,35 @@ namespace team1
             // 
             MenuItem_Kougi.DropDownItems.AddRange(new ToolStripItem[] { MenuItem_Kougi_1F, MenuItem_Kougi_2F, MenuItem_Kougi_3F, MenuItem_Kougi_4F });
             MenuItem_Kougi.Name = "MenuItem_Kougi";
-            MenuItem_Kougi.Size = new Size(56, 22);
+            MenuItem_Kougi.Size = new Size(107, 44);
             MenuItem_Kougi.Text = "講義棟";
             MenuItem_Kougi.Click += OnKougiBuildingMenuClick;
             // 
             // MenuItem_Kougi_1F
             // 
             MenuItem_Kougi_1F.Name = "MenuItem_Kougi_1F";
-            MenuItem_Kougi_1F.Size = new Size(95, 22);
+            MenuItem_Kougi_1F.Size = new Size(187, 44);
             MenuItem_Kougi_1F.Text = "１F";
             MenuItem_Kougi_1F.Click += OnKougiBuildingFloor1Click;
             // 
             // MenuItem_Kougi_2F
             // 
             MenuItem_Kougi_2F.Name = "MenuItem_Kougi_2F";
-            MenuItem_Kougi_2F.Size = new Size(95, 22);
+            MenuItem_Kougi_2F.Size = new Size(187, 44);
             MenuItem_Kougi_2F.Text = "２F";
             MenuItem_Kougi_2F.Click += OnKougiBuildingFloor2Click;
             // 
             // MenuItem_Kougi_3F
             // 
             MenuItem_Kougi_3F.Name = "MenuItem_Kougi_3F";
-            MenuItem_Kougi_3F.Size = new Size(95, 22);
+            MenuItem_Kougi_3F.Size = new Size(187, 44);
             MenuItem_Kougi_3F.Text = "３F";
             MenuItem_Kougi_3F.Click += OnKougiBuildingFloor3Click;
             // 
             // MenuItem_Kougi_4F
             // 
             MenuItem_Kougi_4F.Name = "MenuItem_Kougi_4F";
-            MenuItem_Kougi_4F.Size = new Size(95, 22);
+            MenuItem_Kougi_4F.Size = new Size(187, 44);
             MenuItem_Kougi_4F.Text = "４F";
             MenuItem_Kougi_4F.Click += OnKougiBuildingFloor4Click;
             // 
@@ -449,28 +449,28 @@ namespace team1
             // 
             MenuItem_Gakusei.DropDownItems.AddRange(new ToolStripItem[] { MenuItem_Gakusei_1F, MenuItem_Gakusei_2F, MenuItem_Gakusei_3F });
             MenuItem_Gakusei.Name = "MenuItem_Gakusei";
-            MenuItem_Gakusei.Size = new Size(68, 22);
+            MenuItem_Gakusei.Size = new Size(131, 44);
             MenuItem_Gakusei.Text = "学生会館";
             MenuItem_Gakusei.Click += OnGakuseiBuildingMenuClick;
             // 
             // MenuItem_Gakusei_1F
             // 
             MenuItem_Gakusei_1F.Name = "MenuItem_Gakusei_1F";
-            MenuItem_Gakusei_1F.Size = new Size(95, 22);
+            MenuItem_Gakusei_1F.Size = new Size(187, 44);
             MenuItem_Gakusei_1F.Text = "１F";
             MenuItem_Gakusei_1F.Click += OnGakuseiBuildingFloor1Click;
             // 
             // MenuItem_Gakusei_2F
             // 
             MenuItem_Gakusei_2F.Name = "MenuItem_Gakusei_2F";
-            MenuItem_Gakusei_2F.Size = new Size(95, 22);
+            MenuItem_Gakusei_2F.Size = new Size(187, 44);
             MenuItem_Gakusei_2F.Text = "２F";
             MenuItem_Gakusei_2F.Click += OnGakuseiBuildingFloor2Click;
             // 
             // MenuItem_Gakusei_3F
             // 
             MenuItem_Gakusei_3F.Name = "MenuItem_Gakusei_3F";
-            MenuItem_Gakusei_3F.Size = new Size(95, 22);
+            MenuItem_Gakusei_3F.Size = new Size(187, 44);
             MenuItem_Gakusei_3F.Text = "３F";
             MenuItem_Gakusei_3F.Click += OnGakuseiBuildingFloor3Click;
             // 
@@ -478,21 +478,21 @@ namespace team1
             // 
             MenuItem_Library.DropDownItems.AddRange(new ToolStripItem[] { MenuItem_Library_1F, MenuItem_Library_2F });
             MenuItem_Library.Name = "MenuItem_Library";
-            MenuItem_Library.Size = new Size(56, 22);
+            MenuItem_Library.Size = new Size(107, 44);
             MenuItem_Library.Text = "図書館";
             MenuItem_Library.Click += OnLibraryBuildingMenuClick;
             // 
             // MenuItem_Library_1F
             // 
             MenuItem_Library_1F.Name = "MenuItem_Library_1F";
-            MenuItem_Library_1F.Size = new Size(95, 22);
+            MenuItem_Library_1F.Size = new Size(187, 44);
             MenuItem_Library_1F.Text = "１F";
             MenuItem_Library_1F.Click += OnLibraryBuildingFloor1Click;
             // 
             // MenuItem_Library_2F
             // 
             MenuItem_Library_2F.Name = "MenuItem_Library_2F";
-            MenuItem_Library_2F.Size = new Size(95, 22);
+            MenuItem_Library_2F.Size = new Size(187, 44);
             MenuItem_Library_2F.Text = "２F";
             MenuItem_Library_2F.Click += OnLibraryBuildingFloor2Click;
             // 
@@ -505,9 +505,10 @@ namespace team1
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(12, 16);
+            textBox1.Location = new Point(24, 32);
+            textBox1.Margin = new Padding(6, 6, 6, 6);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(193, 23);
+            textBox1.Size = new Size(382, 39);
             textBox1.TabIndex = 6;
             textBox1.TextChanged += OnStartTextChanged;
             textBox1.Enter += OnSearchPanelRequested;
@@ -519,9 +520,10 @@ namespace team1
             panel1.Controls.Add(panelSearch);
             panel1.Controls.Add(panelTabs);
             panel1.Dock = DockStyle.Left;
-            panel1.Location = new Point(0, 24);
+            panel1.Location = new Point(0, 48);
+            panel1.Margin = new Padding(6, 6, 6, 6);
             panel1.Name = "panel1";
-            panel1.Size = new Size(220, 592);
+            panel1.Size = new Size(440, 1184);
             panel1.TabIndex = 7;
             panel1.Visible = false;
             // 
@@ -533,17 +535,19 @@ namespace team1
             panelBuilding.Controls.Add(labelBuildingDescription);
             panelBuilding.Controls.Add(labelBuildingTitle);
             panelBuilding.Dock = DockStyle.Fill;
-            panelBuilding.Location = new Point(0, 32);
+            panelBuilding.Location = new Point(0, 64);
+            panelBuilding.Margin = new Padding(6, 6, 6, 6);
             panelBuilding.Name = "panelBuilding";
-            panelBuilding.Size = new Size(220, 560);
+            panelBuilding.Size = new Size(440, 1120);
             panelBuilding.TabIndex = 9;
             panelBuilding.Visible = false;
             // 
             // buttonUnfavorite
             // 
-            buttonUnfavorite.Location = new Point(96, 132);
+            buttonUnfavorite.Location = new Point(192, 264);
+            buttonUnfavorite.Margin = new Padding(6, 6, 6, 6);
             buttonUnfavorite.Name = "buttonUnfavorite";
-            buttonUnfavorite.Size = new Size(75, 23);
+            buttonUnfavorite.Size = new Size(150, 46);
             buttonUnfavorite.TabIndex = 4;
             buttonUnfavorite.Text = "解除";
             buttonUnfavorite.UseVisualStyleBackColor = true;
@@ -551,9 +555,10 @@ namespace team1
             // 
             // buttonFavorite
             // 
-            buttonFavorite.Location = new Point(12, 132);
+            buttonFavorite.Location = new Point(24, 264);
+            buttonFavorite.Margin = new Padding(6, 6, 6, 6);
             buttonFavorite.Name = "buttonFavorite";
-            buttonFavorite.Size = new Size(75, 23);
+            buttonFavorite.Size = new Size(150, 46);
             buttonFavorite.TabIndex = 3;
             buttonFavorite.Text = "お気に入り";
             buttonFavorite.UseVisualStyleBackColor = true;
@@ -562,29 +567,31 @@ namespace team1
             // labelFavoriteStatus
             // 
             labelFavoriteStatus.AutoSize = true;
-            labelFavoriteStatus.Location = new Point(12, 108);
+            labelFavoriteStatus.Location = new Point(24, 216);
+            labelFavoriteStatus.Margin = new Padding(6, 0, 6, 0);
             labelFavoriteStatus.Name = "labelFavoriteStatus";
-            labelFavoriteStatus.Size = new Size(76, 15);
+            labelFavoriteStatus.Size = new Size(157, 32);
             labelFavoriteStatus.TabIndex = 2;
             labelFavoriteStatus.Text = "お気に入り: 未";
             // 
             // labelBuildingDescription
             // 
-            labelBuildingDescription.AutoSize = false;
-            labelBuildingDescription.Location = new Point(12, 44);
+            labelBuildingDescription.AutoEllipsis = true;
+            labelBuildingDescription.Location = new Point(24, 88);
+            labelBuildingDescription.Margin = new Padding(6, 0, 6, 0);
             labelBuildingDescription.Name = "labelBuildingDescription";
-            labelBuildingDescription.Size = new Size(193, 56);
+            labelBuildingDescription.Size = new Size(386, 112);
             labelBuildingDescription.TabIndex = 1;
             labelBuildingDescription.Text = "説明";
-            labelBuildingDescription.TextAlign = ContentAlignment.TopLeft;
-            labelBuildingDescription.AutoEllipsis = true;
+            labelBuildingDescription.Click += labelBuildingDescription_Click;
             // 
             // labelBuildingTitle
             // 
             labelBuildingTitle.AutoSize = true;
-            labelBuildingTitle.Location = new Point(12, 16);
+            labelBuildingTitle.Location = new Point(24, 32);
+            labelBuildingTitle.Margin = new Padding(6, 0, 6, 0);
             labelBuildingTitle.Name = "labelBuildingTitle";
-            labelBuildingTitle.Size = new Size(43, 15);
+            labelBuildingTitle.Size = new Size(89, 32);
             labelBuildingTitle.TabIndex = 0;
             labelBuildingTitle.Text = "建物名";
             // 
@@ -599,19 +606,20 @@ namespace team1
             panelSearch.Controls.Add(textBox1);
             panelSearch.Controls.Add(Button1);
             panelSearch.Dock = DockStyle.Fill;
-            panelSearch.Location = new Point(0, 32);
+            panelSearch.Location = new Point(0, 64);
+            panelSearch.Margin = new Padding(6, 6, 6, 6);
             panelSearch.Name = "panelSearch";
-            panelSearch.Size = new Size(220, 560);
+            panelSearch.Size = new Size(440, 1120);
             panelSearch.TabIndex = 8;
             // 
             // listBoxFavorites
             // 
             listBoxFavorites.FormattingEnabled = true;
             listBoxFavorites.IntegralHeight = false;
-            listBoxFavorites.ItemHeight = 15;
-            listBoxFavorites.Location = new Point(12, 252);
+            listBoxFavorites.Location = new Point(24, 504);
+            listBoxFavorites.Margin = new Padding(6, 6, 6, 6);
             listBoxFavorites.Name = "listBoxFavorites";
-            listBoxFavorites.Size = new Size(193, 110);
+            listBoxFavorites.Size = new Size(382, 216);
             listBoxFavorites.TabIndex = 12;
             listBoxFavorites.Visible = false;
             listBoxFavorites.DoubleClick += OnFavoriteListDoubleClick;
@@ -619,9 +627,10 @@ namespace team1
             // 
             // buttonFavoriteToGoal
             // 
-            buttonFavoriteToGoal.Location = new Point(110, 226);
+            buttonFavoriteToGoal.Location = new Point(220, 452);
+            buttonFavoriteToGoal.Margin = new Padding(6, 6, 6, 6);
             buttonFavoriteToGoal.Name = "buttonFavoriteToGoal";
-            buttonFavoriteToGoal.Size = new Size(95, 23);
+            buttonFavoriteToGoal.Size = new Size(190, 46);
             buttonFavoriteToGoal.TabIndex = 11;
             buttonFavoriteToGoal.Text = "目的地に設定";
             buttonFavoriteToGoal.UseVisualStyleBackColor = true;
@@ -629,9 +638,10 @@ namespace team1
             // 
             // buttonFavoriteToStart
             // 
-            buttonFavoriteToStart.Location = new Point(12, 226);
+            buttonFavoriteToStart.Location = new Point(24, 452);
+            buttonFavoriteToStart.Margin = new Padding(6, 6, 6, 6);
             buttonFavoriteToStart.Name = "buttonFavoriteToStart";
-            buttonFavoriteToStart.Size = new Size(95, 23);
+            buttonFavoriteToStart.Size = new Size(190, 46);
             buttonFavoriteToStart.TabIndex = 10;
             buttonFavoriteToStart.Text = "出発地に設定";
             buttonFavoriteToStart.UseVisualStyleBackColor = true;
@@ -641,10 +651,10 @@ namespace team1
             // 
             listBoxGoal.FormattingEnabled = true;
             listBoxGoal.IntegralHeight = false;
-            listBoxGoal.ItemHeight = 15;
-            listBoxGoal.Location = new Point(12, 146);
+            listBoxGoal.Location = new Point(24, 292);
+            listBoxGoal.Margin = new Padding(6, 6, 6, 6);
             listBoxGoal.Name = "listBoxGoal";
-            listBoxGoal.Size = new Size(193, 70);
+            listBoxGoal.Size = new Size(382, 136);
             listBoxGoal.TabIndex = 9;
             listBoxGoal.Visible = false;
             listBoxGoal.DoubleClick += OnGoalSuggestionDoubleClick;
@@ -654,10 +664,10 @@ namespace team1
             // 
             listBoxStart.FormattingEnabled = true;
             listBoxStart.IntegralHeight = false;
-            listBoxStart.ItemHeight = 15;
-            listBoxStart.Location = new Point(12, 42);
+            listBoxStart.Location = new Point(24, 84);
+            listBoxStart.Margin = new Padding(6, 6, 6, 6);
             listBoxStart.Name = "listBoxStart";
-            listBoxStart.Size = new Size(193, 70);
+            listBoxStart.Size = new Size(382, 136);
             listBoxStart.TabIndex = 7;
             listBoxStart.Visible = false;
             listBoxStart.DoubleClick += OnStartSuggestionDoubleClick;
@@ -665,9 +675,10 @@ namespace team1
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(12, 120);
+            textBox2.Location = new Point(24, 240);
+            textBox2.Margin = new Padding(6, 6, 6, 6);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(193, 23);
+            textBox2.Size = new Size(382, 39);
             textBox2.TabIndex = 8;
             textBox2.TextChanged += OnGoalTextChanged;
             textBox2.Enter += OnSearchPanelRequested;
@@ -679,16 +690,18 @@ namespace team1
             panelTabs.Controls.Add(buttonTabSearch);
             panelTabs.Dock = DockStyle.Top;
             panelTabs.Location = new Point(0, 0);
+            panelTabs.Margin = new Padding(6, 6, 6, 6);
             panelTabs.Name = "panelTabs";
-            panelTabs.Size = new Size(220, 32);
+            panelTabs.Size = new Size(440, 64);
             panelTabs.TabIndex = 10;
             // 
             // buttonTabInfo
             // 
             buttonTabInfo.Dock = DockStyle.Right;
-            buttonTabInfo.Location = new Point(110, 0);
+            buttonTabInfo.Location = new Point(220, 0);
+            buttonTabInfo.Margin = new Padding(6, 6, 6, 6);
             buttonTabInfo.Name = "buttonTabInfo";
-            buttonTabInfo.Size = new Size(110, 32);
+            buttonTabInfo.Size = new Size(220, 64);
             buttonTabInfo.TabIndex = 1;
             buttonTabInfo.Text = "情報";
             buttonTabInfo.UseVisualStyleBackColor = true;
@@ -698,8 +711,9 @@ namespace team1
             // 
             buttonTabSearch.Dock = DockStyle.Left;
             buttonTabSearch.Location = new Point(0, 0);
+            buttonTabSearch.Margin = new Padding(6, 6, 6, 6);
             buttonTabSearch.Name = "buttonTabSearch";
-            buttonTabSearch.Size = new Size(110, 32);
+            buttonTabSearch.Size = new Size(220, 64);
             buttonTabSearch.TabIndex = 0;
             buttonTabSearch.Text = "検索";
             buttonTabSearch.UseVisualStyleBackColor = true;
@@ -707,13 +721,13 @@ namespace team1
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleDimensions = new SizeF(192F, 192F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(951, 616);
+            ClientSize = new Size(1902, 1232);
             Controls.Add(panel1);
             Controls.Add(MenuStrip1);
             MainMenuStrip = MenuStrip1;
-            Margin = new Padding(2, 1, 2, 1);
+            Margin = new Padding(4, 2, 4, 2);
             Name = "Form1";
             Text = "Form1";
             Load += OnFormLoad;
