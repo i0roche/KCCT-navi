@@ -16,32 +16,6 @@ namespace team1.Logic
             AllNodes.AddRange(_graphLoader.Load(filePath));
         }
 
-        public List<MapNode> GetReachableNodes(string startId)
-        {
-            var startNode = AllNodes.FirstOrDefault(n => n.Id == startId);
-            if (startNode == null) return new List<MapNode>();
-
-            var reachable = new HashSet<MapNode>();
-            var queue = new Queue<MapNode>();
-
-            reachable.Add(startNode);
-            queue.Enqueue(startNode);
-
-            while (queue.Count > 0)
-            {
-                var current = queue.Dequeue();
-                foreach (var neighbor in current.Neighbors)
-                {
-                    if (!reachable.Contains(neighbor))
-                    {
-                        reachable.Add(neighbor);
-                        queue.Enqueue(neighbor);
-                    }
-                }
-            }
-            return reachable.ToList();
-        }
-
         public List<Edge>? FindPath(string startId, string goalId)
         {
             var startNode = AllNodes.FirstOrDefault(n => n.Id == startId);

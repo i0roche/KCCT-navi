@@ -138,10 +138,10 @@
   { "Id": "wc_3f_men_advanced", "Name": "専攻科棟 男子トイレ(3F)", "Type": "restroom", "Building": "専攻科棟", "Floor": 3, "Department": "common", "Tags": ["トイレ", "男子", "専攻科棟"] },
   { "Id": "wc_3f_women_advanced", "Name": "専攻科棟 女子トイレ(3F)", "Type": "restroom", "Building": "専攻科棟", "Floor": 3, "Department": "common", "Tags": ["トイレ", "女子", "専攻科棟"] },
 
-  { "Id": "srair_1f_info", "Name": "情報センター 階段(1F)", "Type": "stairs", "Building": "情報センター", "Floor": 1, "Department": "common", "Tags": ["階段", "情報センター"] },
-  { "Id": "srair_2f_info", "Name": "情報センター 階段(2F)", "Type": "stairs", "Building": "情報センター", "Floor": 2, "Department": "common", "Tags": ["階段", "情報センター"] },
-  { "Id": "stair_1f_liblary", "Name": "図書館 階段(1F)", "Type": "stairs", "Building": "図書館", "Floor": 1, "Department": "common", "Tags": ["階段", "図書館"] },
-  { "Id": "stair_2f_liblary", "Name": "図書館 階段(2F)", "Type": "stairs", "Building": "図書館", "Floor": 2, "Department": "common", "Tags": ["階段", "図書館"] },
+  { "Id": "stair_1f_info", "Name": "情報センター 階段(1F)", "Type": "stairs", "Building": "情報センター", "Floor": 1, "Department": "common", "Tags": ["階段", "情報センター"] },
+  { "Id": "stair_2f_info", "Name": "情報センター 階段(2F)", "Type": "stairs", "Building": "情報センター", "Floor": 2, "Department": "common", "Tags": ["階段", "情報センター"] },
+  { "Id": "stair_1f_library", "Name": "図書館 階段(1F)", "Type": "stairs", "Building": "図書館", "Floor": 1, "Department": "common", "Tags": ["階段", "図書館"] },
+  { "Id": "stair_2f_library", "Name": "図書館 階段(2F)", "Type": "stairs", "Building": "図書館", "Floor": 2, "Department": "common", "Tags": ["階段", "図書館"] },
 
   { "Id": "stair_1f_honbu_north", "Name": "本部棟 北階段(1F)", "Type": "stairs", "Building": "本部棟", "Floor": 1, "Department": "common", "Tags": ["階段", "本部棟"] },
   { "Id": "stair_1f_honbu_south", "Name": "本部棟 南階段(1F)", "Type": "stairs", "Building": "本部棟", "Floor": 1, "Department": "common", "Tags": ["階段", "本部棟"] },

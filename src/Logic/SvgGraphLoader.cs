@@ -152,13 +152,25 @@ namespace team1.Logic
                 {
                     if (a == b) continue;
                     if (Math.Abs(a.Floor - b.Floor) == 1 &&
-                        Math.Abs(a.X - b.X) < 50.0f &&
-                        Math.Abs(a.Y - b.Y) < 50.0f)
+                        Math.Abs(a.X - b.X) < 60.0f &&
+                        Math.Abs(a.Y - b.Y) < 60.0f)
                     {
-                        Connect(a, b, null);
+                        // 学生はエレベーター使用禁止のため、階段を優先
+                        bool isStair = a.Id.Contains("stair") && b.Id.Contains("stair");
+                        float extraCost = isStair ? 30.0f : 10000.0f;
+                        ConnectVertical(a, b, extraCost);
                     }
                 }
             }
+        }
+
+        private static void ConnectVertical(MapNode a, MapNode b, float extraCost)
+        {
+            float baseCost = MapGeometry.CalculatePathLength(a, b, null);
+            float cost = baseCost + extraCost;
+
+            a.Edges.Add(new Edge(a, b, cost));
+            b.Edges.Add(new Edge(b, a, cost));
         }
     }
 }
