@@ -74,6 +74,7 @@ namespace team1
             viewer.RoomNodeClicked += OnRoomNodeClicked;
             viewer.MapBackgroundClicked += OnMapBackgroundClicked;
             viewer.FloorChangeRequested += OnFloorChangeRequested;
+            viewer.PlaceSelectedForRouting += OnPlaceSelectedForRoute;
 
             return viewer;
         }
@@ -89,6 +90,16 @@ namespace team1
         {
             KeyPreview = true;
             KeyDown += OnFormKeyDown;
+        }
+
+        private void OnPlaceSelectedForRoute(Place place, bool isStart)
+        {
+            if (isStart)
+                textBox1.Text = place.Name;
+            else
+                textBox2.Text = place.Name;
+
+            ShowSearchPanel();
         }
 
         #endregion

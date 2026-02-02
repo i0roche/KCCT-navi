@@ -26,10 +26,15 @@ namespace team1.Controls
         public event Action? MapBackgroundClicked;
         public event Action<int>? FloorChangeRequested;  // 階数変更リクエスト
 
+        public event Action<Place, bool>? PlaceSelectedForRouting; // bool : true=出発地, false=目的地
+
         private SKMatrix _currentMatrix = SKMatrix.CreateIdentity();
         private float _minScale = 0.1f;  // FitToScreenで計算されたスケールを最小値として記録
         private bool _isDragging = false;
         private Point _lastMousePos;
+
+        private ContextMenuStrip _nodeContextMenu; // 右クリックメニュー
+        private Place? _rightClickedPlace; // 右クリックで選択した場所
 
         // 階数ボタンの領域
         private Rectangle _floorUpButtonRect;
@@ -46,6 +51,26 @@ namespace team1.Controls
             this.MouseEnter += (_, _) => Focus();
             this.Resize += (_, _) => UpdateFloorButtonRects();
             this.TabStop = true;
+
+            _nodeContextMenu = new ContextMenuStrip();
+            _nodeContextMenu.Items.Add("出発地に設定", null, (s, e) => OnSetAsStart());
+            _nodeContextMenu.Items.Add("目的地に設定", null, (s, e) => OnSetAsGoal());
+        }
+
+        private void OnSetAsStart()
+        {
+            if (_rightClickedPlace != null)
+            {
+                PlaceSelectedForRouting?.Invoke(_rightClickedPlace, true);
+            }
+        }
+
+        private void OnSetAsGoal()
+        {
+            if (_rightClickedPlace != null)
+            {
+                PlaceSelectedForRouting?.Invoke(_rightClickedPlace, false);
+            }
         }
 
         /// <summary>
@@ -632,6 +657,17 @@ namespace team1.Controls
         private void OnMouseDown(object? sender, MouseEventArgs e)
         {
             Focus();
+
+            if (e.Button == MouseButtons.Right)
+            {
+                // 右クリックでコンテキストメニュー表示
+                if (TryPickPlace(e.Location, out var place))
+                {
+                    _rightClickedPlace = place;
+                    _nodeContextMenu.Show(this, e.Location);
+                }
+                return;
+            }
 
             if (e.Button == MouseButtons.Left)
             {
