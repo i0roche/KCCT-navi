@@ -100,7 +100,7 @@
   },
   {
     "Id": "room_3f_toshi_office_tech",
-    "Name": "技術職員室",
+    "Name": "技術職員室(都市工学科)",
     "Type": "office_tech",
     "Building": "都市工学科棟",
     "Floor": 3,

@@ -171,6 +171,15 @@
     "Tags": ["保健室", "共通施設", "common", "事務"]
   },
   {
+    "Id": "room_2f_common_hall",
+    "Name": "ホール",
+    "Type": "facility",
+    "Building": "本部棟",
+    "Floor": 2,
+    "Department": "common",
+    "Tags": ["ホール", "共通施設", "common"]
+  },
+  {
     "Id": "room_1f_gakusei_busitu_kizai",
     "Name": "機材室",
     "Type": "club",

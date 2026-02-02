@@ -271,7 +271,7 @@
   },
   {
     "Id": "room_4f_chem_office_tech",
-    "Name": "技術職員室",
+    "Name": "技術職員室(応用化学科)",
     "Type": "office_tech",
     "Building": "応用化学科棟",
     "Floor": 4,

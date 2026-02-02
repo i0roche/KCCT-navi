@@ -1,7 +1,7 @@
 [
   {
     "Id": "room_1f_elec_office_tech",
-    "Name": "技術職員室",
+    "Name": "技術職員室(電気工学科)",
     "Type": "office_tech",
     "Building": "電気工学科棟",
     "Floor": 1,

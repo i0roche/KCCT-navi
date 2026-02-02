@@ -38,10 +38,24 @@ namespace team1
         }
 
         private void OnStartTextChanged(object? sender, EventArgs e)
-            => UpdateSuggestions(textBox1, listBoxStart);
+        {
+            // サジェストからの選択時はIDをクリアしない
+            if (_selectedStartPlaceId == null || !textBox1.Text.Equals(_places.FirstOrDefault(p => p.Id == _selectedStartPlaceId)?.Name))
+            {
+                _selectedStartPlaceId = null;
+            }
+            UpdateSuggestions(textBox1, listBoxStart);
+        }
 
         private void OnGoalTextChanged(object? sender, EventArgs e)
-            => UpdateSuggestions(textBox2, listBoxGoal);
+        {
+            // サジェストからの選択時はIDをクリアしない
+            if (_selectedGoalPlaceId == null || !textBox2.Text.Equals(_places.FirstOrDefault(p => p.Id == _selectedGoalPlaceId)?.Name))
+            {
+                _selectedGoalPlaceId = null;
+            }
+            UpdateSuggestions(textBox2, listBoxGoal);
+        }
 
         private void UpdateSuggestions(TextBox source, ListBox listBox)
         {
@@ -92,13 +106,20 @@ namespace team1
             e.SuppressKeyPress = true;
         }
 
-        private static void ApplySuggestion(TextBox target, ListBox listBox)
+        private void ApplySuggestion(TextBox target, ListBox listBox)
         {
             if (listBox.SelectedItem is not SuggestionItem item) return;
 
+            // 先にIDを設定（TextChangedより前に）
+            if (target == textBox1)
+                _selectedStartPlaceId = item.Place.Id;
+            else if (target == textBox2)
+                _selectedGoalPlaceId = item.Place.Id;
+
+            // テキスト設定（TextChangedが発火するがIDはクリアされない）
             target.Text = item.Place.Name;
             target.SelectionStart = target.Text.Length;
-            listBox.Visible = false;
+            listBox.Visible = false;    
         }
 
         private void HideSuggestionLists()
@@ -140,7 +161,7 @@ namespace team1
 
         private void DoRouteSearch(string startQuery, string goalQuery)
         {
-            if (!TryResolvePlace(startQuery, out var start) || !TryResolvePlace(goalQuery, out var goal))
+            if (!TryResolvePlace(startQuery, _selectedStartPlaceId, out var start) || !TryResolvePlace(goalQuery, _selectedGoalPlaceId, out var goal))
             {
                 return;
             }
@@ -164,9 +185,22 @@ namespace team1
             return _places.Where(place => IsMatch(place, query));
         }
 
-        private bool TryResolvePlace(string query, out Place place)
+        private bool TryResolvePlace(string query, string? selectedId, out Place place)
         {
             place = null!;
+
+            // サジェストから選択したIDがあればそれを使う
+            if (!string.IsNullOrEmpty(selectedId))
+            {
+                var found = _places.FirstOrDefault(p => p.Id == selectedId);
+                if (found != null)
+                {
+                    place = found;
+                    return true;
+                }
+            }
+
+            // 従来の名前検索にフォールバック
             var matches = FindPlaces(query).ToList();
             if (matches.Count == 0)
             {

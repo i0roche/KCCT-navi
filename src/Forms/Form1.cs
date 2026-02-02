@@ -41,6 +41,9 @@ namespace team1
         private string? _currentInfoTitle;
         private string? _currentInfoDescription;
 
+        private string? _selectedStartPlaceId;  // サジェストから選んだ出発地のID
+        private string? _selectedGoalPlaceId;   // サジェストから選んだ目的地のID
+
         #endregion
 
         #region コンストラクタ

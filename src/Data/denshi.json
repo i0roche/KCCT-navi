@@ -46,7 +46,7 @@
   },
   {
     "Id": "room_2f_denshi_office_tech",
-    "Name": "技術職員室",
+    "Name": "技術職員室(電子工学科)",
     "Type": "office_tech",
     "Building": "電子工学科棟",
     "Floor": 2,

@@ -1,7 +1,7 @@
 [
   {
     "Id": "room_1f_mech_office_tech",
-    "Name": "技術職員室",
+    "Name": "技術職員室(機械工学科)",
     "Type": "office_tech",
     "Building": "機械工学科実験実習棟",
     "Floor": 1,
