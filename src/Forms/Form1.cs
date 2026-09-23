@@ -57,8 +57,8 @@ namespace team1
 
             SetupKeyboardShortcuts();
 
-            LoadFavorites();
-            RefreshFavoriteList();
+            // お気に入りの読み込み・一覧更新は OnFormLoad で行う
+            // (この時点では _places が空で、ID から Place を解決できないため)
         }
 
         #endregion

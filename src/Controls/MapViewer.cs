@@ -18,7 +18,25 @@ namespace team1.Controls
         public int CurrentFloor { get; set; } = 1;
         public int MaxFloor { get; set; } = 6;  // 最大階数
         public List<Place> Places { get; set; } = new List<Place>();
-        public List<MapNode> AllNodes { get; set; } = new List<MapNode>();
+        public List<MapNode> AllNodes
+        {
+            get => _allNodes;
+            set
+            {
+                // PathFinder が Clear()+AddRange() で中身を差し替える同じリストを共有すると、
+                // 索引だけ古いノードを指したままになる。複製して切り離す
+                _allNodes = value == null ? new List<MapNode>() : new List<MapNode>(value);
+
+                // 描画のたびに AllNodes を線形探索すると Places×AllNodes 回の比較になるので、
+                // (Id, Floor) をキーにした索引を差し替え時に一度だけ作る
+                _nodeLookup = new Dictionary<(string, int), MapNode>(_allNodes.Count);
+                foreach (var node in _allNodes)
+                {
+                    // 重複時は先に見つかったものを採用 (従来の FirstOrDefault と同じ挙動)
+                    _nodeLookup.TryAdd((node.Id, node.Floor), node);
+                }
+            }
+        }
         public HashSet<string> FavoritePlaceIds { get; set; } = new();
         public bool ShowRoomNames { get; set; } = true;
 
@@ -28,10 +46,20 @@ namespace team1.Controls
 
         public event Action<Place, bool>? PlaceSelectedForRouting; // bool : true=出発地, false=目的地
 
+        private List<MapNode> _allNodes = new List<MapNode>();
+        private Dictionary<(string Id, int Floor), MapNode> _nodeLookup = new();
+
         private SKMatrix _currentMatrix = SKMatrix.CreateIdentity();
         private float _minScale = 0.1f;  // FitToScreenで計算されたスケールを最小値として記録
         private bool _isDragging = false;
         private Point _lastMousePos;
+        private Point _mouseDownPos;      // ドラッグと単純クリックを区別するための押下位置
+
+        // これ以下の移動量ならドラッグではなくクリックとみなす (px)
+        private const int ClickSlop = 3;
+
+        // 階数切り替えパネルの背景がボタンからはみ出す量 (px)
+        private const int FloorPanelPadding = 4;
 
         private ContextMenuStrip _nodeContextMenu; // 右クリックメニュー
         private Place? _rightClickedPlace; // 右クリックで選択した場所
@@ -46,7 +74,7 @@ namespace team1.Controls
             this.PaintSurface += OnPaintSurface;
             this.MouseDown += OnMouseDown;
             this.MouseMove += OnMouseMove;
-            this.MouseUp += (s, e) => _isDragging = false;
+            this.MouseUp += OnMouseUp;
             this.MouseWheel += OnMouseWheel;
             this.MouseEnter += (_, _) => Focus();
             this.Resize += (_, _) => UpdateFloorButtonRects();
@@ -90,6 +118,14 @@ namespace team1.Controls
             _floorLabelRect = new Rectangle(right, bottom - buttonSize * 2 - spacing, buttonSize, buttonSize);
             _floorUpButtonRect = new Rectangle(right, bottom - buttonSize * 3 - spacing * 2, buttonSize, buttonSize);
         }
+
+        // 階数切り替え UI 全体の領域 (▲ / 階数ラベル / ▼ と背景パネルの余白)
+        // 描画と当たり判定で同じ矩形を使う
+        private Rectangle FloorPanelBounds => Rectangle.FromLTRB(
+            _floorUpButtonRect.Left - FloorPanelPadding,
+            _floorUpButtonRect.Top - FloorPanelPadding,
+            _floorDownButtonRect.Right + FloorPanelPadding,
+            _floorDownButtonRect.Bottom + FloorPanelPadding);
 
         public void FitToScreen()
         {
@@ -163,12 +199,8 @@ namespace team1.Controls
             UpdateFloorButtonRects();
 
             // 背景パネル
-            var panelRect = new SKRect(
-                _floorUpButtonRect.Left - 4,
-                _floorUpButtonRect.Top - 4,
-                _floorDownButtonRect.Right + 4,
-                _floorDownButtonRect.Bottom + 4
-            );
+            var bounds = FloorPanelBounds;
+            var panelRect = new SKRect(bounds.Left, bounds.Top, bounds.Right, bounds.Bottom);
 
             using var panelPaint = new SKPaint
             {
@@ -215,14 +247,20 @@ namespace team1.Controls
             using var textPaint = new SKPaint
             {
                 Color = textColor,
-                IsAntialias = true,
-                TextSize = 20 * dpiScale,
-                TextAlign = SKTextAlign.Center,
-                FakeBoldText = true
+                IsAntialias = true
+            };
+            using var font = new SKFont
+            {
+                Size = 20 * dpiScale,
+                Embolden = true,
+                // LinearMetrics: 旧 SKPaint のテキスト API は非ヒンティングの線形メトリクスを
+                // 使っていた。これを指定しないと文字送りが整数に丸められ、幅が変わる
+                LinearMetrics = true
             };
 
-            float textY = rect.Top + rect.Height / 2 - (textPaint.FontMetrics.Ascent + textPaint.FontMetrics.Descent) / 2;
-            canvas.DrawText(symbol, rect.Left + rect.Width / 2, textY, textPaint);
+            var metrics = font.Metrics;
+            float textY = rect.Top + rect.Height / 2 - (metrics.Ascent + metrics.Descent) / 2;
+            canvas.DrawText(symbol, rect.Left + rect.Width / 2, textY, SKTextAlign.Center, font, textPaint);
         }
 
         private void DrawFloorLabel(SKCanvas canvas, Rectangle rect, string text)
@@ -241,14 +279,18 @@ namespace team1.Controls
             using var textPaint = new SKPaint
             {
                 Color = new SKColor(33, 33, 33),
-                IsAntialias = true,
-                TextSize = 18 * dpiScale,
-                TextAlign = SKTextAlign.Center,
-                FakeBoldText = true
+                IsAntialias = true
+            };
+            using var font = new SKFont
+            {
+                Size = 18 * dpiScale,
+                Embolden = true,
+                LinearMetrics = true
             };
 
-            float textY = rect.Top + rect.Height / 2 - (textPaint.FontMetrics.Ascent + textPaint.FontMetrics.Descent) / 2;
-            canvas.DrawText(text, rect.Left + rect.Width / 2, textY, textPaint);
+            var metrics = font.Metrics;
+            float textY = rect.Top + rect.Height / 2 - (metrics.Ascent + metrics.Descent) / 2;
+            canvas.DrawText(text, rect.Left + rect.Width / 2, textY, SKTextAlign.Center, font, textPaint);
         }
 
         private void DrawRoomNames(SKCanvas canvas, float scale)
@@ -268,10 +310,13 @@ namespace team1.Controls
             using var textPaint = new SKPaint
             {
                 Color = SKColors.Black,
-                IsAntialias = true,
-                TextSize = fontSize,
-                TextAlign = SKTextAlign.Center,
-                Typeface = typeface
+                IsAntialias = true
+            };
+            using var font = new SKFont
+            {
+                Size = fontSize,
+                Typeface = typeface,
+                LinearMetrics = true
             };
 
             using var bgPaint = new SKPaint
@@ -302,11 +347,11 @@ namespace team1.Controls
 
             foreach (var place in roomsOnFloor)
             {
-                var node = AllNodes.FirstOrDefault(n => n.Id == place.Id && n.Floor == CurrentFloor);
+                var node = FindNode(place.Id, CurrentFloor);
                 if (node == null) continue;
 
-                float textWidth = textPaint.MeasureText(place.Name);
-                var metrics = textPaint.FontMetrics;
+                float textWidth = font.MeasureText(place.Name);
+                var metrics = font.Metrics;
                 float textHeight = metrics.Descent - metrics.Ascent;
 
                 float textTop = node.Y - labelOffset - textHeight;
@@ -323,19 +368,23 @@ namespace team1.Controls
                 canvas.DrawRoundRect(bgRect, 2f / scale, 2f / scale, borderPaint);
 
                 float textY = textBottom - metrics.Descent;
-                canvas.DrawText(place.Name, node.X, textY, textPaint);
+                canvas.DrawText(place.Name, node.X, textY, SKTextAlign.Center, font, textPaint);
 
                 //DrawRoomNode(canvas, node.X, node.Y, scale, FavoritePlaceIds.Contains(place.Id));
             }
 
         }
+        /// 指定の階にある ID のノードを索引から引く
+        private MapNode? FindNode(string id, int floor)
+            => _nodeLookup.TryGetValue((id, floor), out var node) ? node : null;
+
         private void DrawRoomNodes(SKCanvas canvas, float scale)
         {
             var roomsOnFloor = Places.Where(p => p.Floor == CurrentFloor && (p.Id.StartsWith("room_") || p.Id.StartsWith("wc_") || p.Id.StartsWith("stair_"))).ToList();
 
             foreach (var place in roomsOnFloor)
             {
-                var node = AllNodes.FirstOrDefault(n => n.Id == place.Id && n.Floor == CurrentFloor);
+                var node = FindNode(place.Id, CurrentFloor);
                 if (node == null) continue;
 
                 DrawRoomNode(canvas, node.X, node.Y, scale, FavoritePlaceIds.Contains(place.Id), place.Id);
@@ -390,7 +439,7 @@ namespace team1.Controls
 
             foreach (var p in Places.Where(p => p.Floor == CurrentFloor && p.Id.StartsWith("room_")))
             {
-                var node = AllNodes.FirstOrDefault(n => n.Id == p.Id && n.Floor == CurrentFloor);
+                var node = FindNode(p.Id, CurrentFloor);
                 if (node == null) continue;
 
                 float dx = world.X - node.X;
@@ -462,7 +511,7 @@ namespace team1.Controls
                     }
                     else if (edge.To.Floor == CurrentFloor)
                     {
-                        string label = edge.From.Floor > edge.To.Floor ? "UP" : "DOWN";
+                        // 到着側は進行方向ではなく「階段の接続点」を示す
                         DrawStairMarker(canvas, edge.To.X, edge.To.Y, "LINK");
                     }
                 }
@@ -556,13 +605,16 @@ namespace team1.Controls
             using var iconPaint = new SKPaint
             {
                 Color = primaryColor,
-                IsAntialias = true,
-                TextSize = 100,
-                TextAlign = SKTextAlign.Center,
-                FakeBoldText = true
+                IsAntialias = true
+            };
+            using var iconFont = new SKFont
+            {
+                Size = 100,
+                Embolden = true,
+                LinearMetrics = true
             };
             string icon = text == "START" ? "S" : "G";
-            canvas.DrawText(icon, 480, -520, iconPaint);
+            canvas.DrawText(icon, 480, -520, SKTextAlign.Center, iconFont, iconPaint);
 
             canvas.Restore();
         }
@@ -730,15 +782,19 @@ namespace team1.Controls
 
             if (e.Button == MouseButtons.Left)
             {
-                // 階数ボタンのクリック判定
-                if (_floorUpButtonRect.Contains(e.Location) && CurrentFloor < MaxFloor)
+                // 階数切り替え UI の上でのクリックは、地図の操作として扱わない。
+                // 無効状態のボタン・階数ラベル・パネルの余白まで含めて消費しないと、
+                // 素通りして背景クリック (= 情報パネルのクリア) になってしまう
+                if (FloorPanelBounds.Contains(e.Location))
                 {
-                    FloorChangeRequested?.Invoke(CurrentFloor + 1);
-                    return;
-                }
-                if (_floorDownButtonRect.Contains(e.Location) && CurrentFloor > 1)
-                {
-                    FloorChangeRequested?.Invoke(CurrentFloor - 1);
+                    if (_floorUpButtonRect.Contains(e.Location) && CurrentFloor < MaxFloor)
+                    {
+                        FloorChangeRequested?.Invoke(CurrentFloor + 1);
+                    }
+                    else if (_floorDownButtonRect.Contains(e.Location) && CurrentFloor > 1)
+                    {
+                        FloorChangeRequested?.Invoke(CurrentFloor - 1);
+                    }
                     return;
                 }
 
@@ -749,10 +805,29 @@ namespace team1.Controls
                     return;
                 }
 
+                // どのノードにも当たらなかった場合は背景。ドラッグ開始として扱い、
+                // 実際に動かなければ MouseUp で背景クリックとして通知する
                 _isDragging = true;
                 _lastMousePos = e.Location;
+                _mouseDownPos = e.Location;
             }
         }
+
+        private void OnMouseUp(object? sender, MouseEventArgs e)
+        {
+            bool wasDraggingBackground = _isDragging;
+            _isDragging = false;
+
+            if (e.Button != MouseButtons.Left || !wasDraggingBackground) return;
+
+            // 押下位置からほとんど動いていなければ、パン操作ではなく背景クリック
+            if (Math.Abs(e.X - _mouseDownPos.X) <= ClickSlop &&
+                Math.Abs(e.Y - _mouseDownPos.Y) <= ClickSlop)
+            {
+                MapBackgroundClicked?.Invoke();
+            }
+        }
+
         private void OnMouseMove(object? sender, MouseEventArgs e)
         {
             if (_isDragging)

@@ -83,12 +83,11 @@ team1/
 ├── Models/             # データモデル
 │   ├── Place.cs        # 場所情報（ID, 名前, 階, タグ）
 │   ├── MapNode.cs      # グラフノード（座標, 階）
-│   ├── Edge.cs         # グラフエッジ（重み, 経由点）
-│   └── SuggestionItem.cs # サジェスト項目
+│   └── Edge.cs         # グラフエッジ（重み, 経由点）
 ├── Services/           # サービス層
 │   └── PlaceDataService.cs # JSONから場所データ読込
 ├── Properties/         # プロジェクト設定
-│   ├── Resources.resx  # リソース定義（map.svg含む）
+│   ├── Resources.resx  # リソース定義（*.json を埋め込み）
 │   └── Resources.Designer.cs # リソースアクセスコード
 └── Program.cs          # エントリーポイント
 ```
@@ -102,12 +101,12 @@ team1/
 
 ### ビルド
 ```bash
-dotnet build
+dotnet build src/team1.sln
 ```
 
 ### 実行
 ```bash
-dotnet run
+dotnet run --project src/team1.csproj
 ```
 
 ## 使い方

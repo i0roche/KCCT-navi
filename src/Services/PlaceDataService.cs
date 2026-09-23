@@ -23,7 +23,6 @@ namespace team1.Services
             AddPlacesFromResource(places, Properties.Resources.chem_json);
             AddPlacesFromResource(places, Properties.Resources.mech_json);
             AddPlacesFromResource(places, Properties.Resources.advance_json);
-            AddPlacesFromResource(places, Properties.Resources.factory_json);
             AddPlacesFromResource(places, Properties.Resources.common_json);
             AddPlacesFromResource(places, Properties.Resources.facilities_json);
 

@@ -91,12 +91,21 @@ namespace team1
         }
 
         // Save/Load機能
-        private readonly string _saveFilePath = Path.Combine(Application.StartupPath, "favorite.json");
+        // 実行ディレクトリ(Program Files 配下など)は書き込めないことがあるため、
+        // ユーザーごとの AppData に保存する
+        private static readonly string SaveDirectory = Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "KosenCampusNavi");
+
+        private readonly string _saveFilePath = Path.Combine(SaveDirectory, "favorite.json");
+
+        // 旧版が exe と同じ場所に書いていたファイル。移行のため初回だけ読みに行く
+        private readonly string _legacySaveFilePath = Path.Combine(Application.StartupPath, "favorite.json");
 
         private void SaveFavorites() // お気に入りをファイルに保存
         {
             try
             {
+                Directory.CreateDirectory(SaveDirectory);
                 // _favoriteKeysをJSON文字列に変換
                 string jsonString = JsonSerializer.Serialize(_favoriteKeys);
                 File.WriteAllText(_saveFilePath, jsonString);
@@ -111,18 +120,21 @@ namespace team1
         {
             try
             {
-                if (File.Exists(_saveFilePath))
+                // 新しい保存先を優先し、無ければ旧版の保存先から引き継ぐ
+                string? path = File.Exists(_saveFilePath) ? _saveFilePath
+                             : File.Exists(_legacySaveFilePath) ? _legacySaveFilePath
+                             : null;
+                if (path == null) return;
+
+                string jsonString = File.ReadAllText(path);
+                // JSON から HashSet<string> (またはお使いの型) に戻す
+                var loadedData = JsonSerializer.Deserialize<HashSet<string>>(jsonString);
+                if (loadedData != null)
                 {
-                    string jsonString = File.ReadAllText(_saveFilePath);
-                    // JSON から HashSet<string> (またはお使いの型) に戻す
-                    var loadedData = JsonSerializer.Deserialize<HashSet<string>>(jsonString);
-                    if (loadedData != null)
-                    {
-                        _favoriteKeys = loadedData;
-                    }
+                    _favoriteKeys = loadedData;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 // ファイルが破損している場合などの処理
                 _favoriteKeys = new HashSet<string>();

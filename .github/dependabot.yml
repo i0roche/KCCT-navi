@@ -1,0 +1,23 @@
+version: 2
+updates:
+  - package-ecosystem: "nuget"
+    directory: "/src"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore"
+    groups:
+      # Svg.Skia は SkiaSharp のバージョンに追従するため、
+      # 片方だけ上がると噛み合わない。まとめて 1 PR にする
+      skiasharp:
+        patterns:
+          - "SkiaSharp*"
+          - "Svg.Skia"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "ci"

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
@@ -31,8 +32,8 @@ namespace team1.Logic
                     var node = new MapNode
                     {
                         Id = circle.Attribute("id")?.Value ?? "",
-                        X = float.Parse(circle.Attribute("cx")?.Value ?? "0"),
-                        Y = float.Parse(circle.Attribute("cy")?.Value ?? "0"),
+                        X = float.Parse(circle.Attribute("cx")?.Value ?? "0", CultureInfo.InvariantCulture),
+                        Y = float.Parse(circle.Attribute("cy")?.Value ?? "0", CultureInfo.InvariantCulture),
                         Floor = floorNum
                     };
                     nodes.Add(node);

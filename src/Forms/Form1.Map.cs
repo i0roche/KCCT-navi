@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
@@ -79,6 +80,9 @@ namespace team1
             var svg = new SKSvg();
             svg.Load(stream);
 
+            // SKSvg は native な SKPicture を抱えるので、差し替え前に旧インスタンスを解放する
+            // (Load 成功後に解放することで、失敗時に表示中の地図を失わない)
+            _mapViewer.SvgMap?.Dispose();
             _mapViewer.SvgMap = svg;
             _mapViewer.CurrentFloor = floor;
             _mapViewer.Invalidate();
@@ -200,10 +204,10 @@ namespace team1
 
             if (targetElement == null) return;
 
-            float rX = float.Parse(targetElement.Attribute("x")?.Value ?? "0");
-            float rY = float.Parse(targetElement.Attribute("y")?.Value ?? "0");
-            float rW = float.Parse(targetElement.Attribute("width")?.Value ?? "100");
-            float rH = float.Parse(targetElement.Attribute("height")?.Value ?? "100");
+            float rX = float.Parse(targetElement.Attribute("x")?.Value ?? "0", CultureInfo.InvariantCulture);
+            float rY = float.Parse(targetElement.Attribute("y")?.Value ?? "0", CultureInfo.InvariantCulture);
+            float rW = float.Parse(targetElement.Attribute("width")?.Value ?? "100", CultureInfo.InvariantCulture);
+            float rH = float.Parse(targetElement.Attribute("height")?.Value ?? "100", CultureInfo.InvariantCulture);
 
             _mapViewer.ZoomToRect(rX, rY, rW, rH);
         }

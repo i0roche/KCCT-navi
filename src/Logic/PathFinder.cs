@@ -31,19 +31,22 @@ namespace team1.Logic
                 node.ParentEdge = null;
             }
 
-            var openSet = new List<MapNode> { startNode };
+            // F値が最小のノードを毎回取り出すので優先度付きキューを使う
+            // (List + OrderBy だと 1 回の取り出しごとに全体を走査することになる)
+            var openSet = new PriorityQueue<MapNode, float>();
             var closedSet = new HashSet<MapNode>();
 
             startNode.G = 0;
             startNode.H = MapGeometry.Distance(startNode, goalNode);
+            openSet.Enqueue(startNode, startNode.F);
 
-            while (openSet.Any())
+            while (openSet.TryDequeue(out var current, out _))
             {
-                var current = openSet.OrderBy(n => n.F).First();
-                if (current == goalNode) return ReconstructPathEdges(current);
+                // PriorityQueue は優先度の更新ができないため、G値を下げたノードは
+                // 再度 Enqueue している。古い方を取り出したらここで読み飛ばす
+                if (!closedSet.Add(current)) continue;
 
-                openSet.Remove(current);
-                closedSet.Add(current);
+                if (current == goalNode) return ReconstructPathEdges(current);
 
                 foreach (var edge in current.Edges)
                 {
@@ -58,7 +61,7 @@ namespace team1.Logic
                         neighbor.ParentEdge = edge;
                         neighbor.G = tentativeG;
                         neighbor.H = MapGeometry.Distance(neighbor, goalNode);
-                        if (!openSet.Contains(neighbor)) openSet.Add(neighbor);
+                        openSet.Enqueue(neighbor, neighbor.F);
                     }
                 }
             }

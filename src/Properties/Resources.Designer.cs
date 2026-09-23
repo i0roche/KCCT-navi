@@ -181,16 +181,6 @@ namespace team1.Properties {
         }
         
         /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
-        /// </summary>
-        public static byte[] factory_json {
-            get {
-                object obj = ResourceManager.GetObject("factory_json", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
         ///   [
         ///  {
         ///    &quot;Id&quot;: &quot;room_1f_general_classroom_art&quot;,
@@ -218,16 +208,6 @@ namespace team1.Properties {
         public static string general_json {
             get {
                 return ResourceManager.GetString("general_json", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
-        /// </summary>
-        public static byte[] map {
-            get {
-                object obj = ResourceManager.GetObject("map", resourceCulture);
-                return ((byte[])(obj));
             }
         }
         

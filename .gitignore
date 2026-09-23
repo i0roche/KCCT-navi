@@ -416,3 +416,9 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# このプロジェクト固有
+# Windows のショートカット (誤コミット防止)
+*.lnk
+# 実行時に生成されるお気に入りデータ
+favorite.json

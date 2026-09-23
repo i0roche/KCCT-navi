@@ -175,12 +175,12 @@ Place {
 ```
 
 ### SuggestionItem（サジェスト項目）
-検索候補表示用データ
+検索候補表示用データ。`Form1.Search.cs` 内の入れ子 record として定義。
 
 ```csharp
-SuggestionItem {
-    Place: Place     // 場所情報
-    ToString(): string  // リストボックス表示用（Place.Nameを返す）
+SuggestionItem(Place Place) {
+    Place: Place        // 場所情報
+    ToString(): string  // リストボックス表示用「名前 (建物,階)」
 }
 ```
 
@@ -296,17 +296,17 @@ team1/
 ├── Models/             # データモデル
 │   ├── Place.cs        # 場所情報（ID, 名前, 階, タグ）
 │   ├── MapNode.cs      # グラフノード（座標, 階）
-│   ├── Edge.cs         # グラフエッジ（重み, 経由点）
-│   └── SuggestionItem.cs # サジェスト項目
+│   └── Edge.cs         # グラフエッジ（重み, 経由点）
 ├── Services/           # サービス層
 │   └── PlaceDataService.cs # JSONから場所データ読込
 ├── Properties/         # プロジェクト設定
-│   ├── Resources.resx  # リソース定義（map.svg含む）
+│   ├── Resources.resx  # リソース定義（*.json を埋め込み）
 │   └── Resources.Designer.cs # リソースアクセスコード
 └── Program.cs          # エントリーポイント
 ```
 
-**注記**: `map.svg`は`Properties/Resources.resx`に埋め込みリソースとして含まれています。
+**注記**: `map.svg` は埋め込みリソースではなく、ビルド時に出力先の `Data/` へコピーされ、
+実行時に `Form1.Lifecycle.cs` の `GetSvgPath()` がディスクから読み込みます。
 
 ---
 

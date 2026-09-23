@@ -220,14 +220,27 @@ namespace team1
                 ?? matches[0];
         }
 
+        private static readonly char[] KeywordSeparators = { ' ', '　' };
+
         private static bool IsMatch(Place place, string query)
         {
-            return ContainsIgnoreCase(place.Name, query)
-                || ContainsIgnoreCase(place.Id, query)
-                || ContainsIgnoreCase(place.Type, query)
-                || ContainsIgnoreCase(place.Building, query)
-                || ContainsIgnoreCase(place.Department, query)
-                || place.Tags.Any(tag => ContainsIgnoreCase(tag, query));
+            // 「電子 技術職員室」のように、空白区切りの複数キーワードを AND で絞り込む。
+            // 「技術職員室」だけでは 6 件の同名施設を区別できないため。
+            // 括弧はサジェストの表示名に含まれるので区切り文字として扱う
+            var keywords = query
+                .Replace('(', ' ').Replace(')', ' ')
+                .Replace('[', ' ').Replace(']', ' ')
+                .Split(KeywordSeparators, StringSplitOptions.RemoveEmptyEntries);
+
+            if (keywords.Length == 0) return false;
+
+            return keywords.All(keyword =>
+                ContainsIgnoreCase(place.Name, keyword)
+                || ContainsIgnoreCase(place.Id, keyword)
+                || ContainsIgnoreCase(place.Type, keyword)
+                || ContainsIgnoreCase(place.Building, keyword)
+                || ContainsIgnoreCase(place.Department, keyword)
+                || place.Tags.Any(tag => ContainsIgnoreCase(tag, keyword)));
         }
 
         private static bool ContainsIgnoreCase(string? source, string query)
