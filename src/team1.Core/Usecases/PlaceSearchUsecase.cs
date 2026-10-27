@@ -11,6 +11,12 @@ namespace team1.Core.Usecases
         /// <summary>キーワードから一番それらしい場所を 1 件選ぶ。無ければ null</summary>
         Place? Resolve(string query);
 
+        /// <summary>
+        /// 同じ名前の場所が複数あり、表示名 (「名前 (建物,階)」) でも絞れていないか。
+        /// 候補から選ばずに文字だけ入力すると、どれのことか決められないので、利用者に選んでもらう
+        /// </summary>
+        bool IsAmbiguous(string query);
+
         /// <summary>建物の一覧 (行き先を建物 → 階 → 部屋の順に選ぶ画面用)</summary>
         IReadOnlyList<string> GetBuildings();
 
@@ -44,6 +50,16 @@ namespace team1.Core.Usecases
                 ?? matches.FirstOrDefault(place => place.Id.Equals(query, StringComparison.OrdinalIgnoreCase))
                 ?? matches.FirstOrDefault(place => place.Tags.Any(tag => tag.Equals(query, StringComparison.OrdinalIgnoreCase)))
                 ?? matches[0];
+        }
+
+        public bool IsAmbiguous(string query)
+        {
+            query = query.Trim();
+            if (query.Length == 0) return false;
+
+            var all = Search(query).ToList();
+            if (all.Any(p => p.DisplayName.Equals(query, StringComparison.OrdinalIgnoreCase))) return false;
+            return all.Count(p => p.Name.Equals(query, StringComparison.OrdinalIgnoreCase)) > 1;
         }
 
         public IReadOnlyList<string> GetBuildings()

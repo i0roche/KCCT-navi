@@ -61,12 +61,14 @@ namespace team1.Core
                         new JsonSerializerOptions { PropertyNameCaseInsensitive = true, ReadCommentHandling = JsonCommentHandling.Skip });
                     if (loaded != null) options = loaded;
                 }
-                catch (JsonException)
+                catch (Exception ex) when (ex is JsonException or IOException or UnauthorizedAccessException)
                 {
+                    // 設定が読めなくても、既定値で起動する (展示が止まらないことを優先)
                 }
             }
 
             if (args.Contains("--kiosk", StringComparer.OrdinalIgnoreCase)) options.Kiosk = true;
+            if (options.IdleResetSeconds < 0) options.IdleResetSeconds = 0;   // 負の値は「無効」と同じ扱い
 
             return options;
         }

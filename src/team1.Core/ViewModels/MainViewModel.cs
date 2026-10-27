@@ -40,6 +40,14 @@ namespace team1.Core.ViewModels
                 ? Array.Empty<Place>()
                 : searchUsecase.Search(query.Trim()).Take(SuggestionLimit).ToList();
 
+        /// <summary>入力欄の文字が、同名の複数の場所のどれのことか決められないか (すでに選んだ場所が同じ表示なら、決まっている)</summary>
+        public bool IsAmbiguousInput(string text, Place? selected)
+        {
+            text = text.Trim();
+            if (selected != null && (selected.Name == text || selected.DisplayName == text)) return false;
+            return searchUsecase.IsAmbiguous(text);
+        }
+
         public void SetStart(Place place) => routeState.SetStart(place);
 
         public void SetGoal(Place place) => routeState.SetGoal(place);

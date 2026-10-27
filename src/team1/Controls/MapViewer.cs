@@ -342,8 +342,6 @@ namespace team1.Controls
 
         private void DrawRoomNames(SKCanvas canvas, float scale)
         {
-            if (scale < 0.6f) return;
-
             using var typeface = Theme.Typeface();
 
             float dpiScale = Theme.Scale(this);
@@ -376,12 +374,11 @@ namespace team1.Controls
             var roomsOnFloor = Places.Where(p => p.Floor == CurrentFloor && p.Id.StartsWith("room_")).ToList();
 
 
-            if (scale < 1.2f)
+            // 全体表示のとき (全体表示の 1.6 倍まで) は、お気に入りだけ。それより拡大すると全部出す。
+            // 倍率の絶対値ではなく全体表示との比で決める (画面が大きいと、全体表示でも絶対値が大きくなるため)
+            if (IsOverview)
             {
-                // 中間ズーム → お気に入りだけ表示
-                var beforeCount = roomsOnFloor.Count;
                 roomsOnFloor = roomsOnFloor.Where(p => FavoritePlaceIds.Contains(p.Id)).ToList();
-                System.Diagnostics.Debug.WriteLine($"Scale={scale:F2}, Favorites={FavoritePlaceIds.Count}, Showing {roomsOnFloor.Count}/{beforeCount} rooms");
             }
 
             foreach (var place in roomsOnFloor)

@@ -120,9 +120,17 @@ namespace team1.Core.Logic
             b.Edges.Add(new Edge(b, a, cost) { Points = back, IsOutdoor = outdoor });
         }
 
-        // a→b と b→a は、点の並びが逆なだけで同じ通路
+        // a→b と b→a は、点の並びが逆なだけで同じ通路。長さが近く、点が逆順に一致するものだけを同じとみなす
+        // (同じ 2 ノードを結ぶ別の通路が並んでいても、取り違えない)
         private static bool SameShape(Edge back, Edge forward)
-            => back.Points.Count == forward.Points.Count && Math.Abs(back.Cost - forward.Cost) < 0.01f;
+        {
+            if (back.Points.Count != forward.Points.Count || Math.Abs(back.Cost - forward.Cost) > 0.5f) return false;
+            for (int i = 0; i < forward.Points.Count; i++)
+            {
+                if (Distance(forward.Points[i], back.Points[back.Points.Count - 1 - i]) > 0.01f) return false;
+            }
+            return true;
+        }
 
         private static double AngleAt(MapNode corner, MapNode u, MapNode v)
         {

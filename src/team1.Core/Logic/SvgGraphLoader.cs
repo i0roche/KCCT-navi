@@ -153,7 +153,7 @@ namespace team1.Core.Logic
                         Math.Abs(a.Y - b.Y) < 60.0f)
                     {
                         // 学生はエレベーター使用禁止のため、階段を優先
-                        bool isStair = a.Id.Contains("stair") && b.Id.Contains("stair");
+                        bool isStair = MapGeometry.IsStairLink(a, b);
                         float extraCost = isStair ? MapGeometry.StairExtraCost : MapGeometry.ElevatorExtraCost;
                         ConnectVertical(a, b, extraCost);
                     }

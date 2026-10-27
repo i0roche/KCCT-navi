@@ -48,8 +48,8 @@ A*アルゴリズムで上下階を繋いだり、特殊な目的地（トイレ
 
 | 種類 | ルール | 具体例 | 役割 |
 | --- | --- | --- | --- |
-| **階段** | `stair_[階]f_[名前]` | `stair_1f_main / stair_2f_west` | **最重要。** 同名の1階と2階をプログラムで自動接続する。 |
-| **エレベーター** | `elv_[階]f_[名前]` | `elv_1f_main` | 階段と同様に縦移動の接続用。 |
+| **階段** | `stair_[階]f_[名前]` | `stair_1f_main / stair_2f_west` | **最重要。** ID に `stair` を含む隣の階のノードどうしで、地図上の位置が 60px 以内のものを、プログラムで自動接続する (名前が同じである必要は無い。位置で決まる)。 |
+| **エレベーター** | `elv_[階]f_[名前]` | `elv_1f_main` | 階段と同様に縦移動の接続用 (ふだんは使えない重みにしてある。「階段を避ける」で使う)。 |
 | **トイレ** | `wc_[階]f_[性別]_[場所]` | `wc_1f_men_west / wc_1f_multi_main` | 性別: `men`, `women`, `multi` |
 
 ---
@@ -62,15 +62,32 @@ A*アルゴリズムで上下階を繋いだり、特殊な目的地（トイレ
 {
   "Id": "room_4f_mech_hr_m1a",  // SVGのIDと完全一致させる
   "Name": "M1A",                // アプリ表示名
-  "Type": "classroom",          // 種類 (classroom, lab, facility, office_tech)
+  "Type": "classroom",          // 種類 (classroom, lab, facility, club, office, office_tech, restroom, stairs, elevator)
   "Building": "一般科A棟",       // 建物名
   "Floor": 2,                   // 階数 (int)
   "Department": "mech",         // 学科コード
+  "Description": "",            // 説明 (省略可。吹き出しに出す)
   "Tags": [                     // 検索ヒット用キーワード
     "HR",
     "M1A",
     "機械工学科",
     "1年"
-  ]
+  ],
+  "Hidden": true                // 省略可。true なら検索・一覧に出さず、データ検証の対象外にする
+                                // (地図にまだ載せられていない場所。位置が分かればノードを足して外す)
 }
 ```
+
+---
+
+## 5. スクリプトが作る ID・ファイル
+
+地図データを作るスクリプト (`scripts/`) が足すものは、手で書いた ID と区別できる接頭辞を持つ。
+
+| ID・ファイル | 作るもの | 内容 |
+| --- | --- | --- |
+| `kcct_N####` | `add_missing_nodes.py` | KCCT-SiteMap の通路を変換して足した、通路のノード |
+| `walk_gym_#` | `connect_gym.py` | 体育館への屋根付き通路 (地図の通路の図形の中心線) のノード |
+| `link_*` (path の id) | 上の 2 つ | 足したノードをつなぐ、2 点だけの通路 |
+| `~mid#` | 実行時 (`GraphDensifier`) | 通路を細かく分けるために足すノード。SVG には書かれず、経路の線にだけ現れる |
+| `outdoor_edges.txt` | `mark_outdoor_edges.py` | 屋外の通路の一覧。1 行に 2 つのノード ID (`#` 以降はコメント)。雨の日に避ける |

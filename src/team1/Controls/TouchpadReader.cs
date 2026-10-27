@@ -103,7 +103,11 @@ namespace team1.Controls
 
             if (_scanTime != scanTime)
             {
-                // 新しいフレーム。前のフレームがそろわないまま終わったら捨てる
+                // 新しいフレーム。前のフレームがそろわないまま終わったら捨てる。
+                // 捨てたことを (指 0 本のフレームとして) 知らせ、二本指の基準を取り直させる。
+                // そうしないと、抜けたフレームの前後の差が 1 回で動きになり、拡大・回転が大きく飛ぶ
+                if (_scanTime != null && !_emitted && _expected > 0) FrameCompleted?.Invoke([]);
+
                 _scanTime = scanTime;
                 _tips.Clear();
                 _expected = 0;

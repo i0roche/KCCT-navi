@@ -25,14 +25,19 @@ namespace team1.Core.Repositories
 
         public IReadOnlySet<string> Ids => _ids;
 
+        // 保存に失敗したら、メモリの変更も戻す (戻さないと、星は付いたままなのに再起動で消える)
         public void Add(string id)
         {
-            if (_ids.Add(id)) Save();
+            if (!_ids.Add(id)) return;
+            try { Save(); }
+            catch { _ids.Remove(id); throw; }
         }
 
         public void Remove(string id)
         {
-            if (_ids.Remove(id)) Save();
+            if (!_ids.Remove(id)) return;
+            try { Save(); }
+            catch { _ids.Add(id); throw; }
         }
 
         private static HashSet<string> TryLoad(string path)
@@ -52,7 +57,10 @@ namespace team1.Core.Repositories
         {
             var directory = Path.GetDirectoryName(_filePath);
             if (!string.IsNullOrEmpty(directory)) Directory.CreateDirectory(directory);
-            File.WriteAllText(_filePath, JsonSerializer.Serialize(_ids));
+            // 書き込み中に電源が切れても、元のファイルが壊れないよう、一時ファイルに書いてから置き換える
+            var temp = _filePath + ".tmp";
+            File.WriteAllText(temp, JsonSerializer.Serialize(_ids));
+            File.Move(temp, _filePath, overwrite: true);
         }
     }
 

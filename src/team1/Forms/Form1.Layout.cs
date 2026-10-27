@@ -184,6 +184,20 @@ namespace team1
 
         private void OnShowRouteClicked(string startText, string goalText)
         {
+            // 同名の場所 (会議室など) が複数あるのに、候補から選んでいないときは、黙って最初の 1 件にせず選んでもらう
+            if (_vm.IsAmbiguousInput(startText, _vm.RouteState.Start))
+            {
+                ShowStatus($"出発地「{startText.Trim()}」は同名の場所が複数あります。入力すると出る候補から選んでください");
+                _routeBar.StartBox.Focus();
+                return;
+            }
+            if (_vm.IsAmbiguousInput(goalText, _vm.RouteState.Goal))
+            {
+                ShowStatus($"目的地「{goalText.Trim()}」は同名の場所が複数あります。入力すると出る候補から選んでください");
+                _routeBar.GoalBox.Focus();
+                return;
+            }
+
             var start = _vm.ResolveInput(startText, _vm.RouteState.Start)
                         ?? (string.IsNullOrWhiteSpace(startText) ? _vm.CurrentLocation : null);
             var goal = _vm.ResolveInput(goalText, _vm.RouteState.Goal);

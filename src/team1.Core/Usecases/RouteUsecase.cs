@@ -43,11 +43,12 @@ namespace team1.Core.Usecases
             if (startNode == null) return (null, "出発地がまだ地図に登録されていません。");
 
             // ノードから場所へ引けるようにしておく (地図に無い候補はここで落ちる)
-            var candidates = placeRepository.All
-                .Where(p => category.Matches(p))
-                .Select(p => (Place: p, Node: graphRepository.Find(p.Id)))
-                .Where(c => c.Node != null)
-                .ToDictionary(c => c.Node!, c => c.Place);
+            // (同じ ID の場所が重複していても落ちないよう、ToDictionary ではなく TryAdd で入れる)
+            var candidates = new Dictionary<MapNode, Place>();
+            foreach (var place in placeRepository.All.Where(p => category.Matches(p)))
+            {
+                if (graphRepository.Find(place.Id) is { } node) candidates.TryAdd(node, place);
+            }
 
             if (candidates.Count == 0) return (null, $"{category.DisplayName()}が地図に登録されていません。");
 

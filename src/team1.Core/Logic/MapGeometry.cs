@@ -27,6 +27,12 @@ namespace team1.Core.Logic
 
         // 階段 1 階分の追加コスト (SvgGraphLoader の階段接続と揃える)
         public const float StairExtraCost = 30.0f;
+
+        /// <summary>
+        /// 2 つのノードをつなぐ縦移動が階段か。両方の ID が stair を含むものだけが階段で、それ以外 (エレベーター、
+        /// 階段とエレベーターの組) はエレベーター扱い。グラフを作るとき (SvgGraphLoader) と探索の重み (PathFinder) で同じ判定を使う
+        /// </summary>
+        public static bool IsStairLink(MapNode a, MapNode b) => a.Id.Contains("stair") && b.Id.Contains("stair");
         /// <summary>エレベーターの加算コスト。学生は使えない想定なので、ふだんは階段を選ぶほど大きい</summary>
         public const float ElevatorExtraCost = 10000f;
 

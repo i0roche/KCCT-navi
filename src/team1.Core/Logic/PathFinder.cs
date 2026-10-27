@@ -44,7 +44,7 @@ namespace team1.Core.Logic
                 if (isGoal(current))
                 {
                     var edges = ReconstructPathEdges(current, parentEdge);
-                    return new Path(edges, edges.Sum(e => e.Cost)); // 表示用のコストは罰則を含まない実際の長さ
+                    return new Path(edges, edges.Sum(e => e.Cost)); // 通路の長さの合計 (階段・エレベーターの加算コストは含む。雨の日・階段を避ける重みは含まない)
                 }
 
                 foreach (var edge in current.Edges)
@@ -71,7 +71,7 @@ namespace team1.Core.Logic
             if (avoidStairs && edge.From.Floor != edge.To.Floor)
             {
                 // 階段を避けるときは、エレベーターの加算を外して階段に足す (階段を使うのは、エレベーターが無い所だけになる)
-                bool elevator = edge.From.Id.StartsWith("elv_") && edge.To.Id.StartsWith("elv_");
+                bool elevator = !MapGeometry.IsStairLink(edge.From, edge.To);
                 cost += elevator ? -MapGeometry.ElevatorExtraCost + MapGeometry.StairExtraCost : MapGeometry.ElevatorExtraCost;
             }
             return cost;

@@ -8,7 +8,7 @@
 
 | 項目 | 内容 |
 |------|------|
-| **アプリケーション名** | 高専マップナビゲーション |
+| **アプリケーション名** | 校内マップ ナビ |
 | **プラットフォーム** | Windows Forms (.NET 8 / C# 12) |
 | **描画エンジン** | SkiaSharp + Svg.Skia |
 | **経路探索** | A*アルゴリズム |
@@ -23,8 +23,11 @@
 | **SVGマップ表示** | SkiaSharpを使用した高速な2D描画 |
 | **マルチフロア対応** | 複数階層の地図切り替え（1F〜6F） |
 | **経路探索** | A*アルゴリズムによる最短経路計算 |
-| **インタラクティブ操作** | ドラッグ移動・ホイールズーム・部屋クリック |
+| **インタラクティブ操作** | ドラッグ移動・慣性・ホイールズーム・部屋クリック・タッチパッド二本指（移動・拡大・回転） |
+| **検索・一覧** | 候補つき検索・種別/建物で絞り込む部屋一覧・建物メニュー |
+| **経路の設定** | 雨の日（屋外を避ける・屋根付き通路は通れる）・階段を避ける・近くの施設 |
 | **お気に入り機能** | よく使う部屋の登録・管理 |
+| **展示モード** | 全画面・無操作リセット・例外からの復帰・大きな画面への拡大 (UiScale) |
 
 ---
 
@@ -37,7 +40,8 @@ DI (`Microsoft.Extensions.DependencyInjection`) で組み立てて使う。Core 
 ┌─────────────────────────────── team1 (Windows Forms) ───────────────────────────────┐
 │ Form1 (partial)        表示とイベント配線のみ。処理は MainViewModel に任せる           │
 │ AppToolbar / RouteBar  上のツールバー (6班の配置) / 経路の入力欄 (KCCT の配置)        │
-│ MapViewer (partial)    地図描画・パン/ズーム・ピンチ (WM_GESTURE)・経路アニメーション   │
+│ RoutePanel / PlacePopup / SearchPopup / RoomListView / HelpForm  右の行き方・吹き出し… │
+│ MapViewer (partial)    地図描画・パン/ズーム/回転・慣性・タッチパッド/ピンチ・経路アニメ │
 │ MapResourceRepository  階ごとの SVG 描画結果をキャッシュ                               │
 │ IdleWatcher / CrashGuard  無操作リセット / 例外時の復帰 (無人運用)                      │
 └───────────────────────────────────────┬─────────────────────────────────────────────┘
@@ -52,7 +56,8 @@ DI (`Microsoft.Extensions.DependencyInjection`) で組み立てて使う。Core 
 │ Repositories JsonPlaceRepository    Data/*.json                                       │
 │              SvgMapGraphRepository  map.svg → グラフ (SvgGraphLoader)                 │
 │              JsonFavoriteRepository AppData/KosenCampusNavi/favorite.json             │
-│ Logic        PathFinder (A* / Dijkstra), MapGeometry, RouteDescriber                   │
+│ Logic        PathFinder (A* / Dijkstra), GraphDensifier, MapGeometry, RouteDescriber,   │
+│              TwoFingerTracker (二本指の動き)                                          │
 │ Models       Place, MapNode, Edge, RouteResult, PlaceCategory                          │
 └─────────────────────────────────────────────────────────────────────────────────────┘
 ```
@@ -78,6 +83,9 @@ DI (`Microsoft.Extensions.DependencyInjection`) で組み立てて使う。Core 
 | `MaxFloor` | `int` | 最大階数（デフォルト6） |
 | `Places` | `List<Place>` | 施設情報リスト |
 | `AllNodes` | `List<MapNode>` | 全ノード情報 |
+| `Buildings` | `Dictionary<string, (string, SKRect)>` | 全体表示で枠・名前を出す建物 (`view_*`) |
+| `ContentExtra` | `SKRect?` | 全体表示の範囲に含める建物の外形 (Form が設定) |
+| `Rotation` / `CurrentScale` / `ZoomPercent` | `float` | 地図の回転 (時計まわりが正)・倍率・全体表示を 100% とした倍率 |
 | `FavoritePlaceIds` | `HashSet<string>` | お気に入り施設ID |
 | `ShowRoomNames` | `bool` | 部屋名表示フラグ |
 
@@ -90,13 +98,14 @@ DI (`Microsoft.Extensions.DependencyInjection`) で組み立てて使う。Core 
 | 紫 (`#8B5CF6`) | `stair_*` | 階段 |
 | 黄 (`#F59E0B`) | （お気に入り） | お気に入り登録済み |
 
-#### ズームレベルによるラベル表示
+#### ズームレベルによる表示
 
-| スケール | 表示内容 |
+全体表示 (`FitToScreen` の倍率) との比で決める。画面の大きさ (絶対値) には依存しない。
+
+| 全体表示との比 | 表示内容 |
 |---------|----------|
-| 1.2倍以上 | すべての部屋名を表示 |
-| 0.6〜1.2倍 | お気に入りの部屋のみ表示 |
-| 0.6倍未満 | ラベル非表示（ノードのみ） |
+| 1.6 倍未満 (`IsOverview`) | 棟の名前だけ。部屋の点・部屋名はお気に入りのみ |
+| 1.6 倍以上 | すべての部屋の点と部屋名 (棟の名前は出さない) |
 
 #### イベント
 
@@ -105,6 +114,9 @@ DI (`Microsoft.Extensions.DependencyInjection`) で組み立てて使う。Core 
 | `RoomNodeClicked` | 部屋ノードクリック時 |
 | `MapBackgroundClicked` | 背景クリック時 |
 | `FloorChangeRequested` | 階数変更リクエスト時 |
+| `BuildingClicked` | 全体表示で建物 (`view_*`) がクリックされた |
+| `PlaceSelectedForRouting` | 右クリックメニューで出発地/目的地に設定 |
+| `ViewChanged` | 移動・拡大・回転・全体表示のたび (ツールバーの倍率表示・吹き出しの追従に使う) |
 
 ---
 
@@ -128,6 +140,12 @@ DI (`Microsoft.Extensions.DependencyInjection`) で組み立てて使う。Core 
 
 H(n) は直線距離 + 階の差 × 階段 1 階分のコスト (30)。
 実コストを上回らない (許容的) ので、最短経路が保証される。
+
+探索の重み (コスト) は表示する長さとは別に、設定で変える (PathFinder.EdgeCost):
+  ・雨の日: 屋外の通路 (Edge.IsOutdoor) を 20 倍の長さとして探す。通れないわけではないので、屋外しか道が無い場所にも行ける
+  ・階段を避ける: エレベーターの加算コスト (10000) を外し、階段に足す
+どちらも重みを大きくするだけ (1 倍以上) なので、ヒューリスティックは許容的なまま。
+RouteResult.Cost は通路の長さの合計。階段 (30) とエレベーター (10000) の加算コストは含むが、雨の日・階段を避ける設定の重みは含まない。
 
 探索中の G 値や親はノードに持たせず探索ごとに確保する (同じグラフで何度呼んでも干渉しない)。
 
@@ -162,6 +180,7 @@ Edge {
     To: MapNode      // 終点
     Cost: float      // 移動コスト（距離）
     Points: List<SKPoint>  // 曲線の中間点
+    IsOutdoor: bool  // 屋外の通路 (雨の日に避ける)。outdoor_edges.txt から付ける
 }
 ```
 
@@ -172,12 +191,13 @@ Edge {
 Place {
     Id: string       // ノードIDと対応
     Name: string     // "電子基礎実験室", "一般科 男子トイレ(2F)"
-    Type: string     // "lab", "classroom", "facility", "stairs", "elevator", "restroom"
+    Type: string     // "lab", "classroom", "facility", "club", "office", "office_tech", "stairs", "elevator", "restroom"
     Building: string // "一般科A棟", "電子工学科棟"
     Floor: int       // 階数
     Department: string  // "denshi", "common"
     Description: string // 説明文
     Tags: List<string>  // 検索用タグ
+    Hidden: bool        // true なら検索・一覧に出さない (地図に載せられていない場所)
 }
 ```
 
@@ -188,7 +208,9 @@ RouteResult {
     Status: RouteStatus  // Found / SamePlace / PlaceNotOnMap / Unreachable
     Start, Goal: Place
     Edges: IReadOnlyList<Edge>
-    Cost: float
+    Cost: float          // 通路の長さの合計 (階段・エレベーターの加算コストは含む。雨の日・階段を避ける重みは含まない)
+    IsFound: bool        // Status == Found
+    PassesOutdoor: bool  // 屋外の通路を含むか (雨の日でも屋外しか道が無いときに知らせる)
     Message: string      // 見つからなかった理由 (利用者向け)
 }
 ```
@@ -207,19 +229,18 @@ OnPaintSurface() 実行
 │
 ├─③ DrawPicture(SvgMap)          // SVG地図描画
 │
-├─④ DrawRoomNodes()              // 部屋ノード描画（常に表示）
+├─④ DrawRoomNodes()              // 部屋の点 (全体表示ではお気に入りのみ)
 │   └─ 色分け: 青（部屋）/緑（トイレ）/紫（階段）/黄（お気に入り）
 │
-├─⑤ DrawRoomNames()              // 部屋名ラベル描画（ズームレベル依存）
-│   ├─ scale >= 1.2: すべての部屋名
-│   ├─ 0.6 <= scale < 1.2: お気に入りのみ
-│   └─ scale < 0.6: 非表示
+├─⑤ DrawRoomNames()              // 部屋名ラベル (全体表示ではお気に入りのみ。回転しても正立)
+│
+├─⑤' DrawBuildingOverview()      // 全体表示の棟の名前 (点・部屋名より手前)
 │
 ├─⑥ DrawRoute()                  // 経路描画
 │   ├─ DrawPath(floorPath)       // 経路線（青）
-│   ├─ DrawMarker(START)         // 開始ピン（青）
-│   ├─ DrawMarker(GOAL)          // 終点ピン（赤）
-│   └─ DrawStairMarker()         // 階段マーカー（緑/オレンジ/青）
+│   ├─ DrawStairMarker()         // 階の移動のラベル（緑「↑ 3F へ」/橙「↓ 1F へ」/紫「2F から」）
+│   ├─ DrawMarker(START)         // 「出発」（青）: 点 + 上にラベル
+│   └─ DrawMarker(GOAL)          // 「目的地」（赤）: 点 + 上にラベル
 │
 ├─⑦ canvas.Restore()             // 状態復元
 │
@@ -234,11 +255,33 @@ OnPaintSurface() 実行
 |------|------|
 | **ドラッグ** | 地図のパン移動（`PanBy`） |
 | **ホイール** | ズームイン/アウト（`ZoomAt`、カーソル位置中心、全体表示〜10x） |
-| **ピンチ (タッチ)** | `WM_GESTURE` の `GID_ZOOM` → `ZoomAt`（指の中心が基準） |
-| **指でなぞる (タッチ)** | `WM_GESTURE` の `GID_PAN` → `PanBy`（離した後も慣性で少し進む） |
+| **二本指 (タッチパッド)** | `TouchpadReader` → `TwoFingerTracker` → `PanBy` / `ZoomAt` / `RotateAt`（下記）。ホイールのスクロール・ピンチは捨てる |
+| **離して滑る** | ドラッグで離したあと `MapViewer.Inertia.cs` が減速しながら動かす |
+| **棟をクリック (全体表示)** | `BuildingClicked` → その建物へ拡大 (`ZoomToRect`) |
+| **経路を引く / 階を切り替える** | 経路の見える範囲へ自動で拡大 (`ZoomToRoute`) |
+| **ピンチ (タッチスクリーン)** | `WM_GESTURE` の `GID_ZOOM` → `ZoomAt`（指の中心が基準） |
+| **指でなぞる (タッチスクリーン)** | `WM_GESTURE` の `GID_PAN` → `PanBy`（離した後も慣性で少し進む） |
 | **部屋クリック** | `RoomNodeClicked`イベント発火（タッチモードでは指を離したときに判定） |
 | **▲ボタン** | 上階へ移動（`FloorChangeRequested`） |
 | **▼ボタン** | 下階へ移動（`FloorChangeRequested`） |
+
+---
+
+## 画面の構成 (6班の配置・KCCT の入力欄)
+
+```
+┌ メニューバー  建物 / 検索 / 表示 / ヘルプ (展示モードではヘルプなし) ───────────────┐
+├ ツールバー    [マップ][一覧]  [検索]  [★お気に入り]  [▼] 1F [▲]  [−] 100% [＋]      ┤  AppToolbar
+├ 経路の入力欄  [出発地] ⇄ [目的地] [表示][クリア] [雨の日][階段を避ける] [近くの施設 ▼]  ┤  RouteBar
+├ 地図 (MapViewer) または 部屋一覧 (RoomListView)                  │ 行き方 (RoutePanel) ┤
+│   地図の部屋をクリックすると吹き出し (PlacePopup)                │ 経路があるときだけ  │
+└ ステータスバー  メッセージ / 出発地                                                   ┘
+```
+
+- `Form1.Layout.cs` が部品を組み立てて配線する。入力欄の候補は `SearchPopup` (1 つを 3 つの入力欄で共有)。
+- 部品の見た目は `Controls/Modern` (`Theme` の色・フォント、角の丸い `ModernButton` / `ModernTextBox`、メニューの `ModernRenderer`)。画像は使わず、アイコンも線で描く (`Icons`)。
+- 文字は `Theme.FontFamily`、大きさは `Theme.Scale(control)`、起動時に `Theme.UiScale` を設定する (下記)。
+- 経路を引いたとき `Form1.OnRouteStateChanged` が `ZoomToRoute` で経路へ拡大する。検索や一覧からの移動では呼ばない。
 
 ---
 
@@ -250,7 +293,10 @@ OnPaintSurface() 実行
 ┌─────────────────────────────────────────┐
 │  _currentMatrix (SKMatrix)              │
 │  ・スケール (拡大/縮小)                   │
+│  ・回転 (二本指のひねり・Q/E キー)         │
 │  ・平行移動 (パン)                       │
+│  ※回転すると ScaleX は cos 倍になるので、   │
+│    倍率は CurrentScale で求める            │
 └─────────────────────────────────────────┘
 
 ワールド → スクリーン:
@@ -267,13 +313,15 @@ OnPaintSurface() 実行
 
 ## マーカーデザイン
 
-| マーカー | 色 | 用途 |
-|---------|-----|------|
-| **START** | ブルー (`#3B82F6`) | 出発地点 |
-| **GOAL** | サーモンレッド (`#EF645F`) | 目的地 |
-| **UP** | エメラルドグリーン (`#10B981`) | 上階への階段 |
-| **DOWN** | アンバー (`#F59E0B`) | 下階への階段 |
-| **LINK** | インディゴ (`#6366F1`) | 階段接続点 |
+すべて `DrawChipMarker` で描く。地点の点（淡い光と白い輪つき）と、その上の角の丸いラベル。画面の座標で描くので、拡大・回転しても大きさと向きが変わらない。
+
+| マーカー | ラベル | 色 | 用途 |
+|---------|-----|-----|------|
+| START | 出発 | ブルー (`#2563EB`) | 出発地点 |
+| GOAL | 目的地 | レッド (`#DC2626`) | 目的地 |
+| UP | ↑ 3F へ | グリーン (`#059669`) | 上階への階段（続けて上るときは最後の階） |
+| DOWN | ↓ 1F へ | アンバー (`#D97706`) | 下階への階段 |
+| LINK | 2F から | インディゴ (`#4F46E5`) | 階段の接続点（到着側） |
 
 ---
 
@@ -288,18 +336,19 @@ team1/
 │   │   ├── CrashGuard.cs       # 未処理例外の記録と復帰
 │   │   ├── IdleWatcher.cs      # 無操作の検出 (展示モード)
 │   │   ├── kiosk.json          # 展示モードの設定
-│   │   ├── Controls/           # MapViewer (.Touch / .Route / .Inertia / .Overview / .View), AppToolbar, RouteBar, RoutePanel, PlacePopup, SearchPopup, RoomListView
-│   │   ├── Forms/              # Form1 (partial: Map, Search, Favorites, Panels, Input, Lifecycle, BuildingMenu, Kiosk)
+│   │   ├── Controls/           # MapViewer (.Touch / .Route / .Inertia / .Overview / .View / .Touchpad), TouchpadReader,
+│   │   │                       #   AppToolbar, RouteBar, RoutePanel, PlacePopup, SearchPopup, RoomListView, Modern/ (ボタン・入力欄・色・フォント)
+│   │   ├── Forms/              # Form1 (partial: Map, Layout, Menu, Input, Lifecycle, Kiosk), HelpForm
 │   │   ├── Repositories/       # MapResourceRepository (地図画像)
 │   │   └── Data/               # map.svg, *.json, NAMING_CONVENTIONS.md
 │   └── team1.Core/             # UI 非依存 (net8.0)
 │       ├── Models/ Logic/ Repositories/ Usecases/ Stores/ ViewModels/ Messages/
 │       └── AppOptions.cs
 ├── tests/team1.Core.Tests/     # xUnit (検索・経路・最寄り・お気に入り・状態・設定)
-└── scripts/validate_data.py    # 地図データの整合性チェック (CI で実行)
+└── scripts/                    # validate_data.py (整合性チェック・CI で実行), register_maps / add_missing_nodes / connect_gym / mark_outdoor_edges (地図データを作る)
 ```
 
-地図と JSON は埋め込みリソースではなく、ビルド時に出力先の `Data/` へコピーされ、実行時にディスクから読み込む。
+地図・JSON・`outdoor_edges.txt` は埋め込みリソースではなく、ビルド時に出力先の `Data/` へコピーされ、実行時にディスクから読み込む。
 
 ---
 
@@ -365,7 +414,8 @@ KCCT-SiteMap の部屋の座標と team1 の `map.svg` の座標を、同じ名�
 場所データにあるのに `map.svg` にノードが無い部屋 (体育館・プール・弓道場・機械工学科実験実習棟など) と、通路につながっていない部屋について、
 KCCT-SiteMap の座標を `register_maps.py` の変換で team1 の座標にして、ノードと通路を足す。
 - 通路ノードが 60px 以内なら、直線 1 本でつなぐ
-- 遠いとき (体育館など) は、KCCT の通路を変換して、team1 の通路にぶつかるまでたどり、途中のノードも足す (id は `kcct_N####`)
+- 遠いとき (体育館など) は、KCCT の通路を変換して、team1 の通路にぶつかるまでたどり、途中のノードも足す (id は `kcct_N####`)。
+  体育館の 3 室につながる道だけは、位置のずれが大きかったので、後で `connect_gym.py` が `walk_gym_*` のノードで作り直した (プール・弓道場は `kcct_N####` のまま)
 - 通路の接続点と 8px 以内に重なる部屋は、その接続点の id を部屋の id に付け替える
 - 既存の通路が 1 本も変わらないことを確認してから書き込む (`--apply`)。位置が決められなかった部屋は一覧に出す
 

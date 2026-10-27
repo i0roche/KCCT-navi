@@ -53,8 +53,11 @@ namespace team1
         /// <summary>経路なし・出発地は現在地 (設定されていれば)・全体表示の初期状態に戻す</summary>
         private void ResetView()
         {
+            // ボタンの見た目だけでなく、探索の設定 (ViewModel) も戻す。戻さないと、次の来場者の経路が前の人の設定のままになる
             _routeBar.RainMode = false;
             _routeBar.AvoidStairs = false;
+            _vm.AvoidOutdoor = false;
+            _vm.AvoidStairs = false;
             _searchPopup.HidePopup();
             _searchPopup.SetText(_toolbar.SearchBox, "");
             _placePopup.HidePopup();
