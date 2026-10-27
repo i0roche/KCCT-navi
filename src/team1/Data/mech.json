@@ -1,0 +1,587 @@
+[
+  {
+    "Id": "room_1f_mech_office_tech",
+    "Name": "技術職員室(機械工学科)",
+    "Type": "office_tech",
+    "Building": "機械工学科実験実習棟",
+    "Floor": 1,
+    "Department": "mech",
+    "Tags": ["技術職員室", "機械工学科実験実習棟", "機械工学科", "mech"],
+    "Hidden": true
+  },
+  {
+    "Id": "room_1f_mech_lab_energy",
+    "Name": "エネルギー実験室",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 1,
+    "Department": "mech",
+    "Tags": ["エネルギー実験室", "機械工学科棟", "機械工学科", "mech", "実験室"]
+  },
+  {
+    "Id": "room_1f_mech_facility_production_3",
+    "Name": "生産加工3",
+    "Type": "facility",
+    "Building": "機械工学科棟",
+    "Floor": 1,
+    "Department": "mech",
+    "Tags": ["生産加工3", "機械工学科棟", "機械工学科", "mech"]
+  },
+  {
+    "Id": "room_1f_mech_lab_bio",
+    "Name": "生物工学実験室",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 1,
+    "Department": "mech",
+    "Tags": ["生物工学実験室", "機械工学科棟", "機械工学科", "mech", "実験室"]
+  },
+  {
+    "Id": "room_1f_mech_lab_design",
+    "Name": "機械設計実験室",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 1,
+    "Department": "mech",
+    "Tags": ["機械設計実験室", "機械工学科棟", "機械工学科", "mech", "実験室"]
+  },
+  {
+    "Id": "room_1f_mech_lab_thermal",
+    "Name": "熱工学実験室",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 1,
+    "Department": "mech",
+    "Tags": ["熱工学実験室", "機械工学科棟", "機械工学科", "mech", "実験室"]
+  },
+  {
+    "Id": "room_1f_mech_lab_robotkenkyu",
+    "Name": "ロボット工学研究会",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 1,
+    "Department": "mech",
+    "Tags": ["ロボット工学研究会", "機械工学科棟", "機械工学科", "mech", "研究室"],
+    "Hidden": true
+  },
+  {
+    "Id": "room_1f_mech_lab_material_proc1",
+    "Name": "材料加工実験室1",
+    "Type": "lab",
+    "Building": "機械工学科実験実習棟",
+    "Floor": 1,
+    "Department": "mech",
+    "Tags": ["材料加工実験室1", "機械工学科実験実習棟", "機械工学科", "mech", "実験室"]
+  },
+  {
+    "Id": "room_1f_mech_lab_material_strength1",
+    "Name": "材料強度実験室1",
+    "Type": "lab",
+    "Building": "機械工学科実験実習棟",
+    "Floor": 1,
+    "Department": "mech",
+    "Tags": ["材料強度実験室1", "機械工学科実験実習棟", "機械工学科", "mech", "実験室"]
+  },
+  {
+    "Id": "room_1f_mech_lab_material_strength2",
+    "Name": "材料強度実験室2",
+    "Type": "lab",
+    "Building": "機械工学科実験実習棟",
+    "Floor": 1,
+    "Department": "mech",
+    "Tags": ["材料強度実験室2", "機械工学科実験実習棟", "機械工学科", "mech", "実験室"]
+  },
+  {
+    "Id": "room_1f_mech_facility_casting",
+    "Name": "鋳造工場",
+    "Type": "facility",
+    "Building": "機械工学科実験実習棟",
+    "Floor": 1,
+    "Department": "mech",
+    "Tags": ["鋳造工場", "機械工学科実験実習棟", "機械工学科", "mech"]
+  },
+  {
+    "Id": "room_1f_mech_facility_factory_1",
+    "Name": "機械工場1",
+    "Type": "facility",
+    "Building": "機械工学科実験実習棟",
+    "Floor": 1,
+    "Department": "mech",
+    "Tags": ["機械工場1", "機械工学科実験実習棟", "機械工学科", "mech"]
+  },
+  {
+    "Id": "room_1f_mech_facility_factory_2",
+    "Name": "機械工場2",
+    "Type": "facility",
+    "Building": "機械工学科実験実習棟",
+    "Floor": 1,
+    "Department": "mech",
+    "Tags": ["機械工場2", "機械工学科実験実習棟", "機械工学科", "mech"]
+  },
+  {
+    "Id": "room_1f_mech_lab_production",
+    "Name": "生産加工学実験室",
+    "Type": "lab",
+    "Building": "機械工学科実験実習棟",
+    "Floor": 1,
+    "Department": "mech",
+    "Tags": ["生産加工学実験室", "機械工学科実験実習棟", "機械工学科", "mech", "実験室"]
+  },
+  {
+    "Id": "room_1f_mech_lab_robot",
+    "Name": "ロボット実験室",
+    "Type": "lab",
+    "Building": "機械工学科実験実習棟",
+    "Floor": 1,
+    "Department": "mech",
+    "Tags": ["ロボット実験室", "機械工学科実験実習棟", "機械工学科", "mech", "実験室"]
+  },
+  {
+    "Id": "room_1f_mech_lab_fluId",
+    "Name": "流体実験室",
+    "Type": "lab",
+    "Building": "機械工学科実験実習棟",
+    "Floor": 1,
+    "Department": "mech",
+    "Tags": ["流体実験室", "機械工学科実験実習棟", "機械工学科", "mech", "実験室"]
+  },
+  {
+    "Id": "room_1f_mech_lab_graduation_energy",
+    "Name": "卒研室 (エネルギー実験室)",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 1,
+    "Department": "mech",
+    "Tags": ["卒研室 (エネルギー実験室)", "機械工学科棟", "機械工学科", "mech", "実験室"]
+  },
+  {
+    "Id": "room_1f_mech_lab_graduation_material",
+    "Name": "卒研室 (材料強度実験室)",
+    "Type": "lab",
+    "Building": "機械工学科実験実習棟",
+    "Floor": 1,
+    "Department": "mech",
+    "Tags": ["卒研室 (材料強度実験室)", "機械工学科実験実習棟", "機械工学科", "mech", "実験室"],
+    "Hidden": true
+  },
+  {
+    "Id": "room_1f_mech_lab_graduation_prod_1",
+    "Name": "卒研室1 (生産加工学実験室)",
+    "Type": "lab",
+    "Building": "機械工学科実験実習棟",
+    "Floor": 1,
+    "Department": "mech",
+    "Tags": ["卒研室1 (生産加工学実験室)", "機械工学科実験実習棟", "機械工学科", "mech", "実験室"],
+    "Hidden": true
+  },
+  {
+    "Id": "room_1f_mech_lab_graduation_prod_2",
+    "Name": "卒研室2 (生産加工学実験室)",
+    "Type": "lab",
+    "Building": "機械工学科実験実習棟",
+    "Floor": 1,
+    "Department": "mech",
+    "Tags": ["卒研室2 (生産加工学実験室)", "機械工学科実験実習棟", "機械工学科", "mech", "実験室"],
+    "Hidden": true
+  },
+  {
+    "Id": "room_1f_mech_lab_graduation_robot_1",
+    "Name": "卒研室1 (ロボット実験室)",
+    "Type": "lab",
+    "Building": "機械工学科実験実習棟",
+    "Floor": 1,
+    "Department": "mech",
+    "Tags": ["卒研室1 (ロボット実験室)", "機械工学科実験実習棟", "機械工学科", "mech", "実験室"],
+    "Hidden": true
+  },
+  {
+    "Id": "room_1f_mech_lab_graduation_robot_2",
+    "Name": "卒研室2 (ロボット実験室)",
+    "Type": "lab",
+    "Building": "機械工学科実験実習棟",
+    "Floor": 1,
+    "Department": "mech",
+    "Tags": ["卒研室2 (ロボット実験室)", "機械工学科実験実習棟", "機械工学科", "mech", "実験室"],
+    "Hidden": true
+  },
+  {
+    "Id": "room_1f_mech_lab_graduation_fluId_1",
+    "Name": "卒研室1 (流体実験室)",
+    "Type": "lab",
+    "Building": "機械工学科実験実習棟",
+    "Floor": 1,
+    "Department": "mech",
+    "Tags": ["卒研室1 (流体実験室)", "機械工学科実験実習棟", "機械工学科", "mech", "実験室"],
+    "Hidden": true
+  },
+  {
+    "Id": "room_1f_mech_lab_graduation_fluId_2",
+    "Name": "卒研室2 (流体実験室)",
+    "Type": "lab",
+    "Building": "機械工学科実験実習棟",
+    "Floor": 1,
+    "Department": "mech",
+    "Tags": ["卒研室2 (流体実験室)", "機械工学科実験実習棟", "機械工学科", "mech", "実験室"],
+    "Hidden": true
+  },
+  {
+    "Id": "room_2f_mech_lab_system",
+    "Name": "システム工学実験室",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 2,
+    "Department": "mech",
+    "Tags": ["システム工学実験室", "機械工学科棟", "機械工学科", "mech", "実験室"]
+  },
+  {
+    "Id": "room_2f_mech_lab_info",
+    "Name": "情報工学実験室",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 2,
+    "Department": "mech",
+    "Tags": ["情報工学実験室", "機械工学科棟", "機械工学科", "mech", "実験室"]
+  },
+  {
+    "Id": "room_2f_mech_lab_creation",
+    "Name": "創造工学実験室",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 2,
+    "Department": "mech",
+    "Tags": ["創造工学実験室", "機械工学科棟", "機械工学科", "mech", "実験室"]
+  },
+  {
+    "Id": "room_2f_mech_lab_applied_physics",
+    "Name": "応用物理実験室",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 2,
+    "Department": "mech",
+    "Tags": ["応用物理実験室", "機械工学科棟", "機械工学科", "mech", "実験室"]
+  },
+  {
+    "Id": "room_2f_mech_lab_tanabe",
+    "Name": "田邉 研究室",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 2,
+    "Department": "mech",
+    "Tags": ["田邉 研究室", "機械工学科棟", "機械工学科", "mech", "研究室", "田邉"]
+  },
+  {
+    "Id": "room_2f_mech_lab_cho",
+    "Name": "長 研究室",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 2,
+    "Department": "mech",
+    "Tags": ["長 研究室", "機械工学科棟", "機械工学科", "mech", "研究室", "長"]
+  },
+  {
+    "Id": "room_2f_mech_lab_asakura",
+    "Name": "朝倉 研究室",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 2,
+    "Department": "mech",
+    "Tags": ["朝倉 研究室", "機械工学科棟", "機械工学科", "mech", "研究室", "朝倉"]
+  },
+  {
+    "Id": "room_2f_mech_lab_nishida",
+    "Name": "西田 研究室",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 2,
+    "Department": "mech",
+    "Tags": ["西田 研究室", "機械工学科棟", "機械工学科", "mech", "研究室", "西田"]
+  },
+  {
+    "Id": "room_2f_mech_lab_lee",
+    "Name": "李 研究室",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 2,
+    "Department": "mech",
+    "Tags": ["李 研究室", "機械工学科棟", "機械工学科", "mech", "研究室", "李"]
+  },
+  {
+    "Id": "room_2f_mech_lab_hashimoto",
+    "Name": "橋本(英) 研究室",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 2,
+    "Department": "mech",
+    "Tags": ["橋本(英) 研究室", "機械工学科棟", "機械工学科", "mech", "研究室", "橋本(英)"]
+  },
+  {
+    "Id": "room_2f_mech_lab_shimizu",
+    "Name": "清水 研究室",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 2,
+    "Department": "mech",
+    "Tags": ["清水 研究室", "機械工学科棟", "機械工学科", "mech", "研究室", "清水"]
+  },
+  {
+    "Id": "room_2f_mech_lab_suzuki",
+    "Name": "鈴木 研究室",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 2,
+    "Department": "mech",
+    "Tags": ["鈴木 研究室", "機械工学科棟", "機械工学科", "mech", "研究室", "鈴木"]
+  },
+  {
+    "Id": "room_2f_mech_hr_m3a",
+    "Name": "M3A",
+    "Type": "classroom",
+    "Building": "一般科A棟",
+    "Floor": 2,
+    "Department": "mech",
+    "Tags": ["M3A", "一般科A棟", "一般科", "HR"]
+  },
+  {
+    "Id": "room_2f_mech_hr_m3b",
+    "Name": "M3B",
+    "Type": "classroom",
+    "Building": "一般科A棟",
+    "Floor": 2,
+    "Department": "mech",
+    "Tags": ["M3B", "一般科A棟", "一般科", "HR"]
+  },
+  {
+    "Id": "room_2f_mech_hr_m4r",
+    "Name": "M4R",
+    "Type": "classroom",
+    "Building": "専門科講義棟",
+    "Floor": 2,
+    "Department": "mech",
+    "Tags": ["M4R", "専門科講義棟", "mech", "HR"]
+  },
+  {
+    "Id": "room_2f_mech_hr_m4e",
+    "Name": "M4E",
+    "Type": "classroom",
+    "Building": "専門科講義棟",
+    "Floor": 2,
+    "Department": "mech",
+    "Tags": ["M4E", "専門科講義棟", "mech", "HR"]
+  },
+  {
+    "Id": "room_3f_mech_facility_meeting",
+    "Name": "会議室",
+    "Type": "facility",
+    "Building": "機械工学科棟",
+    "Floor": 3,
+    "Department": "mech",
+    "Tags": ["会議室", "機械工学科棟", "機械工学科", "mech"]
+  },
+  {
+    "Id": "room_3f_mech_lab_material_proc2",
+    "Name": "材料加工実験室2",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 3,
+    "Department": "mech",
+    "Tags": ["材料加工実験室2", "機械工学科棟", "機械工学科", "mech", "実験室"]
+  },
+  {
+    "Id": "room_3f_mech_facility_thermostat",
+    "Name": "恒温室",
+    "Type": "facility",
+    "Building": "機械工学科棟",
+    "Floor": 3,
+    "Department": "mech",
+    "Tags": ["恒温室", "機械工学科棟", "機械工学科", "mech"]
+  },
+  {
+    "Id": "room_3f_mech_lab_elements",
+    "Name": "機械要素実験室",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 3,
+    "Department": "mech",
+    "Tags": ["機械要素実験室", "機械工学科棟", "機械工学科", "mech", "実験室"]
+  },
+  {
+    "Id": "room_3f_mech_lab_control",
+    "Name": "制御工学実験室",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 3,
+    "Department": "mech",
+    "Tags": ["制御工学実験室", "機械工学科棟", "機械工学科", "mech", "実験室"]
+  },
+  {
+    "Id": "room_3f_mech_lab_ozawa",
+    "Name": "小澤 研究室",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 3,
+    "Department": "mech",
+    "Tags": ["小澤 研究室", "機械工学科棟", "機械工学科", "mech", "研究室", "小澤"]
+  },
+  {
+    "Id": "room_3f_mech_lab_waseda",
+    "Name": "早稲田 研究室",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 3,
+    "Department": "mech",
+    "Tags": ["早稲田 研究室", "機械工学科棟", "機械工学科", "mech", "研究室", "早稲田"]
+  },
+  {
+    "Id": "room_3f_mech_lab_kumano",
+    "Name": "熊野 研究室",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 3,
+    "Department": "mech",
+    "Tags": ["熊野 研究室", "機械工学科棟", "機械工学科", "mech", "研究室", "熊野"]
+  },
+  {
+    "Id": "room_3f_mech_lab_fukui",
+    "Name": "福井 研究室",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 3,
+    "Department": "mech",
+    "Tags": ["福井 研究室", "機械工学科棟", "機械工学科", "mech", "研究室", "福井"]
+  },
+  {
+    "Id": "room_3f_mech_lab_Amar",
+    "Name": "Amar 研究室",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 3,
+    "Department": "mech",
+    "Tags": ["Amar 研究室", "機械工学科棟", "機械工学科", "mech", "研究室", "Amar"]
+  },
+  {
+    "Id": "room_3f_mech_lab_katayama",
+    "Name": "片山 研究室",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 3,
+    "Department": "mech",
+    "Tags": ["片山 研究室", "機械工学科棟", "機械工学科", "mech", "研究室", "片山"]
+  },
+  {
+    "Id": "room_3f_mech_lab_ishizaki",
+    "Name": "石崎 研究室",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 3,
+    "Department": "mech",
+    "Tags": ["石崎 研究室", "機械工学科棟", "機械工学科", "mech", "研究室", "石崎"]
+  },
+  {
+    "Id": "room_3f_mech_hr_m2a",
+    "Name": "M2A",
+    "Type": "classroom",
+    "Building": "一般科A棟",
+    "Floor": 3,
+    "Department": "mech",
+    "Tags": ["M2A", "一般科A棟", "一般科", "HR"]
+  },
+  {
+    "Id": "room_3f_mech_hr_m2b",
+    "Name": "M2B",
+    "Type": "classroom",
+    "Building": "一般科A棟",
+    "Floor": 3,
+    "Department": "mech",
+    "Tags": ["M2B", "一般科A棟", "一般科", "HR"]
+  },
+  {
+    "Id": "room_3f_mech_hr_m5r",
+    "Name": "M5R",
+    "Type": "classroom",
+    "Building": "専門科講義棟",
+    "Floor": 3,
+    "Department": "mech",
+    "Tags": ["M5R", "専門科講義棟", "mech", "HR"]
+  },
+  {
+    "Id": "room_3f_mech_hr_m5e",
+    "Name": "M5E",
+    "Type": "classroom",
+    "Building": "専門科講義棟",
+    "Floor": 3,
+    "Department": "mech",
+    "Tags": ["M5E", "専門科講義棟", "mech", "HR"]
+  },
+  {
+    "Id": "room_4f_mech_classroom_drawing",
+    "Name": "製図室",
+    "Type": "classroom",
+    "Building": "機械工学科棟",
+    "Floor": 4,
+    "Department": "mech",
+    "Tags": ["製図室", "機械工学科棟", "機械工学科", "mech"]
+  },
+  {
+    "Id": "room_4f_mech_classroom_pbl",
+    "Name": "PBL演習室",
+    "Type": "classroom",
+    "Building": "機械工学科棟",
+    "Floor": 4,
+    "Department": "mech",
+    "Tags": ["PBL演習室", "機械工学科棟", "機械工学科", "mech"]
+  },
+  {
+    "Id": "room_4f_mech_facility_fablab",
+    "Name": "Digital Fab. Lab",
+    "Type": "facility",
+    "Building": "機械工学科棟",
+    "Floor": 4,
+    "Department": "mech",
+    "Tags": ["Digital Fab. Lab", "機械工学科棟", "機械工学科", "mech"]
+  },
+  {
+    "Id": "room_4f_mech_lab_ozaki",
+    "Name": "尾崎 研究室",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 4,
+    "Department": "mech",
+    "Tags": ["尾崎 研究室", "機械工学科棟", "機械工学科", "mech", "研究室", "尾崎"]
+  },
+  {
+    "Id": "room_4f_mech_lab_higashi",
+    "Name": "東 研究室",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 4,
+    "Department": "mech",
+    "Tags": ["東 研究室", "機械工学科棟", "機械工学科", "mech", "研究室", "東"]
+  },
+  {
+    "Id": "room_4f_mech_lab_miyamoto",
+    "Name": "宮本 研究室",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 4,
+    "Department": "mech",
+    "Tags": ["宮本 研究室", "機械工学科棟", "機械工学科", "mech", "研究室", "宮本"]
+  },
+  {
+    "Id": "room_4f_mech_hr_m1a",
+    "Name": "M1A",
+    "Type": "classroom",
+    "Building": "一般科A棟",
+    "Floor": 4,
+    "Department": "mech",
+    "Tags": ["M1A", "一般科A棟", "一般科", "HR"]
+  },
+  {
+    "Id": "room_4f_mech_hr_m1b",
+    "Name": "M1B",
+    "Type": "classroom",
+    "Building": "一般科A棟",
+    "Floor": 4,
+    "Department": "mech",
+    "Tags": ["M1B", "一般科A棟", "一般科", "HR"]
+  }
+]

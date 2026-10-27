@@ -30,32 +30,35 @@
 
 ## システムアーキテクチャ
 
+UI に依存しない処理は `team1.Core` (net8.0) に分け、画面 (`team1`, Windows Forms) からは
+DI (`Microsoft.Extensions.DependencyInjection`) で組み立てて使う。Core は Linux でもテストできる。
+
 ```
-┌──────────────────────────────────────────────────────┐
-│                    Presentation Layer                │
-│  ┌────────────────────────────────────────────────┐  │
-│  │              MapViewer (SKControl)             │  │
-│  │  ・SVG地図のレンダリング                         │  │
-│  │  ・パン/ズーム操作                               │  │
-│  │  ・経路・マーカー描画                            │  │
-│  │  ・階数切替ボタンUI                              │  │
-│  └────────────────────────────────────────────────┘  │
-├──────────────────────────────────────────────────────┤
-│                     Logic Layer                      │
-│  ┌──────────────────┐  ┌──────────────────────────┐  │
-│  │    PathFinder    │  │    SvgGraphLoader        │  │
-│  │   (A*経路探索)    │  │  (SVG→グラフ変換)         │  │
-│  └──────────────────┘  └──────────────────────────┘  │
-├──────────────────────────────────────────────────────┤
-│                     Model Layer                      │
-│  ┌─────────┐  ┌─────────┐  ┌─────────┐               │
-│  │ MapNode │  │  Edge   │  │  Place  │               │
-│  └─────────┘  └─────────┘  └─────────┘               │
-├──────────────────────────────────────────────────────┤
-│                     Data Layer                       │
-│   SVGファイル / JSONファイル (facilities, denshi等)    │
-└──────────────────────────────────────────────────────┘
+┌─────────────────────────────── team1 (Windows Forms) ───────────────────────────────┐
+│ Form1 (partial)        表示とイベント配線のみ。処理は MainViewModel に任せる           │
+│ AppToolbar / RouteBar  上のツールバー (6班の配置) / 経路の入力欄 (KCCT の配置)        │
+│ MapViewer (partial)    地図描画・パン/ズーム・ピンチ (WM_GESTURE)・経路アニメーション   │
+│ MapResourceRepository  階ごとの SVG 描画結果をキャッシュ                               │
+│ IdleWatcher / CrashGuard  無操作リセット / 例外時の復帰 (無人運用)                      │
+└───────────────────────────────────────┬─────────────────────────────────────────────┘
+                                        │ メソッド呼び出し ↓   ↑ メッセージ (IMessenger)
+┌─────────────────────────────── team1.Core (net8.0) ─────────────────────────────────┐
+│ ViewModels   MainViewModel          画面操作 (出発地/目的地の設定・経路表示・リセット) │
+│ Stores       RouteStateStore        出発地・目的地 (Place そのもの)・表示中の経路       │
+│              MapStateStore          表示中の階                                        │
+│ Usecases     PlaceSearchUsecase     キーワード検索・建物/階ごとの一覧                   │
+│              RouteUsecase           経路探索・最寄りの○○ (実経路で最短のもの)          │
+│              FavoriteUsecase        お気に入り                                        │
+│ Repositories JsonPlaceRepository    Data/*.json                                       │
+│              SvgMapGraphRepository  map.svg → グラフ (SvgGraphLoader)                 │
+│              JsonFavoriteRepository AppData/KosenCampusNavi/favorite.json             │
+│ Logic        PathFinder (A* / Dijkstra), MapGeometry, RouteDescriber                   │
+│ Models       Place, MapNode, Edge, RouteResult, PlaceCategory                          │
+└─────────────────────────────────────────────────────────────────────────────────────┘
 ```
+
+- 出発地・目的地は名前ではなく `Place` をストアに持つので、同名の場所 (会議室 ×6 など) を取り違えない
+- ストアが変わると `RouteStateChangedMessage` などが送られ、Form1 (Form1.Layout.cs) が入力欄・行き方・ステータスバーを更新する
 
 ---
 
@@ -68,7 +71,9 @@
 | プロパティ | 型 | 説明 |
 |-----------|-----|------|
 | `SvgMap` | `SKSvg?` | 表示中のSVG地図 |
-| `CurrentRoute` | `List<Edge>?` | 現在の経路 |
+| `CurrentRoute` | `List<Edge>?` | 現在の経路 (設定すると出発地から伸びるアニメーションで描く) |
+| `TouchMode` | `bool` | タッチ向け表示 (既定はオフ。大きい階数ボタン・指サイズの当たり判定・指を離したときに選択) |
+| `CurrentLocationNode` | `MapNode?` | 展示場所 (「現在地」マーカー) |
 | `CurrentFloor` | `int` | 表示中の階（1〜6） |
 | `MaxFloor` | `int` | 最大階数（デフォルト6） |
 | `Places` | `List<Place>` | 施設情報リスト |
@@ -120,6 +125,15 @@
   3. ゴールなら経路復元して終了
   4. 隣接ノードのG値を更新
   5. 2に戻る（OpenSetが空なら経路なし）
+
+H(n) は直線距離 + 階の差 × 階段 1 階分のコスト (30)。
+実コストを上回らない (許容的) ので、最短経路が保証される。
+
+探索中の G 値や親はノードに持たせず探索ごとに確保する (同じグラフで何度呼んでも干渉しない)。
+
+【最寄りの○○ (FindNearest)】
+  H(n) = 0 (= Dijkstra) で探索し、候補のどれかに最初に到達したらそこが実経路で最も近い。
+  直線距離で選ぶと「真上の階にあるが階段が遠いトイレ」を選んでしまうため。
 ```
 
 ---
@@ -136,13 +150,6 @@ MapNode {
     Floor: int       // 階数
     Edges: List<Edge>  // 接続エッジ
     Neighbors: IEnumerable<MapNode>  // 隣接ノード（Edgesから導出）
-    
-    // A*探索用プロパティ
-    G: float         // 開始地点からの実コスト
-    H: float         // ゴールまでの推定距離
-    F: float         // G + H（総合評価値）
-    Parent: MapNode? // 経路復元用親ノード
-    ParentEdge: Edge?  // 経路復元用親エッジ
 }
 ```
 
@@ -174,13 +181,15 @@ Place {
 }
 ```
 
-### SuggestionItem（サジェスト項目）
-検索候補表示用データ。`Form1.Search.cs` 内の入れ子 record として定義。
+### RouteResult（経路探索の結果）
 
 ```csharp
-SuggestionItem(Place Place) {
-    Place: Place        // 場所情報
-    ToString(): string  // リストボックス表示用「名前 (建物,階)」
+RouteResult {
+    Status: RouteStatus  // Found / SamePlace / PlaceNotOnMap / Unreachable
+    Start, Goal: Place
+    Edges: IReadOnlyList<Edge>
+    Cost: float
+    Message: string      // 見つからなかった理由 (利用者向け)
 }
 ```
 
@@ -223,9 +232,11 @@ OnPaintSurface() 実行
 
 | 操作 | 処理 |
 |------|------|
-| **ドラッグ** | 地図のパン移動（`SKMatrix.CreateTranslation`） |
-| **ホイール** | ズームイン/アウト（中心点基準、0.1x〜10x） |
-| **部屋クリック** | `RoomNodeClicked`イベント発火 |
+| **ドラッグ** | 地図のパン移動（`PanBy`） |
+| **ホイール** | ズームイン/アウト（`ZoomAt`、カーソル位置中心、全体表示〜10x） |
+| **ピンチ (タッチ)** | `WM_GESTURE` の `GID_ZOOM` → `ZoomAt`（指の中心が基準） |
+| **指でなぞる (タッチ)** | `WM_GESTURE` の `GID_PAN` → `PanBy`（離した後も慣性で少し進む） |
+| **部屋クリック** | `RoomNodeClicked`イベント発火（タッチモードでは指を離したときに判定） |
 | **▲ボタン** | 上階へ移動（`FloorChangeRequested`） |
 | **▼ボタン** | 下階へ移動（`FloorChangeRequested`） |
 
@@ -270,43 +281,25 @@ OnPaintSurface() 実行
 
 ```
 team1/
-├── Controls/           # カスタムコントロール
-│   └── MapViewer.cs    # マップ表示・操作コントロール（SkiaSharp使用）
-├── Data/               # データファイル
-│   ├── common.json     # 共通棟の場所データ
-│   ├── advanced.json   # 専攻科棟の場所データ
-│   ├── chem.json       # 化学棟の場所データ
-│   ├── denshi.json     # 電子棟の場所データ
-│   ├── facilities.json # 施設の場所データ
-│   └── general.json    # 一般教室棟の場所データ
-├── Forms/              # フォーム関連（partial class分割）
-│   ├── Form1.cs        # メインフォーム（初期化）
-│   ├── Form1.Designer.cs # デザイナー生成コード
-│   ├── Form1.Lifecycle.cs # ライフサイクル管理
-│   ├── Form1.Map.cs    # 地図表示・操作
-│   ├── Form1.Search.cs # 検索機能
-│   ├── Form1.Input.cs  # 入力処理
-│   ├── Form1.Favorites.cs # お気に入り管理
-│   ├── Form1.Panels.cs # パネル切替
-│   └── Form1.BuildingMenu.cs # 建物メニュー
-├── Logic/              # ビジネスロジック
-│   ├── PathFinder.cs   # A*経路探索アルゴリズム
-│   ├── SvgGraphLoader.cs # SVGからグラフ構造読込
-│   └── MapGeometry.cs  # 座標計算・変換
-├── Models/             # データモデル
-│   ├── Place.cs        # 場所情報（ID, 名前, 階, タグ）
-│   ├── MapNode.cs      # グラフノード（座標, 階）
-│   └── Edge.cs         # グラフエッジ（重み, 経由点）
-├── Services/           # サービス層
-│   └── PlaceDataService.cs # JSONから場所データ読込
-├── Properties/         # プロジェクト設定
-│   ├── Resources.resx  # リソース定義（*.json を埋め込み）
-│   └── Resources.Designer.cs # リソースアクセスコード
-└── Program.cs          # エントリーポイント
+├── src/
+│   ├── team1.sln
+│   ├── team1/                  # 画面 (Windows Forms, net8.0-windows)
+│   │   ├── Program.cs          # DI の組み立て・起動
+│   │   ├── CrashGuard.cs       # 未処理例外の記録と復帰
+│   │   ├── IdleWatcher.cs      # 無操作の検出 (展示モード)
+│   │   ├── kiosk.json          # 展示モードの設定
+│   │   ├── Controls/           # MapViewer (.Touch / .Route / .Inertia / .Overview / .View), AppToolbar, RouteBar, RoutePanel, PlacePopup, SearchPopup, RoomListView
+│   │   ├── Forms/              # Form1 (partial: Map, Search, Favorites, Panels, Input, Lifecycle, BuildingMenu, Kiosk)
+│   │   ├── Repositories/       # MapResourceRepository (地図画像)
+│   │   └── Data/               # map.svg, *.json, NAMING_CONVENTIONS.md
+│   └── team1.Core/             # UI 非依存 (net8.0)
+│       ├── Models/ Logic/ Repositories/ Usecases/ Stores/ ViewModels/ Messages/
+│       └── AppOptions.cs
+├── tests/team1.Core.Tests/     # xUnit (検索・経路・最寄り・お気に入り・状態・設定)
+└── scripts/validate_data.py    # 地図データの整合性チェック (CI で実行)
 ```
 
-**注記**: `map.svg` は埋め込みリソースではなく、ビルド時に出力先の `Data/` へコピーされ、
-実行時に `Form1.Lifecycle.cs` の `GetSvgPath()` がディスクから読み込みます。
+地図と JSON は埋め込みリソースではなく、ビルド時に出力先の `Data/` へコピーされ、実行時にディスクから読み込む。
 
 ---
 
@@ -319,7 +312,9 @@ team1/
 | **スケール不変UI** | マーカー・ボタンは画面座標で固定サイズ描画 |
 | **マルチフロア** | Floor属性でノード/エッジをフィルタリング |
 | **当たり判定** | 逆行列による座標変換 + 距離計算 |
-| **経路探索** | A*アルゴリズム（最短経路保証） |
+| **経路探索** | A*アルゴリズム（許容的ヒューリスティックで最短経路保証） |
+| **層の分離** | DI + ViewModel/Store/Usecase/Repository（Core は UI 非依存でテスト可能） |
+| **データ検証** | `scripts/validate_data.py` が SVG と JSON の対応・到達性を CI で検査 |
 
 ---
 
@@ -329,7 +324,10 @@ team1/
 |-----------|-----------|------|
 | SkiaSharp | 3.x | 2D描画エンジン |
 | SkiaSharp.Views.WindowsForms | 3.x | WinForms統合 |
-| Svg.Skia | 2.x | SVG読み込み・描画 |
+| Svg.Skia | 3.x | SVG読み込み・描画 |
+| Microsoft.Extensions.DependencyInjection | 8.x | DI コンテナ |
+| CommunityToolkit.Mvvm | 8.x | メッセージ (IMessenger) |
+| xUnit | 2.x | テスト |
 | System.Text.Json | (組み込み) | JSON解析 |
 
 ---
@@ -341,3 +339,73 @@ team1/
 ---
 
 *このドキュメントは2026年に作成されました*
+
+---
+
+## 追加機能 (マウス・キーボード向け)
+
+| 機能 | 実装 |
+|------|------|
+| メニューバー | `Form1.Menu.cs`。建物・階は `PlaceSearchUsecase` のデータから作る |
+| キーボード操作 | `Form1.Input.cs`。文字入力中 (TextBox) は地図のキーを無視する |
+| 慣性スクロール | `MapViewer.Inertia.cs`。ドラッグ中の速度を記録し、離した後タイマーで減速 |
+| 部屋一覧 | `RoomListView` + `PlaceSearchUsecase.Filter` (種別・建物・キーワード) |
+| 全体図から建物へ | `MapViewer.Overview.cs`。`map.svg` の `view_*` を枠と判定領域に使う |
+| 雨の日モード | `Edge.IsOutdoor` (`outdoor_edges.txt`: KCCT の通路ごとの IsOutdoor を移したもの。`scripts/mark_outdoor_edges.py`)。`PathFinder` が屋外の通路を 20 倍の長さとして探す。通れないわけではないので屋外しか道が無い場所にも行ける |
+
+### 他班の地図との位置合わせ (`scripts/register_maps.py`)
+
+KCCT-SiteMap の部屋の座標と team1 の `map.svg` の座標を、同じ名前・同じ階の部屋 (対応点) で突き合わせ、
+階ごとに最小二乗で相似変換 (拡大率 約 1.40〜1.46) を求める。外れ値を除いた残差の中央値は 1〜16px。
+この変換で KCCT の F1〜F3 の壁を重ねると、主要な建物の形・区画は team1 の壁とほぼ一致した
+(差は体育館側など、team1 が階ごとの内部を描いていない建物だけ)。そのため `map.svg` の形は書き換えていない。
+
+### 地図にない部屋の追加 (`scripts/add_missing_nodes.py`)
+
+場所データにあるのに `map.svg` にノードが無い部屋 (体育館・プール・弓道場・機械工学科実験実習棟など) と、通路につながっていない部屋について、
+KCCT-SiteMap の座標を `register_maps.py` の変換で team1 の座標にして、ノードと通路を足す。
+- 通路ノードが 60px 以内なら、直線 1 本でつなぐ
+- 遠いとき (体育館など) は、KCCT の通路を変換して、team1 の通路にぶつかるまでたどり、途中のノードも足す (id は `kcct_N####`)
+- 通路の接続点と 8px 以内に重なる部屋は、その接続点の id を部屋の id に付け替える
+- 既存の通路が 1 本も変わらないことを確認してから書き込む (`--apply`)。位置が決められなかった部屋は一覧に出す
+
+### 経路を滑らかにする (`GraphDensifier`)
+
+SVG の通路は曲がり角ごとにノードが 1 つしかなく、経路が角で急に折れる。`SvgMapGraphRepository` がグラフを作った後、
+- 通路の線を 30px ごとに分けてノードを足す (角のノードから 12px の所には必ず置く)
+- 角のノードのまわりで、両側の「角から 12px の位置」のノードどうしを直線で結ぶ (角を切る近道)
+- 描くときは `SKPathEffect.CreateCorner` で線の細かい折れを丸める
+
+足したノード (id は `~mid…`) は `IMapGraphRepository.Nodes` には入らず、経路の線にだけ現れる。屋外の通路の印は、分ける前の元のノードの id で付ける。
+
+### 雨の日の経路と屋根付き通路
+
+- `outdoor_edges.txt` は通路ごとの屋外フラグ (`scripts/mark_outdoor_edges.py` が作る)。KCCT-SiteMap の通路の `IsOutdoor` を移し、
+  地図に屋根付き通路として描かれた図形 (色 `#c4ccce`) の上にある通路は、屋内として優先する。
+- 体育館へ続く屋根付き通路は、KCCT の座標から作った道が描かれた通路から数十px ずれていたので、通路の図形の中心線にノードを置いて作り直した (`scripts/connect_gym.py`)。
+- 「階段を避ける」は、エレベーターの加算コストを外して階段に足す (`PathFinder.EdgeCost`)。
+
+### タッチパッドの二本指 (移動・拡大・回転)
+
+Windows は精密タッチパッドの二本指を「スクロール」「Ctrl+ホイール (ピンチ)」に変えてしまい、回転は伝えない。そこで:
+
+- `TouchpadReader` (Controls): ウィンドウをタッチパッドの Raw Input (HID, 使用ページ 0x0D / 使用 0x05) の受け取り先に登録し、`WM_INPUT` から指の位置・番号・Tip (触れているか) を読む。
+  ハイブリッドモード (指 1 本ずつレポート) とパラレルモード (1 レポートに全部の指) のどちらも、同じ ScanTime のレポートを 1 フレームにまとめる。位置は「タッチパッドの幅 = 1」に直す。
+- `TwoFingerTracker` (Core/Logic): 前のフレームと比べて 移動 (Dx, Dy)・拡大 (Scale)・回転 (Rotation) を返す。指の数や番号が変わったら基準を取り直す。単体テストあり (`TwoFingerGestureTests`)。
+- `MapViewer.Touchpad.cs`: 変化を `PanBy` / `ZoomAt` / `RotateAt` にする。拡大・回転の中心はマウスカーソル。二本指の操作中とその直後 250ms は、Windows が同時に送るホイール操作を捨てる (二重に効かないように。マウスのホイールには影響しない)。
+- 回転に対応するため、倍率は `CurrentScale` (ScaleX は回転すると cos 倍になる) を使い、地図の座標で描く文字 (部屋名・建物名) は `BeginUpright` で回転を打ち消す。マーカー類は画面の座標で描いているので影響しない。
+
+### ヘルプと、タッチパッドの操作の向き先
+
+- ヘルプは `HelpForm` (別ウィンドウ・モーダルでない。「やりたいこと → 操作」の短い表だけ)。6班は「バージョン情報」のモーダルダイアログ (`AboutForm`: 版・著作権・NuGet のライセンス一覧) だけで、使い方の説明は README にしか無かった。
+- タッチパッドの Raw Input は、登録したウィンドウにアプリが前面にある間ずっと届く。そのため `MapViewer.IsTouchpadTarget` で、地図が見えていて、アプリが前面で、カーソルが地図の上にあるときだけ地図を動かす (一覧画面・ヘルプが前面のときは動かさない)。
+
+### フォント
+
+画面の文字は `Theme.FontFamily` で決める。Noto Sans JP → BIZ UDPゴシック → メイリオ UI → 游ゴシック UI の順に、その PC に入っている最初のものを使う (展示用 PC に Noto Sans JP が無くても読める文字になる)。地図の描画 (SkiaSharp) も `Theme.Typeface()` で同じものを使う。
+
+### 大きな画面 (UiScale)
+
+展示用の大きな画面でも、離れて見る来場者に読めるよう、画面全体を拡大できる。
+- `AppOptions.UiScale` (kiosk.json)。`null` なら `ResolveUiScale` が、展示モードのときだけ「論理ピクセルの画面の高さ / 900」(1〜2.5 倍、0.05 刻み) にする。通常起動は 1 倍。指定すれば 0.75〜3 に収めてそれを使う。
+- `Theme.UiScale` に起動時 (Form を作る前) に設定し、コントロールの大きさは `Theme.Scale(control)` (= Windows の拡大 × UiScale)、文字は `Theme.Ui` (サイズ × UiScale) で決める。地図のラベル・マーカー・階ボタンも同じ倍率になる。

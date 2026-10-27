@@ -1,0 +1,403 @@
+[
+  {
+    "Id": "room_1f_common_facility_arena_main",
+    "Name": "メインアリーナ",
+    "Type": "facility",
+    "Building": "体育館",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["メインアリーナ", "共通施設", "common", "体育館"]
+  },
+  {
+    "Id": "room_1f_common_facility_arena_sub",
+    "Name": "サブアリーナ",
+    "Type": "facility",
+    "Building": "体育館",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["サブアリーナ", "共通施設", "common", "体育館"]
+  },
+  {
+    "Id": "room_1f_common_facility_martial_arts",
+    "Name": "武道場",
+    "Type": "facility",
+    "Building": "武道場",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["武道場", "共通施設", "common"],
+    "Hidden": true
+  },
+  {
+    "Id": "room_1f_common_facility_pool",
+    "Name": "プール",
+    "Type": "facility",
+    "Building": "プール",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["プール", "共通施設", "common"]
+  },
+  {
+    "Id": "room_1f_common_facility_archery_jp",
+    "Name": "弓道場",
+    "Type": "facility",
+    "Building": "弓道場",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["弓道場", "共通施設", "common"]
+  },
+  {
+    "Id": "room_1f_common_facility_archery",
+    "Name": "アーチェリー場",
+    "Type": "facility",
+    "Building": "アーチェリー場",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["アーチェリー場", "共通施設", "common"]
+  },
+  {
+    "Id": "room_1f_common_facility_cafeteria",
+    "Name": "食堂",
+    "Type": "facility",
+    "Building": "福利厚生棟",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["食堂", "共通施設", "common"]
+  },
+  {
+    "Id": "room_1f_common_facility_shop",
+    "Name": "購買",
+    "Type": "facility",
+    "Building": "福利厚生棟",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["購買", "共通施設", "common"]
+  },
+  {
+    "Id": "room_1f_common_facility_library",
+    "Name": "図書館",
+    "Type": "facility",
+    "Building": "図書館棟",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["図書館", "共通施設", "common"]
+  },
+  {
+    "Id": "room_1f_common_facility_info_center",
+    "Name": "情報センター",
+    "Type": "facility",
+    "Building": "図書館棟",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["情報センター", "共通施設", "common"],
+    "Hidden": true
+  },
+  {
+    "Id": "room_1f_common_office_admin_1",
+    "Name": "事務室",
+    "Type": "office",
+    "Building": "本部棟",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["事務室", "共通施設", "common", "事務"]
+  },
+  {
+    "Id": "room_1f_common_office_admin_2",
+    "Name": "事務室",
+    "Type": "office",
+    "Building": "本部棟",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["事務室", "共通施設", "common", "事務"]
+  },
+  {
+    "Id": "room_1f_common_office_student",
+    "Name": "学生主事室",
+    "Type": "office",
+    "Building": "本部棟",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["学生主事室", "共通施設", "common", "事務"]
+  },
+  {
+    "Id": "room_1f_common_office_academicaffairs",
+    "Name": "教務主事室",
+    "Type": "office",
+    "Building": "本部棟",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["教務主事室", "共通施設", "common", "事務"]
+  },
+  {
+    "Id": "room_1f_common_office_principal",
+    "Name": "校長室",
+    "Type": "office",
+    "Building": "本部棟",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["校長室", "共通施設", "common", "事務"]
+  },
+  {
+    "Id": "room_1f_common_office_non_full_time_instructor",
+    "Name": "非常勤講師室",
+    "Type": "office",
+    "Building": "本部棟",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["非常勤講師室", "共通施設", "common", "事務"]
+  },
+  {
+    "Id": "room_1f_common_office_meeting",
+    "Name": "会議室",
+    "Type": "office",
+    "Building": "本部棟",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["会議室", "共通施設", "common", "事務"]
+  },
+  {
+    "Id": "room_1f_common_office_academic",
+    "Name": "教務室",
+    "Type": "office",
+    "Building": "本部棟",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["教務室", "共通施設", "common", "事務"]
+  },
+  {
+    "Id": "room_1f_common_office_health",
+    "Name": "保健室",
+    "Type": "office",
+    "Building": "本部棟",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["保健室", "共通施設", "common", "事務"]
+  },
+  {
+    "Id": "room_2f_common_hall",
+    "Name": "ホール",
+    "Type": "facility",
+    "Building": "本部棟",
+    "Floor": 2,
+    "Department": "common",
+    "Tags": ["ホール", "共通施設", "common"]
+  },
+  {
+    "Id": "room_1f_gakusei_busitu_kizai",
+    "Name": "機材室",
+    "Type": "club",
+    "Building": "学生会館",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["部室", "機材室", "学生会館", "club"]
+  },
+  {
+    "Id": "room_1f_gakusei_busitu_suisougaku",
+    "Name": "吹奏楽部室",
+    "Type": "club",
+    "Building": "学生会館",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["部室", "吹奏楽部室", "学生会館", "club"]
+  },
+  {
+    "Id": "room_1f_gakusei_busitu_LMC",
+    "Name": "ライトミュージック部室",
+    "Type": "club",
+    "Building": "学生会館",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["部室", "ライトミュージック部室", "学生会館", "club"]
+  },
+  {
+    "Id": "room_1f_gakusei_storage",
+    "Name": "倉庫",
+    "Type": "facility",
+    "Building": "学生会館",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["倉庫", "倉庫", "学生会館", "storage"]
+  },
+  {
+    "Id": "room_1f_gakusei_busitu_jitensha_kyougi",
+    "Name": "自転車競技部室",
+    "Type": "club",
+    "Building": "学生会館",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["部室", "自転車競技部室", "学生会館", "club"]
+  },
+  {
+    "Id": "room_1f_gakusei_busitu_gakuseikai",
+    "Name": "学生会室",
+    "Type": "club",
+    "Building": "学生会館",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["部室", "学生会室", "学生会館", "club","sc","Student Council"]
+  },
+  {
+    "Id": "room_2f_gakusei_busitu_tamokuteki",
+    "Name": "多目的室",
+    "Type": "club",
+    "Building": "学生会館",
+    "Floor": 2,
+    "Department": "common",
+    "Tags": ["部室", "多目的室", "学生会館", "club"]
+  },
+  {
+    "Id": "room_2f_gakusei_busitu_kadou",
+    "Name": "華道部室",
+    "Type": "club",
+    "Building": "学生会館",
+    "Floor": 2,
+    "Department": "common",
+    "Tags": ["部室", "華道部室", "学生会館", "club"]
+  },
+  {
+    "Id": "room_2f_gakusei_busitu_sizen",
+    "Name": "自然科学部室",
+    "Type": "club",
+    "Building": "学生会館",
+    "Floor": 2,
+    "Department": "common",
+    "Tags": ["部室", "自然科学部室", "学生会館", "club"]
+  },
+  {
+    "Id": "room_2f_gakusei_busitu_densan_1",
+    "Name": "電子計算機部室1",
+    "Type": "club",
+    "Building": "学生会館",
+    "Floor": 2,
+    "Department": "common",
+    "Tags": ["部室", "電子計算機部室1", "学生会館", "club"]
+  },
+  {
+    "Id": "room_2f_gakusei_busitu_densan_2",
+    "Name": "電子計算機部室2",
+    "Type": "club",
+    "Building": "学生会館",
+    "Floor": 2,
+    "Department": "common",
+    "Tags": ["部室", "電子計算機部室2", "学生会館", "club"]
+  },
+  {
+    "Id": "room_2f_gakusei_busitu_ESS",
+    "Name": "ESS部室",
+    "Type": "club",
+    "Building": "学生会館",
+    "Floor": 2,
+    "Department": "common",
+    "Tags": ["部室", "ESS部室", "学生会館", "club"]
+  },
+  {
+    "Id": "room_2f_gakusei_busitu_denkou",
+    "Name": "電気工学実験部室",
+    "Type": "club",
+    "Building": "学生会館",
+    "Floor": 2,
+    "Department": "common",
+    "Tags": ["部室", "電気工学実験部室", "学生会館", "club"]
+  },
+  {
+    "Id": "room_2f_gakusei_busitu_MRC",
+    "Name": "MRC部室",
+    "Type": "club",
+    "Building": "学生会館",
+    "Floor": 2,
+    "Department": "common",
+    "Tags": ["部室", "MRC部室", "学生会館", "club"]
+  },
+  {
+    "Id": "room_2f_gakusei_busitu_suiei",
+    "Name": "水泳部室",
+    "Type": "club",
+    "Building": "学生会館",
+    "Floor": 2,
+    "Department": "common",
+    "Tags": ["部室", "水泳部室", "学生会館", "club"]
+  },
+  {
+    "Id": "room_2f_gakusei_busitu_robot",
+    "Name": "ロボット部室",
+    "Type": "club",
+    "Building": "学生会館",
+    "Floor": 2,
+    "Department": "common",
+    "Tags": ["部室", "ロボット部室", "学生会館", "club"]
+  },
+  {
+    "Id": "room_2f_gakusei_busitu_bijutu",
+    "Name": "美術部室",
+    "Type": "club",
+    "Building": "学生会館",
+    "Floor": 2,
+    "Department": "common",
+    "Tags": ["部室", "美術部室", "学生会館", "club"]
+  },
+  {
+    "Id": "room_2f_gakusei_busitu_syasin",
+    "Name": "写真部室",
+    "Type": "club",
+    "Building": "学生会館",
+    "Floor": 2,
+    "Department": "common",
+    "Tags": ["部室", "写真部室", "学生会館", "club"]
+  },
+  {
+    "Id": "room_1f_common_facility_training",
+    "Name": "トレーニングルーム",
+    "Type": "facility",
+    "Building": "体育館",
+    "Floor": 1,
+    "Department": "common",
+    "Tags": ["トレーニングルーム", "共通施設", "common", "体育館"]
+  },
+  {
+    "Id": "room_2f_common_facility_pe_office",
+    "Name": "体育教官室",
+    "Type": "facility",
+    "Building": "体育館",
+    "Floor": 2,
+    "Department": "common",
+    "Tags": ["体育教官室", "共通施設", "common", "体育館"],
+    "Hidden": true
+  },
+  {
+    "Id": "room_2f_common_facility_exercise_1",
+    "Name": "第1演習室",
+    "Type": "facility",
+    "Building": "図書館棟",
+    "Floor": 2,
+    "Department": "common",
+    "Tags": ["第1演習室", "共通施設", "common", "情報センター"]
+  },
+  {
+    "Id": "room_2f_common_facility_exercise_2",
+    "Name": "第2演習室",
+    "Type": "facility",
+    "Building": "図書館棟",
+    "Floor": 2,
+    "Department": "common",
+    "Tags": ["第2演習室", "共通施設", "common", "情報センター"]
+  },
+  {
+    "Id": "room_2f_common_office_meeting_1",
+    "Name": "第1会議室",
+    "Type": "facility",
+    "Building": "本部棟",
+    "Floor": 2,
+    "Department": "common",
+    "Tags": ["第1会議室", "共通施設", "common"],
+    "Hidden": true
+  },
+  {
+    "Id": "room_2f_common_office_meeting_2",
+    "Name": "第2会議室",
+    "Type": "facility",
+    "Building": "本部棟",
+    "Floor": 2,
+    "Department": "common",
+    "Tags": ["第2会議室", "共通施設", "common"],
+    "Hidden": true
+  }
+]

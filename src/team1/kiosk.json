@@ -1,0 +1,18 @@
+{
+  // 展示モードの設定。起動引数 --kiosk でも展示モードになる
+  "Kiosk": false,
+
+  // 展示場所の場所 ID (src/team1/Data/*.json の "Id")。出発地の初期値と「現在地」マーカーに使う
+  // 例: "room_2f_general_hr_d3"
+  "CurrentLocationId": null,
+
+  // この秒数だけ操作が無ければ初期状態に戻す (0 で無効)
+  "IdleResetSeconds": 90,
+
+  // 展示モードの終了キー (Ctrl+Shift+このキー)
+  "ExitKey": "Q",
+
+  // 画面全体の拡大率 (0.75〜3)。大きな画面で、離れて見る来場者にも文字を読めるようにする。
+  // null なら展示モードのときだけ、画面の高さから自動で決める (900px で 1 倍、1080px で 1.2 倍、4K で 2.4 倍)
+  "UiScale": null
+}

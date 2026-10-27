@@ -6,6 +6,19 @@ on:
   pull_request:
 
 jobs:
+  # 地図データの整合性 (場所 Id と SVG ノードの対応・経路の到達性) を検証する
+  validate-data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate map data
+        run: python scripts/validate_data.py --optimality
+
   build:
     strategy:
       fail-fast: false
@@ -15,7 +28,7 @@ jobs:
           - os: windows-latest
             extra: ""
           # 大文字小文字を区別するファイルシステム。
-          # resx の参照パスなどが実ファイル名とずれていると、ここだけが落ちる
+          # データファイルの参照パスなどが実ファイル名とずれていると、ここだけが落ちる
           - os: ubuntu-latest
             extra: "-p:EnableWindowsTargeting=true"
 
@@ -32,3 +45,7 @@ jobs:
       - name: Build (Release)
         # 警告ゼロを維持する。新しい警告が出たら CI を落とす
         run: dotnet build src/team1.sln -c Release -warnaserror ${{ matrix.extra }}
+
+      - name: Test
+        # Core (UI 非依存) のテスト。検索・経路探索・お気に入り・状態管理
+        run: dotnet test tests/team1.Core.Tests -c Release --no-build
