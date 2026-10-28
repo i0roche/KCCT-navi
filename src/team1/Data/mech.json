@@ -2,6 +2,7 @@
   {
     "Id": "room_1f_mech_office_tech",
     "Name": "技術職員室(機械工学科)",
+    "Reading": "ぎじゅつしょくいんしつ(きかいこうがくか)",
     "Type": "office_tech",
     "Building": "機械工学科実験実習棟",
     "Floor": 1,
@@ -12,6 +13,7 @@
   {
     "Id": "room_1f_mech_lab_energy",
     "Name": "エネルギー実験室",
+    "Reading": "えねるぎーじっけんしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 1,
@@ -21,6 +23,7 @@
   {
     "Id": "room_1f_mech_facility_production_3",
     "Name": "生産加工3",
+    "Reading": "せいさんかこう3",
     "Type": "facility",
     "Building": "機械工学科棟",
     "Floor": 1,
@@ -30,6 +33,7 @@
   {
     "Id": "room_1f_mech_lab_bio",
     "Name": "生物工学実験室",
+    "Reading": "せいぶつこうがくじっけんしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 1,
@@ -39,6 +43,7 @@
   {
     "Id": "room_1f_mech_lab_design",
     "Name": "機械設計実験室",
+    "Reading": "きかいせっけいじっけんしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 1,
@@ -48,6 +53,7 @@
   {
     "Id": "room_1f_mech_lab_thermal",
     "Name": "熱工学実験室",
+    "Reading": "ねつこうがくじっけんしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 1,
@@ -57,6 +63,7 @@
   {
     "Id": "room_1f_mech_lab_robotkenkyu",
     "Name": "ロボット工学研究会",
+    "Reading": "ろぼっとこうがくけんきゅうかい",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 1,
@@ -67,6 +74,7 @@
   {
     "Id": "room_1f_mech_lab_material_proc1",
     "Name": "材料加工実験室1",
+    "Reading": "ざいりょうかこうじっけんしつ1",
     "Type": "lab",
     "Building": "機械工学科実験実習棟",
     "Floor": 1,
@@ -76,6 +84,7 @@
   {
     "Id": "room_1f_mech_lab_material_strength1",
     "Name": "材料強度実験室1",
+    "Reading": "ざいりょうきょうどじっけんしつ1",
     "Type": "lab",
     "Building": "機械工学科実験実習棟",
     "Floor": 1,
@@ -85,6 +94,7 @@
   {
     "Id": "room_1f_mech_lab_material_strength2",
     "Name": "材料強度実験室2",
+    "Reading": "ざいりょうきょうどじっけんしつ2",
     "Type": "lab",
     "Building": "機械工学科実験実習棟",
     "Floor": 1,
@@ -94,6 +104,7 @@
   {
     "Id": "room_1f_mech_facility_casting",
     "Name": "鋳造工場",
+    "Reading": "ちゅうぞうこうじょう",
     "Type": "facility",
     "Building": "機械工学科実験実習棟",
     "Floor": 1,
@@ -103,6 +114,7 @@
   {
     "Id": "room_1f_mech_facility_factory_1",
     "Name": "機械工場1",
+    "Reading": "きかいこうじょう1",
     "Type": "facility",
     "Building": "機械工学科実験実習棟",
     "Floor": 1,
@@ -112,6 +124,7 @@
   {
     "Id": "room_1f_mech_facility_factory_2",
     "Name": "機械工場2",
+    "Reading": "きかいこうじょう2",
     "Type": "facility",
     "Building": "機械工学科実験実習棟",
     "Floor": 1,
@@ -121,6 +134,7 @@
   {
     "Id": "room_1f_mech_lab_production",
     "Name": "生産加工学実験室",
+    "Reading": "せいさんかこうがくじっけんしつ",
     "Type": "lab",
     "Building": "機械工学科実験実習棟",
     "Floor": 1,
@@ -130,6 +144,7 @@
   {
     "Id": "room_1f_mech_lab_robot",
     "Name": "ロボット実験室",
+    "Reading": "ろぼっとじっけんしつ",
     "Type": "lab",
     "Building": "機械工学科実験実習棟",
     "Floor": 1,
@@ -139,6 +154,7 @@
   {
     "Id": "room_1f_mech_lab_fluId",
     "Name": "流体実験室",
+    "Reading": "りゅうたいじっけんしつ",
     "Type": "lab",
     "Building": "機械工学科実験実習棟",
     "Floor": 1,
@@ -148,6 +164,7 @@
   {
     "Id": "room_1f_mech_lab_graduation_energy",
     "Name": "卒研室 (エネルギー実験室)",
+    "Reading": "そつけんしつ (えねるぎーじっけんしつ)",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 1,
@@ -157,6 +174,7 @@
   {
     "Id": "room_1f_mech_lab_graduation_material",
     "Name": "卒研室 (材料強度実験室)",
+    "Reading": "そつけんしつ (ざいりょうきょうどじっけんしつ)",
     "Type": "lab",
     "Building": "機械工学科実験実習棟",
     "Floor": 1,
@@ -167,6 +185,7 @@
   {
     "Id": "room_1f_mech_lab_graduation_prod_1",
     "Name": "卒研室1 (生産加工学実験室)",
+    "Reading": "そつけんしつ1 (せいさんかこうがくじっけんしつ)",
     "Type": "lab",
     "Building": "機械工学科実験実習棟",
     "Floor": 1,
@@ -177,6 +196,7 @@
   {
     "Id": "room_1f_mech_lab_graduation_prod_2",
     "Name": "卒研室2 (生産加工学実験室)",
+    "Reading": "そつけんしつ2 (せいさんかこうがくじっけんしつ)",
     "Type": "lab",
     "Building": "機械工学科実験実習棟",
     "Floor": 1,
@@ -187,6 +207,7 @@
   {
     "Id": "room_1f_mech_lab_graduation_robot_1",
     "Name": "卒研室1 (ロボット実験室)",
+    "Reading": "そつけんしつ1 (ろぼっとじっけんしつ)",
     "Type": "lab",
     "Building": "機械工学科実験実習棟",
     "Floor": 1,
@@ -197,6 +218,7 @@
   {
     "Id": "room_1f_mech_lab_graduation_robot_2",
     "Name": "卒研室2 (ロボット実験室)",
+    "Reading": "そつけんしつ2 (ろぼっとじっけんしつ)",
     "Type": "lab",
     "Building": "機械工学科実験実習棟",
     "Floor": 1,
@@ -207,6 +229,7 @@
   {
     "Id": "room_1f_mech_lab_graduation_fluId_1",
     "Name": "卒研室1 (流体実験室)",
+    "Reading": "そつけんしつ1 (りゅうたいじっけんしつ)",
     "Type": "lab",
     "Building": "機械工学科実験実習棟",
     "Floor": 1,
@@ -217,6 +240,7 @@
   {
     "Id": "room_1f_mech_lab_graduation_fluId_2",
     "Name": "卒研室2 (流体実験室)",
+    "Reading": "そつけんしつ2 (りゅうたいじっけんしつ)",
     "Type": "lab",
     "Building": "機械工学科実験実習棟",
     "Floor": 1,
@@ -227,6 +251,7 @@
   {
     "Id": "room_2f_mech_lab_system",
     "Name": "システム工学実験室",
+    "Reading": "しすてむこうがくじっけんしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 2,
@@ -236,6 +261,7 @@
   {
     "Id": "room_2f_mech_lab_info",
     "Name": "情報工学実験室",
+    "Reading": "じょうほうこうがくじっけんしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 2,
@@ -245,6 +271,7 @@
   {
     "Id": "room_2f_mech_lab_creation",
     "Name": "創造工学実験室",
+    "Reading": "そうぞうこうがくじっけんしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 2,
@@ -254,6 +281,7 @@
   {
     "Id": "room_2f_mech_lab_applied_physics",
     "Name": "応用物理実験室",
+    "Reading": "おうようぶつりじっけんしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 2,
@@ -263,6 +291,7 @@
   {
     "Id": "room_2f_mech_lab_tanabe",
     "Name": "田邉 研究室",
+    "Reading": "たなべ けんきゅうしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 2,
@@ -272,6 +301,7 @@
   {
     "Id": "room_2f_mech_lab_cho",
     "Name": "長 研究室",
+    "Reading": "ちょう けんきゅうしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 2,
@@ -281,6 +311,7 @@
   {
     "Id": "room_2f_mech_lab_asakura",
     "Name": "朝倉 研究室",
+    "Reading": "あさくら けんきゅうしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 2,
@@ -290,6 +321,7 @@
   {
     "Id": "room_2f_mech_lab_nishida",
     "Name": "西田 研究室",
+    "Reading": "にしだ けんきゅうしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 2,
@@ -299,6 +331,7 @@
   {
     "Id": "room_2f_mech_lab_lee",
     "Name": "李 研究室",
+    "Reading": "り けんきゅうしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 2,
@@ -308,6 +341,7 @@
   {
     "Id": "room_2f_mech_lab_hashimoto",
     "Name": "橋本(英) 研究室",
+    "Reading": "はしもと(えい) けんきゅうしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 2,
@@ -317,6 +351,7 @@
   {
     "Id": "room_2f_mech_lab_shimizu",
     "Name": "清水 研究室",
+    "Reading": "しみず けんきゅうしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 2,
@@ -326,6 +361,7 @@
   {
     "Id": "room_2f_mech_lab_suzuki",
     "Name": "鈴木 研究室",
+    "Reading": "すずき けんきゅうしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 2,
@@ -371,6 +407,7 @@
   {
     "Id": "room_3f_mech_facility_meeting",
     "Name": "会議室",
+    "Reading": "かいぎしつ",
     "Type": "facility",
     "Building": "機械工学科棟",
     "Floor": 3,
@@ -380,6 +417,7 @@
   {
     "Id": "room_3f_mech_lab_material_proc2",
     "Name": "材料加工実験室2",
+    "Reading": "ざいりょうかこうじっけんしつ2",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 3,
@@ -389,6 +427,7 @@
   {
     "Id": "room_3f_mech_facility_thermostat",
     "Name": "恒温室",
+    "Reading": "こうおんしつ",
     "Type": "facility",
     "Building": "機械工学科棟",
     "Floor": 3,
@@ -398,6 +437,7 @@
   {
     "Id": "room_3f_mech_lab_elements",
     "Name": "機械要素実験室",
+    "Reading": "きかいようそじっけんしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 3,
@@ -407,6 +447,7 @@
   {
     "Id": "room_3f_mech_lab_control",
     "Name": "制御工学実験室",
+    "Reading": "せいぎょこうがくじっけんしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 3,
@@ -416,6 +457,7 @@
   {
     "Id": "room_3f_mech_lab_ozawa",
     "Name": "小澤 研究室",
+    "Reading": "おざわ けんきゅうしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 3,
@@ -425,6 +467,7 @@
   {
     "Id": "room_3f_mech_lab_waseda",
     "Name": "早稲田 研究室",
+    "Reading": "わせだ けんきゅうしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 3,
@@ -434,6 +477,7 @@
   {
     "Id": "room_3f_mech_lab_kumano",
     "Name": "熊野 研究室",
+    "Reading": "くまの けんきゅうしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 3,
@@ -443,6 +487,7 @@
   {
     "Id": "room_3f_mech_lab_fukui",
     "Name": "福井 研究室",
+    "Reading": "ふくい けんきゅうしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 3,
@@ -452,6 +497,7 @@
   {
     "Id": "room_3f_mech_lab_Amar",
     "Name": "Amar 研究室",
+    "Reading": "Amar けんきゅうしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 3,
@@ -461,6 +507,7 @@
   {
     "Id": "room_3f_mech_lab_katayama",
     "Name": "片山 研究室",
+    "Reading": "かたやま けんきゅうしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 3,
@@ -470,6 +517,7 @@
   {
     "Id": "room_3f_mech_lab_ishizaki",
     "Name": "石崎 研究室",
+    "Reading": "いしざき けんきゅうしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 3,
@@ -515,6 +563,7 @@
   {
     "Id": "room_4f_mech_classroom_drawing",
     "Name": "製図室",
+    "Reading": "せいずしつ",
     "Type": "classroom",
     "Building": "機械工学科棟",
     "Floor": 4,
@@ -524,6 +573,7 @@
   {
     "Id": "room_4f_mech_classroom_pbl",
     "Name": "PBL演習室",
+    "Reading": "PBLえんしゅうしつ",
     "Type": "classroom",
     "Building": "機械工学科棟",
     "Floor": 4,
@@ -542,6 +592,7 @@
   {
     "Id": "room_4f_mech_lab_ozaki",
     "Name": "尾崎 研究室",
+    "Reading": "おざき けんきゅうしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 4,
@@ -551,6 +602,7 @@
   {
     "Id": "room_4f_mech_lab_higashi",
     "Name": "東 研究室",
+    "Reading": "ひがし けんきゅうしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 4,
@@ -560,6 +612,7 @@
   {
     "Id": "room_4f_mech_lab_miyamoto",
     "Name": "宮本 研究室",
+    "Reading": "みやもと けんきゅうしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 4,

@@ -2,6 +2,7 @@
   {
     "Id": "room_1f_denshi_lab_basic_electronics",
     "Name": "電子基礎実験室",
+    "Reading": "でんしきそじっけんしつ",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 1,
@@ -11,6 +12,7 @@
   {
     "Id": "room_1f_denshi_lab_device",
     "Name": "デバイス工学実験室（クリーンルーム）",
+    "Reading": "でばいすこうがくじっけんしつ（くりーんるーむ）",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 1,
@@ -20,6 +22,7 @@
   {
     "Id": "room_1f_denshi_lab_frontier",
     "Name": "フロンティア材料実験室",
+    "Reading": "ふろんてぃあざいりょうじっけんしつ",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 1,
@@ -29,6 +32,7 @@
   {
     "Id": "room_1f_denshi_lab_acoustic",
     "Name": "音響工学実験室（無響室）",
+    "Reading": "おんきょうこうがくじっけんしつ（むきょうしつ）",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 1,
@@ -38,6 +42,7 @@
   {
     "Id": "room_1f_denshi_facility_workshop",
     "Name": "工作室",
+    "Reading": "こうさくしつ",
     "Type": "facility",
     "Building": "電子工学科棟",
     "Floor": 1,
@@ -47,6 +52,7 @@
   {
     "Id": "room_2f_denshi_office_tech",
     "Name": "技術職員室(電子工学科)",
+    "Reading": "ぎじゅつしょくいんしつ(でんしこうがくか)",
     "Type": "office_tech",
     "Building": "電子工学科棟",
     "Floor": 2,
@@ -56,6 +62,7 @@
   {
     "Id": "room_2f_denshi_lab_control",
     "Name": "電子制御実験室",
+    "Reading": "でんしせいぎょじっけんしつ",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 2,
@@ -65,6 +72,7 @@
   {
     "Id": "room_2f_denshi_lab_measurement",
     "Name": "電子計測実験室",
+    "Reading": "でんしけいそくじっけんしつ",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 2,
@@ -74,6 +82,7 @@
   {
     "Id": "room_2f_denshi_lab_optoelectronics",
     "Name": "光電子工学実験室",
+    "Reading": "ひかりでんしこうがくじっけんしつ",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 2,
@@ -83,6 +92,7 @@
   {
     "Id": "room_2f_denshi_facility_equipment",
     "Name": "器材室",
+    "Reading": "きざいしつ",
     "Type": "facility",
     "Building": "電子工学科棟",
     "Floor": 2,
@@ -92,6 +102,7 @@
   {
     "Id": "room_2f_denshi_facility_graduation_1",
     "Name": "卒研室1",
+    "Reading": "そつけんしつ1",
     "Type": "facility",
     "Building": "電子工学科棟",
     "Floor": 2,
@@ -101,6 +112,7 @@
   {
     "Id": "room_2f_denshi_facility_graduation_2",
     "Name": "卒研室2",
+    "Reading": "そつけんしつ2",
     "Type": "facility",
     "Building": "電子工学科棟",
     "Floor": 2,
@@ -111,6 +123,7 @@
   {
     "Id": "room_2f_denshi_facility_graduation_3",
     "Name": "卒研室3",
+    "Reading": "そつけんしつ3",
     "Type": "facility",
     "Building": "電子工学科棟",
     "Floor": 2,
@@ -121,6 +134,7 @@
   {
     "Id": "room_2f_denshi_lab_ogiwara",
     "Name": "荻原 研究室",
+    "Reading": "おぎわら けんきゅうしつ",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 2,
@@ -130,6 +144,7 @@
   {
     "Id": "room_2f_denshi_lab_oyama",
     "Name": "尾山 研究室",
+    "Reading": "おやま けんきゅうしつ",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 2,
@@ -139,6 +154,7 @@
   {
     "Id": "room_2f_denshi_lab_nishi",
     "Name": "西 研究室",
+    "Reading": "にし けんきゅうしつ",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 2,
@@ -158,6 +174,7 @@
   {
     "Id": "room_3f_denshi_lab_computer",
     "Name": "計算機工学実験室",
+    "Reading": "けいさんきこうがくじっけんしつ",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 3,
@@ -178,6 +195,7 @@
   {
     "Id": "room_3f_denshi_lab_software",
     "Name": "ソフトウェア工学実験室",
+    "Reading": "そふとうぇあこうがくじっけんしつ",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 3,
@@ -187,6 +205,7 @@
   {
     "Id": "room_3f_denshi_facility_archive",
     "Name": "資料室",
+    "Reading": "しりょうしつ",
     "Type": "facility",
     "Building": "電子工学科棟",
     "Floor": 3,
@@ -196,6 +215,7 @@
   {
     "Id": "room_3f_denshi_facility_meeting",
     "Name": "会議室",
+    "Reading": "かいぎしつ",
     "Type": "facility",
     "Building": "電子工学科棟",
     "Floor": 3,
@@ -205,6 +225,7 @@
   {
     "Id": "room_3f_denshi_facility_graduation_4",
     "Name": "卒研室4",
+    "Reading": "そつけんしつ4",
     "Type": "facility",
     "Building": "電子工学科棟",
     "Floor": 3,
@@ -214,6 +235,7 @@
   {
     "Id": "room_3f_denshi_facility_graduation_5",
     "Name": "卒研室5",
+    "Reading": "そつけんしつ5",
     "Type": "facility",
     "Building": "電子工学科棟",
     "Floor": 3,
@@ -223,6 +245,7 @@
   {
     "Id": "room_3f_denshi_facility_graduation_6",
     "Name": "卒研室6",
+    "Reading": "そつけんしつ6",
     "Type": "facility",
     "Building": "電子工学科棟",
     "Floor": 3,
@@ -232,6 +255,7 @@
   {
     "Id": "room_3f_denshi_lab_takada",
     "Name": "髙田 研究室",
+    "Reading": "たかだ けんきゅうしつ",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 3,
@@ -241,6 +265,7 @@
   {
     "Id": "room_3f_denshi_lab_tahara",
     "Name": "田原 研究室",
+    "Reading": "たはら けんきゅうしつ",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 3,
@@ -250,6 +275,7 @@
   {
     "Id": "room_3f_denshi_lab_tozaki",
     "Name": "戸崎 研究室",
+    "Reading": "とざき けんきゅうしつ",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 3,
@@ -277,6 +303,7 @@
   {
     "Id": "room_4f_denshi_lab_comm",
     "Name": "通信工学実験室",
+    "Reading": "つうしんこうがくじっけんしつ",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 4,
@@ -286,6 +313,7 @@
   {
     "Id": "room_4f_denshi_lab_applied",
     "Name": "電子応用実験室",
+    "Reading": "でんしおうようじっけんしつ",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 4,
@@ -296,6 +324,7 @@
   {
     "Id": "room_4f_denshi_facility_part_time",
     "Name": "非常勤講師室",
+    "Reading": "ひじょうきんこうししつ",
     "Type": "facility",
     "Building": "電子工学科棟",
     "Floor": 4,
@@ -306,6 +335,7 @@
   {
     "Id": "room_4f_denshi_facility_graduation_7",
     "Name": "卒研室7",
+    "Reading": "そつけんしつ7",
     "Type": "facility",
     "Building": "電子工学科棟",
     "Floor": 4,
@@ -316,6 +346,7 @@
   {
     "Id": "room_4f_denshi_facility_graduation_8",
     "Name": "卒研室8",
+    "Reading": "そつけんしつ8",
     "Type": "facility",
     "Building": "電子工学科棟",
     "Floor": 4,
@@ -325,6 +356,7 @@
   {
     "Id": "room_4f_denshi_facility_graduation_9",
     "Name": "卒研室9",
+    "Reading": "そつけんしつ9",
     "Type": "facility",
     "Building": "電子工学科棟",
     "Floor": 4,
@@ -334,6 +366,7 @@
   {
     "Id": "room_4f_denshi_facility_graduation_10",
     "Name": "卒研室10",
+    "Reading": "そつけんしつ10",
     "Type": "facility",
     "Building": "電子工学科棟",
     "Floor": 4,
@@ -343,6 +376,7 @@
   {
     "Id": "room_4f_denshi_lab_koba",
     "Name": "木場 研究室",
+    "Reading": "こば けんきゅうしつ",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 4,
@@ -352,6 +386,7 @@
   {
     "Id": "room_4f_denshi_lab_hashimoto",
     "Name": "橋本(好) 研究室",
+    "Reading": "はしもと(こう) けんきゅうしつ",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 4,
@@ -361,6 +396,7 @@
   {
     "Id": "room_4f_denshi_lab_fujimoto",
     "Name": "藤本 研究室",
+    "Reading": "ふじもと けんきゅうしつ",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 4,
@@ -370,6 +406,7 @@
   {
     "Id": "room_4f_denshi_lab_koya",
     "Name": "小矢 研究室",
+    "Reading": "しょうや けんきゅうしつ",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 4,

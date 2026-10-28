@@ -1,7 +1,9 @@
 using System.Drawing.Drawing2D;
 
 using team1.Controls.Modern;
+using team1.Core.Logic;
 using team1.Core.Models;
+using team1.Core.Usecases;
 
 namespace team1.Controls
 {
@@ -14,13 +16,15 @@ namespace team1.Controls
     {
         private const int MaxRows = 8;
 
-        private readonly Func<string, IReadOnlyList<Place>> _suggest;
+        private readonly Func<string, IReadOnlyList<SearchHit>> _suggest;
+        private readonly Dictionary<TextBox, Func<bool>> _enabled = new();
         private readonly Dictionary<TextBox, Action<Place>> _targets = new();
         private TextBox? _owner;
-        private List<Place> _items = [];
+        private List<SearchHit> _items = [];
+        private string _query = "";
         private bool _suppress;
 
-        public SearchPopup(Func<string, IReadOnlyList<Place>> suggest)
+        public SearchPopup(Func<string, IReadOnlyList<SearchHit>> suggest)
         {
             _suggest = suggest;
             // クリックしても入力欄のフォーカスが外れないようにする
@@ -45,10 +49,14 @@ namespace team1.Controls
             };
         }
 
-        /// <summary>入力欄に候補を出す。選ばれたら chosen を呼ぶ</summary>
-        public void Attach(TextBox box, Action<Place> chosen)
+        /// <summary>
+        /// 入力欄に候補を出す。選ばれたら chosen を呼ぶ。enabled が false を返す間は、候補を出さない
+        /// (一覧画面では、検索欄の文字を一覧の絞り込みに使うため)
+        /// </summary>
+        public void Attach(TextBox box, Action<Place> chosen, Func<bool>? enabled = null)
         {
             _targets[box] = chosen;
+            if (enabled != null) _enabled[box] = enabled;
             box.TextChanged += (_, _) => { if (!_suppress) Update(box); };
             box.GotFocus += (_, _) => { if (box.Text.Length > 0 && !_suppress) Update(box); };
             box.LostFocus += (_, _) => { if (_owner == box) HidePopup(); };
@@ -74,7 +82,8 @@ namespace team1.Controls
             if (e.Index < 0 || e.Index >= _items.Count) return;
             var g = e.Graphics;
             g.SmoothingMode = SmoothingMode.AntiAlias;
-            var place = _items[e.Index];
+            var hit = _items[e.Index];
+            var place = hit.Place;
             bool selected = (e.State & DrawItemState.Selected) != 0;
 
             using (var back = new SolidBrush(Theme.Surface)) g.FillRectangle(back, e.Bounds);
@@ -86,14 +95,13 @@ namespace team1.Controls
                 g.FillPath(fill, path);
             }
 
-            // 名前を左に、建物と階を右に薄く
-            var where = $"{place.Building} {place.Floor}F";
+            // 名前を左 (ヒットした部分はオレンジの背景)、建物と階を右に薄く。近い候補 (誤字を許して見つけたもの) は「近い候補」と添える
+            var where = hit.IsFuzzy ? $"近い候補  {place.Building} {place.Floor}F" : $"{place.Building} {place.Floor}F";
             var whereSize = TextRenderer.MeasureText(g, where, Theme.Ui(9f), Size.Empty, TextFormatFlags.NoPadding);
             var nameRect = new Rectangle(row.Left + 10, row.Top, Math.Max(row.Width - whereSize.Width - 28, 40), row.Height);
-            TextRenderer.DrawText(g, place.Name, Font, nameRect, Theme.Text,
-                TextFormatFlags.VerticalCenter | TextFormatFlags.EndEllipsis | TextFormatFlags.NoPadding);
+            HighlightedText.Draw(g, place.Name, SearchText.HighlightRanges(place.Name, _query), Font, nameRect, Theme.Text);
             TextRenderer.DrawText(g, where, Theme.Ui(9f), new Rectangle(row.Right - whereSize.Width - 10, row.Top, whereSize.Width + 4, row.Height),
-                Theme.Muted, TextFormatFlags.VerticalCenter | TextFormatFlags.NoPadding);
+                hit.IsFuzzy ? Theme.Accent : Theme.Muted, TextFormatFlags.VerticalCenter | TextFormatFlags.NoPadding);
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -105,6 +113,13 @@ namespace team1.Controls
 
         private void Update(TextBox box)
         {
+            if (_enabled.TryGetValue(box, out var enabled) && !enabled())
+            {
+                HidePopup();
+                return;
+            }
+
+            _query = box.Text;
             _items = _suggest(box.Text).ToList();
             if (_items.Count == 0)
             {
@@ -115,7 +130,7 @@ namespace team1.Controls
             _owner = box;
             BeginUpdate();
             Items.Clear();
-            foreach (var p in _items) Items.Add(p.DisplayName);
+            foreach (var hit in _items) Items.Add(hit.Place.DisplayName);
             EndUpdate();
             SelectedIndex = 0;
 
@@ -161,7 +176,7 @@ namespace team1.Controls
         {
             if (_owner == null || index < 0 || index >= _items.Count) return;
             var box = _owner;
-            var place = _items[index];
+            var place = _items[index].Place;
             SetText(box, place.DisplayName);
             box.SelectionStart = box.Text.Length;
             HidePopup();

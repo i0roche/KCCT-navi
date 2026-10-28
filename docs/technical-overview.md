@@ -191,6 +191,7 @@ Edge {
 Place {
     Id: string       // ノードIDと対応
     Name: string     // "電子基礎実験室", "一般科 男子トイレ(2F)"
+    Reading: string  // 名前の読み (ひらがな)。検索用。ASCII だけの名前は空でよい
     Type: string     // "lab", "classroom", "facility", "club", "office", "office_tech", "stairs", "elevator", "restroom"
     Building: string // "一般科A棟", "電子工学科棟"
     Floor: int       // 階数
@@ -259,6 +260,7 @@ OnPaintSurface() 実行
 | **離して滑る** | ドラッグで離したあと `MapViewer.Inertia.cs` が減速しながら動かす |
 | **棟をクリック (全体表示)** | `BuildingClicked` → その建物へ拡大 (`ZoomToRect`) |
 | **経路を引く / 階を切り替える** | 経路の見える範囲へ自動で拡大 (`ZoomToRoute`) |
+| **ダブルクリック** | `OnMapDoubleClick` → `SmoothZoomAt` (2 倍。Shift で縮小。階ボタン・部屋の点の上では何もしない) |
 | **ピンチ (タッチスクリーン)** | `WM_GESTURE` の `GID_ZOOM` → `ZoomAt`（指の中心が基準） |
 | **指でなぞる (タッチスクリーン)** | `WM_GESTURE` の `GID_PAN` → `PanBy`（離した後も慣性で少し進む） |
 | **部屋クリック** | `RoomNodeClicked`イベント発火（タッチモードでは指を離したときに判定） |
@@ -449,6 +451,21 @@ Windows は精密タッチパッドの二本指を「スクロール」「Ctrl+�
 
 - ヘルプは `HelpForm` (別ウィンドウ・モーダルでない。「やりたいこと → 操作」の短い表だけ)。6班は「バージョン情報」のモーダルダイアログ (`AboutForm`: 版・著作権・NuGet のライセンス一覧) だけで、使い方の説明は README にしか無かった。
 - タッチパッドの Raw Input は、登録したウィンドウにアプリが前面にある間ずっと届く。そのため `MapViewer.IsTouchpadTarget` で、地図が見えていて、アプリが前面で、カーソルが地図の上にあるときだけ地図を動かす (一覧画面・ヘルプが前面のときは動かさない)。
+
+### 検索 (`PlaceSearchUsecase` / `SearchText`)
+
+- 比べる文字は `SearchText.Normalize` で正規化する (全角英数 → 半角、カタカナ → ひらがな、小文字)。元の文字と 1 文字ずつ対応させる (ハイライトの位置がずれないため)。
+- ローマ字は `RomajiToHiragana` でひらがなにして、読み (`Place.Reading`) と比べる。キーワードごとに「そのまま」と「ローマ字をかなにしたもの」の両方で探す。
+- 当たりの強さ: 名前 (完全 100 / 前方 80 / 部分 60) > 読み (95 / 75 / 55) > タグ > 建物・種別・階 > ID。全キーワードが当たった場所だけ (AND) で、強さの合計が大きい順。
+- 1 件も当たらないときだけ、あいまい検索 (`ApproximateDistance`: 部分文字列としての編集距離)。3 文字以上は 1 文字、6 文字以上は 2 文字までの誤字を許す。結果は `SearchHit.IsFuzzy` で「近い候補」と分かる。
+- ハイライトは `SearchText.HighlightRanges` (名前の中で当たった範囲)。候補 (`SearchPopup`) と部屋一覧 (`RoomListView`) が `HighlightedText` で描く。
+- `Reading` は `scripts/generate_readings` が Windows の変換機能 (`TextReverseConversionGenerator`) で作る。人名・固有名詞の誤りは `overrides.json` で直す。
+
+### ルート提案 (`MainViewModel.SuggestAlternatives`)
+
+経路を引いたあと、条件を変えると実際に違う道になるものを `RouteAlternative` で返す (屋外を通るなら「屋根のある道で行く」、階段を使うなら「階段を使わずに行く」、
+雨の日・階段を避けるを入れているときは、5% 以上短くなる場合だけ逆の提案)。長さの比べは `RouteResult.Length` (階段・エレベーターの加算コストを含まない歩く長さ)。
+`RoutePanel` にボタンで出し、押すと雨の日・階段の設定を変えて経路を引き直す。
 
 ### フォント
 

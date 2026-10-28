@@ -2,6 +2,7 @@
   {
     "Id": "room_1f_general_classroom_art",
     "Name": "芸術教室",
+    "Reading": "げいじゅつきょうしつ",
     "Type": "classroom",
     "Building": "一般科A棟",
     "Floor": 1,
@@ -11,6 +12,7 @@
   {
     "Id": "room_1f_general_facility_rokushin",
     "Name": "六神ホール",
+    "Reading": "ろくかみほーる",
     "Type": "facility",
     "Building": "一般科A棟",
     "Floor": 1,
@@ -20,6 +22,7 @@
   {
     "Id": "room_1f_general_facility_testfield",
     "Name": "ものづくりテストフィールド",
+    "Reading": "ものづくりてすとふぃーるど",
     "Type": "facility",
     "Building": "一般科B棟",
     "Floor": 1,
@@ -29,6 +32,7 @@
   {
     "Id": "room_2f_general_classroom_av",
     "Name": "視聴覚教室",
+    "Reading": "しちょうかくきょうしつ",
     "Type": "classroom",
     "Building": "一般科B棟",
     "Floor": 2,
@@ -38,6 +42,7 @@
   {
     "Id": "room_2f_general_classroom_ll",
     "Name": "LL教室",
+    "Reading": "LLきょうしつ",
     "Type": "classroom",
     "Building": "一般科B棟",
     "Floor": 2,
@@ -47,6 +52,7 @@
   {
     "Id": "room_3f_general_classroom_av",
     "Name": "人文社会視聴覚室",
+    "Reading": "じんぶんしゃかいしちょうかくしつ",
     "Type": "classroom",
     "Building": "一般科B棟",
     "Floor": 3,
@@ -56,6 +62,7 @@
   {
     "Id": "room_3f_general_classroom_room",
     "Name": "人文社会演習室",
+    "Reading": "じんぶんしゃかいえんしゅうしつ",
     "Type": "classroom",
     "Building": "一般科B棟",
     "Floor": 3,
@@ -65,6 +72,7 @@
   {
     "Id": "room_3f_general_facility_multi",
     "Name": "多目的室",
+    "Reading": "たもくてきしつ",
     "Type": "facility",
     "Building": "一般科B棟",
     "Floor": 3,
@@ -74,6 +82,7 @@
   {
     "Id": "room_3f_general_classroom_math",
     "Name": "数学演習室",
+    "Reading": "すうがくえんしゅうしつ",
     "Type": "classroom",
     "Building": "一般科B棟",
     "Floor": 3,
@@ -83,6 +92,7 @@
   {
     "Id": "room_3f_general_classroom_japanese",
     "Name": "国語演習室",
+    "Reading": "こくごえんしゅうしつ",
     "Type": "classroom",
     "Building": "一般科B棟",
     "Floor": 3,
@@ -92,6 +102,7 @@
   {
     "Id": "room_4f_general_classroom_physics",
     "Name": "物理階段教室",
+    "Reading": "ぶつりかいだんきょうしつ",
     "Type": "classroom",
     "Building": "一般科B棟",
     "Floor": 4,
@@ -101,6 +112,7 @@
   {
     "Id": "room_4f_general_lab_physics",
     "Name": "物理実験室",
+    "Reading": "ぶつりじっけんしつ",
     "Type": "lab",
     "Building": "一般科B棟",
     "Floor": 4,
@@ -110,6 +122,7 @@
   {
     "Id": "room_4f_general_lab_optics",
     "Name": "光学実験室",
+    "Reading": "こうがくじっけんしつ",
     "Type": "lab",
     "Building": "一般科B棟",
     "Floor": 4,
@@ -119,6 +132,7 @@
   {
     "Id": "room_5f_general_classroom_chem",
     "Name": "化学階段教室",
+    "Reading": "かがくかいだんきょうしつ",
     "Type": "classroom",
     "Building": "一般科B棟",
     "Floor": 5,
@@ -128,6 +142,7 @@
   {
     "Id": "room_5f_general_lab_chem",
     "Name": "化学実験室",
+    "Reading": "かがくじっけんしつ",
     "Type": "lab",
     "Building": "一般科B棟",
     "Floor": 5,
@@ -137,6 +152,7 @@
   {
     "Id": "room_5f_general_facility_room",
     "Name": "外国人講師室",
+    "Reading": "がいこくじんこうししつ",
     "Type": "facility",
     "Building": "一般科A棟",
     "Floor": 5,
@@ -146,6 +162,7 @@
   {
     "Id": "room_5f_general_lab_ijima",
     "Name": "飯島 研究室",
+    "Reading": "いいじま けんきゅうしつ",
     "Type": "lab",
     "Building": "一般科A棟",
     "Floor": 5,
@@ -156,6 +173,7 @@
   {
     "Id": "room_5f_general_lab_hirano",
     "Name": "平野 研究室",
+    "Reading": "ひらの けんきゅうしつ",
     "Type": "lab",
     "Building": "一般科A棟",
     "Floor": 5,
@@ -165,6 +183,7 @@
   {
     "Id": "room_5f_general_lab_imasato",
     "Name": "今里 研究室",
+    "Reading": "いまさと けんきゅうしつ",
     "Type": "lab",
     "Building": "一般科A棟",
     "Floor": 5,
@@ -174,6 +193,7 @@
   {
     "Id": "room_5f_general_lab_minami",
     "Name": "南 研究室",
+    "Reading": "みなみ けんきゅうしつ",
     "Type": "lab",
     "Building": "一般科A棟",
     "Floor": 5,
@@ -183,6 +203,7 @@
   {
     "Id": "room_5f_general_lab_uegaki",
     "Name": "上垣 研究室",
+    "Reading": "うえがき けんきゅうしつ",
     "Type": "lab",
     "Building": "一般科A棟",
     "Floor": 5,
@@ -192,6 +213,7 @@
   {
     "Id": "room_5f_general_lab_pileggi",
     "Name": "Pileggi 研究室",
+    "Reading": "Pileggi けんきゅうしつ",
     "Type": "lab",
     "Building": "一般科A棟",
     "Floor": 5,
@@ -201,6 +223,7 @@
   {
     "Id": "room_5f_general_lab_yamamoto_t",
     "Name": "山本(長) 研究室",
+    "Reading": "やまもと(ちょう) けんきゅうしつ",
     "Type": "lab",
     "Building": "一般科A棟",
     "Floor": 5,
@@ -210,6 +233,7 @@
   {
     "Id": "room_5f_general_lab_sato_y",
     "Name": "佐藤(洋) 研究室",
+    "Reading": "さとう(ひろし) けんきゅうしつ",
     "Type": "lab",
     "Building": "一般科A棟",
     "Floor": 5,
@@ -219,6 +243,7 @@
   {
     "Id": "room_5f_general_lab_takami",
     "Name": "髙見 研究室",
+    "Reading": "たかみ けんきゅうしつ",
     "Type": "lab",
     "Building": "一般科A棟",
     "Floor": 5,
@@ -228,6 +253,7 @@
   {
     "Id": "room_5f_general_lab_ooshio",
     "Name": "大塩 研究室",
+    "Reading": "おおしお けんきゅうしつ",
     "Type": "lab",
     "Building": "一般科A棟",
     "Floor": 5,
@@ -237,6 +263,7 @@
   {
     "Id": "room_5f_general_lab_ogura",
     "Name": "小倉 研究室",
+    "Reading": "おぐら けんきゅうしつ",
     "Type": "lab",
     "Building": "一般科A棟",
     "Floor": 5,
@@ -246,6 +273,7 @@
   {
     "Id": "room_6f_general_lab_shoro",
     "Name": "松露 研究室",
+    "Reading": "しょうろ けんきゅうしつ",
     "Type": "lab",
     "Building": "一般科A棟",
     "Floor": 6,
@@ -255,6 +283,7 @@
   {
     "Id": "room_6f_general_lab_yokoyama",
     "Name": "横山 研究室",
+    "Reading": "よこやま けんきゅうしつ",
     "Type": "lab",
     "Building": "一般科A棟",
     "Floor": 6,
@@ -264,6 +293,7 @@
   {
     "Id": "room_6f_general_lab_kitamura",
     "Name": "北村 研究室",
+    "Reading": "きたむら けんきゅうしつ",
     "Type": "lab",
     "Building": "一般科A棟",
     "Floor": 6,
@@ -273,6 +303,7 @@
   {
     "Id": "room_6f_general_lab_kodama",
     "Name": "児玉 研究室",
+    "Reading": "こだま けんきゅうしつ",
     "Type": "lab",
     "Building": "一般科A棟",
     "Floor": 6,
@@ -282,6 +313,7 @@
   {
     "Id": "room_6f_general_lab_taniguchi_k",
     "Name": "谷口(公) 研究室",
+    "Reading": "たにぐち(こう) けんきゅうしつ",
     "Type": "lab",
     "Building": "一般科A棟",
     "Floor": 6,
@@ -291,6 +323,7 @@
   {
     "Id": "room_6f_general_lab_yoshimura",
     "Name": "吉村 研究室",
+    "Reading": "よしむら けんきゅうしつ",
     "Type": "lab",
     "Building": "一般科A棟",
     "Floor": 6,
@@ -300,6 +333,7 @@
   {
     "Id": "room_6f_general_lab_sugano",
     "Name": "菅野 研究室",
+    "Reading": "すがの けんきゅうしつ",
     "Type": "lab",
     "Building": "一般科A棟",
     "Floor": 6,
@@ -309,6 +343,7 @@
   {
     "Id": "room_6f_general_lab_yamaji",
     "Name": "山路 研究室",
+    "Reading": "やまじ けんきゅうしつ",
     "Type": "lab",
     "Building": "一般科A棟",
     "Floor": 6,
@@ -318,6 +353,7 @@
   {
     "Id": "room_6f_general_lab_ishihara",
     "Name": "石原 研究室",
+    "Reading": "いしはら けんきゅうしつ",
     "Type": "lab",
     "Building": "一般科A棟",
     "Floor": 6,
@@ -327,6 +363,7 @@
   {
     "Id": "room_6f_general_lab_takehisa",
     "Name": "武久 研究室",
+    "Reading": "たけひさ けんきゅうしつ",
     "Type": "lab",
     "Building": "一般科A棟",
     "Floor": 6,
@@ -336,6 +373,7 @@
   {
     "Id": "room_6f_general_lab_doi",
     "Name": "土居 研究室",
+    "Reading": "どい けんきゅうしつ",
     "Type": "lab",
     "Building": "一般科A棟",
     "Floor": 6,
@@ -345,6 +383,7 @@
   {
     "Id": "room_6f_general_lab_machida",
     "Name": "町田 研究室",
+    "Reading": "まちだ けんきゅうしつ",
     "Type": "lab",
     "Building": "一般科B棟",
     "Floor": 6,
@@ -354,6 +393,7 @@
   {
     "Id": "room_6f_general_lab_yao",
     "Name": "八百 研究室",
+    "Reading": "やお けんきゅうしつ",
     "Type": "lab",
     "Building": "一般科B棟",
     "Floor": 6,
@@ -363,6 +403,7 @@
   {
     "Id": "room_6f_general_lab_fukami",
     "Name": "深見 研究室",
+    "Reading": "ふかみ けんきゅうしつ",
     "Type": "lab",
     "Building": "一般科B棟",
     "Floor": 6,
@@ -372,6 +413,7 @@
   {
     "Id": "room_6f_general_lab_yamamoto_s",
     "Name": "山本(舜) 研究室",
+    "Reading": "やまもと(しゅん) けんきゅうしつ",
     "Type": "lab",
     "Building": "一般科B棟",
     "Floor": 6,
@@ -381,6 +423,7 @@
   {
     "Id": "room_6f_general_lab_fujita",
     "Name": "藤田 研究室",
+    "Reading": "ふじた けんきゅうしつ",
     "Type": "lab",
     "Building": "一般科B棟",
     "Floor": 6,

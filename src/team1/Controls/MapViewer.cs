@@ -102,6 +102,7 @@ namespace team1.Controls
             this.MouseUp += OnMouseUp;
             this.MouseWheel += OnMouseWheel;
             this.MouseEnter += (_, _) => Focus();
+            this.MouseDoubleClick += OnMapDoubleClick;
             this.Resize += (_, _) => UpdateFloorButtonRects();
             this.TabStop = true;
 
@@ -762,6 +763,7 @@ namespace team1.Controls
                 }
                 if (TryPickBuilding(e.Location, out var viewId))
                 {
+                    _lastBuildingClickTick = Environment.TickCount64;
                     BuildingClicked?.Invoke(viewId);
                     return;
                 }

@@ -84,5 +84,47 @@ namespace team1.Controls
 
         /// <summary>画面の中央を基準に倍率を factor 倍する (ツールバーの + / − ボタン)</summary>
         public void ZoomBy(float factor) => ZoomAt(factor, new Point(Width / 2, Height / 2));
+
+        // ---- ダブルクリックで拡大 (Shift を押しながらで縮小)。Google マップのアプリと同じ操作 (6班の issue #222)
+
+        private const float DoubleClickZoom = 2f;
+        private const int ZoomAnimationSteps = 9;
+
+        private readonly System.Windows.Forms.Timer _zoomTimer = new() { Interval = 16 };
+        private int _zoomStepsLeft;
+        private float _zoomStepFactor = 1f;
+        private Point _zoomPivot;
+        private long _lastBuildingClickTick;
+
+        private void OnMapDoubleClick(object? sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) return;
+            // 階ボタン・部屋の点 (クリックで吹き出しが開く) の上では拡大しない。
+            // 全体表示で棟をクリックして拡大した直後の 2 回目のクリックも、二重に拡大しないよう無視する
+            if (FloorPanelBounds.Contains(e.Location) || TryPickPlace(e.Location, out _)) return;
+            if (Environment.TickCount64 - _lastBuildingClickTick < 600) return;
+
+            bool zoomOut = (ModifierKeys & Keys.Shift) != 0;
+            SmoothZoomAt(zoomOut ? 1f / DoubleClickZoom : DoubleClickZoom, e.Location);
+        }
+
+        /// <summary>指定の位置を中心に、factor 倍へ滑らかに拡大・縮小する (短いアニメーション)</summary>
+        public void SmoothZoomAt(float factor, Point pivot)
+        {
+            StopInertia();
+            _zoomTimer.Stop();
+            _zoomPivot = pivot;
+            _zoomStepFactor = MathF.Pow(factor, 1f / ZoomAnimationSteps);
+            _zoomStepsLeft = ZoomAnimationSteps;
+            _zoomTimer.Tick -= OnZoomTick;
+            _zoomTimer.Tick += OnZoomTick;
+            _zoomTimer.Start();
+        }
+
+        private void OnZoomTick(object? sender, EventArgs e)
+        {
+            ZoomAt(_zoomStepFactor, _zoomPivot);
+            if (--_zoomStepsLeft <= 0) _zoomTimer.Stop();
+        }
     }
 }

@@ -2,6 +2,7 @@
   {
     "Id": "room_1f_common_facility_arena_main",
     "Name": "メインアリーナ",
+    "Reading": "めいんありーな",
     "Type": "facility",
     "Building": "体育館",
     "Floor": 1,
@@ -11,6 +12,7 @@
   {
     "Id": "room_1f_common_facility_arena_sub",
     "Name": "サブアリーナ",
+    "Reading": "さぶありーな",
     "Type": "facility",
     "Building": "体育館",
     "Floor": 1,
@@ -20,6 +22,7 @@
   {
     "Id": "room_1f_common_facility_martial_arts",
     "Name": "武道場",
+    "Reading": "ぶどうじょう",
     "Type": "facility",
     "Building": "武道場",
     "Floor": 1,
@@ -30,6 +33,7 @@
   {
     "Id": "room_1f_common_facility_pool",
     "Name": "プール",
+    "Reading": "ぷーる",
     "Type": "facility",
     "Building": "プール",
     "Floor": 1,
@@ -39,6 +43,7 @@
   {
     "Id": "room_1f_common_facility_archery_jp",
     "Name": "弓道場",
+    "Reading": "きゅうどうじょう",
     "Type": "facility",
     "Building": "弓道場",
     "Floor": 1,
@@ -48,6 +53,7 @@
   {
     "Id": "room_1f_common_facility_archery",
     "Name": "アーチェリー場",
+    "Reading": "あーちぇりーじょう",
     "Type": "facility",
     "Building": "アーチェリー場",
     "Floor": 1,
@@ -57,6 +63,7 @@
   {
     "Id": "room_1f_common_facility_cafeteria",
     "Name": "食堂",
+    "Reading": "しょくどう",
     "Type": "facility",
     "Building": "福利厚生棟",
     "Floor": 1,
@@ -66,6 +73,7 @@
   {
     "Id": "room_1f_common_facility_shop",
     "Name": "購買",
+    "Reading": "こうばい",
     "Type": "facility",
     "Building": "福利厚生棟",
     "Floor": 1,
@@ -75,6 +83,7 @@
   {
     "Id": "room_1f_common_facility_library",
     "Name": "図書館",
+    "Reading": "としょかん",
     "Type": "facility",
     "Building": "図書館棟",
     "Floor": 1,
@@ -84,6 +93,7 @@
   {
     "Id": "room_1f_common_facility_info_center",
     "Name": "情報センター",
+    "Reading": "じょうほうせんたー",
     "Type": "facility",
     "Building": "図書館棟",
     "Floor": 1,
@@ -94,6 +104,7 @@
   {
     "Id": "room_1f_common_office_admin_1",
     "Name": "事務室",
+    "Reading": "じむしつ",
     "Type": "office",
     "Building": "本部棟",
     "Floor": 1,
@@ -103,6 +114,7 @@
   {
     "Id": "room_1f_common_office_admin_2",
     "Name": "事務室",
+    "Reading": "じむしつ",
     "Type": "office",
     "Building": "本部棟",
     "Floor": 1,
@@ -112,6 +124,7 @@
   {
     "Id": "room_1f_common_office_student",
     "Name": "学生主事室",
+    "Reading": "がくせいしゅじしつ",
     "Type": "office",
     "Building": "本部棟",
     "Floor": 1,
@@ -121,6 +134,7 @@
   {
     "Id": "room_1f_common_office_academicaffairs",
     "Name": "教務主事室",
+    "Reading": "きょうむしゅじしつ",
     "Type": "office",
     "Building": "本部棟",
     "Floor": 1,
@@ -130,6 +144,7 @@
   {
     "Id": "room_1f_common_office_principal",
     "Name": "校長室",
+    "Reading": "こうちょうしつ",
     "Type": "office",
     "Building": "本部棟",
     "Floor": 1,
@@ -139,6 +154,7 @@
   {
     "Id": "room_1f_common_office_non_full_time_instructor",
     "Name": "非常勤講師室",
+    "Reading": "ひじょうきんこうししつ",
     "Type": "office",
     "Building": "本部棟",
     "Floor": 1,
@@ -148,6 +164,7 @@
   {
     "Id": "room_1f_common_office_meeting",
     "Name": "会議室",
+    "Reading": "かいぎしつ",
     "Type": "office",
     "Building": "本部棟",
     "Floor": 1,
@@ -157,6 +174,7 @@
   {
     "Id": "room_1f_common_office_academic",
     "Name": "教務室",
+    "Reading": "きょうむしつ",
     "Type": "office",
     "Building": "本部棟",
     "Floor": 1,
@@ -166,6 +184,7 @@
   {
     "Id": "room_1f_common_office_health",
     "Name": "保健室",
+    "Reading": "ほけんしつ",
     "Type": "office",
     "Building": "本部棟",
     "Floor": 1,
@@ -175,6 +194,7 @@
   {
     "Id": "room_2f_common_hall",
     "Name": "ホール",
+    "Reading": "ほーる",
     "Type": "facility",
     "Building": "本部棟",
     "Floor": 2,
@@ -184,6 +204,7 @@
   {
     "Id": "room_1f_gakusei_busitu_kizai",
     "Name": "機材室",
+    "Reading": "きざいしつ",
     "Type": "club",
     "Building": "学生会館",
     "Floor": 1,
@@ -193,6 +214,7 @@
   {
     "Id": "room_1f_gakusei_busitu_suisougaku",
     "Name": "吹奏楽部室",
+    "Reading": "すいそうがくぶしつ",
     "Type": "club",
     "Building": "学生会館",
     "Floor": 1,
@@ -202,6 +224,7 @@
   {
     "Id": "room_1f_gakusei_busitu_LMC",
     "Name": "ライトミュージック部室",
+    "Reading": "らいとみゅーじっくぶしつ",
     "Type": "club",
     "Building": "学生会館",
     "Floor": 1,
@@ -211,6 +234,7 @@
   {
     "Id": "room_1f_gakusei_storage",
     "Name": "倉庫",
+    "Reading": "そうこ",
     "Type": "facility",
     "Building": "学生会館",
     "Floor": 1,
@@ -220,6 +244,7 @@
   {
     "Id": "room_1f_gakusei_busitu_jitensha_kyougi",
     "Name": "自転車競技部室",
+    "Reading": "じてんしゃきょうぎぶしつ",
     "Type": "club",
     "Building": "学生会館",
     "Floor": 1,
@@ -229,6 +254,7 @@
   {
     "Id": "room_1f_gakusei_busitu_gakuseikai",
     "Name": "学生会室",
+    "Reading": "がくせいかいしつ",
     "Type": "club",
     "Building": "学生会館",
     "Floor": 1,
@@ -238,6 +264,7 @@
   {
     "Id": "room_2f_gakusei_busitu_tamokuteki",
     "Name": "多目的室",
+    "Reading": "たもくてきしつ",
     "Type": "club",
     "Building": "学生会館",
     "Floor": 2,
@@ -247,6 +274,7 @@
   {
     "Id": "room_2f_gakusei_busitu_kadou",
     "Name": "華道部室",
+    "Reading": "かどうぶしつ",
     "Type": "club",
     "Building": "学生会館",
     "Floor": 2,
@@ -256,6 +284,7 @@
   {
     "Id": "room_2f_gakusei_busitu_sizen",
     "Name": "自然科学部室",
+    "Reading": "しぜんかがくぶしつ",
     "Type": "club",
     "Building": "学生会館",
     "Floor": 2,
@@ -265,6 +294,7 @@
   {
     "Id": "room_2f_gakusei_busitu_densan_1",
     "Name": "電子計算機部室1",
+    "Reading": "でんしけいさんきぶしつ1",
     "Type": "club",
     "Building": "学生会館",
     "Floor": 2,
@@ -274,6 +304,7 @@
   {
     "Id": "room_2f_gakusei_busitu_densan_2",
     "Name": "電子計算機部室2",
+    "Reading": "でんしけいさんきぶしつ2",
     "Type": "club",
     "Building": "学生会館",
     "Floor": 2,
@@ -283,6 +314,7 @@
   {
     "Id": "room_2f_gakusei_busitu_ESS",
     "Name": "ESS部室",
+    "Reading": "ESSぶしつ",
     "Type": "club",
     "Building": "学生会館",
     "Floor": 2,
@@ -292,6 +324,7 @@
   {
     "Id": "room_2f_gakusei_busitu_denkou",
     "Name": "電気工学実験部室",
+    "Reading": "でんきこうがくじっけんぶしつ",
     "Type": "club",
     "Building": "学生会館",
     "Floor": 2,
@@ -301,6 +334,7 @@
   {
     "Id": "room_2f_gakusei_busitu_MRC",
     "Name": "MRC部室",
+    "Reading": "MRCぶしつ",
     "Type": "club",
     "Building": "学生会館",
     "Floor": 2,
@@ -310,6 +344,7 @@
   {
     "Id": "room_2f_gakusei_busitu_suiei",
     "Name": "水泳部室",
+    "Reading": "すいえいぶしつ",
     "Type": "club",
     "Building": "学生会館",
     "Floor": 2,
@@ -319,6 +354,7 @@
   {
     "Id": "room_2f_gakusei_busitu_robot",
     "Name": "ロボット部室",
+    "Reading": "ろぼっとぶしつ",
     "Type": "club",
     "Building": "学生会館",
     "Floor": 2,
@@ -328,6 +364,7 @@
   {
     "Id": "room_2f_gakusei_busitu_bijutu",
     "Name": "美術部室",
+    "Reading": "びじゅつぶしつ",
     "Type": "club",
     "Building": "学生会館",
     "Floor": 2,
@@ -337,6 +374,7 @@
   {
     "Id": "room_2f_gakusei_busitu_syasin",
     "Name": "写真部室",
+    "Reading": "しゃしんぶしつ",
     "Type": "club",
     "Building": "学生会館",
     "Floor": 2,
@@ -346,6 +384,7 @@
   {
     "Id": "room_1f_common_facility_training",
     "Name": "トレーニングルーム",
+    "Reading": "とれーにんぐるーむ",
     "Type": "facility",
     "Building": "体育館",
     "Floor": 1,
@@ -355,6 +394,7 @@
   {
     "Id": "room_2f_common_facility_pe_office",
     "Name": "体育教官室",
+    "Reading": "たいいくきょうかんしつ",
     "Type": "facility",
     "Building": "体育館",
     "Floor": 2,
@@ -365,6 +405,7 @@
   {
     "Id": "room_2f_common_facility_exercise_1",
     "Name": "第1演習室",
+    "Reading": "だい1えんしゅうしつ",
     "Type": "facility",
     "Building": "図書館棟",
     "Floor": 2,
@@ -374,6 +415,7 @@
   {
     "Id": "room_2f_common_facility_exercise_2",
     "Name": "第2演習室",
+    "Reading": "だい2えんしゅうしつ",
     "Type": "facility",
     "Building": "図書館棟",
     "Floor": 2,
@@ -383,6 +425,7 @@
   {
     "Id": "room_2f_common_office_meeting_1",
     "Name": "第1会議室",
+    "Reading": "だい1かいぎしつ",
     "Type": "facility",
     "Building": "本部棟",
     "Floor": 2,
@@ -393,6 +436,7 @@
   {
     "Id": "room_2f_common_office_meeting_2",
     "Name": "第2会議室",
+    "Reading": "だい2かいぎしつ",
     "Type": "facility",
     "Building": "本部棟",
     "Floor": 2,

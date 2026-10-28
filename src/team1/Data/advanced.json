@@ -2,6 +2,7 @@
   {
     "Id": "room_1f_advanced_lab_design_analysis",
     "Name": "創造デザイン工房（解析・設計工房）",
+    "Reading": "そうぞうでざいんこうぼう（かいせき・せっけいこうぼう）",
     "Type": "lab",
     "Building": "専攻科棟",
     "Floor": 1,
@@ -11,6 +12,7 @@
   {
     "Id": "room_1f_advanced_lab_design_modeling",
     "Name": "創造デザイン工房（造形工房）",
+    "Reading": "そうぞうでざいんこうぼう（ぞうけいこうぼう）",
     "Type": "lab",
     "Building": "専攻科棟",
     "Floor": 1,
@@ -20,6 +22,7 @@
   {
     "Id": "room_1f_advanced_lab_design_processing",
     "Name": "創造デザイン工房（加工工房）",
+    "Reading": "そうぞうでざいんこうぼう（かこうこうぼう）",
     "Type": "lab",
     "Building": "専攻科棟",
     "Floor": 1,
@@ -29,6 +32,7 @@
   {
     "Id": "room_1f_advanced_office_tech",
     "Name": "工房技術職員室",
+    "Reading": "こうぼうぎじゅつしょくいんしつ",
     "Type": "office_tech",
     "Building": "専攻科棟",
     "Floor": 1,
@@ -38,6 +42,7 @@
   {
     "Id": "room_1f_advanced_lab_hayashida",
     "Name": "林田研究室",
+    "Reading": "はやしだけんきゅうしつ",
     "Type": "lab",
     "Building": "専攻科棟",
     "Floor": 1,
@@ -47,6 +52,7 @@
   {
     "Id": "room_1f_advanced_lab_AED1",
     "Name": "学生研究室AED1",
+    "Reading": "がくせいけんきゅうしつAED1",
     "Type": "lab",
     "Building": "専攻科棟",
     "Floor": 1,
@@ -56,6 +62,7 @@
   {
     "Id": "room_1f_advanced_lab_NVC",
     "Name": "NVC研究室",
+    "Reading": "NVCけんきゅうしつ",
     "Type": "lab",
     "Building": "専攻科棟",
     "Floor": 1,
@@ -65,6 +72,7 @@
   {
     "Id": "room_2f_advanced_classroom_lecture_large",
     "Name": "大講義室",
+    "Reading": "だいこうぎしつ",
     "Type": "classroom",
     "Building": "専攻科棟",
     "Floor": 2,
@@ -74,6 +82,7 @@
   {
     "Id": "room_2f_advanced_classroom_lecture_mid_1",
     "Name": "中講義室1",
+    "Reading": "なかこうぎしつ1",
     "Type": "classroom",
     "Building": "専攻科棟",
     "Floor": 2,
@@ -83,6 +92,7 @@
   {
     "Id": "room_2f_advanced_classroom_lecture_mid_2",
     "Name": "中講義室2",
+    "Reading": "なかこうぎしつ2",
     "Type": "classroom",
     "Building": "専攻科棟",
     "Floor": 2,
@@ -101,6 +111,7 @@
   {
     "Id": "room_2f_advanced_facility_research_office",
     "Name": "研究渉外主事室",
+    "Reading": "けんきゅうしょうがいしゅじしつ",
     "Type": "facility",
     "Building": "専攻科棟",
     "Floor": 2,
@@ -110,6 +121,7 @@
   {
     "Id": "room_3f_advanced_lab_energy",
     "Name": "エネルギー工学実験室",
+    "Reading": "えねるぎーこうがくじっけんしつ",
     "Type": "lab",
     "Building": "専攻科棟",
     "Floor": 3,
@@ -119,6 +131,7 @@
   {
     "Id": "room_3f_advanced_lab_electronics_applied_2",
     "Name": "電子応用第2実験室",
+    "Reading": "でんしおうようだい2じっけんしつ",
     "Type": "lab",
     "Building": "専攻科棟",
     "Floor": 3,
@@ -128,6 +141,7 @@
   {
     "Id": "room_3f_advanced_lab_biophysics",
     "Name": "生物物理化学実験室",
+    "Reading": "せいぶつぶつりかがくじっけんしつ",
     "Type": "lab",
     "Building": "専攻科棟",
     "Floor": 3,
@@ -137,6 +151,7 @@
   {
     "Id": "room_3f_advanced_lab_AE2",
     "Name": "学生研究室AE2",
+    "Reading": "がくせいけんきゅうしつAE2",
     "Type": "lab",
     "Building": "専攻科棟",
     "Floor": 3,
@@ -146,6 +161,7 @@
   {
     "Id": "room_3f_advanced_lab_AC",
     "Name": "学生研究室AC",
+    "Reading": "がくせいけんきゅうしつAC",
     "Type": "lab",
     "Building": "専攻科棟",
     "Floor": 3,
@@ -155,6 +171,7 @@
   {
     "Id": "room_3f_advanced_lab_tsuyoshi",
     "Name": "津吉研究室",
+    "Reading": "つよしけんきゅうしつ",
     "Type": "lab",
     "Building": "専攻科棟",
     "Floor": 3,
@@ -164,6 +181,7 @@
   {
     "Id": "room_3f_advanced_lab_kuki",
     "Name": "九鬼研究室",
+    "Reading": "くきけんきゅうしつ",
     "Type": "lab",
     "Building": "専攻科棟",
     "Floor": 3,

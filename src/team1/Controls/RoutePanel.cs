@@ -16,6 +16,10 @@ namespace team1.Controls
         private readonly Label _subtitle;
         private readonly FlowLayoutPanel _steps;
         private readonly Label _note;
+        private readonly FlowLayoutPanel _alternatives;
+
+        /// <summary>「ほかの行き方」のボタンが押された</summary>
+        public event Action<RouteAlternative>? AlternativeChosen;
 
         public RoutePanel()
         {
@@ -61,7 +65,18 @@ namespace team1.Controls
                 BackColor = Theme.Surface,
                 Padding = new Padding(0, (int)(6 * dpi), 0, 0),
             };
+            _alternatives = new FlowLayoutPanel
+            {
+                Dock = DockStyle.Bottom,
+                AutoSize = true,
+                FlowDirection = FlowDirection.TopDown,
+                WrapContents = false,
+                BackColor = Theme.Surface,
+                Padding = new Padding(0, (int)(8 * Theme.Scale(this)), 0, (int)(8 * Theme.Scale(this))),
+                Visible = false,
+            };
             Controls.Add(_steps);
+            Controls.Add(_alternatives);
             Controls.Add(_note);
             Controls.Add(_title);
             Controls.Add(_subtitle);
@@ -96,6 +111,41 @@ namespace team1.Controls
             FitSteps();
             _steps.ResumeLayout();
             Visible = true;
+        }
+
+        /// <summary>「ほかの行き方」(条件を変えると違う道になるもの) をボタンで出す。無ければ隠す</summary>
+        public void SetAlternatives(IReadOnlyList<RouteAlternative> alternatives)
+        {
+            foreach (Control c in _alternatives.Controls) c.Dispose();
+            _alternatives.Controls.Clear();
+            _alternatives.Visible = alternatives.Count > 0;
+            if (alternatives.Count == 0) return;
+
+            float dpi = Theme.Scale(this);
+            _alternatives.Controls.Add(new Label
+            {
+                Text = "ほかの行き方",
+                AutoSize = true,
+                Font = Theme.Ui(9.5f),
+                ForeColor = Theme.Muted,
+                Margin = new Padding(0, 0, 0, (int)(6 * dpi)),
+            });
+
+            int width = Math.Max(_alternatives.ClientSize.Width, (int)(250 * dpi));
+            foreach (var alt in alternatives)
+            {
+                string percent = Math.Abs(alt.ExtraPercent) < 1 ? "ほぼ同じ" : alt.ExtraPercent > 0 ? $"+{alt.ExtraPercent:0}%" : $"{alt.ExtraPercent:0}%";
+                var button = new ModernButton
+                {
+                    Text = $"{alt.Label}  ({percent})",
+                    Size = new Size(width, (int)(38 * dpi)),
+                    Margin = new Padding(0, 0, 0, (int)(6 * dpi)),
+                    Font = Theme.Ui(10f),
+                };
+                var chosen = alt;
+                button.Click += (_, _) => AlternativeChosen?.Invoke(chosen);
+                _alternatives.Controls.Add(button);
+            }
         }
 
         protected override void OnPaint(PaintEventArgs e)

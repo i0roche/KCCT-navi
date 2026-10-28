@@ -33,7 +33,7 @@ namespace team1
         /// <summary>地図 (Fill) より先に、周りの部品を追加する。後で追加したものほど外側にドッキングされる</summary>
         private void BuildLayout()
         {
-            _searchPopup = new SearchPopup(_vm.GetSuggestions);
+            _searchPopup = new SearchPopup(_vm.GetSuggestionHits);
             _toolbar = new AppToolbar();
             _routeBar = new RouteBar();
             _routePanel = new RoutePanel();
@@ -53,7 +53,12 @@ namespace team1
             _toolbar.FloorDownClicked += () => ChangeFloorByUser(_vm.MapState.CurrentFloor - 1);
             _toolbar.ZoomInClicked += () => _mapViewer.ZoomBy(1.25f);
             _toolbar.ZoomOutClicked += () => _mapViewer.ZoomBy(0.8f);
-            _searchPopup.Attach(_toolbar.SearchBox, OpenPlace);
+            // 一覧画面では、検索欄の文字で一覧を絞り込む (種別・建物のフィルターはそのまま効く)。候補の一覧は出さない
+            _searchPopup.Attach(_toolbar.SearchBox, OpenPlace, enabled: () => !_roomList.Visible);
+            _toolbar.SearchBox.TextChanged += (_, _) =>
+            {
+                if (_roomList.Visible) _roomList.SetQuery(_toolbar.SearchBox.Text);
+            };
             if (_vm.FavoritesEnabled) _toolbar.Extras.Controls.Add(MakeFavoritesButton());
 
             // 経路の入力欄 (入力欄の文字は、「表示」を押したときに場所へ直す)
@@ -68,6 +73,15 @@ namespace team1
             _routeBar.RainChanged += on => { _vm.AvoidOutdoor = on; RecalculateRoute(); };
             _routeBar.AvoidStairsChanged += on => { _vm.AvoidStairs = on; RecalculateRoute(); };
             _routeBar.NearestRequested += category => _vm.ShowNearest(category);
+            // 「ほかの行き方」: 雨の日・階段を避けるの設定を、その提案に合わせて経路を引き直す
+            _routePanel.AlternativeChosen += alt =>
+            {
+                _routeBar.RainMode = alt.AvoidOutdoor;
+                _routeBar.AvoidStairs = alt.AvoidStairs;
+                _vm.AvoidOutdoor = alt.AvoidOutdoor;
+                _vm.AvoidStairs = alt.AvoidStairs;
+                RecalculateRoute();
+            };
 
             // 地図の部屋の吹き出し
             _placePopup.SetAsStart += place => { _vm.SetStart(place); _placePopup.HidePopup(); };
@@ -242,6 +256,7 @@ namespace team1
                 ? "屋外を通らないと行けないため、屋外を通る道です。"
                 : null;
             _routePanel.ShowRoute(state.Route, note);
+            _routePanel.SetAlternatives(_vm.SuggestAlternatives());
 
             UpdateStatusLocation();
         }

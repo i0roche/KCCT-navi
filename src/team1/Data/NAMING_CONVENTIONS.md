@@ -62,6 +62,7 @@ A*アルゴリズムで上下階を繋いだり、特殊な目的地（トイレ
 {
   "Id": "room_4f_mech_hr_m1a",  // SVGのIDと完全一致させる
   "Name": "M1A",                // アプリ表示名
+  "Reading": "えむいちえー",     // 名前の読み (ひらがな。省略可。ASCII だけの名前は不要)
   "Type": "classroom",          // 種類 (classroom, lab, facility, club, office, office_tech, restroom, stairs, elevator)
   "Building": "一般科A棟",       // 建物名
   "Floor": 2,                   // 階数 (int)

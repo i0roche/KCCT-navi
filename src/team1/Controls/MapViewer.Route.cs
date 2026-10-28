@@ -163,6 +163,7 @@ namespace team1.Controls
             {
                 _animationTimer?.Dispose();
                 _inertiaTimer.Dispose();
+                _zoomTimer.Dispose();
             }
             base.Dispose(disposing);
         }

@@ -2,6 +2,7 @@
   {
     "Id": "room_1f_elec_office_tech",
     "Name": "技術職員室(電気工学科)",
+    "Reading": "ぎじゅつしょくいんしつ(でんきこうがくか)",
     "Type": "office_tech",
     "Building": "電気工学科棟",
     "Floor": 1,
@@ -11,6 +12,7 @@
   {
     "Id": "room_1f_elec_lab_power_1",
     "Name": "電力工学実験室1",
+    "Reading": "でんりょくこうがくじっけんしつ1",
     "Type": "lab",
     "Building": "電気工学科棟",
     "Floor": 1,
@@ -20,6 +22,7 @@
   {
     "Id": "room_1f_elec_lab_power_2",
     "Name": "電力工学実験室2",
+    "Reading": "でんりょくこうがくじっけんしつ2",
     "Type": "lab",
     "Building": "電気工学科棟",
     "Floor": 1,
@@ -29,6 +32,7 @@
   {
     "Id": "room_1f_elec_lab_machine_1",
     "Name": "電気機械実験室1",
+    "Reading": "でんききかいじっけんしつ1",
     "Type": "lab",
     "Building": "電気工学科棟",
     "Floor": 1,
@@ -38,6 +42,7 @@
   {
     "Id": "room_1f_elec_lab_machine_2",
     "Name": "電気機械実験室2",
+    "Reading": "でんききかいじっけんしつ2",
     "Type": "lab",
     "Building": "電気工学科棟",
     "Floor": 1,
@@ -47,6 +52,7 @@
   {
     "Id": "room_1f_elec_lab_nano_device",
     "Name": "ナノデバイス実験室",
+    "Reading": "なのでばいすじっけんしつ",
     "Type": "lab",
     "Building": "電気工学科棟",
     "Floor": 1,
@@ -56,6 +62,7 @@
   {
     "Id": "room_1f_elec_lab_nano_material",
     "Name": "ナノマテリアル実験室",
+    "Reading": "なのまてりあるじっけんしつ",
     "Type": "lab",
     "Building": "電気工学科棟",
     "Floor": 1,
@@ -65,6 +72,7 @@
   {
     "Id": "room_1f_elec_facility_equipment",
     "Name": "器材室",
+    "Reading": "きざいしつ",
     "Type": "facility",
     "Building": "電気工学科棟",
     "Floor": 1,
@@ -74,6 +82,7 @@
   {
     "Id": "room_2f_elec_lab_measurement",
     "Name": "電気計測実験室",
+    "Reading": "でんきけいそくじっけんしつ",
     "Type": "lab",
     "Building": "電気工学科棟",
     "Floor": 2,
@@ -83,6 +92,7 @@
   {
     "Id": "room_2f_elec_lab_comm",
     "Name": "通信工学実験室",
+    "Reading": "つうしんこうがくじっけんしつ",
     "Type": "lab",
     "Building": "電気工学科棟",
     "Floor": 2,
@@ -92,6 +102,7 @@
   {
     "Id": "room_2f_elec_lab_electronics_1",
     "Name": "電子工学実験室1",
+    "Reading": "でんしこうがくじっけんしつ1",
     "Type": "lab",
     "Building": "電気工学科棟",
     "Floor": 2,
@@ -101,6 +112,7 @@
   {
     "Id": "room_2f_elec_lab_electronics_2",
     "Name": "電子工学実験室2",
+    "Reading": "でんしこうがくじっけんしつ2",
     "Type": "lab",
     "Building": "電気工学科棟",
     "Floor": 2,
@@ -110,6 +122,7 @@
   {
     "Id": "room_2f_elec_lab_control",
     "Name": "制御工学実験室",
+    "Reading": "せいぎょこうがくじっけんしつ",
     "Type": "lab",
     "Building": "電気工学科棟",
     "Floor": 2,
@@ -148,6 +161,7 @@
   {
     "Id": "room_3f_elec_lab_medical_image",
     "Name": "医用画像工学実験室",
+    "Reading": "いようがぞうこうがくじっけんしつ",
     "Type": "lab",
     "Building": "電気工学科棟",
     "Floor": 3,
@@ -157,6 +171,7 @@
   {
     "Id": "room_3f_elec_classroom_info",
     "Name": "情報演習室",
+    "Reading": "じょうほうえんしゅうしつ",
     "Type": "classroom",
     "Building": "電気工学科棟",
     "Floor": 3,
@@ -166,6 +181,7 @@
   {
     "Id": "room_3f_elec_lab_applied_elec",
     "Name": "電気応用実験室",
+    "Reading": "でんきおうようじっけんしつ",
     "Type": "lab",
     "Building": "電気工学科棟",
     "Floor": 3,
@@ -175,6 +191,7 @@
   {
     "Id": "room_3f_elec_facility_graduation_1",
     "Name": "卒研室1",
+    "Reading": "そつけんしつ1",
     "Type": "facility",
     "Building": "電気工学科棟",
     "Floor": 3,
@@ -184,6 +201,7 @@
   {
     "Id": "room_3f_elec_facility_graduation_2",
     "Name": "卒研室2",
+    "Reading": "そつけんしつ2",
     "Type": "facility",
     "Building": "電気工学科棟",
     "Floor": 3,
@@ -193,6 +211,7 @@
   {
     "Id": "room_3f_elec_facility_graduation_3",
     "Name": "卒研室3",
+    "Reading": "そつけんしつ3",
     "Type": "facility",
     "Building": "電気工学科棟",
     "Floor": 3,
@@ -202,6 +221,7 @@
   {
     "Id": "room_3f_elec_facility_graduation_4",
     "Name": "卒研室4",
+    "Reading": "そつけんしつ4",
     "Type": "facility",
     "Building": "電気工学科棟",
     "Floor": 3,
@@ -211,6 +231,7 @@
   {
     "Id": "room_3f_elec_lab_kawai",
     "Name": "河合 研究室",
+    "Reading": "かわい けんきゅうしつ",
     "Type": "lab",
     "Building": "電気工学科棟",
     "Floor": 3,
@@ -220,6 +241,7 @@
   {
     "Id": "room_3f_elec_lab_akamatsu",
     "Name": "赤松 研究室",
+    "Reading": "あかまつ けんきゅうしつ",
     "Type": "lab",
     "Building": "電気工学科棟",
     "Floor": 3,
@@ -229,6 +251,7 @@
   {
     "Id": "room_3f_elec_lab_sakai",
     "Name": "酒井 研究室",
+    "Reading": "さかい けんきゅうしつ",
     "Type": "lab",
     "Building": "電気工学科棟",
     "Floor": 3,
@@ -247,6 +270,7 @@
   {
     "Id": "room_4f_elec_classroom_unix",
     "Name": "UNIX演習室",
+    "Reading": "UNIXえんしゅうしつ",
     "Type": "classroom",
     "Building": "電気工学科棟",
     "Floor": 4,
@@ -256,6 +280,7 @@
   {
     "Id": "room_4f_elec_facility_meeting",
     "Name": "会議室",
+    "Reading": "かいぎしつ",
     "Type": "facility",
     "Building": "電気工学科棟",
     "Floor": 4,
@@ -265,6 +290,7 @@
   {
     "Id": "room_4f_elec_facility_graduation_5",
     "Name": "卒研室5",
+    "Reading": "そつけんしつ5",
     "Type": "facility",
     "Building": "電気工学科棟",
     "Floor": 4,
@@ -274,6 +300,7 @@
   {
     "Id": "room_4f_elec_facility_graduation_6",
     "Name": "卒研室6",
+    "Reading": "そつけんしつ6",
     "Type": "facility",
     "Building": "電気工学科棟",
     "Floor": 4,
@@ -283,6 +310,7 @@
   {
     "Id": "room_4f_elec_facility_graduation_7",
     "Name": "卒研室7",
+    "Reading": "そつけんしつ7",
     "Type": "facility",
     "Building": "電気工学科棟",
     "Floor": 4,
@@ -292,6 +320,7 @@
   {
     "Id": "room_4f_elec_facility_graduation_8",
     "Name": "卒研室8",
+    "Reading": "そつけんしつ8",
     "Type": "facility",
     "Building": "電気工学科棟",
     "Floor": 4,
@@ -301,6 +330,7 @@
   {
     "Id": "room_4f_elec_facility_graduation_9",
     "Name": "卒研室9",
+    "Reading": "そつけんしつ9",
     "Type": "facility",
     "Building": "電気工学科棟",
     "Floor": 4,
@@ -310,6 +340,7 @@
   {
     "Id": "room_4f_elec_facility_graduation_10",
     "Name": "卒研室10",
+    "Reading": "そつけんしつ10",
     "Type": "facility",
     "Building": "電気工学科棟",
     "Floor": 4,
@@ -319,6 +350,7 @@
   {
     "Id": "room_4f_elec_lab_michihira",
     "Name": "道平 研究室",
+    "Reading": "みちたいら けんきゅうしつ",
     "Type": "lab",
     "Building": "電気工学科棟",
     "Floor": 4,
@@ -328,6 +360,7 @@
   {
     "Id": "room_4f_elec_lab_satou",
     "Name": "佐藤(徹) 研究室",
+    "Reading": "さとう(とおる) けんきゅうしつ",
     "Type": "lab",
     "Building": "電気工学科棟",
     "Floor": 4,
@@ -337,6 +370,7 @@
   {
     "Id": "room_4f_elec_lab_morita",
     "Name": "森田 研究室",
+    "Reading": "もりた けんきゅうしつ",
     "Type": "lab",
     "Building": "電気工学科棟",
     "Floor": 4,
@@ -346,6 +380,7 @@
   {
     "Id": "room_4f_elec_lab_katou",
     "Name": "加藤 研究室",
+    "Reading": "かとう けんきゅうしつ",
     "Type": "lab",
     "Building": "電気工学科棟",
     "Floor": 4,
@@ -355,6 +390,7 @@
   {
     "Id": "room_4f_elec_lab_nakamura",
     "Name": "中村 研究室",
+    "Reading": "なかむら けんきゅうしつ",
     "Type": "lab",
     "Building": "電気工学科棟",
     "Floor": 4,
@@ -373,6 +409,7 @@
   {
     "Id": "room_2f_elec_facility_library_materials",
     "Name": "図書資料室",
+    "Reading": "としょしりょうしつ",
     "Type": "facility",
     "Building": "電気工学科棟",
     "Floor": 2,

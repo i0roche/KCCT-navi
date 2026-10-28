@@ -61,6 +61,9 @@ namespace team1
             _mapViewer.Visible = false;
             _roomList.Visible = true;
             _toolbar.ShowingMap(false);
+            // 検索欄に文字があれば、そのまま一覧の絞り込みにする
+            _searchPopup.HidePopup();
+            _roomList.SetQuery(_toolbar.SearchBox.Text);
             _roomList.BringToFront();
             _roomList.FocusQuery();
         }

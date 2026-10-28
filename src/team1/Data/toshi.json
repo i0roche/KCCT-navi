@@ -2,6 +2,7 @@
   {
     "Id": "room_1f_toshi_facility_surveying",
     "Name": "測量準備室",
+    "Reading": "そくりょうじゅんびしつ",
     "Type": "facility",
     "Building": "都市工学科棟",
     "Floor": 1,
@@ -11,6 +12,7 @@
   {
     "Id": "room_1f_toshi_facility_surveying_2",
     "Name": "測量学実習室",
+    "Reading": "そくりょうがくじっしゅうしつ",
     "Type": "facility",
     "Building": "都市工学科棟",
     "Floor": 1,
@@ -20,6 +22,7 @@
   {
     "Id": "room_1f_toshi_lab_material_1",
     "Name": "材料実験室1",
+    "Reading": "ざいりょうじっけんしつ1",
     "Type": "lab",
     "Building": "都市工学科棟",
     "Floor": 1,
@@ -29,6 +32,7 @@
   {
     "Id": "room_1f_toshi_lab_structure",
     "Name": "構造実験室",
+    "Reading": "こうぞうじっけんしつ",
     "Type": "lab",
     "Building": "都市工学科棟",
     "Floor": 1,
@@ -38,6 +42,7 @@
   {
     "Id": "room_1f_toshi_lab_hydraulics",
     "Name": "水理実験室",
+    "Reading": "すいりじっけんしつ",
     "Type": "lab",
     "Building": "実験排水処理施設棟",
     "Floor": 1,
@@ -47,6 +52,7 @@
   {
     "Id": "room_2f_toshi_lab_material_2",
     "Name": "材料実験室2",
+    "Reading": "ざいりょうじっけんしつ2",
     "Type": "lab",
     "Building": "都市工学科棟",
     "Floor": 2,
@@ -56,6 +62,7 @@
   {
     "Id": "room_2f_toshi_lab_soil",
     "Name": "土質工学実験室",
+    "Reading": "どしつこうがくじっけんしつ",
     "Type": "lab",
     "Building": "都市工学科棟",
     "Floor": 2,
@@ -65,6 +72,7 @@
   {
     "Id": "room_2f_toshi_lab_sanitary",
     "Name": "衛生工学実験室",
+    "Reading": "えいせいこうがくじっけんしつ",
     "Type": "lab",
     "Building": "都市工学科棟",
     "Floor": 2,
@@ -74,6 +82,7 @@
   {
     "Id": "room_2f_toshi_lab_imai",
     "Name": "今井 研究室",
+    "Reading": "いまい けんきゅうしつ",
     "Type": "lab",
     "Building": "都市工学科棟",
     "Floor": 2,
@@ -83,6 +92,7 @@
   {
     "Id": "room_2f_toshi_lab_nonami",
     "Name": "野並 研究室",
+    "Reading": "のなみ けんきゅうしつ",
     "Type": "lab",
     "Building": "都市工学科棟",
     "Floor": 2,
@@ -92,6 +102,7 @@
   {
     "Id": "room_2f_toshi_facility_graduation_AS3",
     "Name": "学生研究室 AS3",
+    "Reading": "がくせいけんきゅうしつ AS3",
     "Type": "facility",
     "Building": "都市工学科棟",
     "Floor": 2,
@@ -101,6 +112,7 @@
   {
     "Id": "room_2f_toshi_facility_graduation_AS4",
     "Name": "学生研究室 AS4",
+    "Reading": "がくせいけんきゅうしつ AS4",
     "Type": "facility",
     "Building": "都市工学科棟",
     "Floor": 2,
@@ -119,6 +131,7 @@
   {
     "Id": "room_3f_toshi_office_tech",
     "Name": "技術職員室(都市工学科)",
+    "Reading": "ぎじゅつしょくいんしつ(としこうがくか)",
     "Type": "office_tech",
     "Building": "都市工学科棟",
     "Floor": 3,
@@ -128,6 +141,7 @@
   {
     "Id": "room_3f_toshi_facility_meeting",
     "Name": "会議室",
+    "Reading": "かいぎしつ",
     "Type": "facility",
     "Building": "都市工学科棟",
     "Floor": 3,
@@ -137,6 +151,7 @@
   {
     "Id": "room_3f_toshi_lab_uno",
     "Name": "宇野 研究室",
+    "Reading": "うの けんきゅうしつ",
     "Type": "lab",
     "Building": "都市工学科棟",
     "Floor": 3,
@@ -146,6 +161,7 @@
   {
     "Id": "room_3f_toshi_lab_mizukoshi",
     "Name": "水越 研究室",
+    "Reading": "みずこし けんきゅうしつ",
     "Type": "lab",
     "Building": "都市工学科棟",
     "Floor": 3,
@@ -155,6 +171,7 @@
   {
     "Id": "room_3f_toshi_lab_torii",
     "Name": "鳥居 研究室",
+    "Reading": "とりい けんきゅうしつ",
     "Type": "lab",
     "Building": "都市工学科棟",
     "Floor": 3,
@@ -164,6 +181,7 @@
   {
     "Id": "room_3f_toshi_lab_kozuka",
     "Name": "小塚 研究室",
+    "Reading": "こづか けんきゅうしつ",
     "Type": "lab",
     "Building": "都市工学科棟",
     "Floor": 3,
@@ -173,6 +191,7 @@
   {
     "Id": "room_3f_toshi_lab_ihara",
     "Name": "伊原 研究室",
+    "Reading": "いはら けんきゅうしつ",
     "Type": "lab",
     "Building": "都市工学科棟",
     "Floor": 3,
@@ -182,6 +201,7 @@
   {
     "Id": "room_3f_toshi_lab_kakiki",
     "Name": "柿木 研究室",
+    "Reading": "かきのき けんきゅうしつ",
     "Type": "lab",
     "Building": "都市工学科棟",
     "Floor": 3,
@@ -191,6 +211,7 @@
   {
     "Id": "room_3f_toshi_lab_kaminaka",
     "Name": "上中 研究室",
+    "Reading": "うえなか けんきゅうしつ",
     "Type": "lab",
     "Building": "都市工学科棟",
     "Floor": 3,
@@ -200,6 +221,7 @@
   {
     "Id": "room_3f_toshi_lab_takashina",
     "Name": "高科 研究室",
+    "Reading": "たかしな けんきゅうしつ",
     "Type": "lab",
     "Building": "都市工学科棟",
     "Floor": 3,
@@ -209,6 +231,7 @@
   {
     "Id": "room_3f_toshi_facility_graduation_AS1",
     "Name": "学生研究室 AS1",
+    "Reading": "がくせいけんきゅうしつ AS1",
     "Type": "facility",
     "Building": "都市工学科棟",
     "Floor": 3,
@@ -218,6 +241,7 @@
   {
     "Id": "room_3f_toshi_facility_graduation_AS2",
     "Name": "学生研究室 AS2",
+    "Reading": "がくせいけんきゅうしつ AS2",
     "Type": "facility",
     "Building": "都市工学科棟",
     "Floor": 3,
@@ -227,6 +251,7 @@
   {
     "Id": "room_3f_toshi_facility_graduation_AS5",
     "Name": "学生研究室 AS5",
+    "Reading": "がくせいけんきゅうしつ AS5",
     "Type": "facility",
     "Building": "都市工学科棟",
     "Floor": 3,
@@ -263,6 +288,7 @@
   {
     "Id": "room_4f_toshi_classroom_classroom",
     "Name": "小演習室",
+    "Reading": "しょうえんしゅうしつ",
     "Type": "classroom",
     "Building": "都市工学科棟",
     "Floor": 4,
@@ -272,6 +298,7 @@
   {
     "Id": "room_4f_toshi_lab_planning",
     "Name": "計画学実験室",
+    "Reading": "けいかくがくじっけんしつ",
     "Type": "lab",
     "Building": "都市工学科棟",
     "Floor": 4,
@@ -281,6 +308,7 @@
   {
     "Id": "room_4f_toshi_facility_drawing",
     "Name": "製図室",
+    "Reading": "せいずしつ",
     "Type": "facility",
     "Building": "都市工学科棟",
     "Floor": 4,
@@ -290,6 +318,7 @@
   {
     "Id": "room_4f_toshi_facility_info_proc",
     "Name": "情報処理室",
+    "Reading": "じょうほうしょりしつ",
     "Type": "facility",
     "Building": "都市工学科棟",
     "Floor": 4,
@@ -299,6 +328,7 @@
   {
     "Id": "room_4f_toshi_classroom_classroom_2",
     "Name": "演習室",
+    "Reading": "えんしゅうしつ",
     "Type": "classroom",
     "Building": "都市工学科棟",
     "Floor": 4,
@@ -308,6 +338,7 @@
   {
     "Id": "room_4f_toshi_facility_meeting_4",
     "Name": "4階会議室",
+    "Reading": "4かいかいぎしつ",
     "Type": "facility",
     "Building": "都市工学科棟",
     "Floor": 4,

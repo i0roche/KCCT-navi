@@ -53,6 +53,7 @@ namespace team1.Controls
         public void StopInertia()
         {
             _inertiaTimer.Stop();
+            _zoomTimer.Stop();   // ダブルクリックの拡大アニメーションも、ほかの操作で止まる
             _velocity = PointF.Empty;
         }
     }

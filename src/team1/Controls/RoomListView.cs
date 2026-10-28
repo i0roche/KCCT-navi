@@ -1,6 +1,7 @@
 using System.Drawing.Drawing2D;
 
 using team1.Controls.Modern;
+using team1.Core.Logic;
 using team1.Core.Models;
 using team1.Core.Usecases;
 
@@ -111,6 +112,12 @@ namespace team1.Controls
 
         public void FocusQuery() => _queryBox.Inner.Focus();
 
+        /// <summary>検索欄の文字を外から変える (ツールバーの検索欄を、一覧の絞り込みとして使うため)</summary>
+        public void SetQuery(string text)
+        {
+            if (_queryBox.Inner.Text != text) _queryBox.Inner.Text = text;
+        }
+
         private void AddChip(FlowLayoutPanel panel, string text, string type, float dpi)
         {
             var width = TextRenderer.MeasureText(text, Theme.Ui(10.5f)).Width + (int)(36 * dpi);
@@ -155,7 +162,7 @@ namespace team1.Controls
             if (_list == null) return; // コンストラクターの途中
             UpdateChips();
             var places = _search.Filter(_type, _building, _queryBox.Inner.Text).ToList();
-            _list.SetItems(places);
+            _list.SetItems(places, _queryBox.Inner.Text);
             _countLabel.Text = $"{places.Count} 件";
         }
 
@@ -168,6 +175,7 @@ namespace team1.Controls
             private const float NameShare = 0.34f, BuildingShare = 0.26f, FloorShare = 0.10f;
 
             private List<Place> _items = [];
+            private string _query = "";
             private int _hover = -1;
             private int _selected = -1;
             private Rectangle _goButton;
@@ -186,9 +194,10 @@ namespace team1.Controls
             private int RowHeight => (int)(46 * Theme.Scale(this));
             private int HeaderHeight => (int)(38 * Theme.Scale(this));
 
-            public void SetItems(List<Place> items)
+            public void SetItems(List<Place> items, string query)
             {
                 _items = items;
+                _query = query;
                 _hover = -1;
                 _selected = items.Count > 0 ? 0 : -1;
                 AutoScrollMinSize = new Size(0, HeaderHeight + items.Count * RowHeight + (int)(8 * Theme.Scale(this)));
@@ -319,7 +328,8 @@ namespace team1.Controls
                     }
 
                     var flags = TextFormatFlags.NoPadding | TextFormatFlags.VerticalCenter | TextFormatFlags.EndEllipsis;
-                    TextRenderer.DrawText(g, place.Name, bold, new Rectangle(nameX, y, buildingX - nameX - (int)(10 * dpi), RowHeight), Theme.Text, flags);
+                    // 名前: 検索のヒット部分はオレンジの背景
+                    HighlightedText.Draw(g, place.Name, SearchText.HighlightRanges(place.Name, _query), bold, new Rectangle(nameX, y, buildingX - nameX - (int)(10 * dpi), RowHeight), Theme.Text);
                     TextRenderer.DrawText(g, place.Building, normal, new Rectangle(buildingX, y, floorX - buildingX - (int)(10 * dpi), RowHeight), Theme.Muted, flags);
 
                     Badge(g, $"{place.Floor}F", floorX, y, Theme.Background, Theme.Text, dpi, Theme.Ui(10f, FontStyle.Bold));

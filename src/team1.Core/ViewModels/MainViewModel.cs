@@ -35,6 +35,12 @@ namespace team1.Core.ViewModels
 
         public bool FavoritesEnabled => !options.Kiosk;
 
+        /// <summary>候補 (検索の当たりの強い順。1 件も当たらないときは、誤字を許した「近い候補」)</summary>
+        public IReadOnlyList<SearchHit> GetSuggestionHits(string query)
+            => string.IsNullOrWhiteSpace(query)
+                ? Array.Empty<SearchHit>()
+                : searchUsecase.SearchRanked(query.Trim()).Take(SuggestionLimit).ToList();
+
         public IReadOnlyList<Place> GetSuggestions(string query)
             => string.IsNullOrWhiteSpace(query)
                 ? Array.Empty<Place>()
@@ -121,6 +127,42 @@ namespace team1.Core.ViewModels
         }
 
         public void ClearRoute() => routeState.SetRoute(null);
+
+        /// <summary>
+        /// いまの行き方のほかに、条件を変えると実際に違う道になるものを提案する。
+        /// 例: 屋外を通る行き方なら「屋根のある道で行く (+12%)」、階段を使う行き方なら「階段を使わずに行く」。
+        /// 雨の日・階段を避けるを入れているときは、その逆 (「最短の道で行く (-8%)」など) を、5% 以上短くなるときだけ出す
+        /// </summary>
+        public IReadOnlyList<RouteAlternative> SuggestAlternatives()
+        {
+            if (routeState.Route is not { IsFound: true } current || routeState.Start is not { } start || routeState.Goal is not { } goal)
+                return [];
+
+            var suggestions = new List<RouteAlternative>();
+
+            void Consider(string label, bool rain, bool stairs, Func<RouteResult, bool> worthIt)
+            {
+                var alt = routeUsecase.FindRoute(start, goal, rain, stairs);
+                if (!alt.IsFound || !worthIt(alt) || SameRoute(current, alt)) return;
+                double extra = current.Length > 0 ? (alt.Length - current.Length) / current.Length * 100.0 : 0;
+                suggestions.Add(new RouteAlternative(label, rain, stairs, extra));
+            }
+
+            if (!AvoidOutdoor && current.PassesOutdoor)
+                Consider("屋根のある道で行く", true, AvoidStairs, alt => !alt.PassesOutdoor);
+            if (!AvoidStairs && current.ChangesFloor && !current.UsesElevator)
+                Consider("階段を使わずに行く", AvoidOutdoor, true, alt => alt.UsesElevator || !alt.ChangesFloor);
+            if (AvoidOutdoor)
+                Consider("最短の道で行く", false, AvoidStairs, alt => alt.Length < current.Length * 0.95f);
+            if (AvoidStairs)
+                Consider("階段を使って行く", AvoidOutdoor, false, alt => alt.Length < current.Length * 0.95f);
+
+            return suggestions;
+        }
+
+        // 通る場所 (ノードの並び) が同じなら、同じ行き方
+        private static bool SameRoute(RouteResult a, RouteResult b)
+            => a.Edges.Count == b.Edges.Count && a.Edges.Zip(b.Edges).All(p => p.First.From == p.Second.From && p.First.To == p.Second.To);
 
         // 雨の日モードでも、屋外しか道が無い場所には屋外を通る。黙って案内せず、利用者に知らせる
         private void NotifyIfOutdoor(RouteResult result)

@@ -4,6 +4,9 @@ namespace team1.Core.Models
     {
         public string Id { get; set; } = "";
         public string Name { get; set; } = "";
+
+        /// <summary>名前の読み (ひらがな)。ひらがな・カタカナ・ローマ字・あいまい検索に使う。無くてもよい (scripts/generate_readings が作る)</summary>
+        public string Reading { get; set; } = "";
         public string Type { get; set; } = "";
         public string Building { get; set; } = "";
         public int Floor { get; set; }
