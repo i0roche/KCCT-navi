@@ -14,6 +14,11 @@ updates:
         patterns:
           - "SkiaSharp*"
           - "Svg.Skia"
+    ignore:
+      # SkiaSharp 3.119.1 → 最新で SKPath の変更系 API が obsolete になり、
+      # -warnaserror のビルドが落ちる。SKPathBuilder へ移行するまで固定する
+      - dependency-name: "SkiaSharp*"
+      - dependency-name: "Svg.Skia"
 
   - package-ecosystem: "github-actions"
     directory: "/"
