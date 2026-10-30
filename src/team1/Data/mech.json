@@ -396,11 +396,11 @@
     "Tags": ["M4R", "専門科講義棟", "mech", "HR"]
   },
   {
-    "Id": "room_2f_mech_hr_m4e",
+    "Id": "room_3f_mech_hr_m4e",
     "Name": "M4E",
     "Type": "classroom",
     "Building": "専門科講義棟",
-    "Floor": 2,
+    "Floor": 3,
     "Department": "mech",
     "Tags": ["M4E", "専門科講義棟", "mech", "HR"]
   },
@@ -475,14 +475,14 @@
     "Tags": ["早稲田 研究室", "機械工学科棟", "機械工学科", "mech", "研究室", "早稲田"]
   },
   {
-    "Id": "room_3f_mech_lab_kumano",
+    "Id": "room_3f_mech_lab_tsuji",
     "Name": "辻 研究室",
     "Reading": "つじ けんきゅうしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 3,
     "Department": "mech",
-    "Tags": ["辻 研究室", "機械工学科棟", "機械工学科", "mech", "研究室", "熊野"]
+    "Tags": ["辻 研究室", "機械工学科棟", "機械工学科", "mech", "研究室", "辻"]
   },
   {
     "Id": "room_3f_mech_lab_kumano",
@@ -562,11 +562,11 @@
     "Tags": ["M5R", "専門科講義棟", "mech", "HR"]
   },
   {
-    "Id": "room_3f_mech_hr_m5e",
+    "Id": "room_2f_mech_hr_m5e",
     "Name": "M5E",
     "Type": "classroom",
     "Building": "専門科講義棟",
-    "Floor": 3,
+    "Floor": 2,
     "Department": "mech",
     "Tags": ["M5E", "専門科講義棟", "mech", "HR"]
   },
@@ -591,7 +591,7 @@
     "Tags": ["PBL演習室1", "機械工学科棟", "機械工学科", "mech"]
   },
   {
-    "Id": "room_4f_mech_classroom_pbl",
+    "Id": "room_4f_mech_classroom_pbl_2",
     "Name": "PBL演習室2",
     "Reading": "PBLえんしゅうしつ2",
     "Type": "classroom",

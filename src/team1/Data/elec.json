@@ -90,7 +90,7 @@
     "Tags": ["電気計測実験室1", "電気工学科棟", "電気工学科", "elec", "実験室"]
   },
   {
-    "Id": "room_2f_elec_lab_measurement",
+    "Id": "room_2f_elec_lab_measurement_2",
     "Name": "電気計測実験室2",
     "Reading": "でんきけいそくじっけんしつ2",
     "Type": "lab",
@@ -100,7 +100,7 @@
     "Tags": ["電気計測実験室2", "電気工学科棟", "電気工学科", "elec", "実験室"]
   },
   {
-    "Id": "room_2f_elec_lab_measurement",
+    "Id": "room_2f_elec_lab_energy",
     "Name": "エネルギー工学実験室",
     "Reading": "えねるぎーこうがくじっけんしつ",
     "Type": "lab",
@@ -159,24 +159,22 @@
     "Tags": ["E3", "一般科A棟", "一般科", "HR"]
   },
   {
-    "Id": "room_2f_elec_hr_e4",
+    "Id": "room_4f_elec_hr_e4",
     "Name": "E4",
     "Type": "classroom",
     "Building": "専門科講義棟",
-    "Floor": 2,
+    "Floor": 4,
     "Department": "elec",
-    "Tags": ["E4", "専門科講義棟", "elec", "HR"],
-    "Hidden": true
+    "Tags": ["E4", "専門科講義棟", "elec", "HR"]
   },
   {
-    "Id": "room_2f_elec_hr_e5",
+    "Id": "room_4f_elec_hr_e5",
     "Name": "E5",
     "Type": "classroom",
     "Building": "専門科講義棟",
-    "Floor": 2,
+    "Floor": 4,
     "Department": "elec",
-    "Tags": ["E5", "専門科講義棟", "elec", "HR"],
-    "Hidden": true
+    "Tags": ["E5", "専門科講義棟", "elec", "HR"]
   },
   {
     "Id": "room_3f_elec_lab_medical_image",
@@ -269,14 +267,14 @@
     "Tags": ["赤松 研究室", "電気工学科棟", "電気工学科", "elec", "研究室", "赤松"]
   },
   {
-    "Id": "room_3f_elec_lab_akamatsu",
+    "Id": "room_3f_elec_lab_tsuyoshi",
     "Name": "津吉 研究室",
     "Reading": "つよし けんきゅうしつ",
     "Type": "lab",
     "Building": "電気工学科棟",
     "Floor": 3,
     "Department": "elec",
-    "Tags": ["津吉 研究室", "電気工学科棟", "電気工学科", "elec", "研究室", "赤松"]
+    "Tags": ["津吉 研究室", "電気工学科棟", "電気工学科", "elec", "研究室", "津吉"]
   },
   {
     "Id": "room_3f_elec_lab_sakai",
@@ -380,7 +378,7 @@
   {
     "Id": "room_4f_elec_lab_michihira",
     "Name": "道平 研究室",
-    "Reading": "みちいら けんきゅうしつ",
+    "Reading": "みちひら けんきゅうしつ",
     "Type": "lab",
     "Building": "電気工学科棟",
     "Floor": 4,
@@ -405,7 +403,7 @@
     "Building": "電気工学科棟",
     "Floor": 4,
     "Department": "elec",
-    "Tags": ["栩木 研究室", "電気工学科棟", "電気工学科", "elec", "研究室", "森田"]
+    "Tags": ["栩木 研究室", "電気工学科棟", "電気工学科", "elec", "研究室", "栩木"]
   },
   {
     "Id": "room_4f_elec_lab_katou",
