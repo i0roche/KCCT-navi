@@ -59,7 +59,7 @@ namespace team1.Controls.Modern
             using (var back = new SolidBrush(Parent?.BackColor ?? Theme.Background)) g.FillRectangle(back, ClientRectangle);
 
             var rect = new RectangleF(0.5f, 0.5f, Width - 1.5f, Height - 1.5f);
-            using var path = Theme.RoundedRect(rect, 8f);
+            using var path = Theme.RoundedRect(rect, 3f);
             using (var fill = new SolidBrush(Theme.Surface)) g.FillPath(fill, path);
             using (var pen = new Pen(Inner.Focused ? Theme.Accent : Theme.Border, Inner.Focused ? 1.6f : 1f)) g.DrawPath(pen, path);
 

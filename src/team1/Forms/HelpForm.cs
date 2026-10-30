@@ -281,10 +281,10 @@ namespace team1
 
                         // キーの形: 下だけ少し厚い、角の丸い白いキー
                         var cap = new RectangleF(x + 0.5f, top + 0.5f, w - 1, h - 3);
-                        using (var edge = Theme.RoundedRect(new RectangleF(x + 0.5f, top + 2.5f, w - 1, h - 3), 6f))
+                        using (var edge = Theme.RoundedRect(new RectangleF(x + 0.5f, top + 2.5f, w - 1, h - 3), 3f))
                         using (var edgeBrush = new SolidBrush(Color.FromArgb(205, 211, 222)))
                             g.FillPath(edgeBrush, edge);
-                        using (var top2 = Theme.RoundedRect(cap, 6f))
+                        using (var top2 = Theme.RoundedRect(cap, 3f))
                         {
                             using var fill = new SolidBrush(Color.FromArgb(250, 251, 253));
                             using var border = new Pen(Color.FromArgb(205, 211, 222));

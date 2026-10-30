@@ -75,7 +75,7 @@ namespace team1.Controls
         {
             base.OnSizeChanged(e);
             // 角を丸くする (縁は OnPaint で細い線を引いてなじませる)
-            using var path = Theme.RoundedRect(new RectangleF(0, 0, Width, Height), 12f);
+            using var path = Theme.RoundedRect(new RectangleF(0, 0, Width, Height), 4f);
             Region = new Region(path);
         }
 
@@ -86,7 +86,7 @@ namespace team1.Controls
             float dpi = Theme.Scale(this);
 
             using (var back = new SolidBrush(Theme.Surface)) g.FillRectangle(back, ClientRectangle);
-            using (var path = Theme.RoundedRect(new RectangleF(0.5f, 0.5f, Width - 1.5f, Height - 1.5f), 12f))
+            using (var path = Theme.RoundedRect(new RectangleF(0.5f, 0.5f, Width - 1.5f, Height - 1.5f), 4f))
             using (var pen = new Pen(Theme.Border)) g.DrawPath(pen, path);
 
             if (Place == null) return;

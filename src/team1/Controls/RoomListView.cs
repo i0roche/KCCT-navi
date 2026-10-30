@@ -322,7 +322,7 @@ namespace team1.Controls
 
                     if (i == _selected || i == _hover)
                     {
-                        using var path = Theme.RoundedRect(row, 8f);
+                        using var path = Theme.RoundedRect(row, 3f);
                         using var fill = new SolidBrush(i == _selected ? Theme.AccentSoft : Theme.Hover);
                         g.FillPath(fill, path);
                     }
@@ -341,7 +341,7 @@ namespace team1.Controls
                     {
                         int bw = (int)(104 * dpi), bh = (int)(30 * dpi);
                         _goButton = new Rectangle(row.Right - bw - (int)(10 * dpi), y + (RowHeight - bh) / 2, bw, bh);
-                        using var path = Theme.RoundedRect(_goButton, 8f);
+                        using var path = Theme.RoundedRect(_goButton, 3f);
                         using var fill = new SolidBrush(Theme.Accent);
                         g.FillPath(fill, path);
                         TextRenderer.DrawText(g, "地図で見る", Theme.Ui(10f, FontStyle.Bold), _goButton, Color.White,
@@ -366,7 +366,7 @@ namespace team1.Controls
                 int w = size.Width + (int)(18 * dpi);
                 int h = (int)(26 * dpi);
                 var rect = new Rectangle(x, rowTop + ((int)(46 * dpi) - h) / 2, w, h);
-                using var path = Theme.RoundedRect(rect, h / 2f);
+                using var path = Theme.RoundedRect(rect, 3f);
                 using var fill = new SolidBrush(back);
                 g.FillPath(fill, path);
                 TextRenderer.DrawText(g, text, font, rect, fore, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter | TextFormatFlags.NoPadding);
