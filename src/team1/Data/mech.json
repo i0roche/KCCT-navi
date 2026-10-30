@@ -52,13 +52,13 @@
   },
   {
     "Id": "room_1f_mech_lab_thermal",
-    "Name": "熱工学実験室",
-    "Reading": "ねつこうがくじっけんしつ",
+    "Name": "感性工学実験室",
+    "Reading": "かんせいこうがくじっけんしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 1,
     "Department": "mech",
-    "Tags": ["熱工学実験室", "機械工学科棟", "機械工学科", "mech", "実験室"]
+    "Tags": ["感性工学実験室", "機械工学科棟", "機械工学科", "mech", "実験室"]
   },
   {
     "Id": "room_1f_mech_lab_robotkenkyu",
@@ -250,7 +250,7 @@
   },
   {
     "Id": "room_2f_mech_lab_system",
-    "Name": "システム工学実験室",
+    "Name": "ロボット工学実験室",
     "Reading": "しすてむこうがくじっけんしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
@@ -476,6 +476,16 @@
   },
   {
     "Id": "room_3f_mech_lab_kumano",
+    "Name": "辻 研究室",
+    "Reading": "つじ けんきゅうしつ",
+    "Type": "lab",
+    "Building": "機械工学科棟",
+    "Floor": 3,
+    "Department": "mech",
+    "Tags": ["辻 研究室", "機械工学科棟", "機械工学科", "mech", "研究室", "熊野"]
+  },
+  {
+    "Id": "room_3f_mech_lab_kumano",
     "Name": "熊野 研究室",
     "Reading": "くまの けんきゅうしつ",
     "Type": "lab",
@@ -572,13 +582,23 @@
   },
   {
     "Id": "room_4f_mech_classroom_pbl",
-    "Name": "PBL演習室",
-    "Reading": "PBLえんしゅうしつ",
+    "Name": "PBL演習室1",
+    "Reading": "PBLえんしゅうしつ1",
     "Type": "classroom",
     "Building": "機械工学科棟",
     "Floor": 4,
     "Department": "mech",
-    "Tags": ["PBL演習室", "機械工学科棟", "機械工学科", "mech"]
+    "Tags": ["PBL演習室1", "機械工学科棟", "機械工学科", "mech"]
+  },
+  {
+    "Id": "room_4f_mech_classroom_pbl",
+    "Name": "PBL演習室2",
+    "Reading": "PBLえんしゅうしつ2",
+    "Type": "classroom",
+    "Building": "機械工学科棟",
+    "Floor": 4,
+    "Department": "mech",
+    "Tags": ["PBL演習室2", "機械工学科棟", "機械工学科", "mech"]
   },
   {
     "Id": "room_4f_mech_facility_fablab",
@@ -602,7 +622,7 @@
   {
     "Id": "room_4f_mech_lab_higashi",
     "Name": "東 研究室",
-    "Reading": "ひがし けんきゅうしつ",
+    "Reading": "あずま けんきゅうしつ",
     "Type": "lab",
     "Building": "機械工学科棟",
     "Floor": 4,

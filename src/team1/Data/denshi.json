@@ -1,13 +1,13 @@
 [
   {
     "Id": "room_1f_denshi_lab_basic_electronics",
-    "Name": "電子基礎実験室",
-    "Reading": "でんしきそじっけんしつ",
+    "Name": "基礎創造実験室",
+    "Reading": "きそそうぞうじっけんしつ",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 1,
     "Department": "denshi",
-    "Tags": ["電子基礎実験室", "電子工学科棟", "電子工学科", "denshi", "実験室"]
+    "Tags": ["基礎創造実験室", "電子工学科棟", "電子工学科", "denshi", "実験室"]
   },
   {
     "Id": "room_1f_denshi_lab_device",
@@ -31,13 +31,13 @@
   },
   {
     "Id": "room_1f_denshi_lab_acoustic",
-    "Name": "音響工学実験室（無響室）",
-    "Reading": "おんきょうこうがくじっけんしつ（むきょうしつ）",
+    "Name": "Acoustic Robotics System Lab.",
+    "Reading": "アコースティックロボティクスシステムラボ",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 1,
     "Department": "denshi",
-    "Tags": ["音響工学実験室（無響室）", "電子工学科棟", "電子工学科", "denshi", "実験室"]
+    "Tags": ["Acoustic Robotics System Lab.", "電子工学科棟", "電子工学科", "denshi", "実験室"]
   },
   {
     "Id": "room_1f_denshi_facility_workshop",
@@ -61,13 +61,13 @@
   },
   {
     "Id": "room_2f_denshi_lab_control",
-    "Name": "電子制御実験室",
-    "Reading": "でんしせいぎょじっけんしつ",
+    "Name": "システム制御実験室",
+    "Reading": "しすてむせいぎょじっけんしつ",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 2,
     "Department": "denshi",
-    "Tags": ["電子制御実験室", "電子工学科棟", "電子工学科", "denshi", "実験室"]
+    "Tags": ["システム制御実験室", "電子工学科棟", "電子工学科", "denshi", "実験室"]
   },
   {
     "Id": "room_2f_denshi_lab_measurement",
@@ -81,13 +81,13 @@
   },
   {
     "Id": "room_2f_denshi_lab_optoelectronics",
-    "Name": "光電子工学実験室",
-    "Reading": "ひかりでんしこうがくじっけんしつ",
+    "Name": "光情報システム実験室",
+    "Reading": "ひかりじょうほうしすてむじっけんしつ",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 2,
     "Department": "denshi",
-    "Tags": ["光電子工学実験室", "電子工学科棟", "電子工学科", "denshi", "実験室"]
+    "Tags": ["光情報システム実験室", "電子工学科棟", "電子工学科", "denshi", "実験室"]
   },
   {
     "Id": "room_2f_denshi_facility_equipment",
@@ -194,13 +194,13 @@
   },
   {
     "Id": "room_3f_denshi_lab_software",
-    "Name": "ソフトウェア工学実験室",
-    "Reading": "そふとうぇあこうがくじっけんしつ",
+    "Name": "Physical System Integration Lab.",
+    "Reading": "フィジカルシステムインテグレーションラボ",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 3,
     "Department": "denshi",
-    "Tags": ["ソフトウェア工学実験室", "電子工学科棟", "電子工学科", "denshi", "実験室"]
+    "Tags": ["Physical System Integration Lab.", "電子工学科棟", "電子工学科", "denshi", "実験室"]
   },
   {
     "Id": "room_3f_denshi_facility_archive",

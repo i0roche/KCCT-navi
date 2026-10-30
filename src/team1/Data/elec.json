@@ -81,13 +81,33 @@
   },
   {
     "Id": "room_2f_elec_lab_measurement",
-    "Name": "電気計測実験室",
-    "Reading": "でんきけいそくじっけんしつ",
+    "Name": "電気計測実験室1",
+    "Reading": "でんきけいそくじっけんしつ1",
     "Type": "lab",
     "Building": "電気工学科棟",
     "Floor": 2,
     "Department": "elec",
-    "Tags": ["電気計測実験室", "電気工学科棟", "電気工学科", "elec", "実験室"]
+    "Tags": ["電気計測実験室1", "電気工学科棟", "電気工学科", "elec", "実験室"]
+  },
+  {
+    "Id": "room_2f_elec_lab_measurement",
+    "Name": "電気計測実験室2",
+    "Reading": "でんきけいそくじっけんしつ2",
+    "Type": "lab",
+    "Building": "電気工学科棟",
+    "Floor": 2,
+    "Department": "elec",
+    "Tags": ["電気計測実験室2", "電気工学科棟", "電気工学科", "elec", "実験室"]
+  },
+  {
+    "Id": "room_2f_elec_lab_measurement",
+    "Name": "エネルギー工学実験室",
+    "Reading": "えねるぎーこうがくじっけんしつ",
+    "Type": "lab",
+    "Building": "電気工学科棟",
+    "Floor": 2,
+    "Department": "elec",
+    "Tags": ["エネルギー工学実験室", "電気工学科棟", "電気工学科", "elec", "実験室"]
   },
   {
     "Id": "room_2f_elec_lab_comm",
@@ -249,6 +269,16 @@
     "Tags": ["赤松 研究室", "電気工学科棟", "電気工学科", "elec", "研究室", "赤松"]
   },
   {
+    "Id": "room_3f_elec_lab_akamatsu",
+    "Name": "津吉 研究室",
+    "Reading": "つよし けんきゅうしつ",
+    "Type": "lab",
+    "Building": "電気工学科棟",
+    "Floor": 3,
+    "Department": "elec",
+    "Tags": ["津吉 研究室", "電気工学科棟", "電気工学科", "elec", "研究室", "赤松"]
+  },
+  {
     "Id": "room_3f_elec_lab_sakai",
     "Name": "酒井 研究室",
     "Reading": "さかい けんきゅうしつ",
@@ -350,7 +380,7 @@
   {
     "Id": "room_4f_elec_lab_michihira",
     "Name": "道平 研究室",
-    "Reading": "みちたいら けんきゅうしつ",
+    "Reading": "みちいら けんきゅうしつ",
     "Type": "lab",
     "Building": "電気工学科棟",
     "Floor": 4,
@@ -369,13 +399,13 @@
   },
   {
     "Id": "room_4f_elec_lab_morita",
-    "Name": "森田 研究室",
-    "Reading": "もりた けんきゅうしつ",
+    "Name": "栩木 研究室",
+    "Reading": "とちぎ けんきゅうしつ",
     "Type": "lab",
     "Building": "電気工学科棟",
     "Floor": 4,
     "Department": "elec",
-    "Tags": ["森田 研究室", "電気工学科棟", "電気工学科", "elec", "研究室", "森田"]
+    "Tags": ["栩木 研究室", "電気工学科棟", "電気工学科", "elec", "研究室", "森田"]
   },
   {
     "Id": "room_4f_elec_lab_katou",
