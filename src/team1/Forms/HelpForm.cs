@@ -128,8 +128,9 @@ namespace team1
             _view.Plain("KCCT-SiteMap 班 …… 近くの施設の指定、雨の日の経路、体育館などの地図データ");
             _view.Plain("https://github.com/canta-9142/KCCT-SiteMap");
             _view.Gap();
-            _view.Plain("6班 (Group6SchoolMap) …… 画面の配置、タッチパッドの読み取り");
+            _view.Plain("6班 (Group6SchoolMap) …… 画面の配置、タッチパッドの読み取り (6班のコードを元に書き直した)");
             _view.Plain("https://github.com/2025D3T02/Group6SchoolMap");
+            _view.Plain("Copyright (c) 2026 Yukito Akira, Takumi Kitao, Takuma Yoshizato");
             _view.Gap();
             _view.Plain("どちらも作者の許可をもらっています。");
 
