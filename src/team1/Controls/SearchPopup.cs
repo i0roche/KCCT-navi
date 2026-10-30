@@ -90,7 +90,7 @@ namespace team1.Controls
             var row = Rectangle.Inflate(e.Bounds, -6, -2);
             if (selected)
             {
-                using var path = Theme.RoundedRect(row, 6f);
+                using var path = Theme.RoundedRect(row, 3f);
                 using var fill = new SolidBrush(Theme.AccentSoft);
                 g.FillPath(fill, path);
             }

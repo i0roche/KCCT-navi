@@ -201,8 +201,8 @@ python scripts/validate_data.py --optimality # A* が最短経路を返すかも
 
 ## 謝辞
 
-同じ実験の他班の作品から機能のアイデアを得て、本班で実装しました。
-他班のコード・画像はそのままは取り込んでいません。地図データでは、KCCT-SiteMap 班の部屋・通路の座標だけを使って、`map.svg` に無かった部屋のノードと通路を追加しました（下記）。
+同じ実験の他班の作品から、機能のアイデアや実装の方法を参考にしました。
+6班のタッチパッドの読み取り (`TouchpadReader`) は、6班のコードを元に書き直したもので、MIT License の表示を [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) に載せています。ほかのコード・画像は、他班のものを取り込んでいません。地図データでは、KCCT-SiteMap 班の部屋・通路の座標だけを使って、`map.svg` に無かった部屋のノードと通路を追加しました（下記）。
 
 - **KCCT-SiteMap 班** ([canta-9142/KCCT-SiteMap](https://github.com/canta-9142/KCCT-SiteMap))
   - 「一番近いトイレ」などカテゴリでの目的地指定
@@ -210,7 +210,8 @@ python scripts/validate_data.py --optimality # A* が最短経路を返すかも
   - 部屋・通路の座標 (`GraphData.json`, `FacilityData.cs`)。体育館・プール・弓道場・機械工学科実験実習棟などのノードと通路を、座標を team1 の地図に合わせて追加した (`scripts/add_missing_nodes.py`)
   - 屋外かどうかを通路に持たせて、雨の日に屋外を避ける経路（通路ごとの `IsOutdoor` を、座標を合わせて team1 の通路に移した。`scripts/mark_outdoor_edges.py`）
 - **6班 (Group6SchoolMap)** ([2025D3T02/Group6SchoolMap](https://github.com/2025D3T02/Group6SchoolMap), MIT / Apache-2.0)
-  - タッチパッド/タッチ操作（ピンチ・慣性）、キーボードでの地図操作（矢印・WASD）。タッチパッドの指の位置を Raw Input (HID) から読む方法（`TouchpadReader`）は、6班の TouchpadHelper を参考に、必要な部分だけ P/Invoke で書き直した
+  - Copyright (c) 2026 Yukito Akira, Takumi Kitao, Takuma Yoshizato (MIT License の全文は [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md))
+  - タッチパッド/タッチ操作（ピンチ・慣性）、キーボードでの地図操作（矢印・WASD）。タッチパッドの指の位置を Raw Input (HID) から読む方法（`TouchpadReader`）は、6班の TouchpadHelper を元に、team1 の構成に合わせて P/Invoke で書き直した
   - 種別で絞り込める部屋一覧画面、検索のハイライト・あいまい検索・かな/ローマ字検索（issue #195〜#198・#219）、ルート提案（#211）、ダブルクリックでの拡大（#222）の案
   - 全体図から建物を選んで中へ入る操作
   - DI と Usecase/Repository による層の分け方、データを変換スクリプトで検証する仕組み

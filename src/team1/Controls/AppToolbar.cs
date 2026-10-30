@@ -127,7 +127,7 @@ namespace team1.Controls
                 var g = e.Graphics;
                 g.SmoothingMode = SmoothingMode.AntiAlias;
                 using (var back = new SolidBrush(Parent?.BackColor ?? Theme.Surface)) g.FillRectangle(back, ClientRectangle);
-                using var path = Theme.RoundedRect(new RectangleF(0.5f, 0.5f, Width - 1.5f, Height - 1.5f), 8f);
+                using var path = Theme.RoundedRect(new RectangleF(0.5f, 0.5f, Width - 1.5f, Height - 1.5f), 3f);
                 using (var fill = new SolidBrush(Theme.Background)) g.FillPath(fill, path);
                 using (var pen = new Pen(Theme.Border)) g.DrawPath(pen, path);
                 TextRenderer.DrawText(g, Text, Font, ClientRectangle, Theme.Text, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter | TextFormatFlags.NoPadding);

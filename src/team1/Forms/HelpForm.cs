@@ -128,8 +128,9 @@ namespace team1
             _view.Plain("KCCT-SiteMap 班 …… 近くの施設の指定、雨の日の経路、体育館などの地図データ");
             _view.Plain("https://github.com/canta-9142/KCCT-SiteMap");
             _view.Gap();
-            _view.Plain("6班 (Group6SchoolMap) …… 画面の配置、タッチパッドの読み取り");
+            _view.Plain("6班 (Group6SchoolMap) …… 画面の配置、タッチパッドの読み取り (6班のコードを元に書き直した)");
             _view.Plain("https://github.com/2025D3T02/Group6SchoolMap");
+            _view.Plain("Copyright (c) 2026 Yukito Akira, Takumi Kitao, Takuma Yoshizato");
             _view.Gap();
             _view.Plain("どちらも作者の許可をもらっています。");
 
@@ -281,10 +282,10 @@ namespace team1
 
                         // キーの形: 下だけ少し厚い、角の丸い白いキー
                         var cap = new RectangleF(x + 0.5f, top + 0.5f, w - 1, h - 3);
-                        using (var edge = Theme.RoundedRect(new RectangleF(x + 0.5f, top + 2.5f, w - 1, h - 3), 6f))
+                        using (var edge = Theme.RoundedRect(new RectangleF(x + 0.5f, top + 2.5f, w - 1, h - 3), 3f))
                         using (var edgeBrush = new SolidBrush(Color.FromArgb(205, 211, 222)))
                             g.FillPath(edgeBrush, edge);
-                        using (var top2 = Theme.RoundedRect(cap, 6f))
+                        using (var top2 = Theme.RoundedRect(cap, 3f))
                         {
                             using var fill = new SolidBrush(Color.FromArgb(250, 251, 253));
                             using var border = new Pen(Color.FromArgb(205, 211, 222));

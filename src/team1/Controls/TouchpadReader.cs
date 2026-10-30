@@ -13,7 +13,7 @@ namespace team1.Controls
     /// (WM_INPUT を WndProc から HandleInput に渡す)。通常のマウス操作・ホイールの変換はそのまま届く。
     ///
     /// 指の位置は「タッチパッドの幅 = 1」に直して返す (縦横が同じ縮尺の前提)。
-    /// HID の読み方は 6班 (Group6SchoolMap, MIT / Apache-2.0) の TouchpadHelper を参考にしている。
+    /// HID の読み方は 6班 (Group6SchoolMap, MIT / Apache-2.0) の TouchpadHelper を元に書き直している (表示は THIRD_PARTY_NOTICES.md)。
     /// </summary>
     internal sealed class TouchpadReader
     {

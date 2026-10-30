@@ -70,14 +70,14 @@
     "Tags": ["システム制御実験室", "電子工学科棟", "電子工学科", "denshi", "実験室"]
   },
   {
-    "Id": "room_2f_denshi_lab_measurement",
-    "Name": "電子計測実験室",
-    "Reading": "でんしけいそくじっけんしつ",
+    "Id": "room_2f_denshi_lab_measurement_1",
+    "Name": "学生実験室1",
+    "Reading": "がくせいじっけんしつ1",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 2,
     "Department": "denshi",
-    "Tags": ["電子計測実験室", "電子工学科棟", "電子工学科", "denshi", "実験室"]
+    "Tags": ["学生実験室1", "電子工学科棟", "電子工学科", "denshi", "実験室"]
   },
   {
     "Id": "room_2f_denshi_lab_optoelectronics",
@@ -132,14 +132,14 @@
     "Description": "冷蔵庫がふるい！"
   },
   {
-    "Id": "room_2f_denshi_lab_ogiwara",
-    "Name": "荻原 研究室",
-    "Reading": "おぎわら けんきゅうしつ",
+    "Id": "room_2f_denshi_lab_tanaka",
+    "Name": "田中 研究室",
+    "Reading": "たなか けんきゅうしつ",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 2,
     "Department": "denshi",
-    "Tags": ["荻原 研究室", "電子工学科棟", "電子工学科", "denshi", "研究室", "荻原"]
+    "Tags": ["田中 研究室", "電子工学科棟", "電子工学科", "denshi", "研究室", "田中"]
   },
   {
     "Id": "room_2f_denshi_lab_oyama",
@@ -172,15 +172,14 @@
     "Description": "電子工学科のD3ホームルームです。"
   },
   {
-    "Id": "room_3f_denshi_lab_computer",
-    "Name": "計算機工学実験室",
+    "Id": "room_3f_denshi_lab_PSI",
+    "Name": "Physical System Integration Lab.",
     "Reading": "けいさんきこうがくじっけんしつ",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 3,
     "Department": "denshi",
-    "Tags": ["計算機工学実験室", "電子工学科棟", "電子工学科", "denshi", "実験室"],
-    "Description": "かつては某先生の城塞がありました"
+    "Tags": ["Physical System Integration Lab.", "電子工学科棟", "電子工学科", "denshi", "実験室"]
   },
   {
     "Id": "room_3f_denshi_facility_DigitalFabricationLab",
@@ -191,16 +190,6 @@
     "Department": "denshi",
     "Tags": ["Digital Fabrication Lab.", "電子工学科棟", "電子工学科", "denshi", "DFlab"],
     "Description": "お高い3Dプリンタがあります"
-  },
-  {
-    "Id": "room_3f_denshi_lab_software",
-    "Name": "Physical System Integration Lab.",
-    "Reading": "フィジカルシステムインテグレーションラボ",
-    "Type": "lab",
-    "Building": "電子工学科棟",
-    "Floor": 3,
-    "Department": "denshi",
-    "Tags": ["Physical System Integration Lab.", "電子工学科棟", "電子工学科", "denshi", "実験室"]
   },
   {
     "Id": "room_3f_denshi_facility_archive",
@@ -221,6 +210,16 @@
     "Floor": 3,
     "Department": "denshi",
     "Tags": ["会議室", "電子工学科棟", "電子工学科", "denshi"]
+  },
+  {
+    "Id": "room_3f_denshi_lab_measurement_2",
+    "Name": "学生実験室3",
+    "Reading": "がくせいじっけんしつ3",
+    "Type": "lab",
+    "Building": "電子工学科棟",
+    "Floor": 3,
+    "Department": "denshi",
+    "Tags": ["学生実験室3", "電子工学科棟", "電子工学科", "denshi", "実験室"]
   },
   {
     "Id": "room_3f_denshi_facility_graduation_4",
@@ -311,14 +310,14 @@
     "Tags": ["通信工学実験室", "電子工学科棟", "電子工学科", "denshi", "実験室"]
   },
   {
-    "Id": "room_4f_denshi_lab_applied",
-    "Name": "電子応用実験室",
-    "Reading": "でんしおうようじっけんしつ",
+    "Id": "room_4f_denshi_lab_measurement_3",
+    "Name": "学生実験室3",
+    "Reading": "がくせいじっけんしつ3",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 4,
     "Department": "denshi",
-    "Tags": ["電子応用実験室", "電子工学科棟", "電子工学科", "denshi", "実験室"],
+    "Tags": ["学生実験室3", "電子工学科棟", "電子工学科", "denshi", "実験室"],
     "Description": "ぬいぐるみがいっぱいあります"
   },
   {
@@ -386,7 +385,7 @@
   {
     "Id": "room_4f_denshi_lab_hashimoto",
     "Name": "橋本(好) 研究室",
-    "Reading": "はしもと(こう) けんきゅうしつ",
+    "Reading": "はしもと けんきゅうしつ",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 4,
@@ -406,7 +405,7 @@
   {
     "Id": "room_4f_denshi_lab_koya",
     "Name": "小矢 研究室",
-    "Reading": "しょうや けんきゅうしつ",
+    "Reading": "こや けんきゅうしつ",
     "Type": "lab",
     "Building": "電子工学科棟",
     "Floor": 4,

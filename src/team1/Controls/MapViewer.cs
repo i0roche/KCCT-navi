@@ -270,8 +270,8 @@ namespace team1.Controls
                 Style = SKPaintStyle.Stroke,
                 StrokeWidth = 1
             };
-            canvas.DrawRoundRect(panelRect, 12, 12, panelPaint);
-            canvas.DrawRoundRect(panelRect, 12, 12, panelBorder);
+            canvas.DrawRoundRect(panelRect, 4, 4, panelPaint);
+            canvas.DrawRoundRect(panelRect, 4, 4, panelBorder);
 
             // 上ボタン
             DrawFloorButton(canvas, _floorUpButtonRect, "▲", CurrentFloor < MaxFloor);
@@ -289,8 +289,8 @@ namespace team1.Controls
             var skRect = new SKRect(rect.Left + 0.5f, rect.Top + 0.5f, rect.Right - 0.5f, rect.Bottom - 0.5f);
             using var bgPaint = new SKPaint { Color = SKColors.White, IsAntialias = true, Style = SKPaintStyle.Fill };
             using var borderPaint = new SKPaint { Color = new SKColor(214, 219, 228), IsAntialias = true, Style = SKPaintStyle.Stroke, StrokeWidth = 1 };
-            canvas.DrawRoundRect(skRect, 8, 8, bgPaint);
-            canvas.DrawRoundRect(skRect, 8, 8, borderPaint);
+            canvas.DrawRoundRect(skRect, 3, 3, bgPaint);
+            canvas.DrawRoundRect(skRect, 3, 3, borderPaint);
 
             float dpiScale = Theme.Scale(this);
             using var linePaint = new SKPaint
@@ -325,7 +325,7 @@ namespace team1.Controls
             };
 
             var skRect = new SKRect(rect.Left, rect.Top, rect.Right, rect.Bottom);
-            canvas.DrawRoundRect(skRect, 8, 8, bgPaint);
+            canvas.DrawRoundRect(skRect, 3, 3, bgPaint);
 
             float dpiScale = Theme.Scale(this);
             using var textPaint = new SKPaint
@@ -653,11 +653,11 @@ namespace team1.Controls
             // 影 → 本体 → 下向きのしっぽ (点を指す)
             using (var shadow = new SKPaint { Color = new SKColor(0, 0, 0, 55), IsAntialias = true, MaskFilter = SKMaskFilter.CreateBlur(SKBlurStyle.Normal, 3 * dpi) })
             {
-                canvas.DrawRoundRect(new SKRect(pill.Left, pill.Top + 2 * dpi, pill.Right, pill.Bottom + 2 * dpi), height / 2, height / 2, shadow);
+                canvas.DrawRoundRect(new SKRect(pill.Left, pill.Top + 2 * dpi, pill.Right, pill.Bottom + 2 * dpi), 4 * dpi, 4 * dpi, shadow);
             }
             using (var fill = new SKPaint { Color = color, IsAntialias = true, Style = SKPaintStyle.Fill })
             {
-                canvas.DrawRoundRect(pill, height / 2, height / 2, fill);
+                canvas.DrawRoundRect(pill, 4 * dpi, 4 * dpi, fill);
                 using var tail = new SKPath();
                 tail.MoveTo(at.X - 5 * dpi, pill.Bottom - 1);
                 tail.LineTo(at.X + 5 * dpi, pill.Bottom - 1);
@@ -666,7 +666,7 @@ namespace team1.Controls
                 canvas.DrawPath(tail, fill);
             }
             using (var edge = new SKPaint { Color = SKColors.White.WithAlpha(230), IsAntialias = true, Style = SKPaintStyle.Stroke, StrokeWidth = 1.5f * dpi })
-                canvas.DrawRoundRect(pill, height / 2, height / 2, edge);
+                canvas.DrawRoundRect(pill, 4 * dpi, 4 * dpi, edge);
 
             float cursor = pill.Left + padX;
             if (arrow != MarkerArrow.None)

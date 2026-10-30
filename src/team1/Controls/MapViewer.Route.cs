@@ -151,7 +151,7 @@ namespace team1.Controls
             float width = font.MeasureText(label) + 16 * dpiScale;
             float height = 28 * dpiScale;
             var rect = SKRect.Create(screen.X - width / 2, screen.Y - 30 * dpiScale - height, width, height);
-            canvas.DrawRoundRect(rect, 6 * dpiScale, 6 * dpiScale, labelBg);
+            canvas.DrawRoundRect(rect, 3 * dpiScale, 3 * dpiScale, labelBg);
             canvas.DrawText(label, rect.MidX, rect.Bottom - 8 * dpiScale, SKTextAlign.Center, font, labelText);
 
             canvas.Restore();

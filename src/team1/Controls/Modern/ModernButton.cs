@@ -71,7 +71,7 @@ namespace team1.Controls.Modern
             }
 
             var rect = new RectangleF(0.5f, 0.5f, Width - 1.5f, Height - 1.5f);
-            using (var path = Theme.RoundedRect(rect, 8f))
+            using (var path = Theme.RoundedRect(rect, 3f))
             using (var brush = new SolidBrush(fill))
             using (var pen = new Pen(border))
             {
